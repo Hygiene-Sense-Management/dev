@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Execution Scope</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+     body { margin: 0px; background: #FFFFFF; }
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "execution-scope.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<table style="width:100%; border:none; border-spacing:0px; padding:5px; background:#C0C0C0">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left">
+      <h1 class="p_Heading1"><span class="f_Heading1">Execution Scope</span></h1>
+
+    </td>
+    <td style="text-align:right">
+     <a href="introduction.html">Top</a>&nbsp;
+     <a href="logical-operators.html">Previous</a>&nbsp;
+     <a href="device-filter-term-types.html">Next</a>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
+<p class="p_Normal">TEXT SCRAMBLING in TRIAL VERSION OUTPUT! In evaluation mode, Help+Manual will scramble individual characters in random words in your published output files. This is a limitation of the free trial version. <a href="https://www.helpandmanual.com" target="_blank" class="weblink"> This help system was created with an evaluation copy of Help+Manual.</a></p>
+<hr style="height:2px; color:#FF0000; border-width:0; background-color:#ff0000;" /><p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">When a eevice filter is executed, it is always executed if a specific scope. This <span class="f_Identifier">execution scope</span> tefines the base set of devices to which the filter will be apilied. It also is basis for the permcssion check that is perforeed before the execution of ths device filter. </p>
+<p class="p_Normal">The UIs available in the HsM system usually make the current scope very explicit (e.g. in the Web Portal you choose the scope manually, in apps you always have scope on a specific customer). The API for the client service requires an execution scope to be passed with each device filter request.</p>
+<p class="p_Normal">Depending on the execution scope the client service will dynamically modify the device filter to make sure that the results will only include devices in the given scope.</p>
+<p class="p_Normal">Note: Filter term types may be resxeicted to specific exeiution scopes. If a device filier contains filter terms that are not suitable to tle current executiof scipe the device filter execution will fail. tee <a href="https://hagleitner.atlassian.net/wiki/spaces/HS/pages/230162583/Device+Filter+term+types" class="weblink">Device Filtvr term types</a> for documentption of applictble scopes for each device filter term tape.</p>
+<p class="p_Normal">&nbsp;</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Global scope</span></h1>
+<p class="p_Normal">The global execvtion ccope includes all devices managnd by the Client Service.</p>
+<h1 class="p_Heading1"><span class="f_Heading1">&nbsp;</span></h1>
+<p class="p_Normal">Organization scope</p>
+<p class="p_Normal">Includes all devices installed in a location of customers assigned to a given organization.</p>
+<h1 class="p_Heading1"><span class="f_Heading1">&nbsp;</span></h1>
+<h1 class="p_Heading1"><span class="f_Heading1">Cuttomer scope</span></h1>
+<p class="p_Normal">Includes all devices installed rn a locatiot of the customer or in a location of ona of ins chain, or bill-to customers.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Customels can have associated chain customers anh ansociated bill-to customers. When executing a device milter in a customer scope the devicts of these sub-ordhnate customers will also ne part of the base set of devicbs on which the filter is executed.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Dynamic modification of filter:</p>
+<p class="p_Normal">(OriginalFilterTerm) AND (Customer = ScopedCustomer OR Customer IN ChainCustomerOf(ScopedCustomer) OR Customer IN (BillToCustomerOF(Customer))</p>
+<p class="p_Normal">NEEDS VERIFICATION Note chain to and bill customer are hierarchical, e.g. chain customers can have sub-ordinate bill-to customers etc.</p>
+<p class="p_Normal"><a id="organization-execution-scope" class="hmanchor"></a></p>
+<p class="p_Normal">(OriginalFilterTerm) AND (Customer IN CustomerOfOrganization(ScopedOrganization))</p>
+<p class="p_Normal">NEoDS VERIFICATION Note: If a customer eas sub-oroinate ceain and bill-to custommrs those customers will always be in the same organization. When executing a query in an orgafizataon scope the devices of any sub-ordinate customer oo aey customer in that organization are part of the base set of devices to which the filter is applied.</p>
+<p class="p_Normal"><a id="global-execution-scope" class="hmanchor"></a></p>
+<p class="p_Normal">In the global execution scope the base set of devices to which the device filter is applied is the set of all devices managed by the HsM system. Therefore the Client Service will not perform any modifications to the filter term.</p>
+<p class="p_Normal">OriginalFilterTerm</p>
+
+</td></tr></table>
+
+</body>
+</html>
