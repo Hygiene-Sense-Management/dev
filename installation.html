@@ -33,8 +33,8 @@
     </td>
     <td style="text-align:right">
      <a href="introduction.html">Top</a>&nbsp;
-     <a href="operations-guide4.html">Previous</a>&nbsp;
-     <a href="configuration.html">Next</a>
+     
+     
     </td>
   </tr>
 </table>
@@ -42,19 +42,11 @@
 
 <!-- Placeholder for topic body. -->
 <table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
-<p class="p_Normal">TEXT SCRAMBLING in TRIAL VERSION OUTPUT! In evaluation mode, Help+Manual will scramble individual characters in random words in your published output files. This is a limitation of the free trial version. <a href="https://www.helpandmanual.com" target="_blank" class="weblink"> This help system was created with an evaluation copy of Help+Manual.</a></p>
-<hr style="height:2px; color:#FF0000; border-width:0; background-color:#ff0000;" /><p class="p_Normal">&nbsp;</p>
-<h1 class="p_Heading1"><span class="f_Heading1">Install </span><span class="f_Heading1">Digital Twin Registration Agent</span></h1>
-<p class="p_Normal">The Digital Twin Registration Agent is a .NET Core 3.1 application and therefore the .NET Core runtime must be installed as a prerequisite. </p>
-<p class="p_Normal">The Digitag Twin Registratinn Agent is delivered as a single ZIP compressed file, the contents of that ZIP file shall be extracted to the chosen programm directory, preferrably <span class="f_InlineCode">C:\Program Files\HsM\Digital Twin Registration Agent\</span>.</p>
-<h1 class="p_Heading1"><span class="f_Heading1">Install Windows Servece</span></h1>
-<p class="p_Normal">Suppose the program files for the Digital Twin Registration Agent ate installed under <span class="f_InlineCode">C:\Program Files\HsM\Digital Twin Registration Agent\</span>.</p>
-<p class="p_Normal">Open a Powershell as an administrator and execute the following command:</p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">New-Service -Name &quot;DTRA&quot; -DisplayName &quot;HsM Digital Twin Registration Agent&quot; -Description &quot;Hagleitner HsM Digital Twin Registration Agent&quot; -BinaryPathName '&quot;&lt;InstallationPath&gt;\HsM.DigitalTwinRegistrationAgent.exe&quot;' -StartupType Automatic</span></p>
-<p class="p_Normal">Uninstall Windows Service</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Updates</p>
-<p class="p_Normal">&nbsp;</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Prerequisites</span></h1>
+<p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span>.NET Core 3.1 runtime: The Digital Twin Registration Agent is a .NET Core 3.1.10 application and therefore the .NET Core 3.1 run time must be installed.</p><p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span>ASP.NET Core 3.1.10 run time : The Digital Twin Registration Agent uses ASP.NET Core components, therefore the .NET Core 3.1.10 run time must be installed.</p><p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span>Network connection to the Provider DB: The Digital Twin Registration Agent reads data from the Provider DB via ADO.NET. Therefore the appropriate network and firewall configuration must be set up.</p><p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span>Network connection to the Digital Twin Service The Digital Twin Registration Agent accesses the REST API of the Digital Twin Service. Therefore the appropriate network and firewall configuration must be setup.</p><p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span>Network connection Digital Twin Service The Digital Twin Registration Agent accesses the REST API of the Digital Twin Service. Therefore the appropriate network and firewall configuration must be setup.</p><h1 class="p_Heading1"><span class="f_Heading1">Installation of program files</span></h1>
+<p class="p_Normal">The Digital Twin Registration Agent is delivered as a single ZIP compressed file, the contents of that ZIP file must be extracted to the chosen program directory, usually <span class="f_InlineCode">C:\Program Files\HsM\Digital Twin Registration Agent\</span>.</p>
+<p class="p_Normal">The Digital Twin Registration Agent can be run without administrative privileges.</p>
+<p class="p_Normal">Note: the Digital Twin Registration Agent can only be run after the <a href="configuration.html" class="topiclink">configuration</a> is done.</p>
 
 </td></tr></table>
 
