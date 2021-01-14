@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-   <title>Date interval</title>
+   <title>Date interval specification</title>
    <meta name="generator" content="Help &amp; Manual" />
    <meta name="keywords" content="" />
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -28,13 +28,13 @@
 <table style="width:100%; border:none; border-spacing:0px; padding:5px; background:#C0C0C0">
   <tr style="vertical-align:middle">
     <td style="text-align:left">
-      <h1 class="p_Heading1"><span class="f_Heading1">Date interval</span></h1>
+      <h1 class="p_Heading1"><span class="f_Heading1">Date interval specification</span></h1>
 
     </td>
     <td style="text-align:right">
      <a href="preface.html">Top</a>&nbsp;
      <a href="organization.html">Previous</a>&nbsp;
-     <a href="administrators-guide.html">Next</a>
+     <a href="static-date-interval-specifica.html">Next</a>
     </td>
   </tr>
 </table>
@@ -42,8 +42,11 @@
 
 <!-- Placeholder for topic body. -->
 <table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
-<p class="p_Normal">Date intervals are used to filter or query timestamped data that within an given lower and upper boundary. The Client Service supports static and adaptive date intervals. Static date intervals are specified by a fixed lower and upper boundary, adaptive date intervals are specified with offsets the are applied to the current date and time when the data interval is accessed.</p>
-<p class="p_Normal">If the boundaries of a data interval are included in the interval can be defined by the properties <span class="f_Identifier">Start included</span> and <span class="f_Identifier">End Included.</span></p>
+<p class="p_Normal">Date intervals are used to filter or query timestamped data that is within an given start date and end date. Since HsM deals with time-series a lot the Client Service provides versatile ways of specifying date intervals.</p>
+<p class="p_Normal"><a href="static-date-interval-specifica.html" class="topiclink">Static date interval specifications</a> contain a fixed start date and end date. <a href="adaptive-date-interval-specifi.html" class="topiclink">Adaptive date intervals</a> specifications are defined with offsets - the actual date interval is then calculated by applying the defined offsets to the current date and time when the date interval is accessed.</p>
+<p class="p_Normal">Both types of date intervals specifications also allow to specify if the start date and end date are included in the date interval or not.</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Validation</span></h1>
+<p class="p_Normal">A valid date interval specification is valid if the resulting date interval is </p>
 
 </td></tr></table>
 

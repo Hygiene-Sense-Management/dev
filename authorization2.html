@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Authorization</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+     body { margin: 0px; background: #FFFFFF; }
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "authorization2.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<table style="width:100%; border:none; border-spacing:0px; padding:5px; background:#C0C0C0">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left">
+      <h1 class="p_Heading1"><span class="f_Heading1">Authorization</span></h1>
+
+    </td>
+    <td style="text-align:right">
+     <a href="preface.html">Top</a>&nbsp;
+     <a href="customers.html">Previous</a>&nbsp;
+     <a href="data-analysis-service.html">Next</a>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
+<h1 class="p_Heading1"><span class="f_Heading1">Usertypen</span></h1>
+<p class="p_Normal">B2C: User Management Tool DOrt weredn user verwaltet</p>
+<p class="p_Normal">Dev un Integration eines, Stage und production eines</p>
+<p class="p_Normal">PROD hagleitner ONline Portal</p>
+<p class="p_Normal"><img alt="clip0001" width="637" height="262" style="margin:0;width:637px;height:262px;border:none" src="clip0001.png"/></p>
+<p class="p_Normal">Azure AD B2C hat unterschiedliche Benutzer Typen</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">User in B2C können local oder federated sein.</p>
+<p class="p_Normal">Mitarbeiter login is fererated</p>
+<h2 class="p_Heading2"><span class="f_Heading2">User Tabelle im Client Service Database</span></h2>
+<p class="p_Normal">Identity provider spalte gefüllt = federated user^</p>
+<p class="p_Normal">&nbsp;</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Permissions:</span></h1>
+<p class="p_Normal">Permissions sind die kleinsten Atome.</p>
+<p class="p_Normal">Permissions sind vom System vordefiniert.</p>
+<p class="p_Normal">Permission können sich auf bestimme Wirklungsbereich beziehen, das ist aber nicht wirklich in der Permission codier, sonder wird nur manuell über Permission Rolle Zuornung und die Rolle einen Scope hat.</p>
+<p class="p_Normal">Permissions beziehen sich auf bestimmte Objekte (z.B. Devices, ...)</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Scopes</span></h1>
+<p class="p_Normal">Customer: Dies Permission wirkt auf einen customer. Ob die Rollen und permissins an kettenkunden vererbt werden ist eine Customer einstellung. Tabelle Customer - Customer User Role</p>
+<p class="p_Normal">Organization: Dies permission wirkt auf eie organization. Zuordnungstabelle: OrganizationUserRole, permission wirkt auch auf alle Kunden.</p>
+<p class="p_Normal">-&gt; Organization limited</p>
+<p class="p_Normal">Global: Dies permission wirkt auf das gesamte System (d.h. auch auf alle Organisationen und alle Customers)</p>
+<p class="p_Normal">&nbsp;</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Verbindung zu Xibu und Service APp</span></h1>
+<p class="p_Normal">Eine Permission in HsM (z.b. XIBU_TECHNICAN) bedingt eine Rolle in der APp. Die Permissions auf der App werden aber von der App verwaltet.</p>
+<p class="p_Normal">&nbsp;</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Zuordnung Customer-User-Role</span></h1>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Rollen sind container für Permissions</p>
+<p class="p_Normal">Zuordnung geht immer über Rolle.</p>
+<p class="p_Normal">Benutzer und ROlle m:n</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Roles werden von Hagleitner definiert und sind nicht User-definierbar.</p>
+<p class="p_Normal">SCopes sind von Hagleitner definiert und können nicht vom User definiert werden.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Rollen werden um ein Scope Attribut erweitert dameit gelten die Permissions in dieser Rolle nur für diesen Scope.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Rolle zuweieung bu Benutze hat immer ein Scope Attribut</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Es gibt kein Benutzergruppen konzept</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Permissions are always additive.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Object = Scope</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Permission </p>
+<p class="p_Normal">&nbsp;</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Wie kommen User zu Ihren Roles</span></h1>
+<p class="p_Normal">Unterschied zwischen ferated und local </p>
+<p class="p_Normal">Im AD Gruppentypen mit HOP_</p>
+<p class="p_Normal">AD Gruppen werden in unser Backend synchronisiert. (eignetlich nur sync in eine Richtung)</p>
+<p class="p_Normal">Mapping von Group Names zu Rollen wirdanhand der syntax ActiveDirectoryGroupOrganizationRole Tabelle</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

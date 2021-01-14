@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Static date interval specification</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+     body { margin: 0px; background: #FFFFFF; }
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "static-date-interval-specifica.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<table style="width:100%; border:none; border-spacing:0px; padding:5px; background:#C0C0C0">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left">
+      <h1 class="p_Heading1"><span class="f_Heading1">Static date interval specification</span></h1>
+
+    </td>
+    <td style="text-align:right">
+     <a href="preface.html">Top</a>&nbsp;
+     <a href="date-interval.html">Previous</a>&nbsp;
+     <a href="adaptive-date-interval-specifi.html">Next</a>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
+<p class="p_Normal">A static date interval specification contain a fixed lower and upper boundary.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 6px 0;"><table style="width:720px; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:205px; background-color:#DCDCDC; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Setting</p>
+</th>
+<th style="vertical-align:top; width:511px; background-color:#DCDCDC; padding:0; border:solid thin #c0c0c0;"><br />
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:205px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Start date and time</p>
+</td>
+<td style="vertical-align:top; width:511px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Date time offset</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:205px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">End date and time</p>
+</td>
+<td style="vertical-align:top; width:511px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Date time offset</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:205px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Start date included</p>
+</td>
+<td style="vertical-align:top; width:511px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">If set a date time that equals exactly the start offset would be considered as part of the interval, in not set it would be outside the interval</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:205px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">End date included</p>
+</td>
+<td style="vertical-align:top; width:511px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">If set a date time that equals exactly the end &nbsp;offset would be considered as part of the interval, in not set it would be outside the interval</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 13: Settings for static date interval specifications</span></p>
+<h1 class="p_Heading1"><span class="f_Heading1">Handling of date time offsets</span></h1>
+<p class="p_Normal">Start date and time and end date and time are given with a specific offset. The Client Service will respect different date time offsets </p>
+<p class="p_Normal">e.g. the date 2020-12-11 14:30:00+01:00 is include in the static interval specification with a lower boundary of 2020-12-11 13:00:00+00:00 and an upper boundary of 2020-12-11 12:00:00-02:00</p>
+
+</td></tr></table>
+
+</body>
+</html>
