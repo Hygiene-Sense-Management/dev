@@ -34,6 +34,9 @@ span.f_ImageCaption /* Image Caption */
 {
  font-size: 11px;
 }
+span.f_Important /* Important */
+{
+}
 span.f_InlineCode /* InlineCode */
 {
  font-size: 12px;
@@ -54,10 +57,6 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_CodeExample /* Code Example */
 {
  font-size: 12px;
- line-height: 1.0;
- white-space: nowrap;
- page-break-inside: avoid;
- background: #f2f2f2;
  margin: 0 0 0 0;
 }
 .p_Comment /* Comment */
@@ -89,6 +88,17 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_ImageCaption /* Image Caption */
 {
  font-size: 11px;
+}
+.p_Important /* Important */
+{
+ font-size: 13px;
+ border-color: #999999;
+ border-style: solid;
+ border-width: thin;
+ border-right: none;
+ border-left: none;
+ padding: 6px 6px 6px 6px;
+ margin: 0 0 0 0;
 }
 .p_InlineCode /* InlineCode */
 {

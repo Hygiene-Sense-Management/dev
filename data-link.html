@@ -32,9 +32,9 @@
 
     </td>
     <td style="text-align:right">
-     <a href="introduction.html">Top</a>&nbsp;
-     <a href="compound-device-status.html">Previous</a>&nbsp;
-     <a href="device-dates.html">Next</a>
+     <a href="preface.html">Top</a>&nbsp;
+     <a href="customer.html">Previous</a>&nbsp;
+     <a href="device-type.html">Next</a>
     </td>
   </tr>
 </table>
@@ -42,7 +42,8 @@
 
 <!-- Placeholder for topic body. -->
 <table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
-<p class="p_Normal">The HsM system can also manage pure analog dispensers (with no data link to the HsM HsM Backend), this device filter term type can be used to filter devices by their capability to send data to the HsM &lt;%BACKEND%.</p>
+<p class="p_Normal">The HsM system can also manage pure analog dispensers (with no data link to the HsM Backend), this device filter term type can be used to filter devices by their capability to send data to the &lt;%BACKEND%.</p>
+<p class="p_Normal">Note this term type will not filter for devices that actually send data to the HsM Backend but only filters for their theoretical ability to send data.</p>
 <h1 class="p_Heading1"><span class="f_Heading1">Settings</span></h1>
 <div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 6px 0;"><table style="width:720px; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
@@ -55,22 +56,23 @@
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Capability filter</p>
+<td style="vertical-align:top; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Data link capability</p>
 </td>
-<td style="vertical-align:top; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Yes: Filters for devices that can communicate with the HsM backend. </p>
-<p class="p_Normal">No: Filters for devices that cannot communicate with the HsM backend.</p>
+<td style="vertical-align:top; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Can send data: Filters for devices that can send data to the HsM Backend. </p>
+<p class="p_Normal">Cannot send data: Filters for devices that cannot send data to the HsM Backend</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Compound member handling</p>
+<td style="vertical-align:top; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Include compound members</p>
 </td>
-<td style="vertical-align:top; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Include Devices with compound members that have data link capability</p>
+<td style="vertical-align:top; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">If a device is a compound device and has a compound member that can send data to the HsM Backend these devices will pass the filter if this option is set.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<h1 class="p_Heading1"><span class="f_Heading1">Validation rules</span></h1>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 5: Settings of this device term type</span></p>
+<h1 class="p_Heading1"><span class="f_Heading1">Validity constraints</span></h1>
 <p class="p_Normal">This term type has no validation rules.</p>
 
 </td></tr></table>

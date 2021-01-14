@@ -32,9 +32,9 @@
 
     </td>
     <td style="text-align:right">
-     <a href="introduction.html">Top</a>&nbsp;
-     <a href="device-type.html">Previous</a>&nbsp;
-     <a href="location-tree-filter.html">Next</a>
+     <a href="preface.html">Top</a>&nbsp;
+     <a href="resource-instance-value2.html">Previous</a>&nbsp;
+     <a href="transmission-mode.html">Next</a>
     </td>
   </tr>
 </table>
@@ -57,14 +57,16 @@
 <tr>
 <td style="vertical-align:top; width:185px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Time span</p>
 </td>
-<td style="vertical-align:top; width:531px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">The filter will be passed by all devices who have reported a value for any resource instance later than <span class="f_InlineCode">CurrentDateAndTime - TimeSpan</span></p>
+<td style="vertical-align:top; width:531px; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">The filter will be passed by all devices who have reported a value for any resource instance later than <span class="f_InlineCode">CurrentDateAndTime - TimeSpan</span><span class="f_Identifier"> . </span></p>
+<p class="p_InlineCode"><span class="f_InlineCode">CurrentDateAndTime</span><span class="f_Identifier"> </span>is evaluated at the time when the filter is executed.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<h1 class="p_Heading1"><span class="f_Heading1">Validation Rules</span></h1>
-<p class="p_Normal">Time span: must be greater than zero.</p>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 9: Settings of this device term type</span></p>
+<h1 class="p_Heading1"><span class="f_Heading1">Validity constraints</span></h1>
+<p class="p_Normal">Time span greater 60s (hard validity constraint): The length of the given time span must be greater than 60 seconds.</p>
 
 </td></tr></table>
 

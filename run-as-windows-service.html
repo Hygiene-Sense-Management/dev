@@ -32,7 +32,7 @@
 
     </td>
     <td style="text-align:right">
-     <a href="introduction.html">Top</a>&nbsp;
+     <a href="preface.html">Top</a>&nbsp;
      
      
     </td>
@@ -46,18 +46,18 @@
 <p class="p_Normal">Creating a Windows Service for the Digital Twin Registration Agent can be done with the <span class="f_InlineCode">New-Service</span> PowerShell cmdlet. For full documentation of this cmdlet type <span class="f_InlineCode">Get-Help New-Service -Online</span> &nbsp;in PowerShell.</p>
 <p class="p_Normal">Note that multiple windows service can be created based on the same installation↲↲↲ of the Digital Twin Registration Agent. However make sure that these service use different Environments and therefore different configuration. The Digital Twin Registration Agent will not allow two instances to run with the same configuration.</p>
 <p class="p_Normal">General Syntax of the New-Service cmdlet:</p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">New-Service&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-Name]&nbsp;&lt;String&gt;&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-BinaryPathName]&nbsp;&lt;String&gt;&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-DisplayName&nbsp;&lt;String&gt;]&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-Description&nbsp;&lt;String&gt;]&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-SecurityDescriptorSddl&nbsp;&lt;String&gt;]&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-StartupType&nbsp;&lt;ServiceStartupType&gt;]&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-Credential&nbsp;&lt;PSCredential&gt;]&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-DependsOn&nbsp;&lt;String[]&gt;]&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-WhatIf]&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-Confirm]&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[&lt;CommonParameters&gt;]</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">New-Service </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-Name] &lt;String&gt; </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-BinaryPathName] &lt;String&gt; </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-DisplayName &lt;String&gt;] </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-Description &lt;String&gt;] </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-SecurityDescriptorSddl &lt;String&gt;] </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-StartupType &lt;ServiceStartupType&gt;] </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-Credential &lt;PSCredential&gt;] </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-DependsOn &lt;String[]&gt;] </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-WhatIf] </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[-Confirm] </span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">[&lt;CommonParameters&gt;]</span></p>
 <p class="p_Normal">&nbsp;</p>
 <p class="p_Normal">Suggestions for the parameters to use:</p>
 <div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 6px 0;"><table style="border:none; border-spacing:0;">
@@ -95,12 +95,12 @@
 </div>
 <p class="p_Normal">&nbsp;</p>
 <p class="p_Normal">Example </p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">New-Service&nbsp;`</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-Name&nbsp;&quot;DRTA_Production&quot;&nbsp;`</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-BinaryPathName&nbsp;'&quot;&lt;path&gt;\Hsm.DigitalTwinRegistrationAgent.exe&nbsp;--Environment=Production&quot;&nbsp;`</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-DisplayName&nbsp;&quot;HsM&nbsp;Digital&nbsp;Twin&nbsp;Registration&nbsp;Agent&nbsp;-&nbsp;Production&quot;&nbsp;`</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-Description&nbsp;&quot;Registeres&nbsp;digital&nbsp;twins&nbsp;with&nbsp;the&nbsp;HsM&nbsp;Digital&nbsp;Twin&nbsp;Service&quot;&nbsp;`</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:26px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-StartupType&nbsp;&quot;Automatic&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">New-Service `</span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-Name &quot;DRTA_Production&quot; `</span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-BinaryPathName '&quot;&lt;path&gt;\Hsm.DigitalTwinRegistrationAgent.exe --Environment=Production&quot; `</span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-DisplayName &quot;HsM Digital Twin Registration Agent - Production&quot; `</span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-Description &quot;Registeres digital twins with the HsM Digital Twin Service&quot; `</span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">-StartupType &quot;Automatic&quot;</span></p>
 
 </td></tr></table>
 
