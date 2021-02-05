@@ -2,11 +2,11 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Configuration",
 hmDescription:"For running the Digital Twin Registration Agent a working directory and an environment name must be specified. The root working directory for all instances of the the Digital...",
-hmPrevLink:"time-synchronization.html",
-hmNextLink:"environment-variable-dtra_conf.html",
-hmParentLink:"operations-guide4.html",
-hmBreadCrumbs:"<a href=\"digital-birth.html\">On Premise infrastructure<\/a> &gt; <a href=\"digital-twin-registration-agen.html\">Digital Twin Registration Agent<\/a> &gt; <a href=\"operations-guide4.html\">Operations guide<\/a>",
-hmTitlePath:"On Premise infrastructure > Digital Twin Registration Agent > Operations guide > Configuration",
+hmPrevLink:"",
+hmNextLink:"",
+hmParentLink:"common.html",
+hmBreadCrumbs:"",
+hmTitlePath:"Common > Article numbers",
 hmHeader:"<h1 class=\"p_Heading1\"><span class=\"f_Heading1\">Configuration<\/span><\/h1>\n\r",
 hmBody:"<p class=\"p_Normal\">For running the Digital Twin Registration Agent a working directory and an environment name must be specified. The root working directory for all instances of the the Digital Twin Registration Agent is specified with a <a href=\"environment-variable-dtra_conf.html\" class=\"topiclink\">Windows Environment variable<\/a>, within this root directory the Digital Twin Registration Agent expects the <a href=\"configuration-files.html\" class=\"topiclink\">configuration file<\/a>.<\/p>\n\r"
 })

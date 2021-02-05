@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Data Analysis Service",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"authorization2.html",
+hmPrevLink:"global-roles.html",
 hmNextLink:"administrators-guide_2.html",
 hmParentLink:"backend-infrastructure.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a>",
