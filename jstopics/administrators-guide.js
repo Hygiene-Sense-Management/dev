@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Administrator\'s Guide",
 hmDescription:"Installation Maintenance",
-hmPrevLink:"predefined-adaptive-date-inter.html",
+hmPrevLink:"organization.html",
 hmNextLink:"authentication.html",
 hmParentLink:"client-service.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"client-service.html\">Client Service<\/a>",

@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Device filter term types",
 hmDescription:"Device filter term types are predefined building blocks for device filters. Term types can have settings and have their own validation rules.",
-hmPrevLink:"term-type-availability.html",
+hmPrevLink:"scope-availability-.html",
 hmNextLink:"device-dates_2.html",
 hmParentLink:"device-filter.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"client-service.html\">Client Service<\/a> &gt; <a href=\"device-filter.html\">Device filter<\/a>",

@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Length: Fixed length 13 characters Characters Content 1 - 6 Production date: Date when the device this component was initially part of passed the end test. Not necessarily the" />
+	<meta name="description" content="Version 3 of HsM serial numbers are fixed length serial numbers (13 characters). The serial number is case insensitive." />
 	<meta name="author" content="" />
 	<meta name="msapplication-tap-highlight" content="no" />
 	<link type="text/css" href="./css/hmprojectstyles.css" rel="stylesheet" />
@@ -235,7 +235,7 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="index.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Top</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="device-qr-codes.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="decision.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		 <a id="hamburgerlink" class="topicnavlink" title="Additional Functions Menu">
@@ -251,34 +251,42 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	<div id="unclicker"></div>
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART-->
-	<p class="p_Normal">Length: Fixed length 13 characters</p>
-<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="border:none; border-spacing:0;">
+	<p class="p_Normal">Version 3 of HsM serial numbers are fixed length serial numbers (13 characters). The serial number is case insensitive.</p>
+<p class="p_Normal">&lt;decimalNumeral&gt; :: = <span class="f_CodeExample" style="font-size: 1.10rem; font-family: 'Courier New',Courier,monospace;">0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</span></p>
+<p class="p_Normal">&lt;letter&gt; :: =  <span class="f_CodeExample" style="font-size: 1.10rem; font-family: 'Courier New',Courier,monospace;">A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z</span></p>
+<p class="p_Normal"><span class="f_CodeExample" style="font-size: 1.10rem; font-family: 'Courier New',Courier,monospace;">&lt;base36Numeral&gt; ::= </span>&lt;decimalNumeral&gt; | &lt;letter&gt; </p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal"><span class="f_CodeExample" style="font-size: 1.10rem; font-family: 'Courier New',Courier,monospace;">&lt;year&gt; ::= </span>&lt;decimalNumeral&gt;&lt;decimalNumeral&gt;</p>
+<p class="p_Normal"><span class="f_CodeExample" style="font-size: 1.10rem; font-family: 'Courier New',Courier,monospace;">&lt;year&gt; ::= </span>&lt;decimalNumeral&gt;&lt;decimalNumeral&gt;</p>
+<p class="p_Normal">yyMMddLLLSSSS</p>
+<p class="p_Normal">Length: Fixed length 13 characters</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="width:45.0000rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:6.0000rem; height:1.5000rem; padding:0; border:none"><p class="p_Normal">Characters</p>
+<th style="vertical-align:top; width:6.6250rem; background-color:#DCDCDC; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Characters</p>
 </th>
-<th style="vertical-align:top; width:27.8750rem; height:1.5000rem; padding:0; border:none"><p class="p_Normal">Content</p>
+<th style="vertical-align:top; width:38.1250rem; background-color:#DCDCDC; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Content</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:6.0000rem; padding:0; border:none"><p class="p_Normal">1 - 6</p>
+<td style="vertical-align:top; width:6.6250rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">1 - 6</p>
 </td>
-<td style="vertical-align:top; width:27.8750rem; padding:0; border:none"><p class="p_Normal">Production date: Date when the device this component was initially part of passed the end test. Not necessarily the same as the Birth Date recorded in the device's digital twin.</p>
-<p class="p_Normal">Date is given in format <span class="f_InlineCode">yyMMdd</span> i.e. 2 digit year, 2 digit month, two digit day</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:6.0000rem; padding:0; border:none"><p class="p_Normal">7 - 9</p>
-</td>
-<td style="vertical-align:top; width:27.8750rem; padding:0; border:none"><p class="p_Normal">Production line: Identifier of the production line that produced the device the component was initially part of. Formatted as base 36 cipher</p>
+<td style="vertical-align:top; width:38.1250rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Production date: Date when the device this component was initially part of passed the end test. Not necessarily the same as the Birth Date recorded in the device's digital twin.</p>
+<p class="p_Normal">Date is given in format <span class="f_InlineCode">yyMMdd</span> and must represent a valid date. </p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:6.0000rem; padding:0; border:none"><p class="p_Normal">10 - 13</p>
+<td style="vertical-align:top; width:6.6250rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">7 - 9</p>
 </td>
-<td style="vertical-align:top; width:27.8750rem; padding:0; border:none"><p class="p_Normal">Sequential number defined during the end-test. Formatted as base 36 cipher</p>
+<td style="vertical-align:top; width:38.1250rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Production line: Identifier of the production line that produced the device the component was initially part of. Formatted as base 36 cipher</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:6.6250rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">10 - 13</p>
+</td>
+<td style="vertical-align:top; width:38.1250rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Sequential number defined during the end-test. Formatted as base 36 cipher</p>
 </td>
 </tr>
 </tbody>
