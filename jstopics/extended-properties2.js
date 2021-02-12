@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Extended Properties",
 hmDescription:"Each device type can have definitions for extended properties. Extended properties are properties of devices that are instances extended property definitions that are part of...",
-hmPrevLink:"resource-instance-equivalents.html",
+hmPrevLink:"cat-resource-instance-equivalents.html",
 hmNextLink:"problem-types.html",
 hmParentLink:"catalog-service.html",
 hmBreadCrumbs:"<a href=\"neutral-backend-infrastructure.html\">Neutral backend infrastructure<\/a> &gt; <a href=\"catalog-service.html\">HsM Catalog Service<\/a>",
