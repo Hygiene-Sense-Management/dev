@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Compound device types",
 hmDescription:"nh  HsM supports the concept of compound devices, i.e. devices can include other devices. These devices within other devices, however, are more than just components: they have...",
-hmPrevLink:"definitions.html",
+hmPrevLink:"cats-device-type.html",
 hmNextLink:"introduction2.html",
 hmParentLink:"catalog-service.html",
 hmBreadCrumbs:"<a href=\"neutral-backend-infrastructure.html\">Neutral backend infrastructure<\/a> &gt; <a href=\"catalog-service.html\">HsM Catalog Service<\/a>",

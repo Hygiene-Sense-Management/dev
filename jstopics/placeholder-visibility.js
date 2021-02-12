@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Placeholder visibility",
 hmDescription:"Component placeholders are marked with an visibility attribute. This attribute is a hint to software products showing either the device type\'s component placeholder structure...",
-hmPrevLink:"device-type2.html",
+hmPrevLink:"component-types.html",
 hmNextLink:"wizards.html",
 hmParentLink:"catalog-service.html",
 hmBreadCrumbs:"<a href=\"neutral-backend-infrastructure.html\">Neutral backend infrastructure<\/a> &gt; <a href=\"catalog-service.html\">HsM Catalog Service<\/a>",
