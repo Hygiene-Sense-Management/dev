@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Backend infrastructure",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"device-provisioning-service.html",
+hmPrevLink:"dpse.html",
 hmNextLink:"clse.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",

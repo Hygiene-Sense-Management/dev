@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Common",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"configuration-app.html",
+hmPrevLink:"coap.html",
 hmNextLink:"date-interval-definition.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",
