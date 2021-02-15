@@ -1686,7 +1686,7 @@ dictwords = ["please 0 12 64 1 12 8 2 12 8 3 12 8 4 12 8 5 12 8 6 12 16 7 12 8 8
 	"throughout 72 10 2 83 10 2 86 10 4 135 10 2",
 	"hosted 72 10 1",
 	"digitaltwin 72 10 1",
-	"initial.. 72 6 64",
+	"initiall.. 72 6 64",
 	"digital-twin-service.html 72 6 64",
 	"continued 73 15 80",
 	"development 73 15 80",
