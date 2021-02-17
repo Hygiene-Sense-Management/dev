@@ -1,0 +1,12 @@
+hmLoadTopic({
+hmKeywords:"",
+hmTitle:"Recording of data link status",
+hmDescription:"The data link status of HsM Backend devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status...",
+hmPrevLink:"dlms-presented-status-gateway-devices.html",
+hmNextLink:"dlms-data-link-monitoring-nongateway-gateway.html",
+hmParentLink:"dlms.html",
+hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"dlms.html\">Data Link Monitoring Service<\/a>",
+hmTitlePath:"Backend infrastructure > Data Link Monitoring Service > Recording of data link status",
+hmHeader:"<h1 class=\"p_Heading1\"><span class=\"f_Heading1\">Recording of data link status<\/span><\/h1>\n\r",
+hmBody:"<p class=\"p_Normal\">The data link status of HsM Backend devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status of each HsM Backend device is recorded as time-series of data. <\/p>\n\r<p class=\"p_Normal\">Following virtual resource instance values are recorded<\/p>\n\r<p class=\"p_Normal\">Data link status change<\/p>\n\r<h2 class=\"p_Heading2\"><span class=\"f_Heading2\">Data-link status change<\/span><\/h2>\n\r<p class=\"p_Normal\">Applies to gateway and non-gateway devices<\/p>\n\r<p class=\"p_Normal\">Resource type:<\/p>\n\r<p class=\"p_Normal\">Resource instance number:<\/p>\n\r<p class=\"p_Normal\">Whenever a change in the data-link status of a device is detected by the HsM data link monitoring the new status after the status change is recorded as a resource instance value and stored with the device.<\/p>\n\r<p class=\"p_Normal\">Due to technical reasons the time-stamp of this change in not always precise as the change of the data link status might be detected with a certain delay.<\/p>\n\r<h2 class=\"p_Heading2\"><span class=\"f_Heading2\">Last used stationary gateway <\/span><\/h2>\n\r<p class=\"p_Normal\">Applies to non-gateway devices only<\/p>\n\r<p class=\"p_Normal\">For non-gateway devices the last used stationary gateway, i.e. the stationary gateway that was last used by the non-gateway device to connect to the HsM Backend) is stored.<\/p>\n\r<h2 class=\"p_Heading2\"><span class=\"f_Heading2\">Last-detected-online (Non-gateway devices and stationary gateways)<\/span><\/h2>\n\r<p class=\"p_Normal\">The time stamp when a data-link status of the device was last Online. This is used to for differentiating between temporarily offline and offline.<\/p>\n\r"
+})
