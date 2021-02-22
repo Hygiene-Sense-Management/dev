@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Filters for devices that sent a resource instance value (for any resource instance) within the configured time span." />
+	<meta name="description" content="Filters for devices whose latest modification or update on any of its resource instance is within the specified date interval.&nbsp;" />
 	<meta name="author" content="" />
 	<meta name="msapplication-tap-highlight" content="no" />
 	<link type="text/css" href="./css/hmprojectstyles.css" rel="stylesheet" />
@@ -229,7 +229,7 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 		<a id="atoclink" class="topicnavlink" title="Contents of this topic">
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a> 
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="clse-devicefiltertermtype-latestequivalentresourceinstancevalue.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="clse-devicefiltertermtype-latestresourceinstancevalue.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="index.html" title="Go to top topic">
@@ -251,7 +251,7 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	<div id="unclicker"></div>
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART-->
-	<p class="p_Normal">Filters for devices that sent a resource instance value (for any resource instance) within the configured time span.</p>
+	<p class="p_Normal">Filters for devices whose latest modification or update on any of its resource instance is within the specified date interval. </p>
 <h1 class="p_Heading1"><span class="f_Heading1">Settings</span></h1>
 <div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="width:45.0000rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
@@ -264,16 +264,15 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:11.5625rem; padding:0; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:11.5625rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Filtered date</p>
 </td>
-<td style="vertical-align:top; width:33.1875rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Modified, Updated</p>
+<td style="vertical-align:top; width:33.1875rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">This filter can either be applied to the last modified or last updated time stamp of the latest sent resource instance value. </p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.5625rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Time span</p>
+<td style="vertical-align:top; width:11.5625rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal"><a href="comm-date-interval-specification.html" class="topiclink">Date interval specification</a></p>
 </td>
-<td style="vertical-align:top; width:33.1875rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">The filter will be passed by all devices who have reported a value for any resource instance later than <span class="f_InlineCode">CurrentDateAndTime - TimeSpan</span><span class="f_Identifier"> . </span></p>
-<p class="p_InlineCode"><span class="f_InlineCode">CurrentDateAndTime</span><span class="f_Identifier"> </span>is evaluated at the time when the filter is executed.</p>
+<td style="vertical-align:top; width:33.1875rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">The filter will be passed by all devices that have sent or modified a resource instance value (see option above) within the date interval evaluated from this specification.</p>
 </td>
 </tr>
 </tbody>
@@ -281,7 +280,7 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 </div>
 <p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 9: Settings of this device term type</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Validity constraints</span></h1>
-<p class="p_Normal">Time span greater 60s (hard validity constraint): The length of the given time span must be greater than 60 seconds.</p>
+<p class="p_Normal">This term type has no validity constraints.</p>
 
 	</div> <!-- hmpagebody_scroller -->
 	</div> <!-- hmpagebody -->
