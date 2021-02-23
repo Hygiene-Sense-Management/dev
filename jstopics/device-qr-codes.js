@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"HsM Device QR Codes",
 hmDescription:"All devices managed by the HsM have stickers with a QR code that carries information about the device. This QR code sticker can be used by clients (like Apps) to read...",
-hmPrevLink:"decision.html",
+hmPrevLink:"comm-date-interval-specification-predefinedadaptive.html",
 hmNextLink:"article-numbers.html",
 hmParentLink:"comm.html",
 hmBreadCrumbs:"<a href=\"comm.html\">Common<\/a>",
