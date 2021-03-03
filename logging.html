@@ -221,7 +221,7 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation: <span>&raquo;&nbsp;No topics above this level&nbsp;&laquo;</span></p> 
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation: <a href="on-premise-infrastructure.html">On Premise infrastructure</a> &gt; <a href="dtra.html">Digital Twin Registration Agent</a> &gt; <a href="dtra-operations-guide.html">Operations guide</a> &gt; <a href="configuration.html">Configuration</a></p> 
 		  <p class="topictitle">Logging</p>
 		  </div>
 		</td>
@@ -229,13 +229,13 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 		<a id="atoclink" class="topicnavlink" title="Contents of this topic">
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a> 
-		 <a id="topicnavlinkprevious" class="topicnavlink disabled"  title="This is the first topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="configuration-files.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink disabled" title="No topics above this level">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="index.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Top</span></a>
-		<a id="topicnavlinknext" class="topicnavlink disabled" title="This is the last topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="working-directory.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		 <a id="hamburgerlink" class="topicnavlink" title="Additional Functions Menu">
@@ -253,50 +253,50 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 <!--ZOOMRESTART-->
 	<p class="p_Normal">For monitoring the Digital Twin Registration Agent the program logs via the nlog framework and therefore allows for versatile routing of log messages. </p>
 <p class="p_Normal">Log messages have associated log levels that can be used to route log message. The Digital Twin Registration Agent uses log levels in following way:</p>
-<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="width:45.0000rem; border:none; border-spacing:0; border-collapse:collapse;">
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:5.2500rem; background-color:#DCDCDC; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Log level</p>
+<th style="vertical-align:top; width:5.2500rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Log level</p>
 </th>
-<th style="vertical-align:top; width:39.8750rem; background-color:#DCDCDC; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Notes</p>
+<th style="vertical-align:top; width:39.8750rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Notes</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:5.2500rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Fatal</p>
+<td style="vertical-align:top; width:5.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Fatal</p>
 </td>
-<td style="vertical-align:top; width:39.8750rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Exceptions that prevent the Digital Twin Registration Agent from operating. Io Exceptions, Network down etc. - must be actively monitored.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:5.2500rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Error</p>
-</td>
-<td style="vertical-align:top; width:39.8750rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Exceptions that hinder registration of devices. Must be actively monitored</p>
+<td style="vertical-align:top; width:39.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Exceptions that prevent the Digital Twin Registration Agent from operating. Io Exceptions, Network down etc. - must be actively monitored.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:5.2500rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Warning</p>
+<td style="vertical-align:top; width:5.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Error</p>
 </td>
-<td style="vertical-align:top; width:39.8750rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Require Weekly checks by administrators</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:5.2500rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Info</p>
-</td>
-<td style="vertical-align:top; width:39.8750rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Detailed Protocol of operation. Can be used by administrators to debug behavior</p>
+<td style="vertical-align:top; width:39.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Exceptions that hinder registration of devices. Must be actively monitored</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:5.2500rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Debug</p>
+<td style="vertical-align:top; width:5.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Warning</p>
 </td>
-<td style="vertical-align:top; width:39.8750rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Only for developer debugging</p>
+<td style="vertical-align:top; width:39.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Require Weekly checks by administrators</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:5.2500rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Trace</p>
+<td style="vertical-align:top; width:5.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Info</p>
 </td>
-<td style="vertical-align:top; width:39.8750rem; padding:0; border:solid thin #c0c0c0;"><p class="p_Normal">Only for developer debugging</p>
+<td style="vertical-align:top; width:39.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Detailed Protocol of operation. Can be used by administrators to debug behavior</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:5.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Debug</p>
+</td>
+<td style="vertical-align:top; width:39.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Only for developer debugging</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:5.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Trace</p>
+</td>
+<td style="vertical-align:top; width:39.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Only for developer debugging</p>
 </td>
 </tr>
 </tbody>

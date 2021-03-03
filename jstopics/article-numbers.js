@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Article numbers",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"device-qr-codes.html",
+hmPrevLink:"hsm-qr-codes.html",
 hmNextLink:"",
 hmParentLink:"comm.html",
 hmBreadCrumbs:"<a href=\"comm.html\">Common<\/a>",

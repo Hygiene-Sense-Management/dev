@@ -23,7 +23,7 @@ span.f_Comment /* Comment */
 }
 span.f_Heading1 /* Heading1 */
 {
- font-size: 1.20rem;
+ font-size: 1.10rem;
  font-weight: bold;
 }
 span.f_Heading2 /* Heading2 */
@@ -48,6 +48,9 @@ span.f_InlineCode /* InlineCode */
  background-color: #efefef;
 }
 span.f_Notes /* Notes */
+{
+}
+span.f_Tablecontents /* Table contents */
 {
 }
 /* Paragraph styles */
@@ -92,6 +95,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_ImageCaption /* Image Caption */
 {
  font-size: 0.80rem;
+ margin: 0 0 0.6250rem 0;
 }
 .p_Important /* Important */
 {
@@ -111,6 +115,11 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_Notes /* Notes */
 {
  font-size: 1.00rem;
+}
+.p_Tablecontents /* Table contents */
+{
+ font-size: 1.00rem;
+ margin: 0 0 0.1250rem 0;
 }
 /* Table styles */
 div.hmrotate90  { display:inline-block; -webkit-writing-mode: vertical-rl; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; }

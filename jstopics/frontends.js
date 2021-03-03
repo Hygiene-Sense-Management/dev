@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Frontends",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"operations-guide2.html",
+hmPrevLink:"raw-data-blob-storage-structur.html",
 hmNextLink:"xiap.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",

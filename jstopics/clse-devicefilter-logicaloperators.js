@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Logical operators",
 hmDescription:"Device filters support following logical operators:",
-hmPrevLink:"validating-device-filters.html",
+hmPrevLink:"clse-validating-device-filters.html",
 hmNextLink:"clse-devicefilter-executionscope.html",
 hmParentLink:"clse-devicefilter.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"clse.html\">Client Service<\/a> &gt; <a href=\"clse-devicefilter.html\">Device filter<\/a>",
