@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Administrator\'s Guide",
 hmDescription:"Installation Maintenance",
-hmPrevLink:"clse-saved-device-filters.html",
+hmPrevLink:"clse-stored-device-filters.html",
 hmNextLink:"authentication.html",
 hmParentLink:"clse.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"clse.html\">Client Service<\/a>",
