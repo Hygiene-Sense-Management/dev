@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"On Premise infrastructure",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"introduction.html",
+hmPrevLink:"copyright_notice.html",
 hmNextLink:"device-provisioning-registrati.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",
