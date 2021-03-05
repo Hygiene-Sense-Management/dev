@@ -1,4 +1,177 @@
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-function videoBoxConstructor(){var c=function(f,e){if(f<e){return f}return e};var a=function(f,e){if(f>e){return f}return e};var b=function(u,e,D,z,j,f,o,G,y,F){var h=$(window);var E=$(document);var A=$("body");var k=null;$(A).prepend('<div id="hmlightboxbackground" style="z-index:99997;border:none;padding:0;margin:0;position:absolute;left:0;top:0;background-color:#7F7F7F"></div>');var g=$("#hmlightboxbackground");g.css("opacity","0.5");$(A).prepend('<div id="hmlightboxscrolllayer" style="z-index:99998;border:none;padding:0;margin:0;position:absolute;left:0;top:0;background:none;overflow:auto"></div>');k=parent.$("#hmlightboxscrolllayer");A=k;$(A).prepend('<div id="hmlightbox" style="z-index:99999;position:absolute;display:none"></div>');var i=$("#hmlightbox");var t=$(u).appendTo(i);t.children("object").first().attr("id","hmVideoBox");var q=null;if(G!==null){$(i).append('<p id="hmlightboxcaption">'+G+"</p>");q=$("#hmlightboxcaption")}var C=300;var l,v;var B=f;var m=o;if(hmLightboxConstrained){if(f>($(h).width()-40)){f=$(h).width()-40;if(f<(B/2)){f=B/2}o=m*f/B}}t.css({width:f+"px",height:o+"px"});if(q!==null){q.css("width",f+"px")}if(hmAnimate&&y){v=s();if(q!==null){q.css("display","none")}t.css({width:z+"px",height:j+"px"});l=s();p();l[0]=e;l[1]=D;i.css({left:l[0]+"px",top:l[1]+"px"});i.show();i.animate({left:v[0]-t.position().left,top:v[1]-t.position().top},C,function(){if(q!==null){q.css("display","block")}});t.animate({width:f,height:o},C)}else{v=s();p();i.show()}$(h).bind("resize.hmlightbox",p);$(h).bind("scroll.hmlightbox",w);$(A).bind("click.hmlightbox",x);$(A).bind("keydown.hmlightbox",n);$(i).focus();function w(){g.css("width",(($(E).scrollLeft()>0)?$(E).width():$(h).width())+"px");g.css("height",(($(E).scrollTop()>0)?$(E).height():$(h).height())+"px")}function p(){if(hmLightboxConstrained){var H=f;f=$(h).width()-40;if(f>B){f=B}else{if(f<(B/2)){f=B/2}}if(H!=f){o=m*f/B;t.css({width:f+"px",height:o+"px"});if(q!==null){q.css("width",f+"px")}}}var I=s();i.css({left:I[0]+"px",top:I[1]+"px"});if(k!==null){k.css({width:$(h).width()+"px",height:$(h).height()+"px"})}w()}function s(){var K=i.width();var N=i.height();if(F){K=f;N=o}var M=a(K+40,E.width());var I=a(N+40,E.height());var L=a(20,parseInt(($(h).width()-K)/2)+(E.scrollLeft()));var H=a(20,parseInt(($(h).height()-N)/2)+(E.scrollTop()));var J=new Array(L,H,K,N);return J}function n(H){if(H.keyCode==27){r()}}function x(I){var H=(!F)||(I.pageX<i.position().left)||(I.pageY<i.position().top)||(I.pageX>i.position().left+i.width())||(I.pageY>i.position().top+i.height());if(H){r()}}function r(){if(hmAnimate&&y){if(q!==null){q.css("display","none")}t.animate({width:0,height:0},C);i.animate({left:e+z/2,top:D+j/2},C,function(){$("object#hmVideoBox").remove();i.remove();if(k!==null){k.remove()}g.remove()})}else{t.css({width:0,height:0});i.remove();if(k!==null){k.remove()}g.remove()}$(h).unbind(".hmlightbox");$(A).unbind(".hmlightbox")}};var d=function(h){var l=h.data,g=h.$obj.offset().left,j=h.$obj.offset().top,f=h.$obj.outerWidth(),k=h.$obj.outerHeight(),i=h.vWidth,e=h.vHeight;b(l,g,j,f,k,i,e,"",true,true)};return d}hmWebHelp.funcs.hmVideoBox=videoBoxConstructor();
+function videoBoxConstructor() {
+	var hmmin = function(v1, v2) { if (v1<v2) return v1; return v2; };
+	var hmmax = function (v1, v2) { if (v1>v2) return v1; return v2; };
+	var HMShowLightbox = function(htmlCode, startL, startT, startW, startH, endW, endH, newCaption, doAnimate, isVideo) {
+	  var lightboxWindow = $(window);
+	  var lightboxDocument = $(document);
+	  var lightboxBody = $('body');
+	  var lighboxScrollLayer = null;
+	  $(lightboxBody).prepend('<div id="hmlightboxbackground" style="z-index:99997;border:none;padding:0;margin:0;position:absolute;left:0;top:0;background-color:#7F7F7F"></div>');  
+	  var lightboxBackground = $('#hmlightboxbackground');
+	  lightboxBackground.css('opacity', '0.5');
+
+		$(lightboxBody).prepend('<div id="hmlightboxscrolllayer" style="z-index:99998;border:none;padding:0;margin:0;position:absolute;left:0;top:0;background:none;overflow:visible;"></div>');
+		lighboxScrollLayer = $('#hmlightboxscrolllayer');
+		lightboxBody = lighboxScrollLayer;  
+
+	  $(lightboxBody).prepend('<div id="hmlightbox" style="z-index:99999;position:absolute;display:none"></div>');
+	  var lightbox = $('#hmlightbox');  
+	  var lightboxObject = $(htmlCode).appendTo(lightbox);
+	  lightboxObject.children("object").first().attr("id","hmVideoBox");
+	  var lightboxCaption = null;
+	  if (newCaption !== null) {
+		$(lightbox).append('<p id="hmlightboxcaption">' +newCaption+ '</p>');
+		lightboxCaption =  $('#hmlightboxcaption');
+	  }  	
+
+	  var lightboxSpeed = 300;
+	  var sizeStart,sizeEnd; 
+	  var maxW = endW;
+	  var maxH = endH;
+	  if (hmLightboxConstrained) {
+		if (endW > ($(lightboxWindow).width()-40)) {
+		  endW = $(lightboxWindow).width()-40;
+		  if (endW < (maxW/2)) endW = maxW/2;
+		  endH = maxH * endW / maxW;
+		}
+	  }
+
+	  lightboxObject.css({'width': endW+'px', 'height': endH+'px'});
+	  if (lightboxCaption!==null) lightboxCaption.css('width', endW+'px');
+		
+	  if (hmAnimate&&doAnimate) {
+		sizeEnd = lightboxGetsize();
+		if (lightboxCaption!==null) lightboxCaption.css('display', 'none'); /* hide caption during animation */
+		lightboxObject.css({'width': startW + 'px', 'height': startH + 'px'});
+		sizeStart = lightboxGetsize();
+		lightboxResize();
+			
+		sizeStart[0] = startL;
+		sizeStart[1] = startT;
+		lightbox.css({'left': sizeStart[0]+'px', 'top': sizeStart[1]+'px'});
+		lightbox.show();
+			
+		lightbox.animate({ left: sizeEnd[0]-lightboxObject.position().left, top: sizeEnd[1]-lightboxObject.position().top }, 
+						   lightboxSpeed, 
+						   function() { 
+							 if (lightboxCaption!==null) lightboxCaption.css('display', 'block');
+						   }
+						 );
+							 
+		lightboxObject.animate({ width: endW, height: endH }, lightboxSpeed); 
+	  }
+	  else {
+		sizeEnd = lightboxGetsize();
+		lightboxResize();
+		lightbox.show();  	
+	  }  
+
+	  $(lightboxWindow).bind('resize.hmlightbox', lightboxResize);
+	  $(lightboxWindow).bind('scroll.hmlightbox', lightboxScroll);
+	  $(lightboxBody).bind('click.hmlightbox', lightboxClick);
+	  $(document).bind('keydown.hmlightbox', lightboxKeydown);
+	  $(lightbox).focus();
+
+	  function lightboxScroll() {
+		lightboxBackground.css('width', (($(lightboxDocument).scrollLeft() > 0) ? $(lightboxDocument).width() : $(lightboxWindow).width()) +'px');
+		lightboxBackground.css('height', (($(lightboxDocument).scrollTop() > 0) ? $(lightboxDocument).height() : $(lightboxWindow).height()) +'px');
+	  }
+		
+	  function lightboxResize() {
+		if (hmLightboxConstrained) {
+		  var tmpW = endW;
+		  endW = $(lightboxWindow).width()-40;
+		  if (endW > maxW) endW = maxW;
+		  else if (endW < (maxW/2)) endW = maxW/2;
+		  if (tmpW != endW) {
+			endH = maxH * endW / maxW;
+			lightboxObject.css({'width': endW+'px', 'height': endH+'px'});
+			if (lightboxCaption!==null) lightboxCaption.css('width', endW+'px');
+		  }
+		}
+
+		var size = lightboxGetsize();
+		lightbox.css({left: size[0]+'px', top:size[1]+'px'});
+		
+		if (lighboxScrollLayer!==null) { 
+		  lighboxScrollLayer.css({'width': $(lightboxWindow).width()+'px', 'height': $(lightboxWindow).height()+'px'});
+		}
+		lightboxScroll();
+	  }
+
+	  function lightboxGetsize() {
+		var lbW  = lightbox.width();
+		var lbH  = lightbox.height();
+
+		if (isVideo) {
+		  lbW = endW;
+		  lbH = endH;
+		}
+		var newW = hmmax(lbW + 40, lightboxDocument.width());
+		var newH = hmmax(lbH + 40, lightboxDocument.height());	
+		var newL = hmmax(20, parseInt(($(lightboxWindow).width() - lbW)/2) + (lightboxDocument.scrollLeft()));
+		var newT = hmmax(20, parseInt(($(lightboxWindow).height() - lbH)/2) + (lightboxDocument.scrollTop()));
+
+		var size = new Array(newL, newT, lbW, lbH);
+		return size;
+	  }
+
+	  function lightboxKeydown(e) { 
+		if (e.keyCode == 27) lightboxClose(); 
+	  }
+
+	  function lightboxClick(e) { 
+		var	canClose = (!isVideo) ||
+					   (e.pageX < lightbox.position().left) || (e.pageY < lightbox.position().top) ||
+					   (e.pageX > lightbox.position().left+lightbox.width()) || (e.pageY > lightbox.position().top+lightbox.height());  	 
+		if (canClose) lightboxClose(); 
+	  }
+
+	  function lightboxClose() {
+		if (hmAnimate&&doAnimate) {
+		  if (lightboxCaption!==null) lightboxCaption.css('display', 'none'); /* hide caption during animation */
+		  lightboxObject.animate({ width: 0, height: 0 }, lightboxSpeed); 
+		  lightbox.animate({ left: startL + startW/2, top: startT + startH/2 }, 
+						   lightboxSpeed, 
+						   function() { 
+							 $("object#hmVideoBox").remove();
+							 lightbox.remove(); 
+							 if (lighboxScrollLayer!==null) lighboxScrollLayer.remove(); 
+							 lightboxBackground.remove();
+						   }
+						  );
+		}
+		else {
+		  lightboxObject.css({ width: 0, height: 0 });
+		  lightbox.remove();
+		  if (lighboxScrollLayer!==null) lighboxScrollLayer.remove(); 
+		  lightboxBackground.remove();
+		}
+		$(lightboxWindow).unbind('.hmlightbox');
+		$(lightboxBody).unbind('.hmlightbox');
+		$(document).unbind('.hmlightbox');
+	}
+	  
+	}; // showLightbox
+	
+	var parseVBox = function(args) {
+		
+	var htmlcode = args.data,
+		startL = args.$obj.offset().left,
+		startT = args.$obj.offset().top,
+		startW = args.$obj.outerWidth(),
+		startH = args.$obj.outerHeight(),
+		vWidth = args.vWidth,
+		vHeight = args.vHeight;
+		
+		HMShowLightbox(htmlcode, startL, startT, startW, startH, vWidth, vHeight, '', true, true);
+		
+	};
+	
+	return parseVBox;
+} // constructor
+
+hmWebHelp.funcs.hmVideoBox = videoBoxConstructor();

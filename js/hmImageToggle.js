@@ -1,4 +1,160 @@
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-var HMImageToggle=function(h){var a,t=false,j=h.attr("id"),v=h.attr("data-src0"),u=h.attr("data-src1"),b=h.attr("data-state"),l=h.attr("data-title0")?h.attr("data-title0"):null,k=h.attr("data-title1")?h.attr("data-title1"):null,o=h.attr("data-caption0")?h.attr("data-caption0"):null,m=h.attr("data-caption1")?h.attr("data-caption1"):null,e=o?h.parents("div")[0]:null,n=h.offset().left,f=h.offset().top,r={},w={},g={},p,s=0,i=new Image();g.w=$(window).width()-30;g.h=$(window).height()-30;r.w=h.width();r.h=h.height();p=g.h;hFactor=r.h/r.w;if(!m){$("body").append('<div id="imagetogglebox"></div>')}else{$("body").append('<div id="imagetogglebox"><div id="imagecaptionbox"><p class="zoomedcaption">'+m+"</p></div></div>");t=$("div#imagecaptionbox")}a=$("div#imagetogglebox");$(i).css({width:"100%",height:"auto"});function d(y,x){var z=(typeof x=="undefined")?"fast":x;a.animate({width:r.w,height:r.h,top:f,left:n},z,function(){a.hide();a.remove();h.attr("data-state","0");if(typeof hmxtoggle=="undefined"){$("body,html").css("overflow","hidden")}})}hmWebHelp.funcs.closeImageToggle=d;function c(x){x.stopPropagation();if(a.width()<w.w){if(w.w>$(window).width()||w.h>$(window).height()){$("body,html").css("overflow","auto")}if(t){t.hide()}a.animate({top:0,left:0,width:w.w,height:w.h},"fast",function(){a.css("position","absolute");$("div#imagezoom").hide()})}else{d()}}function q(y,x){while(y.w>x.w||y.h>x.h){y.w-=5;y.h=y.w*hFactor}return y}i.onload=function(){var B={},y,A,z=0,x=0;w.w=B.w=i.width;w.h=B.h=i.height;B=q(B,g);a.append(i);a.append('<div id="imagezoom"><img id="imagezoomer" src="./images/ZoomIn.png" border="0"/></div>');$(i).on("click",d);a.css({left:n+"px",top:f+"px",width:r.w+"px",height:r.h+"px"});a.show();s=parseFloat(getComputedStyle(a[0]).getPropertyValue("border-top-width"),10);if(t){t.css({width:B.w+"px"});while(B.h>p-(t.height()+10)){B.w-=5;B.h=B.w*hFactor}x=t.outerHeight();t.css({width:""})}y=($(window).height()-(B.h+s*2))/2;A=($(window).width()-(B.w+s*2))/2;if(t){y=5;z=x+s*2}if(w.w>B.w){$("div#imagezoom").on("click",c).show()}a.animate({width:B.w,height:B.h+z,top:y,left:A},"fast",function(){h.attr("data-state","1");if(t){var C=$(i).height()+t.outerHeight();a.css("height",C+"px")}})};i.src=u};hmWebHelp.funcs.hmImageToggle=HMImageToggle;
+var HMImageToggle = function($img){
+	var	$imgbox, $captionbox = false,
+		imgID = $img.attr("id"),
+		src0 = $img.attr("data-src0"),
+		src1 = $img.attr("data-src1"),
+		istate = $img.attr("data-state"),
+		title0 = $img.attr("data-title0") ? $img.attr("data-title0") : null,
+		title1 = $img.attr("data-title1") ? $img.attr("data-title1") : null,
+		caption0 = $img.attr("data-caption0") ? $img.attr("data-caption0") : null,
+		caption1 = $img.attr("data-caption1") ? $img.attr("data-caption1") : null,
+		captionbox = caption0 ? $img.parents("div")[0] : null,
+		startLeft = $img.offset().left,
+		startTop = $img.offset().top,
+		closeddims = {},
+		maxdims = {},
+		windowdims = {},
+		maxImageHeight,
+		vBorderWidth = 0,
+		newImage = new Image();
+		
+		windowdims.w = $(window).width() - 30;
+		windowdims.h = $(window).height() - 30;
+		closeddims.w = $img.width();
+		closeddims.h = $img.height();
+		maxImageHeight = windowdims.h;
+		hFactor = closeddims.h/closeddims.w;
+
+	// No Caption
+	if (!caption1) {
+			$("body").append('<div id="imagetogglebox"></div>');
+		} else {
+			$("body").append('<div id="imagetogglebox"><div id="imagecaptionbox"><p class="zoomedcaption">'+caption1+'</p></div></div>');
+			$captionbox = $("div#imagecaptionbox");
+		}
+	
+	$imgbox = $("div#imagetogglebox");
+	$(newImage).css({"width": "100%", "height": "auto"});
+
+		// Close image toggle
+		function unClicker (elem) {
+			
+			
+			// Click outside element
+			$(document).on((typeof hmBrowser == "undefined" ? "click" : hmBrowser.touchstart) + '.closemenu', function(event){
+				if (!elem.contains(event.target)) {
+					closeImage();
+					$(document).off(".closemenu");
+					$(elem).off(".closemenu");
+				}
+			});
+			
+			// ESC key
+			$(document).on("keydown.closemenu", function(event){
+				let x = event.which || event.keyCode;
+				if (x == 27) {
+					closeImage();
+					$(document).off(".closemenu");
+					$(elem).off(".closemenu");
+				}
+			});
+		}
+		
+		function closeImage(event,anispeed) {
+			var speed = (typeof anispeed == "undefined") ? "fast" : anispeed;
+			$imgbox.animate({width: closeddims.w, height: closeddims.h, top: startTop, left: startLeft},speed,function(){
+				$imgbox.hide();
+				$imgbox.remove();
+				$img.attr("data-state","0");
+				// Only reset if we're not in a field-level topic
+				if (typeof hmxtoggle == "undefined")
+				$("body,html").css("overflow","hidden");
+			});
+		}
+		
+		// Expose the function for external calls
+		hmWebHelp.funcs.closeImageToggle = closeImage;
+		
+		function maximizeImage(event) {
+			event.stopPropagation();
+			if ($imgbox.width() < maxdims.w) {
+				if (maxdims.w > $(window).width() || maxdims.h > $(window).height()) {
+				$("body,html").css("overflow","auto");
+				}
+				if ($captionbox)
+					$captionbox.hide();
+				$imgbox.animate({
+					"top": 0,
+					"left": 0,
+					"width": maxdims.w,
+					"height": maxdims.h
+				},"fast", function(){
+					$imgbox.css("position","absolute");
+					$("div#imagezoom").hide();
+				});
+			} else {
+				closeImage();
+			}
+		}
+		
+		function dynamicResize(dims, refdims) {
+			while (dims.w > refdims.w || dims.h > refdims.h) {
+				dims.w -= 5;
+				dims.h = dims.w * hFactor;
+			}
+			return dims;
+		}
+		
+		newImage.onload = function() {
+			var opendims = {}, newTop, newLeft,
+				hOffset = 0, cboxHeight = 0;
+			maxdims.w = opendims.w = newImage.width;
+			maxdims.h = opendims.h = newImage.height;
+			
+			
+			opendims = dynamicResize(opendims,windowdims);
+			$imgbox.append(newImage);
+			$imgbox.append('<div id="imagezoom"><img id="imagezoomer" src="./images/ZoomIn.png" border="0"/></div>');
+
+			unClicker($imgbox[0]);
+
+			$imgbox.css({"left": startLeft + "px", "top": startTop + "px", "width": closeddims.w + "px", "height": closeddims.h + "px"});
+			$imgbox.show();	
+			vBorderWidth = parseFloat(getComputedStyle($imgbox[0]).getPropertyValue("border-top-width"),10);
+			if ($captionbox) {
+				$captionbox.css({
+					"width": opendims.w + "px"
+					});
+				while (opendims.h >  maxImageHeight - ($captionbox.height()+10)) {
+					opendims.w -= 5;
+					opendims.h = opendims.w * hFactor;
+				}
+				cboxHeight = $captionbox.outerHeight();
+				$captionbox.css({
+					"width": ""
+					});
+				
+			}
+			newTop = ($(window).height() - (opendims.h + cboxHeight + vBorderWidth*2)) / 2;
+			newLeft = ($(window).width() - (opendims.w + vBorderWidth*2)) / 2;
+			if ($captionbox) {
+				hOffset = cboxHeight+vBorderWidth*2;
+			}
+			if (maxdims.w > opendims.w) {
+				$("div#imagezoom").on("click",maximizeImage).show();
+			}
+			$imgbox.animate({width: opendims.w, height: opendims.h + hOffset, top: newTop, left: newLeft },'fast',
+			function() {
+				$img.attr("data-state","1");
+				if ($captionbox) {
+				var imgBoxFinalHeight = $(newImage).height() + $captionbox.outerHeight();
+				$imgbox.css("height",imgBoxFinalHeight + "px");
+				}
+			});
+		};
+		newImage.src = src1;
+};
+hmWebHelp.funcs.hmImageToggle = HMImageToggle;

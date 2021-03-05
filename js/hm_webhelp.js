@@ -1,5 +1,2436 @@
 /*! Main Help & Manual WebHelp 3.0 Functions
-	Copyright (c) by Tim Green 2015-2017. All rights reserved. 
-	Contact: tg@it-authoring.com
+	Copyright (c) 2015-2021 by Tim Green. All rights reserved. 
+	Contact: https://www.ec-software.com
 */
-hmFlags.defaultExt=hmFlags.hmDefaultPage.substr(hmFlags.hmDefaultPage.lastIndexOf("."));hmFlags.topicExt=hmFlags.hmTOC.substr(hmFlags.hmTOC.lastIndexOf("."));var hmBrowser={};hmBrowser.addEventListener=!!window.addEventListener;hmBrowser.orientation=!!("onorientationchange" in window);hmBrowser.orientationevent=typeof window.orientation=="undefined"?"resize":"orientationchange";hmBrowser.server=/^https??:\/\//im.test(document.location);hmBrowser.touch=!!(("ontouchstart" in window&&!window.opera)||("msmaxtouchppoints" in window.navigator)||("maxtouchppoints" in window.navigator)||(navigator.maxTouchPoints>0)||(navigator.msMaxTouchPoints>0));hmBrowser.nonDeskTouch=((hmBrowser.touch&&!/win32|win64/i.test(navigator.platform))||(hmBrowser.touch&&/win32|win64/i.test(navigator.platform)&&/mobile/i.test(navigator.userAgent)));hmBrowser.transitions=(function(a){var c=["transitionProperty","WebkitTransition","MozTransition","OTransition","msTransition"];for(var b in c){if(a.style[c[b]]!==undefined){return true}}return false})(document.createElement("rabbit"));hmBrowser.Flandscape=function(){if(hmBrowser.orientation){return(Math.abs(window.orientation)==90)}else{return(window.innerHeight<window.innerWidth)}};hmBrowser.MobileFirefox=(/Android.+?Gecko.+?Firefox/i.test(navigator.userAgent));hmBrowser.eventType=(("onmousedown" in window&&!hmBrowser.nonDeskTouch)?"mouse":("ontouchstart" in window)?"touch":("msmaxtouchpoints" in window.navigator||navigator.msMaxTouchPoints>0)?"mstouchpoints":("maxtouchpoints" in window.navigator||navigator.maxTouchPoints>0)?"touchpoints":"mouse");switch(hmBrowser.eventType){case"mouse":hmBrowser.touchstart="mousedown.startevents";hmBrowser.touchend="mouseup.endevents";hmBrowser.touchmove="mousemove.moveevents";break;case"touch":hmBrowser.touchstart="touchstart.startevents";hmBrowser.touchend="touchend.endevents";hmBrowser.touchmove="touchmove.moveevents";break;case"mstouchpoints":hmBrowser.touchstart="MSPointerDown.startevents";hmBrowser.touchend="MSPointerUp.endevents";hmBrowser.touchmove="MSPointerMove.moveevents";break;case"touchpoints":hmBrowser.touchstart="pointerdown.startevents";hmBrowser.touchend="pointerup.endevents";hmBrowser.touchmove="pointermove.moveevents";break;default:hmBrowser.touchstart="mousedown.startevents";hmBrowser.touchend="mouseup.endevents";hmBrowser.touchmove="mousemove.moveevents"}hmBrowser.hover=hmDevice.desktop?"mouseenter.startevents":hmBrowser.touchstart;var hmpage={$navwrapper:$("div#navwrapper"),navboxoffset:0.25,$navcontainer:$("div#navcontainer"),$navsplitbar:$("div#navsplitbar"),$contcontainers:$("div#navwrapper, div#topicbox"),$headermenu:$("div#header_menu"),hmDescription:"",topicfooter:"",hmPicture:"",FtabsWidth:function(){return $("nav#navpane_tabs").width()},navWidth:$("div#navwrapper").width(),FnavWidth:function(){return hmpage.$navwrapper.width()},FmaxNavWidth:function(){return hmDevice.phone?$(window).width()*0.9:hmDevice.tablet?(hmBrowser.Flandscape()?$(window).width()*0.5:$(window).width()*0.9):hmpage.topicleft?$(window).width()*0.8:$(window).width()*0.4},FminNavWidth:function(){return hmpage.FtabsWidth()+26+(hmpage.FnavWidth()-hmpage.$navcontainer.width())},FnavOffset:function(){return parseFloat($("div.navbox").css("border-left-width"),10)+parseFloat($("div.navbox").css("border-right-width"),10)},hmHelpUrl:{},splitter:{},currentnav:0,currentTopicID:"",$headerbox:$("div#headerbox_wrapper"),$topicbox:$("div#topicbox"),$topicboxTop:$("div#topicbox").offset().top,$topicheader:$("table#topicheadertable td"),$topichdwrap:$("div#topicheaderwrapper"),topichdoffset:$("td#topicnavcell").innerHeight()+1-$("div#topicheaderwrapper > h1.p_Heading1").outerHeight(),$contentsbox:$("div#contentsbox"),$indexbox:$("div#indexbox"),$searchbox:$("div#searchbox"),$headerwrapper:$("div#headerwrapper"),$pagebody:$("div#hmpagebody"),$pageheader:$("div#hmpageheader"),$navhandle:$("div#dragwrapper"),FheaderHeight:function(){return $("div#headerbox").height()},headerheightStatic:parseInt($("div#headerbox").css("height"),10),$headerpara:$("div#headerwrapper h1.page_header"),topicleft:$("div#topicbox").position().left<50,navclosed:$("div#navwrapper").position().left<0,narrowpageX:false,Fnarrowpage:function(){return((!hmDevice.phone&&$(window).width()<=((hmFlags.tocInitWidth+20)*2))||(hmDevice.phone&&!hmBrowser.Flandscape())||(hmDevice.tablet&&!hmBrowser.Flandscape()&&$(window).width()<=((hmFlags.tocInitWidth+20)*3))||(hmDevice.desktop&&$(window).width()<600))},headerclosedonopen:(function(){var a=sessionVariable.getSV("headerState");return(false||(a!==null&&a==="closed"))})(),headerclosed:!!(this.headerclosedonopen||$("div#headerbox").is(":hidden")),tocclosedonopen:(function(){var a=sessionVariable.getSV("tocState");return(a!==null&&a==="closed")})(),breadcrumbs:true,parenthome:false,defaulttopic:"index.html",shortpageX:false,Fshortpage:function(){return((!hmDevice.phone&&$(window).height()<400)||(hmDevice.phone&&hmBrowser.Flandscape()))},navShadowOn:false,initialized:false,projectBaseFontRel:"100",projectStoredFont:function(){var a=sessionVariable.getPV("fontSize");if(a!==null){return(parseInt(a,10)/100)*16}else{return NaN}},FbaseFontSize:function(){var a=this.projectStoredFont();return(!isNaN(a)?a:parseFloat(window.getComputedStyle(document.getElementsByTagName("html")[0],null).getPropertyValue("font-size"),10))},Fpix2em:function(a){return(a/this.FbaseFontSize())},Fem2pix:function(a){return(a*this.FbaseFontSize())},anchorX:hmBrowser.server?"?anchor=":"!anchor=",anchorY:hmBrowser.server?"?":"!"};if(/%|pt|px/i.test(hmpage.projectBaseFontRel)){$("*").css("visibility","hidden");alert("ERROR! The font size encoding of your project is not set to ems, which is required for this skin.\r\n\r\nPlease set the font size encoding of your project to ems in 'Configuration - Publishing Options - WebHelp - HTML Export Options' before using this skin.\r\n\r\nYou can adjust the base font size in your output with the percentage setting after the font size encoding setting.")}else{hmpage.projectBaseFontRel=parseFloat(hmpage.projectBaseFontRel,10)}var hmWebHelp={funcs:{},currentBS:0,lastBS:false,visitedTopics:{},userParams:{paramsCount:0}};hmWebHelp.trimString=function(a){return a.replace(/^\s+/g,"").replace(/\s+$/g,"")};jQuery.cachedScript=function(b,a){a=$.extend(a||{},{dataType:"script",cache:true,url:b});return jQuery.ajax(a)};var HMTrackTopiclink=function(a){if(gaaccount!==""){hmWebHelp.track("exit",a.href)}};hmWebHelp.extFuncs=function(c,b){var a="";if(typeof hmWebHelp.funcs!="object"){hmWebHelp.funcs={}}if(typeof hmWebHelp.funcs[c]=="function"){hmWebHelp.funcs[c](b)}else{a="./js/"+c+".js";$.getScript(a,function(e,g,f){if(g==="success"&&typeof hmWebHelp.funcs[c]=="function"){try{hmWebHelp.funcs[c](b)}catch(d){alert(d)}}else{alert("External function script "+c+".js failed to load as a function")}})}};hmWebHelp.PreventDefault=function(a){if(a.preventDefault){a.preventDefault()}else{a.returnValue=false}};hmWebHelp.closePopup=function(){if(typeof hmXPopup==="object"&&typeof hmXPopup.closePopup==="function"&&hmXPopup.$popup.is(":visible")){hmXPopup.closePopup()}};hmWebHelp.tocNav=new function(){var m=this,e="",a=null,l=null,h=false,i=false,k=0,g="";var d=function(n,o){k=a;g=l;a=o?false:n.bs;l=o?false:n.href;i=o;h=true;if(n.href!=hmFlags.hmCurrentPage){History.pushState(null,null,n.href)}else{if(n.bs>=0){xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:n.bs})}}};var f=function(n){if(!h){if(n.href!==g){g=n.href;l="";xMessage.sendObject("hmnavigation",{action:"href",href:n.href,bs:false});return}else{}}if(h){if(l||a>=0){if(l&&!a&&a!==0){if(l!==g){xMessage.sendObject("hmnavigation",{action:"href",href:l.replace(/[\!\?]anchor=/,"#"),bs:false})}g=l}else{if(!i&&a>=0){if(a!==k){xMessage.sendObject("hmnavigation",{action:"bs",href:false,bs:a})}k=a}}}}h=false;a=false;l=false;return};var j=function(p){var t="Navigation: ",o=[],r="",q=" <span>&raquo; No topics above this level &laquo;</span>",s=" <span>&raquo; No TOC entry for this topic &laquo;</span>";if(p.breadmode=="full"){for(var n in p){o=p[n].split(r);if(o.length==3){if(o[1]!==""){t+='<a href="javascript:void(0)" onclick="hmWebHelp.tocNav({action: \'set\', bs: '+o[0]+", href: '"+hmWebHelp.targetCheck(o[1])+"'})\">"+o[2]+"</a> &gt; "}else{t+=o[2]+"</a> &gt; "}}}t=t.replace(/&gt;\s$/,"");$("p#ptopic_breadcrumbs").html(t)}else{if(p.breadmode=="top"){$("p#ptopic_breadcrumbs").html(t+q)}else{$("p#ptopic_breadcrumbs").html(t+s)}}};var c=function(p){var o=$("a#topicnavlinkprevious"),r=$("a#topicnavlinkhome"),n=$("a#topicnavlinknext"),q="";if(p.phf=="none"){o.attr("class","topicnavlink disabled").attr("title","This is the first topic").removeAttr("href").removeAttr("data-bs").removeAttr("data-ac").off("click").off(hmBrowser.touchstart)}else{o.attr("class","topicnavlink nav").attr("title","Go to previous topic").attr("href",p.phf).attr("data-bs",p.pbs).attr("data-ac",p.pac)}if(p.hhf=="none"){r.attr("class","topicnavlink disabled").attr("title","No topics above this level").removeAttr("href").removeAttr("data-bs").removeAttr("data-ac").off("click").off(hmBrowser.touchstart)}else{r.attr("class","topicnavlink nav").attr("title","Go to top topic").attr("href",p.hhf).attr("data-bs",p.hbs).attr("data-ac",p.hac)}if(p.nhf=="none"){n.attr("class","topicnavlink disabled").attr("title","This is the last topic").removeAttr("href").removeAttr("data-bs").removeAttr("data-ac").off("click").off(hmBrowser.touchstart)}else{n.attr("class","topicnavlink nav").attr("title","Go to next topic").attr("href",p.nhf).attr("data-bs",p.nbs).attr("data-ac",p.nac)}$("a.topicnavlink.nav").off("click").off(hmBrowser.touchstart).on("click",function(s){s.preventDefault();s.stopPropagation()}).on(hmBrowser.touchstart,function(s){q=$(this).attr("href")+($(this).attr("data-ac")===""?"":hmpage.anchorX+$(this).attr("data-ac").substr(1));hmWebHelp.tocNav({action:"set",href:q,bs:parseInt($(this).attr("data-bs"),10)})})};var b=function(n){if(typeof n!="object"){return false}if(!n.hasOwnProperty("action")){return false}e=n.action;return true};return function(n){if(!b(n)){return}switch(e){case"set":d(n,false);break;case"load":d(n,true);break;case"href":f(n);break;case"bread":j(n.crumbs);break;case"setnavlinks":c(n);break}}}();hmWebHelp.lastTrackEvent="";hmWebHelp.track=function(c,b){if(gaaccount!==""){if((window._gat)&&(hmWebHelp.lastTrackEvent!=c+b)){hmWebHelp.lastTrackEvent=c+b;var a=window._gat._getTracker(gaaccount);switch(c){case"topic":b=b.substring(b.indexOf("//")+1,b.length);b=b.substring(b.lastIndexOf("/")+1,b.length);a._trackPageview(b);break;case"search":a._trackPageview(b);break;case"index":a._trackEvent("Help|IndexTerm",b,null,null);break;case"exit":a._trackEvent("Help|ExitTo",b,null,null);break}}}};hmWebHelp.hmTopicPageInit=function(){var f=$("a.dropdown-toggle"),a=$("img.dropdown-toggle-icon"),h=$("img.image-toggle"),e=$("div.video-lightbox"),c=$("a.inline-toggle");hmpage.$scrollBox=hmDevice.phone?$("div#topicbox"):$("div#hmpagebody_scroller");hmpage.$scrollContainer=hmDevice.phone?$("body"):$("div#hmpagebody");if($("span[class*='_atoc']").length>=parseInt("3",10)&&hmDevice.desktop){$("a#atoclink").css("visibility","visible").off(hmBrowser.touchstart).on(hmBrowser.touchstart,function(i){i.preventDefault();i.stopPropagation();hmWebHelp.extFuncs("hm_autotoc",i)})}else{$("a#atoclink").css("visibility","hidden")}$("input.topiclink").each(function(){var i=$(this).attr("onclick");if(/^self\.location\.href=/.test(i)){i=i.replace(/^self\.location\.href='(.+?)'$/g,"$1");$(this).attr("data-target",i);$(this).removeAttr("onclick")}});$("a.topiclink, a.topichotspot, p#ptopic_breadcrumbs a, input.topiclink").off(hmBrowser.touchstart).on("click",function(i){i.preventDefault();i.stopPropagation()}).on(hmBrowser.touchstart,function(l){if(typeof(l.button)!="undefined"&&l.button!==0){return}l.preventDefault();l.stopPropagation();var m=$(this).attr("href");if(typeof m=="undefined"){m=$(this).attr("data-target")}if(!m){return}var k,j,i=m.indexOf("#")>1?m.split("#").pop():false,n=m.indexOf("#")>1?m.substr(0,m.lastIndexOf("#")):m;if(hmBrowser.server){k=document.location.pathname.split("/").pop()}else{k=document.location.hash.substr(1)}j=k!==n;if(hmDevice.tablet){$(this).filter("a.topicnavlink").addClass("navhilite")}if(!hmDevice.desktop&&hmFlags.layoutTable){hmWebHelp.funcs.toggleLayoutTable({action:"hide",instant:true})}if(i&&!j){hmWebHelp.scrollTopic(i)}else{m=hmWebHelp.targetCheck(m);if(hmWebHelp.hmMainPageCheck(m)){hmWebHelp.tocNav({action:"set",href:m,bs:false})}}});$("div#navigationmenu").children().contextmenu(function(){return false});$("a.popuplink,a.popuphotspot,a.topichotspot[href^='javascript:void']").contextmenu(function(){return false}).on(hmBrowser.touchstart,function(n){n.preventDefault();if(typeof(n.button)!="undefined"&&n.button!==0){return}var m=$(this).attr("data-target"),j=$(this).attr("data-path"),i=$(this).attr("data-title"),l=n.originalEvent,k=hmpage.Fem2pix(3.000)-10;if(typeof hmXPopup==="object"){hmXPopup.clickX=hmDevice.phone?0:l.pageX;hmXPopup.clickY=hmDevice.phone?k:l.pageY;hmXPopup.loadPopup(m,j,i)}else{newScript="./js/hmSmartPopup.js";$.getScript(newScript,function(p,r,q){if(r==="success"&&typeof hmXPopup.loadPopup=="function"){try{hmXPopup.clickX=hmDevice.phone?0:l.pageX;hmXPopup.clickY=hmDevice.phone?k:l.pageY;hmXPopup.loadPopup(m,j,i)}catch(o){alert(o)}}else{alert("Syntax or other eror in popup function")}})}});$("a#hamburgerlink").contextmenu(function(){return false}).off(hmBrowser.touchstart).on(hmBrowser.touchstart,function(i){i.preventDefault();i.stopPropagation();if(hmDevice.tablet){$(this).addClass("navhilite")}$("ul.topnav li ul.subnav").slideUp("fast");$("ul.topnav > li > a.current").removeClass("current");hmWebHelp.hamburgerMenu()}).on(hmBrowser.touchend,function(i){if(hmDevice.tablet){$(this).removeClass("navhilite")}});if(!hmDevice.phone){$("a#hm_printable_link").attr("href","_hm_print_window.htm?"+hmFlags.hmCurrentPage)}if(!hmBrowser.server){$(".server").hide()}if(f.length<1){$(".toggles").hide()}else{$(".toggles").show();f.on(hmBrowser.touchstart,function(j){j.preventDefault();var i={method:"HMToggle",obj:$(this),clicked:true};hmWebHelp.extFuncs("hmDoToggle",i)});if(a.length>0){a.on(hmBrowser.touchstart,function(j){j.preventDefault();var i={method:"HMToggleIcon",obj:$(this),clicked:true};hmWebHelp.extFuncs("hmDoToggle",i)})}if(f.filter("[data-state='1']").length>0){$("svg#showhide_toggles_icon").find("use").attr("xlink:href","#eye-off");$("li#showhide_toggles span").first().html("Hide Expanding Text")}else{$("svg#showhide_toggles_icon").find("use").attr("xlink:href","#eye");$("li#showhide_toggles span").first().html("Show Expanding Text")}}if(c.length>0){c.on(hmBrowser.touchstart,function(i){i.preventDefault();hmWebHelp.extFuncs("hmDoInlineToggle",$(this))})}$("img.image-toggle").parent("a").on("click",function(i){i.preventDefault();if(hmDevice.device==="desktop"){hmWebHelp.extFuncs("hmImageToggle",($(this).children("img").first()))}else{hmWebHelp.extFuncs("hmImageToggleMobile",($(this).children("img").first()))}});if(e.length>0){e.each(function(){$(this).children().first("div").on("click",function(i){i.preventDefault();i.stopPropagation();var j={};j.data=$(this).attr("data-lightbox");j.vWidth=$(this).attr("data-width");j.vHeight=$(this).attr("data-height");j.$obj=$(this);hmWebHelp.extFuncs("hmVideoBox",j)})})}if(!hmDevice.desktop){var d=$("table.xResponsive");if(d.length>0){hmWebHelp.extFuncs("hm_xTablesInit",d)}else{$(window).off(hmBrowser.orientationevent+".xTables")}hmWebHelp.initTapImages();var g=0;var b=hmDevice.phone?"table.layout-table,table.layout-table-phone":"table.layout-table,table.layout-table-tablet";$(b).each(function(){g++;$(this).hide().attr("id","ltable"+g).before("<div class=\"openLTable\" onclick=\"hmWebHelp.extFuncs('toggleLayoutTable',{action: 'show',table:'table#ltable"+g+"',obj:this})\">Tap to View Table</div>")})}};hmWebHelp.hmCreateVSplitter=function(l,p){var q,b,o,j,k,i,d=0,e=0,c=$("div#dragsurface"),f=$("img#leftright"),h=0;f.hide();function a(r){if(r.pointerType=="mouse"||r.pointerType==4){return"mouse"}else{if(r.pointerType=="touch"||r.pointerType==2||r.pointerType=="pen"||r.pointerType==3){return"touch"}else{if(/^mouse/i.test(r.type)){return"mouse"}else{if(/^touch/i.test(r.type)||/^pen/i.test(r.type)){return"touch"}else{return"none"}}}}}function m(s){e=new Date().getTime()-d;if(e<200||hmpage.$navwrapper.width()<161||hmpage.$navwrapper.offset().left<0){var r=hmpage.$navwrapper.width();hmTocWidth=r>161?r:220;hmWebHelp.pageDimensions.dragHandle(false)}else{if(hmpage.$navwrapper.width()>=161){hmTocWidth=hmpage.$navwrapper.width();setTimeout(hmWebHelp.adjustTopicPos,300)}}f.off(".endevents");hmpage.$navsplitbar.off(".moveevents");hmpage.$navsplitbar.off(".endevents");hmpage.$navhandle.off(".moveevents");hmpage.$navhandle.off(".endevents");c.off(".moveevents");c.off(".endevents");c.hide();f.hide();hmpage.navWidth=hmpage.FnavWidth();sessionVariable.setPV("navWidth",hmpage.navWidth.toString());hmWebHelp.nsheader();hmWebHelp.fHeadUpdate();hmWebHelp.PreventDefault(s)}function g(s){hmWebHelp.PreventDefault(s);d=new Date().getTime();var r;if(typeof s.changedTouches!="undefined"){r=s.changedTouches[0]}else{r=s}q=(!(document.all&&!window.opera))?r.pageX:r.clientX;oldY=(!(document.all&&!window.opera))?r.pageY:r.clientY;b=hmpage.FnavWidth();maxWidthV=hmpage.FmaxNavWidth();o=hmpage.FminNavWidth();j=$(p).position().left;k=$(p).outerWidth();i=hmpage.$navwrapper.offset().left;if(hmBrowser.touch||hmDevice.winphone||a(s)=="mouse"){c.show();c.on(hmBrowser.touchmove,function(u){var t=u.originalEvent;n(t)});c.on(hmBrowser.touchend,function(u){var t=u.originalEvent;m(t)})}hmpage.$navsplitbar.on(hmBrowser.touchmove,function(u){var t=u.originalEvent;n(t)});hmpage.$navsplitbar.on(hmBrowser.touchend,function(u){var t=u.originalEvent;m(t)});hmpage.$navhandle.on(hmBrowser.touchmove,function(u){var t=u.originalEvent;n(t)});hmpage.$navhandle.on(hmBrowser.touchend,function(u){var t=u.originalEvent;m(t)})}function n(v){hmWebHelp.PreventDefault(v);var t;if(typeof v.changedTouches!="undefined"){t=v.changedTouches[0]}else{t=v}h++;if(hmDevice.desktop||h>2){h=0;e=new Date().getTime()-d;if(hmBrowser.touch&&a(v)!="mouse"&&f.is(":hidden")&&e>80){f.show();f.css("top",(hmpage.$pageheader.is(":visible")?(oldY-(hmpage.$pageheader.height()+30))+"px":(oldY)+"px"));f.on(hmBrowser.touchend,function(x){var w=x.originalEvent;m(w)})}var u=(!(document.all&&!window.opera))?t.pageX-q:t.clientX-q;var s=(!(document.all&&!window.opera))?t.pageY:t.clientY;var r=b+u<o?o:b+u;if((r<=maxWidthV)&&(r>=o)&&!hmpage.navclosed){hmpage.$navwrapper.css("width",(r+"px"));if(!hmpage.topicleft){hmpage.$topicbox.css("left",(j+r-b)+"px")}f.css("top",(hmpage.$pageheader.is(":visible")?s-(hmpage.$pageheader.height()+30)+"px":(s)+"px"))}hmTocWidth=hmpage.$navwrapper.width()}}$("div#dragwrapper").on(hmBrowser.touchstart,function(s){s.stopPropagation();var r=s.originalEvent;g(r)});if(hmDevice.desktop){$("div#navsplitbar").on(hmBrowser.touchstart,function(s){var r=s.originalEvent;g(r)})}};hmWebHelp.navJitter=function(){setTimeout(function(){if(hmpage.currentnav==1){$("li#indextab,a#indextablink").trigger("touchstart")}if(hmpage.currentnav==2){$("li#searchtab,a#searchtablink").trigger("touchstart")}},500)};hmWebHelp.initTopNav=function(){function a(){$("ul.topnav li ul.subnav").css("top",$($("ul.topnav")[0]).height()+"px")}$("ul.topnav > li:has(ul) > a").on(hmBrowser.touchstart,function(c){c.preventDefault();c.stopPropagation();$("ul.topnav > li > a.current").removeClass("current");$(this).addClass("current");if($("div#navigationmenu").is(":visible")&&!hmDevice.phone){hmWebHelp.hamburgerMenu("close")}hmWebHelp.closePopup();var b=$(this).parent().find("ul.subnav");if(!hmDevice.phone){$("div#unclicker").show().on(hmBrowser.touchstart+".closemenu",function(){b.slideUp("fast");$("ul.topnav > li > a.current").removeClass("current");$("div#unclicker").off(hmBrowser.touchstart+".closemenu").hide()})}if(b.is(":hidden")){$("ul.topnav li").find("ul.subnav").hide();a();b.slideDown("fast",function(){$(this).find("li:visible").last().not(".last").addClass("last")})}else{b.hide();$("ul.topnav > li > a.current").removeClass("current")}if(hmDevice.phone){hmWebHelp.funcs.doVibrate()}});$("ul.subnav li a").on("click",function(){$("ul.topnav li").find("ul.subnav").hide();$("ul.topnav > li > a.current").removeClass("current");if(hmDevice.phone){hmWebHelp.funcs.doVibrate()}});a()};hmWebHelp.hmMainPageInit=function(){var b=sessionVariable.getPV("navWidth");hmpage.splitter=new hmWebHelp.hmCreateVSplitter("div#navwrapper","div#topicbox");if(b!==null){hmWebHelp.resizePanes(parseInt(b,10))}hmWebHelp.pageDimensions=new hmWebHelp.pageDims();if(hmDevice.embedded){hmWebHelp.pageDimensions.embedInit()}if(!hmDevice.embedded&&hmpage.headerclosedonopen&&!hmDevice.phone){hmWebHelp.pageDimensions.pageHeaderUpDown(false)}if(hmpage.headerclosedonopen&&hmDevice.phone){hmWebHelp.funcs.mobileUpDown(null)}if(hmDevice.ipad&&!window.navigator.standalone){$("body").css({bottom:"-4rem"})}if(hmDevice.desktop){hmWebHelp.pageDimensions.doDims()}if(hmDevice.phone){hmWebHelp.pageDimensions.navShadow()}if(hmpage.tocclosedonopen){hmWebHelp.pageDimensions.dragHandle(true)}xMessage.sendObject("hmnavigation",{action:"sendvalue",vn:"hmDevice.mainPageInitialized",vv:"*true"});xMessage.sendObject("hmindex",{action:"sendvalue",vn:"hmDevice.mainPageInitialized",vv:"*true"});xMessage.sendObject("hmsearch",{action:"sendvalue",vn:"hmDevice.mainPageInitialized",vv:"*true"});History.Adapter.bind(window,"statechange",function(){var d=History.getState();if(d.hash!=hmpage.currentTopicID&&hmpage.currentTopicID!==""){hmpage.currentTopicID=d.hash;hmpage.hmHelpUrl=hmWebHelp.parseState(hmpage.currentTopicID);hmpage.currentURI=encodeURI(document.location.href);hmWebHelp.tocNav({action:"href",href:hmpage.hmHelpUrl.topic,bs:false});hmWebHelp.loadTopic(hmpage.hmHelpUrl);hmWebHelp.track("topic",hmpage.currentTopicID)}});if(hmpage.hmHelpUrl.topic!=hmFlags.hmCurrentPage){hmWebHelp.currentAnchor=hmpage.hmHelpUrl.anchor!==""?hmpage.hmHelpUrl.anchor:false;hmWebHelp.loadTopic(hmpage.hmHelpUrl);hmWebHelp.track("topic",hmpage.currentTopicID)}if(hmpage.hmHelpUrl.topic!==""){if(hmpage.hmHelpUrl.anchor!==""){History.replaceState(null,null,hmpage.hmHelpUrl.topic+hmpage.anchorX+hmpage.hmHelpUrl.anchor);if(hmpage.currentnav===0){setTimeout(function(){xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:(hmpage.hmHelpUrl.topic+"#"+hmpage.hmHelpUrl.anchor)})},300)}hmWebHelp.track("topic",hmpage.hmHelpUrl.topic+"?anchor="+hmpage.hmHelpUrl.anchor)}else{History.replaceState(null,$("title").text(),hmpage.hmHelpUrl.topic);hmWebHelp.track("topic",hmpage.hmHelpUrl.topic)}}hmpage.$navhandle.on(hmBrowser.touchstart,function(d){$("div#dragwrapper").addClass("draghilite");setTimeout(function(){$("div#dragwrapper").removeClass("draghilite")},50)});if(hmDevice.desktop){$("li#showhide_pageheader").on(hmBrowser.touchstart,function(d){hmWebHelp.pageDimensions.pageHeaderUpDown(false)})}if(hmDevice.tablet){$("div#toolbutton_wrapper").on(hmBrowser.touchstart,function(d){hmWebHelp.pageDimensions.pageHeaderUpDown(false)})}$("a#contentstablink").on(hmBrowser.touchstart,function(d){d.preventDefault();hmWebHelp.switchNavTab("contents")});$("a#indextablink").on(hmBrowser.touchstart,function(d){d.preventDefault();hmWebHelp.switchNavTab("index")});$("a#searchtablink").on(hmBrowser.touchstart,function(d){d.preventDefault();hmWebHelp.switchNavTab("search")});if(hmTocLoaded){hmWebHelp.syncToc(true)}else{var a=setInterval(function(){if(hmTocLoaded){hmWebHelp.syncToc(true);clearInterval(a)}},100)}if(!hmDevice.desktop){if(hmDevice.tablet&&!hmBrowser.Flandscape()){hmWebHelp.pageDimensions.moveTopicLeft()}hmWebHelp.funcs.doubleTap=new hmWebHelp.dT();hmWebHelp.funcs.doPagePos=new hmWebHelp.pagePos("div#hmpagebody");if(hmDevice.mobileSleepReload){hmWebHelp.reloadAfterSleep()}}hmWebHelp.hmTopicPageInit();hmpage.currentTopicID=History.getState().hash;hmWebHelp.initTopNav();hmpage.initialized=true;if(gaaccount!==""){var c=c||[];c.push(["_setAccount",gaaccount]);c.push(["_trackPageview"]);(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var d=document.getElementsByTagName("script")[0];d.parentNode.insertBefore(e,d)})();setTimeout(function(){(hmWebHelp.track("topic",(hmpage.currentTopicID.split("/").pop())))},300)}};hmWebHelp.pageDims=function(){var b=false,m=0,c=true,i=false,n=false,d=hmDevice.device=="phone"?0:document.getElementById("headerbox").getBoundingClientRect().left;function s(){var t=false;if(typeof hmpage.$mToolbar!="undefined"){if(hmpage.$mToolbar.attr("data")=="open"){t="open"}else{t="closed"}}if(hmpage.navclosed||hmpage.topicleft){$("div.navbox").css({"box-shadow":"0.090rem 0.085rem 0.2rem  #676767"});hmpage.navShadowOn=true}else{$("div.navbox").css({"box-shadow":"0 0 0 0"});hmpage.navShadowOn=false}if(!hmpage.navclosed&&hmpage.topicleft&&!hmDevice.phone){hmpage.$topicbox.css("opacity","0.7")}else{hmpage.$topicbox.css("opacity","1.0")}}function p(){var t=0;if(!hmpage.navclosed){do{t=hmFlags.tocInitWidth}while(hmFlags.tocInitWidth===0)}else{t=parseInt(t,10)+20}hmFlags.tocInitWidth=t;return t}function e(){var z="0.0rem",y=hmpage.Fpix2em(hmpage.$navwrapper.position().top)+"rem",w=hmpage.Fpix2em(hmpage.$topicbox.position().top)+"rem",A="0.300rem",u="0.300rem",t=$("div#navwrapper, div#topicbox"),x=hmpage.$headerbox.is(":visible"),v=false;return function(B){if(v){return}v=true;var C=false;if((B&&b)||(!hmpage.initialized&&b)){b=false;C=true}else{b=true}if(x){x=false;y=hmpage.Fpix2em(hmpage.$navwrapper.position().top)+"rem";w=hmpage.Fpix2em(hmpage.$topicbox.position().top)+"rem";hmpage.$headermenu.hide();hmpage.$navwrapper.animate({top:u},(b?400:0));hmpage.$topicbox.animate({top:A},(b?400:0));hmpage.$headerbox.slideUp((b?"400":"0"),function(){if(C){b=true}if(hmDevice.desktop){$("svg#showhide_header_icon").find("use").attr("xlink:href","#expand");$("li#showhide_pageheader a").first().attr("title","Show Page Header");$("li#showhide_pageheader span").first().html("Show Page Header")}v=false;sessionVariable.setSV("headerState","closed")})}else{x=true;u=hmpage.Fpix2em(hmpage.$navwrapper.position().top)+"rem";A=hmpage.Fpix2em(hmpage.$topicbox.position().top)+"rem";hmpage.$navwrapper.animate({top:y},(b?400:0),function(){hmpage.$headermenu.show();v=false});hmpage.$topicbox.animate({top:w},(b?400:0));hmpage.$headerbox.slideDown((b?"400":"0"),function(){if(C){b=true}if(hmDevice.desktop){$("svg#showhide_header_icon").find("use").attr("xlink:href","#collapse");$("li#showhide_pageheader a").first().attr("title","Hide Page Header");$("li#showhide_pageheader span").first().html("Hide Page Header")}sessionVariable.setSV("headerState","open")})}}}var k=new e();function q(t){var v=false;if((t&&b)||(!hmpage.initialized&&b)){b=false;v=true}else{b=true}hmpage.topicleft=true;var u=(hmDevice.phone?"0":((hmpage.$navwrapper.width()-hmpage.$navcontainer.width())+hmpage.Fem2pix(hmpage.navboxoffset)));var w=(hmDevice.phone?(hmpage.$mToolbar.attr("data")=="open"?(hmpage.Fpix2em(hmpage.$mToolbarHeight)+"rem"):"0px"):hmFlags.skinType!="flat"?"0.5rem":"0.0rem");hmpage.$topicbox.animate({left:u,bottom:w},b?450:0,function(){hmWebHelp.nsheader();hmWebHelp.fHeadUpdate();if(v){b=true}setTimeout(hmWebHelp.adjustTopicPos,300)});s()}function a(t){var v=false,u=hmpage.$navwrapper.width()+d+hmpage.Fem2pix(hmpage.navboxoffset),w=(hmDevice.phone?(hmpage.$mToolbar.attr("data")=="open"?(hmpage.Fpix2em(hmpage.$mToolbarHeight)+"rem"):"0px"):hmFlags.skinType!="flat"?"0.5rem":"0.0rem");if((t&&b)||(!hmpage.initialized&&b)){b=false;v=true}else{b=true}hmpage.topicleft=false;hmpage.$topicbox.animate({left:u,bottom:w},b?250:0,function(){hmWebHelp.nsheader();hmWebHelp.fHeadUpdate();if(v){b=true}setTimeout(hmWebHelp.adjustTopicPos,300)});s()}function h(t){hmpage.navWidth=hmpage.FnavWidth();var u=false;if((t&&b)||(!hmpage.initialized&&b)){b=false;u=true}else{b=true}hmpage.navclosed=true;hmTocWidth=hmpage.$navwrapper.width();hmpage.$navwrapper.animate({left:-hmpage.$navcontainer.width()+"px"},b?250:0,function(){if(hmDevice.phone){$("div.mobnav.toc").css("background-image","url('./images/toc_show.png')")}if(u){b=true}s();sessionVariable.setSV("tocState","closed")})}function g(t){var u=false;if((t&&b)||(!hmpage.initialized&&b)){b=false;u=true}else{b=true}hmpage.navclosed=false;if(hmDevice.phone&&$("div#navigationmenu").is(":visible")){hmWebHelp.closeTopNav()}hmpage.$navwrapper.animate({left:d},b?450:0,function(){if(hmDevice.phone){$("div.mobnav.toc").css("background-image","url('./images/toc_hide.png')")}if(u){b=true}s();sessionVariable.setSV("tocState","open")})}function o(){if(hmDevice.embedded&&hmDevice.desktop){if(hmpage.$headerbox.is(":visible")){hmWebHelp.pageDimensions.pageHeaderUpDown(true)}$("p#ptopic_breadcrumbs").hide()}else{if(!hmDevice.embedded&&hmDevice.desktop){if(hmpage.$headerbox.is(":hidden")){hmWebHelp.pageDimensions.pageHeaderUpDown(true)}if(hmpage.breadcrumbs){$("p#ptopic_breadcrumbs").show()}}else{if(hmDevice.tablet||hmDevice.phone){xMessage.sendObject("parent",{action:"callfunction",fn:"hmHelp.doFullWindow"})}}}}function j(u){var t=false;switch(u){case"both":if(hmpage.Fnarrowpage()!==hmpage.narrowpageX||hmpage.Fshortpage()!==hmpage.shortpageX){t=true;hmpage.narrowpageX=!hmpage.narrowpageX;hmpage.shortpageX=!hmpage.shortpageX}break;case"width":if(hmpage.Fnarrowpage()!==hmpage.narrowpageX){t=true;hmpage.narrowpageX=!hmpage.narrowpageX}break;case"height":if(hmpage.Fshortpage()!==hmpage.shortpageX){t=true;hmpage.shortpageX=!hmpage.shortpageX}break}return t}function f(){var u=hmpage.FnavWidth(),t=hmpage.FmaxNavWidth(),v=hmpage.FminNavWidth();if(u>t){hmWebHelp.resizePanes(t)}if(u<v){hmWebHelp.resizePanes(v)}}function l(){f();if(hmDevice.desktop&&!hmpage.topicleft&&hmpage.Fnarrowpage()){q();if(false){h()}}if(hmDevice.desktop&&hmpage.topicleft&&!hmpage.navclosed&&!hmpage.Fnarrowpage()){a();if(hmpage.navclosed){g()}}s();if(!j("both")&&hmpage.initialized&&hmDevice.desktop){return}var u=50;var t=0;if(hmBrowser.touch&&b){b=false}if(!hmpage.initialized||j("width")||!hmDevice.desktop){if(hmpage.Fnarrowpage()||hmDevice.phone||(hmDevice.tablet&&!hmBrowser.Flandscape())){q();s()}else{if((!hmpage.Fnarrowpage()&&hmpage.topicleft&&!hmDevice.phone)||(hmDevice.tablet&&hmBrowser.Flandscape())){a();if(!hmpage.navclosed){if(c){a()}}else{g()}s()}}}b=true;hmpage.initialized=true}function r(t){if(!t){t=false}if(hmWebHelp.funcs.doVibrate&&!t){hmWebHelp.funcs.doVibrate()}if(hmpage.Fnarrowpage()||hmDevice.phone||(hmDevice.tablet&&hmBrowser.Flandscape())){if(!hmpage.navclosed){h(t);if(!hmpage.topicleft&&hmDevice.tablet&&hmBrowser.Flandscape()){q()}}else{g(t);if(hmpage.topicleft&&hmDevice.tablet&&hmBrowser.Flandscape()){a()}}s()}else{if(!hmpage.navclosed){h(t);q(t)}else{if(!hmDevice.phone&&!(hmDevice.tablet&&!hmBrowser.Flandscape())){a(t)}g(t)}s()}b=true}return{tocWidth:p,doDims:l,embedInit:o,dragHandle:r,navShadow:s,moveTOCLeft:h,moveTOCRight:g,moveTopicLeft:q,moveTopicRight:a,pageHeaderUpDown:k}};hmWebHelp.pagePos=function(b){var e=0,a=0;var d=b;function f(){a=$(d).scrollTop();e=$(d).scrollLeft()}function c(g){if(!g){$(d).scrollTop(a).scrollLeft(e)}else{$(d).animate({scrollTop:a,scrollLeft:e},g)}a=0;e=0}return{getPos:function(){f()},setPos:function(g){c(g)}}};hmWebHelp.dT=function(){var a=new Date().getTime();var b=null;return function(d,c){var e=new Date().getTime();var f=e-a;a=e;if((f>120)&&(f<500)&&b===d){hmWebHelp.extFuncs(d,c)}b=d}};hmWebHelp.targetCheck=function(a){if(!a||a.substr(0,11)=="javascript:"){return""}if(a.indexOf("#")>-1){a=a.replace("#",hmpage.anchorX)}return a};hmWebHelp.timedReset=function(b,a,c){b=a;setTimeout(function(){b=!a},c)};hmWebHelp.flashTarget=function(d,c,a){if(!true){return}c--;b();function b(){setTimeout(function(){$(d).each(function(){$(d).css("visibility","hidden");setTimeout(function(){c--;$(d).css("visibility","visible");if(c>0){b()}},a)})},a)}};hmWebHelp.scrollTopic=function(d,c){var f,a=null,e=null,b=hmDevice.phone?$("div#topicbox"):$("div#hmpagebody_scroller");if(typeof d!=="undefined"&&typeof d!=="string"){f=d}else{if(typeof d==="string"){d=d.replace(/\./g,"\\.");f=d===""?false:$("a#"+d);if(f&&f.length===0){f=false}}}if(f){a=f.parents("div.dropdown-toggle-body");e=f.siblings("img.dropdown-toggle-icon").first();if(e.length===0){e=f.siblings("a.dropdown-toggle").first()}if(e.length==1){e=e.attr("id");e=e.substr(0,e.indexOf("_"));e=$("a#"+e+"_LINK").first()}else{e=false}}if(a&&a.length>0){hmWebHelp.extFuncs("hmDoToggle",{method:"hmToggleToggles",obj:{toggles:a,mode:"expand",scrolltarget:f,dotoggle:e}})}else{if(f){b.scrollTo(f,300,{offset:{top:-20},onAfter:function(){if(e){hmWebHelp.extFuncs("hmDoToggle",{method:"HMToggle",obj:e})}else{hmWebHelp.flashTarget(f.parent(),3,200)}}})}else{if(c){b.scrollTop(c)}}}};function hmLoadTopic(a){var b=a.hmTitle;switch("topic"){case"project":b=$("h1#hm_pageheader").text();break;case"project_topic":b=$("h1#hm_pageheader").text()+" > "+a.hmTitle;break}$("title").text(b);$("meta[name='keywords']").attr("content",a.hmKeywords);hmpage.hmDescription=typeof a.hmDescription=="undefined"?"":a.hmDescription;$("meta[name='description']").attr("content",hmpage.hmDescription);hmpage.hmPicture=typeof a.hmPicture=="undefined"?"":a.hmPicture;hmWebHelp.closePopup();if(!hmFlags.hdFormat){$("p.topictitle").html(a.hmTitle)}else{if(a.hmHeader!==""){$("span.hdFormat").html(a.hmHeader)}else{$("span.hdFormat").html('<h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">'+a.hmTitle+"</span></h1>")}}$("div#hmpagebody_scroller").html(a.hmBody+hmpage.topicfooter);if(hmpage.hmPicture!==""){$("div#featureheader").remove();if(!hmDevice.phone){hmWebHelp.extFuncs("hmFeatureHeader")}else{hmWebHelp.extFuncs("hmFeatureHeaderM","init")}}else{$("div#featureheader").remove();if(!hmDevice.phone){$("div#hmpagebody_scroller").css({"padding-top":"0.5rem"})}else{$("div#topicbox").css({"padding-top":"0.5rem"})}}}hmWebHelp.loadTopic=function(c){var d="";if(hmpage.currentnav===0){hmWebHelp.currentAnchor=false}var b=[];if(c.topic===""){return}if(c.anchor===""){hmWebHelp.currentAnchor=""}else{hmWebHelp.currentAnchor=c.anchor}$("#autoTocWrapper").html("");if($("div#navigationmenu").is(":visible")){hmWebHelp.hamburgerMenu()}if($("div#imagetogglebox").is(":visible")){hmWebHelp.funcs.closeImageToggle(null,0)}function a(){var f="";$("div#topicheaderwrapper span").addClass("wraptext");if((hmDevice.desktop&&hmDevice.embedded)){$("p#ptopic_breadcrumbs").hide()}var e=hmDevice.phone?$("div#topicbox"):$("div#hmpagebody_scroller");if(c.anchor!==""){f=hmpage.anchorX+c.anchor;hmWebHelp.scrollTopic(c.anchor,"")}else{hmWebHelp.scrollTopic("",c.topic)}hmFlags.hmCurrentPage=c.topic+f;hmWebHelp.hmTopicPageInit();hmWebHelp.nsheader();hmWebHelp.fHeadUpdate()}d=c.jstopic.substr(c.jstopic.lastIndexOf("/")+1);if(Object.keys(hmWebHelp.visitedTopics).length>300){hmWebHelp.visitedTopics={}}if(!hmWebHelp.visitedTopics.hasOwnProperty(d)){$.getScript(c.jstopic,function(e,g,f){a();hmWebHelp.visitedTopics[d]=true}).fail(function(){History.pushState(null,null,hmFlags.hmMainPage);alert("ERROR Topic Not Found "+c.topic)})}else{$.cachedScript(c.jstopic).done(function(e,f){a()})}};hmWebHelp.initTapImages=function(){var a=$("img.tap-image");if(a.length>0){$("img.tap-image").each(function(){$(this).on(hmBrowser.touchstart,function(c){var b=c.originalEvent;hmWebHelp.funcs.doubleTap("tapImage",this)})})}};hmWebHelp.reloadAfterSleep=function(){function a(){return(new Date()).getTime()}var f=a(),e=a(),c=0,b=5000;function d(){e=a();c=e-f;if(c>120000){location.reload()}f=a()}setInterval(d,b)};hmWebHelp.doFullEmbedWindow=function(g){var d=$(g).children("span").first(),a=d.text(),f,e=a=="Zoom Window Out"?"Zoom Window In":"Zoom Window Out",c=$("svg#fullscreen_toggle").find("use").attr("xlink:href"),b=c=="#resize-full"?"#resize-small":"#resize-full";xMessage.sendObject("parent",{action:"callfunction",fn:"hmHelp.doFullWindow"});hmDevice.embedded=b.indexOf("-small")<0;hmWebHelp.pageDimensions.embedInit();$("svg#fullscreen_toggle").find("use").attr("xlink:href",b);d.text(e);hmWebHelp.hamburgerMenu()};hmWebHelp.switchNavTab=function(a){$("li.current").removeClass("current");$("li#"+a+"tab").addClass("current");$("div.navbox.on").removeClass("on").addClass("off");$("div#"+a+"box").removeClass("off").addClass("on");if(a==="search"&&$("iframe#hmsearch").attr("src")===""){$("iframe#hmsearch").attr("src",hmFlags.hmSearchPage)}if(a==="index"&&$("iframe#hmindex").attr("src")===""){$("iframe#hmindex").attr("src",hmFlags.hmIndexPage)}switch(a){case"contents":xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:hmFlags.hmCurrentPage});if(hmWebHelp.currentAnchor!==""){xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:(hmFlags.hmCurrentPage+"#"+hmWebHelp.currentAnchor)})}hmWebHelp.currentAnchor=false;hmpage.currentnav=0;break;case"index":hmpage.currentnav=1;if(hmpage.android){hmWebHelp.navJitter()}break;case"search":hmpage.currentnav=2;if(hmDevice.android){hmWebHelp.navJitter()}break}};hmWebHelp.adjustTopicPos=function(){var a=0,d=hmpage.Fpix2em(hmpage.$navwrapper.position().left+hmpage.$navwrapper.width()),b=hmpage.Fpix2em(hmpage.$navwrapper.width()),c=hmpage.Fpix2em(hmpage.$navwrapper.position().left);hmpage.$navwrapper.css({left:c+"rem",width:b+"rem"});if(hmpage.topicleft&&!hmpage.navclosed){return}hmpage.$topicbox.css("left",d+hmpage.navboxoffset+"rem")};hmWebHelp.resizePanes=function(a){if(typeof a=="undefined"){return}if(a>hmpage.FmaxNavWidth()){a=hmpage.FmaxNavWidth()}if(a<hmpage.FminNavWidth()){a=hmpage.FminNavWidth()}hmpage.$navwrapper.width(a+"px");hmWebHelp.adjustTopicPos();hmWebHelp.nsheader();hmWebHelp.fHeadUpdate()};hmWebHelp.hmMainPageCheck=function(a){if(!window.history.pushState){if(location.pathname.substr(location.pathname.lastIndexOf("/")+1)!=hmFlags.hmMainPage){document.location=hmFlags.hmMainPage+"#"+a;return false}else{return true}}else{return true}};hmWebHelp.getQueryComponent=function(e,d){var f=new RegExp("^"+d+"=(.+?)$","i");var b="";for(var g in e){var a=f.exec(e[g]);if(a!==null){b=a[1];break}}return decodeURIComponent(b)};hmWebHelp.parseUrl=function(){var z=function(H){if(H===""){return false}var x=H.substr(H.lastIndexOf("."));if(x===""){return false}else{return x}};var h={topic:"",jstopic:"",anchor:"",switches:"",valid:false};var r=location.pathname.substr(location.pathname.lastIndexOf("/")+1);var l,q,B,u,n,d=[],E,a;l=location.search.substr(1).split("&");u=z(l[0]);B=u==hmFlags.topicExt||u+"l"==hmFlags.topicExt?l[0]:"";if(location.hash!==""){if(!hmBrowser.server){l=[];B=""}if(location.hash.indexOf(hmpage.anchorY)>-1){n=location.hash.substr(1).split(hmpage.anchorY);if(n[1].indexOf("&")>-1){d[0]=n[0];n=n[1].split("&");n=d.concat(n)}}else{n=location.hash!==""?location.hash.substr(1).split("&"):[""]}}else{n=[""]}E=z(n[0])==hmFlags.topicExt?n[0]:"";a=(location.search===""&&location.hash==="");if(u==".htm"&&hmFlags.topicExt==".html"&&B!==""){B=B.replace(/htm$/,"html")}var j=(r===""&&a);var c=(r==hmFlags.hmMainPage);var D=(c&&a);var p=(r==hmFlags.hmMainPage&&B!=="");var g=(!hmBrowser.server&&r==hmFlags.hmMainPage&&E!=="");var k=(!hmBrowser.server&&r!==""&&r!==hmFlags.hmMainPage&&E==="");var G=(!g&&!k&&r!==""&&!p&&z(r)==hmFlags.topicExt);if(k){document.location=hmFlags.hmMainPage+"#"+r+(E!==""?"!"+E:"")}if(G||g){if(l.length>0){h.anchor=hmWebHelp.getQueryComponent(l,"anchor")}else{if(n.length>1&&!hmBrowser.server){h.anchor=hmWebHelp.getQueryComponent(n,"anchor")}}h.topic=hmBrowser.server?r:E!==""?E:r;h.jstopic="./jstopics/"+h.topic.replace(/(.*)\..+?$/ig,"$1.js");if(!hmBrowser.server&&E!==""&&r!==hmpage.defaulttopic){var w=h.anchor!==""?"!anchor="+h.anchor:"",C=location.hash.substr(location.hash.indexOf("&"));document.location=hmpage.defaulttopic+"#"+E+w+C}h.valid=true;if(h.anchor!==""){hmWebHelp.scrollTopic(h.anchor)}var y,i,v,t=hmBrowser.server?l:n;if(hmFlags.contextID){h.topic=hmGetContextId(hmFlags.contextID);if(/\#/.test(h.topic)){h.anchor=h.topic.substr(h.topic.indexOf("#")+1);h.topic=h.topic.substr(0,h.topic.indexOf("#"))}if(h.topic=="undefined"){h.topic=hmFlags.hmDefaultPage}h.jstopic="./jstopics/"+h.topic.replace(/(.*)\..+?$/ig,"$1.js");h.valid=true}var s=t,m,b;for(var o=0;o<s.length;o++){if(s[o].indexOf("=")<0){continue}m=s[o].substr(0,s[o].indexOf("="));b=s[o].substr(s[o].indexOf("=")+1);if($.inArray(m,["kwindex","ftsearch","contextid"])>-1){continue}hmWebHelp.userParams.paramsCount++;hmWebHelp.userParams[m]=b}hmGetUrlParams();i=hmWebHelp.getQueryComponent(t,"kwindex");v=hmWebHelp.getQueryComponent(t,"ftsearch");if(i+v===""){return h}if(i!==""){hmWebHelp.switchNavTab("index");if(i!="$hmindex"){setTimeout(function(){xMessage.sendObject("hmindex",{action:"callfunction",fn:"hmDoKwSearch",fa:i})},1000)}}if(v!==""){hmWebHelp.switchNavTab("search");if(v!="$hmsearch"){setTimeout(function(){xMessage.sendObject("hmsearch",{action:"callfunction",fn:"hmDoFtSearch",fa:v})},1000)}}return h}if(j||D){h.topic=hmFlags.hmDefaultPage;h.jstopic="./jstopics/"+h.topic.replace(/(.*)\..+?$/ig,"$1.js");h.valid=true;return h}if(p){if(!hmBrowser.server){var A=document.location.href,f=A.replace(/\?/,"#");if(document.location.hash!==""){var e=document.location.hash,F=new RegExp(e);e=e.replace(/\#/,hmpage.anchorX);f=f.replace(F,e)}document.location.href=f;return false}h.topic=B;h.jstopic="./jstopics/"+h.topic.replace(/(.*)\..+?$/ig,"$1.js");h.anchor=n[0];h.valid=true;return h}h.topic=hmFlags.hmDefaultPage;h.jstopic="./jstopics/"+h.topic.replace(/(.*)\..+?$/ig,"$1.js");h.valid=true;return h};hmWebHelp.syncToc=function(){if(hmFlags.isHmTopic||hmFlags.hmCurrentPage!==""){if(hmFlags.hmCurrentPage===""){xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:hmFlags.thisTopic})}else{if(hmpage.hmHelpUrl.anchor!==""){xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:(hmpage.hmHelpUrl.topic+"#"+hmpage.hmHelpUrl.anchor)})}else{if(hmFlags.hmCurrentPage!=hmpage.hmHelpUrl.topic){xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:hmpage.hmHelpUrl.topic})}else{xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:hmFlags.hmCurrentPage})}}}}else{xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"tocSource.findElement",fa:hmFlags.hmDefaultPage})}};hmWebHelp.parseState=function(b){b=b.substr(b.lastIndexOf("/")+1);var c=[""];var a={topic:"",jstopic:"",anchor:"",switches:"",valid:false};a.topic=b.indexOf(hmpage.anchorY)>-1?b.substr(0,b.indexOf(hmpage.anchorY)):b;a.jstopic="./jstopics/"+a.topic.replace(/(.*)\..+?$/ig,"$1.js");if(b.indexOf(hmpage.anchorY)>-1){c=b.substr(b.indexOf(hmpage.anchorY)+1).split("&");a.anchor=hmWebHelp.getQueryComponent(c,"anchor")}return a};hmWebHelp.nsheader=function(){if(hmDevice.phone){return}var a=$("table#topicheadertable").height(),b=$("a#hamburgerlink").outerHeight()+7;tNavHeight=a;$("div#hmpagebody").css("top",(tNavHeight)+"px");$("div#navigationmenu").css("top",(tNavHeight+2)+"px")};hmWebHelp.fHeadUpdate=function(){if($("div#featureheader").length<1){return}if(typeof hmWebHelp.funcs.hmFeatureHeader!=="undefined"){hmWebHelp.funcs.hmFeatureHeader("resize")}if(typeof hmWebHelp.funcs.hmFeatureHeaderM!=="undefined"){hmWebHelp.funcs.hmFeatureHeaderM("resize")}};hmWebHelp.hamburgerMenu=function(d){var e=false;if(typeof d!="undefined"){e=d}var b=$("div#navigationmenu");if($("#autoTocWrapper").is(":visible")&&hmDevice.desktop){hmWebHelp.extFuncs("hm_autotoc","snap")}if($("div#unclicker").length<1){$("div#hmpagebody").prepend('<div id="unclicker" />')}function c(){$("div#unclicker").on(hmBrowser.touchstart,function(){hmWebHelp.hamburgerMenu("close")}).show();b.slideDown(150,function(){$("ul#hamburgermenu li:visible").last().not(".last").addClass("last")})}function a(){b.slideUp(150);$("div#unclicker").off(hmBrowser.touchstart).hide()}if(!e){if(b.is(":hidden")){hmWebHelp.closePopup();c()}else{a()}}else{if(e=="close"){a()}else{c()}}};hmpage.hmHelpUrl=hmWebHelp.parseUrl();hmpage.currentURI=encodeURI(document.location.href);hmpage.narrowpageX=hmpage.Fnarrowpage();hmpage.shortpageX=hmpage.Fshortpage();$(document).ready(function(){$("div#topicheaderwrapper span").addClass("wraptext");var a=hmDevice.desktop?0:800;$(window).on(hmBrowser.orientationevent,function(){setTimeout(function(){window.scrollTo(0,0);if(!hmDevice.phone){hmWebHelp.pageDimensions.doDims();hmWebHelp.nsheader()}else{hmWebHelp.funcs.mobTBfix()}if(hmBrowser.orientationevent!=="resize"){hmWebHelp.closePopup()}},a)});hmWebHelp.nsheader();hmpage.$scrollBox=hmDevice.phone?$("div#topicbox"):$("div#hmpagebody_scroller");hmpage.$scrollContainer=hmDevice.phone?$("body"):$("div#hmpagebody");setTimeout(function(){if($("iframe#hmindex").attr("src")===""&&hmIndexActive){$("iframe#hmindex").attr("src",hmFlags.hmIndexPage)}setTimeout(function(){if($("iframe#hmsearch").attr("src")===""&&hmSearchActive){$("iframe#hmsearch").attr("src",hmFlags.hmSearchPage)}},1000)},1000)});
+
+// General variables
+hmFlags.defaultExt = hmFlags.hmDefaultPage.substr(hmFlags.hmDefaultPage.lastIndexOf("."));
+hmFlags.topicExt = hmFlags.hmTOC.substr(hmFlags.hmTOC.lastIndexOf("."));
+
+// var statePrefix = window.history.pushState ? "" : hmFlags.hmMainPage;
+
+//** Browser capabilities object  **//
+var hmBrowser = {}; 
+	hmBrowser.addEventListener = !!window.addEventListener; //Unused
+	hmBrowser.orientation = !!("onorientationchange" in window);
+	hmBrowser.orientationevent = typeof window.orientation == "undefined" ? "resize" : "orientationchange";
+	hmBrowser.server = /^https??:\/\//im.test(document.location);
+	// Touch browser *with* hardware support
+	hmBrowser.touch = !!(('ontouchstart' in window && !window.opera) || ('msmaxtouchppoints' in window.navigator) || ('maxtouchppoints' in window.navigator) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+	hmBrowser.nonDeskTouch = ((hmBrowser.touch && !/win32|win64/i.test(navigator.platform)) || (hmBrowser.touch && /win32|win64/i.test(navigator.platform) && /mobile/i.test(navigator.userAgent)));	
+	hmBrowser.transitions = (function(temp) {
+	  var props = ['transitionProperty', 'WebkitTransition', 'MozTransition', 'OTransition', 'msTransition'];
+	  for ( var i in props ) if (temp.style[ props[i] ] !== undefined) return true;
+	  return false;
+	})(document.createElement('rabbit'));
+	hmBrowser.Flandscape = function() {if (hmBrowser.orientation) {return (Math.abs(window.orientation)==90);} else {return (window.innerHeight < window.innerWidth);}};
+	hmBrowser.MobileFirefox = (/Android.+?Gecko.+?Firefox/i.test(navigator.userAgent));
+
+	hmBrowser.eventType = (('onmousedown' in window && !hmBrowser.nonDeskTouch) ? "mouse" : ('ontouchstart' in window) ? "touch" : ('msmaxtouchpoints' in window.navigator || navigator.msMaxTouchPoints > 0) ? "mstouchpoints" : ('maxtouchpoints' in window.navigator || navigator.maxTouchPoints > 0) ? "touchpoints" : "mouse");
+	
+	switch(hmBrowser.eventType) {
+	case "mouse":
+		hmBrowser.touchstart = "mousedown.startevents";
+		hmBrowser.touchend = "mouseup.endevents";
+		hmBrowser.touchmove = "mousemove.moveevents";
+	break;
+	case "touch":
+		hmBrowser.touchstart = "touchstart.startevents";
+		hmBrowser.touchend = "touchend.endevents";
+		hmBrowser.touchmove = "touchmove.moveevents";
+	break;
+	case "mstouchpoints":
+		hmBrowser.touchstart = "MSPointerDown.startevents";
+		hmBrowser.touchend = "MSPointerUp.endevents";
+		hmBrowser.touchmove = "MSPointerMove.moveevents";
+	break;
+	case "touchpoints":
+		hmBrowser.touchstart = "pointerdown.startevents";
+		hmBrowser.touchend = "pointerup.endevents";
+		hmBrowser.touchmove = "pointermove.moveevents";
+	break;
+	default: // Generic fallback, just in case
+		hmBrowser.touchstart = "mousedown.startevents";
+		hmBrowser.touchend = "mouseup.endevents";
+		hmBrowser.touchmove = "mousemove.moveevents";
+	}
+	
+	hmBrowser.hover = hmDevice.desktop ? "mouseenter.startevents" : hmBrowser.touchstart;
+
+
+// Global page variables, references, dimensions etc.
+var hmpage = {
+		$navwrapper: $("div#navwrapper"),
+		$helpwrapper: $("div#pagewrapper"),
+		$navtabs: $("nav#navpane_tabs"),
+		$dragwrapper: $("div#dragwrapper"),
+		navboxoffset: 0.25,
+		$navcontainer: $("div#navcontainer"),
+		$navsplitbar: $("div#navsplitbar"),
+		$contcontainers: $("div#navwrapper, div#topicbox"),
+		$headermenu: $("div#header_menu"),
+		hmDescription: "",
+		topicfooter: "",
+		hmPicture: "",
+		topicadjust: false,
+		FtabsWidth: function(){
+			let thisnavwidth = 20;
+			$("ul#topictabs li").each(function(){
+				if ($(this).is(":visible"))
+					thisnavwidth += $(this).outerWidth();
+				});
+			return thisnavwidth;
+		},
+		FnavWidth: function() {
+			return hmpage.$navcontainer.width();
+			},
+		navWidth: $("div#navwrapper").width(),
+		FmaxNavWidth: function() { return hmDevice.phone ? hmpage.$helpwrapper.width() * 0.9 : hmDevice.tablet ? (hmBrowser.Flandscape() ?  hmpage.$helpwrapper.width() * 0.5 :  hmpage.$helpwrapper.width() * 0.9) : hmpage.topicleft ? hmpage.$helpwrapper.width() * 0.8 : hmpage.$helpwrapper.width() * 0.5;},
+		FminNavWidth: function() { return (hmpage.FtabsWidth() < 200 ? 200 : hmpage.FtabsWidth()) + 40 + (hmpage.FnavWidth() - hmpage.$navcontainer.width());},
+		FnavOffset: function() {return parseFloat($("div.navbox").css("border-left-width"),10) + parseFloat($("div.navbox").css("border-right-width"),10);},
+		hmHelpUrl: {},
+		splitter: {},
+		currentnav: 0, // Index of current navigation tab
+		currentTopicID: "",
+		$headerbox: $("div#headerbox_wrapper"),
+		$topicbox: $("div#topicbox"),
+		$topicboxTop: $("div#topicbox").offset().top,
+		$topicheader: $("table#topicheadertable td"),
+		$topichdwrap: $("div#topicheaderwrapper"),		
+		topichdoffset: $("td#topicnavcell").innerHeight() + 1 - $("div#topicheaderwrapper > h1.p_Heading1").outerHeight(),
+		$contentsbox: $("div#contentsbox"),
+		$indexbox: $("div#indexbox"),
+		$searchbox: $("div#searchbox"),
+		$headerwrapper: $("div#headerwrapper"),
+		$pagebody: $("div#hmpagebody"),
+		$pageheader: $("div#hmpageheader"),
+		$navhandle: $("div#dragwrapper"),
+		$navtools: $("div#dragwrapper,div#toolbutton_wrapper"),
+		FheaderHeight: function() {
+			return $("div#headerbox").height();
+			},
+		headerheightStatic: parseInt($("div#headerbox").css("height"),10),
+		$headerpara: $("div#headerwrapper h1.page_header"),
+		topicleft: $("div#topicbox").position().left < 50,
+		navclosed: Math.round($("div#navwrapper").position().left) < 0,
+		narrowpageX: false,
+		Fnarrowpage: function() {
+			return (
+			(!hmDevice.phone && hmpage.$helpwrapper.width() <= ((hmFlags.tocInitWidth+20)*2)) ||
+			(hmDevice.phone && !hmBrowser.Flandscape())|| 
+			(hmDevice.tablet && !hmBrowser.Flandscape() && hmpage.$helpwrapper.width() <= ((hmFlags.tocInitWidth+20)*3)) ||
+			(hmDevice.desktop && hmpage.$helpwrapper.width() < 600)
+			);},
+		headerclosedonopen: (function(){
+			var storedHeaderState = sessionVariable.getSV("headerState");
+			return (false || (storedHeaderState !== null && storedHeaderState === "closed"))})(),
+		headerclosed: !!(this.headerclosedonopen || $("div#headerbox").is(":hidden")),
+		tocclosedonopen: (function(){
+			var storedTocState = sessionVariable.getSV("tocState");
+			if ((!true && hmDevice.desktop) || (!true && !hmDevice.desktop))
+				return((storedTocState !== null && storedTocState === "closed"));
+			else
+				return true;
+		})(),
+		breadcrumbs: true,
+		parenthome: false,
+		defaulttopic: "index.html",
+		shortpageX: false,
+		Fshortpage: function() {
+			return (
+				(!hmDevice.phone && $(window).height() < 400) ||
+				(hmDevice.phone && hmBrowser.Flandscape())
+				);
+			},
+		navShadowOn: false,
+		initialized: false,
+		projectBaseFontRel: "100",
+		projectStoredFont: function(){
+			var testVal = sessionVariable.getPV("fontSize");
+			if (testVal !== null)
+			return (parseInt(testVal,10)/100) * 16;
+			else return NaN},
+		FbaseFontSize: function(){
+			var cookieFont = this.projectStoredFont();
+			return (
+			!isNaN(cookieFont) ? cookieFont :
+			parseFloat(window.getComputedStyle(document.getElementsByTagName("html")[0],null).getPropertyValue("font-size"),10)
+			);},
+		Fpix2em: function(pix) {return (pix / this.FbaseFontSize());},
+		Fem2pix: function(em) {return (em * this.FbaseFontSize());},
+		anchorX: hmBrowser.server ? "\?anchor\=" : "\!anchor\=",
+		anchorY: hmBrowser.server ? "\?" : "\!"
+	};
+// Check for correct encoding in author's project
+if (/%|pt|px/i.test(hmpage.projectBaseFontRel)) {
+	$("*").css("visibility","hidden");
+alert("ERROR! The font size encoding of your project is not set to ems, which is required for this skin.\r\n\r\nPlease set the font size encoding of your project to ems in 'Configuration - Publishing Options - WebHelp - HTML Export Options' before using this skin.\r\n\r\nYou can adjust the base font size in your output with the percentage setting after the font size encoding setting.");
+	} else { 
+		hmpage.projectBaseFontRel = parseFloat(hmpage.projectBaseFontRel,10);
+	}
+	
+// Main function encapsulating object
+var hmWebHelp = {
+		// Container object for externally loaded functions
+		funcs: {},
+		currentBS: 0,
+		lastBS: false,
+		visitedTopics: {},
+		minTopicHeader: false,
+		userParams: {paramsCount: 0}
+	};
+
+	// String trimmer
+hmWebHelp.trimString = function(str){
+   return str.replace(/^\s+/g, '').replace(/\s+$/g, '');  
+};
+
+jQuery.cachedScript = function( url, options ) {
+
+  // Use .done(function(script,textStatus){}); for callbacks
+
+  // Allow user to set any option except for dataType, cache, and url
+  options = $.extend( options || {}, {
+    dataType: "script",
+    cache: true,
+    url: url
+  });
+  return jQuery.ajax( options );
+};
+
+// Topic tracking function
+var HMTrackTopiclink = function(obj) {
+	  if (gaaccount !== "") {
+		   hmWebHelp.track("exit", obj.href);
+		}
+};
+
+// Handler for post-loading functions from files
+hmWebHelp.extFuncs = function(func, args) {	
+		var newScript = "";
+	if (typeof hmWebHelp.funcs != "object") hmWebHelp.funcs = {};
+	
+	if (typeof hmWebHelp.funcs[func] == "function") {
+		hmWebHelp.funcs[func](args);
+	} else {
+		// Get name of script and load it
+		newScript= "./js/" + func + ".js";
+		$.getScript(newScript, function (data, textStatus, jqxhr) {
+
+		if (textStatus === "success" && typeof hmWebHelp.funcs[func] == "function") {
+			try {
+			hmWebHelp.funcs[func](args);
+			} catch(err) {
+			// This catches bugs in a semantically correct extFunc
+			alert(err);
+			}
+		} else {
+			// This catches source that fails to validate as a function
+			alert("External function script " + func + ".js failed to load as a function");
+			}
+		});
+	}
+	}; // hmWebHelp.extFuncs()
+	
+// Multi-browser preventDefault, not really needed with jQuery but can be used
+// when not specifically using jQuery functions for speed or other reasons
+hmWebHelp.PreventDefault = function(event) {
+	if (event.preventDefault)
+		event.preventDefault();
+	else
+	 	event.returnValue = false;
+	};
+
+// Close open popup if present
+hmWebHelp.closePopup = function() {
+	if (typeof hmXPopup === "object" && typeof hmXPopup.closePopup === "function" && hmXPopup.$popup.is(":visible")) {
+				hmXPopup.closePopup();
+			}
+};
+
+// Close header drop-down menus
+hmWebHelp.closeTopnav = function(instant) {
+	var speed = instant ? 0 : "fast";
+	$("ul.topnav li ul.subnav").slideUp(speed);
+	$("ul.topnav > li > a.current").removeClass("current");
+	$("ul.topnav li.header svg use").attr("xlink:href","#menu-closed");
+}
+
+// TOC navigation management object
+hmWebHelp.tocNav = new function() {
+	
+	// Main handle
+	var self = this,
+	
+	// Operational vars
+		action = "",
+		thisbs = null,
+		thishref = null,
+		isset = false,
+		skipnav = false,
+	// Storage vars
+		lastbs = 0,
+		lasthref = "";
+	
+
+	// Set up object for later execution
+	var doset = function(args,nonav) {
+		lastbs = thisbs;
+		lasthref = thishref;
+		thisbs = nonav ? false : args.bs;
+		thishref = nonav ? false: args.href;
+		skipnav = nonav;
+		isset = true;
+		if (args.href != hmFlags.hmCurrentPage && args.href != "") {
+			History.pushState(null,null,args.href);
+		} 
+		else if (typeof(args.bs) == "number" && args.bs >= 0) {
+		xMessage.sendObject("hmnavigation",{action: "callfunction",fn: "tocSource.findElement", fa: args.bs});
+		}
+		
+	};
+	
+	// Execute nav with href
+	var donav = function(args) {
+
+		// Automatic href if not previously set
+		if (!isset) {
+			if (args.href !== lasthref) {
+			lasthref = args.href;
+			thishref = "";
+			xMessage.sendObject("hmnavigation",{ action: "href", href: args.href, bs: false});
+			return;
+			} else {
+			}
+		}
+		
+		// Read and execute settings if the object has been set
+		if (isset) {
+			if (thishref || thisbs >=0) {
+				if (thishref && !thisbs && thisbs !== 0) {
+					if (thishref !== lasthref) {
+						xMessage.sendObject("hmnavigation",{ action: "href", href: thishref.replace(/[\!\?]anchor=/,"#"), bs: false});
+					}
+					lasthref = thishref;
+				} else if (!skipnav && thisbs >=0) {
+					if (thisbs !== lastbs)
+						xMessage.sendObject("hmnavigation",{ action: "bs", href: false, bs: thisbs});
+					lastbs = thisbs;
+				}
+			} 
+		}
+	
+		isset = false;
+		thisbs = false;
+		thishref = false;
+		return;
+	};
+	
+	// Update breadcrumbs
+	var dobread = function(args) {
+			var bakedbread = "Navigation:&nbsp; ",
+				tempslice = [],
+				stop = "",
+				nobread = " \<span\>&raquo; No topics above this level &laquo;\<\/span\>",
+				notoc = " \<span\>&raquo; No TOC entry for this topic &laquo;\<\/span\>";
+		
+			if (args.breadmode == "full") {
+			for (var x in args) {
+				tempslice = args[x].split(stop);
+				if (tempslice.length == 3) {
+					if (tempslice[1] !== "") {
+						bakedbread += '\<a href="javascript:void(0)" onclick="hmWebHelp.tocNav({action: \'set\', bs: '+tempslice[0]+', href: \''+hmWebHelp.targetCheck(tempslice[1])+'\'})"\>' + tempslice[2] + '\</a\> &gt; ';
+		
+					}
+					else
+						bakedbread += tempslice[2] + '\</a\> &gt; ';
+				}
+			}
+			bakedbread = bakedbread.replace(/&gt;\s$/,"");
+			$("p#ptopic_breadcrumbs").html(bakedbread);
+			} else {
+			if (args.breadmode == "top")
+				$("p#ptopic_breadcrumbs").html(bakedbread + nobread);
+			else
+				$("p#ptopic_breadcrumbs").html(bakedbread + notoc);
+			}
+	};
+	
+	// Update topic navigation links
+	
+	var donavlinks = function(args){
+		
+		var $prev = $("a#topicnavlinkprevious"),
+			$top = $("a#topicnavlinkhome"),
+			$next = $("a#topicnavlinknext"),
+			targetHref = "";
+			
+			if (args.phf == "none") {
+				$prev.attr("class","topicnavlink disabled").attr("title","This is the first topic").removeAttr("href").removeAttr("data-bs").removeAttr("data-ac").off("click").off(hmBrowser.touchstart);
+			} else {
+				$prev.attr("class","topicnavlink nav").attr("title","Go to previous topic").attr("href",args.phf).attr("data-bs",args.pbs).attr("data-ac",args.pac);
+			}
+			
+			if (args.hhf == "none") {
+				$top.attr("class","topicnavlink disabled").attr("title","No topics above this level").removeAttr("href").removeAttr("data-bs").removeAttr("data-ac").off("click").off(hmBrowser.touchstart);
+			} else {
+				$top.attr("class","topicnavlink nav").attr("title","Go to top topic").attr("href",args.hhf).attr("data-bs",args.hbs).attr("data-ac",args.hac);
+			}
+			
+			if (args.nhf == "none") {
+				$next.attr("class","topicnavlink disabled").attr("title","This is the last topic").removeAttr("href").removeAttr("data-bs").removeAttr("data-ac").off("click").off(hmBrowser.touchstart);
+			} else {
+				$next.attr("class","topicnavlink nav").attr("title","Go to next topic").attr("href",args.nhf).attr("data-bs",args.nbs).attr("data-ac",args.nac);
+			}
+	
+		$("a.topicnavlink.nav").off("click").off(hmBrowser.touchstart).on("click",function(event){event.preventDefault(); event.stopPropagation();}).on(hmBrowser.touchstart, function(event) {
+		targetHref = $(this).attr('href') + ($(this).attr('data-ac') === '' ? '' : hmpage.anchorX + $(this).attr('data-ac').substr(1));
+		hmWebHelp.tocNav({action: "set", href: targetHref, bs: parseInt($(this).attr('data-bs'),10)}); 
+	});
+		
+	}; // donavlinks
+	
+	// Initial setup
+	var parseargs = function(args) {
+		if (typeof args != "object") return false;
+		if (!args.hasOwnProperty('action')) return false;
+		action = args.action;
+		return true;
+	};
+	
+	// Initializer
+	return function(args) {
+		if (!parseargs(args)) {
+			return;
+			}
+		switch(action) {
+			case "set":
+			doset(args,false);
+		break;
+			case "load":
+			doset(args,true);
+		break;
+			case "href":
+			donav(args);
+		break;
+			case "bread":
+			dobread(args.crumbs);
+		break;
+			case "setnavlinks":
+			donavlinks(args);
+		break;
+		}
+	};
+	}();
+
+// HM Google Analytics tracking function
+
+if (gaaccount !== "") {
+	hmWebHelp.lastTrackEvent = "";
+	if (typeof gatrackername == "undefined") {
+		// HM7 Version
+		hmWebHelp.gaTrackerName = "";
+		hmWebHelp.gaTrackerPath = 0;
+	} else {
+		// HM 8 version
+		hmWebHelp.gaTrackerName = gatrackername;
+		hmWebHelp.gaTrackerPath = gatracklevels;
+	}
+		if (hmWebHelp.gaTrackerPath == 0) {
+			
+			hmWebHelp.gaTrackerPath = "";
+			
+		} else if (hmWebHelp.gaTrackerPath == 9) {
+			
+			hmWebHelp.gaTrackerPath = location.host + location.pathname;
+			hmWebHelp.gaTrackerPath = hmWebHelp.gaTrackerPath.substr(0,hmWebHelp.gaTrackerPath.lastIndexOf("\/")+1);
+			
+		} else {
+			
+			let pathLevels = hmWebHelp.gaTrackerPath,
+				pathString = location.pathname.substr(0,location.pathname.lastIndexOf("\/")),
+				pathArray = pathString.split("\/");
+				hmWebHelp.gaTrackerPath = "";
+				
+			for (var y = pathArray.length-1; pathLevels > 0; y--) {
+    			if (y == 0) break;
+				hmWebHelp.gaTrackerPath =  pathArray[y] + "\/" + hmWebHelp.gaTrackerPath;
+				pathLevels--;
+			}
+			hmWebHelp.gaTrackerPath = "\/" + hmWebHelp.gaTrackerPath;
+		}
+		
+		hmWebHelp.gaTrackerSource = hmWebHelp.gaTrackerPath == "" ? "" : hmWebHelp.gaTrackerPath + "index.html" + "?q=";
+}
+
+hmWebHelp.track = function(action, data) {
+
+	if (gaaccount !== "") {
+		
+		// Initiate the tracker on first call
+		if (typeof ga == "undefined") {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			
+			if (hmWebHelp.gaTrackerName == "") {
+				ga('create', {
+					trackingId: gaaccount,
+					cookieDomain: 'auto'
+				});
+			} else {
+				ga('create', {
+					trackingId: gaaccount,
+					cookieDomain: 'auto',
+					name: hmWebHelp.gaTrackerName
+				});
+			}
+
+			let entryPage = document.location.pathname.substr(document.location.pathname.lastIndexOf("\/")+1);
+			if (hmWebHelp.gaTrackerName != "") hmWebHelp.gaTrackerName = hmWebHelp.gaTrackerName + "."; 
+
+			ga(hmWebHelp.gaTrackerName + 'set', 'page', hmWebHelp.gaTrackerPath + entryPage)
+			ga(hmWebHelp.gaTrackerName + 'send', 'pageview');
+			return;
+		}
+		
+		// Tracking after initialization
+		if (typeof ga != "undefined" && (hmWebHelp.lastTrackEvent != action+data)) {
+			hmWebHelp.lastTrackEvent = action+data;	
+		} else {
+			return;
+		}
+		// Tracking calls after first init
+		switch(action) {
+			case "topic":
+				data = data.substring(data.indexOf("//")+1,data.length);
+				data = data.substring(data.lastIndexOf("/")+1,data.length);
+				if (data.indexOf("\?\&_suid") > 0) data = data.substr(0,data.indexOf("\?"));
+				if (data.substr(0,1) == "\/") data = data.substr(1);
+				if (data.indexOf("\?") < data.lastIndexOf("\?")) {
+					data = data.replace(/\?q=/,"\&q=");
+				}
+				ga(hmWebHelp.gaTrackerName + 'set', 'page', hmWebHelp.gaTrackerPath + decodeURIComponent(data));
+				ga(hmWebHelp.gaTrackerName + 'send', 'pageview');
+				break;
+	  
+			case "search":
+				ga(hmWebHelp.gaTrackerName + 'send', {
+					hitType: 'event',
+					eventCategory: 'Search Help',
+					eventAction: 'Search',
+					eventLabel: hmWebHelp.gaTrackerSource + decodeURIComponent(data)
+				  });
+			  break;
+	  
+			case "index":
+				ga(hmWebHelp.gaTrackerName + 'send', {
+					hitType: 'event',
+					eventCategory: 'Select Index Keyword',
+					eventAction: 'Click Index',
+					eventLabel: hmWebHelp.gaTrackerSource + decodeURIComponent(data)
+				  });
+			  break;
+	  
+			case "exit":
+				ga(hmWebHelp.gaTrackerName + 'send', {
+					hitType: 'event', 
+					eventCategory: 'Outbound Link', 
+					eventAction: 'Click Link', 
+					eventLabel: decodeURIComponent(data), 
+					transport: 'beacon'
+				  });
+			  break;
+			}
+
+	}
+
+}; // hmWebHelp.track
+
+// Close all drop-down menus before continuing with something else
+hmWebHelp.closeMenus = function() {
+		if ($("div#navigationmenu").is(":visible") && !hmDevice.phone)
+			hmWebHelp.hamburgerMenu("close");
+		if (!hmDevice.phone && hmWebHelp.minTopicHeader)
+			$("div#header_menu").hide();
+		if (!hmDevice.phone && !hmWebHelp.minTopicHeader)
+			hmWebHelp.closeTopnav(true);
+		if (hmDevice.phone && $("div#header_menu").is(":visible"))
+			hmWebHelp.closeTopNav();
+		if ($("div#autoTocWrapper").is(":visible") && !hmDevice.phone)
+			$("div#autoTocWrapper").hide();
+		hmWebHelp.closePopup();
+	}
+// Initialize page-specific event handlers
+hmWebHelp.hmTopicPageInit = function() {
+	
+	// Toggles on page
+	var $dropToggles = $("a.dropdown-toggle"),
+		$dropIcons = $("img.dropdown-toggle-icon"),
+		$imageToggles = $("img.image-toggle"),
+		$videoToggles = $("div.video-lightbox"),
+		$inlineToggles = $("a.inline-toggle");
+		
+	// Refresh scrollbox reference for new content
+	hmpage.$scrollBox = hmDevice.phone ? $("div#topicbox") : $("div#hmpagebody_scroller");
+	hmpage.$scrollContainer = hmDevice.phone ? $("body") : $("div#hmpagebody");
+	
+	// Display atoc scroll menu on pages with atoc links
+	if ($("span[class*='_atoc']").length >= parseInt("3",10) && !hmDevice.phone) {
+		$("a#atoclink").css("visibility","visible").off(hmBrowser.touchstart).on(hmBrowser.touchstart, 
+			function(event){
+			event.preventDefault(); event.stopPropagation();
+			hmWebHelp.extFuncs('hm_autotoc',event);
+			});
+		} else {
+			$("a#atoclink").css("visibility","hidden");
+		}
+	
+	// Topic links incl. anchors, anchor links within topics
+	
+	// Process button topic links
+	$("input.topiclink").each(function(){
+		var target = $(this).attr("onclick");
+		if (/^self\.location\.href=/.test(target))
+			{
+				target = target.replace(/^self\.location\.href='(.+?)'$/g, "$1");
+				$(this).attr("data-target",target);		
+				$(this).removeAttr("onclick");
+			}
+		});
+	
+	$("a.topiclink, a.topichotspot, p#ptopic_breadcrumbs a, input.topiclink").off(hmBrowser.touchstart).on("click",function(event){event.preventDefault(); event.stopPropagation();}).on(hmBrowser.touchstart, function(event) {
+		//Catch right-clicks
+		if (typeof(event.button) != "undefined" && event.button !== 0) return;
+		event.preventDefault(); event.stopPropagation();
+		var target = $(this).attr("href");
+		// Button link?
+		if (typeof target == "undefined") 
+			target = $(this).attr("data-target");
+		// Handle disabled links/tools
+		if (!target) return;
+		var thisPage, newPage,
+			thisAnchor = target.indexOf("#") > 1 ? target.split("#").pop() : false,
+			targetPage = target.indexOf("#") > 1 ? target.substr(0,target.lastIndexOf("#")) : target;
+		if (hmBrowser.server) {
+			thisPage = document.location.pathname.split("\/").pop();
+		} else {
+			thisPage = document.location.hash.substr(1);
+		}
+			newPage = thisPage !== targetPage;
+		
+		if (hmDevice.tablet)
+			$(this).filter("a.topicnavlink").addClass('navhilite');
+		
+		// Link in a layout table?
+
+		if (!hmDevice.desktop && hmFlags.layoutTable) {
+			hmWebHelp.funcs.toggleLayoutTable({action: "hide", instant: true});
+		}
+
+		// Filter out anchor links to targets in current topic 
+		if (thisAnchor && !newPage) { 
+			hmWebHelp.scrollTopic(thisAnchor);
+		} else {
+				target = hmWebHelp.targetCheck(target);
+				if (hmWebHelp.hmMainPageCheck(target)) {
+					//History.pushState(null,null,target);
+					hmWebHelp.tocNav({action: "set", href: target, bs: false});
+				}
+			}
+		});
+		
+		// Suppress right-click in navigation menu entries
+		$("div#navigationmenu").children().contextmenu(function(){return false;});
+		
+		// Popup links
+			$("a.popuplink,a.popuphotspot,input.popuplink,a.topichotspot[href^='javascript:void']").contextmenu(function(){return false;}).on(hmBrowser.touchstart,function(event){
+			event.preventDefault();
+			if (typeof(event.button) != "undefined" && event.button !== 0) return;
+			var popupTarget = $(this).attr("data-target"),
+				popupPath = $(this).attr("data-path"),
+				popupTitle = $(this).attr("data-title"),
+				// Need original event for touch coordinates
+				ev = event.originalEvent,
+				phonetop = hmpage.Fem2pix(3.000) - 10;
+			if (typeof hmXPopup === "object") {
+				hmXPopup.clickX = hmDevice.phone ? 0 : ev.pageX;
+				hmXPopup.clickY = hmDevice.phone ? phonetop : ev.pageY;
+				hmXPopup.loadPopup(popupTarget,popupPath,popupTitle);
+			} else {	
+				newScript= "./js/hmSmartPopup.js";
+				$.getScript(newScript, function (data, textStatus, jqxhr) {
+				if (textStatus === "success" && typeof hmXPopup.loadPopup == "function") {
+					try {
+					hmXPopup.clickX = hmDevice.phone ? 0 : ev.pageX;
+					hmXPopup.clickY = hmDevice.phone ? phonetop : ev.pageY;
+					hmXPopup.loadPopup(popupTarget,popupPath,popupTitle);
+					} catch(err) {
+					// Catches bugs in semantically correct function
+					alert(err);
+					}
+				} else {
+					// Catches source that fails to validate as a function
+					alert("Syntax or other eror in popup function");
+					}
+				});	
+			}
+		});
+		
+		
+		
+		/* Hamburger Menu */
+		$("a#hamburgerlink").contextmenu(function(){return false;}).off(hmBrowser.touchstart).on(hmBrowser.touchstart, function(event){
+			event.preventDefault(); event.stopPropagation();
+			if ($("div#navigationmenu").is(":visible")) {
+				hmWebHelp.closeMenus();
+				return;
+			};
+			if (hmDevice.tablet)
+				$(this).addClass('navhilite');
+			hmWebHelp.closeMenus();
+			hmWebHelp.hamburgerMenu();
+			}).on(hmBrowser.touchend,function(event){
+			if (hmDevice.tablet)
+				$(this).removeClass('navhilite');
+			});
+		// Printable version link in hamburger menu
+		if (!hmDevice.phone && hmBrowser.server) {
+			$("a#hm_printable_link").attr("href","_hm_print_window.htm?" + hmFlags.hmCurrentPage).attr("target","hm_print_window");
+			}
+		
+		// Hide server-only stuff when local
+		if (!hmBrowser.server)
+			$(".server").hide();
+		
+		// Dropdown Toggles
+		if ($dropToggles.length < 1) {
+			$(".toggles").hide();
+		}
+		else {
+			$(".toggles").show();
+			$dropToggles.on(hmBrowser.touchstart,function(event){
+			event.preventDefault();
+			var toggleArgs = {method: "HMToggle", obj: $(this), clicked: true};
+			hmWebHelp.extFuncs("hmDoToggle",toggleArgs);
+			});
+			if ($dropIcons.length > 0)
+			$dropIcons.on(hmBrowser.touchstart,function(event){
+			event.preventDefault();
+			var toggleArgs = {method: "HMToggleIcon", obj: $(this), clicked: true};
+			hmWebHelp.extFuncs("hmDoToggle",toggleArgs);
+			});
+			// Set hamburger menu item based on whether there are toggles open on the page
+			if ($dropToggles.filter("[data-state='1']").length > 0) {
+				$("svg#showhide_toggles_icon").find("use").attr("xlink:href","#eye-off");
+				$("li#showhide_toggles span").first().html("Hide Expanding Text");
+			} else {
+				$("svg#showhide_toggles_icon").find("use").attr("xlink:href","#eye");
+				$("li#showhide_toggles span").first().html("Show Expanding Text");
+			}
+			
+		}
+		
+		// Inline Text Toggles
+		if ($inlineToggles.length > 0) {
+			$inlineToggles.on(hmBrowser.touchstart,function(event){
+				event.preventDefault();
+				hmWebHelp.extFuncs("hmDoInlineToggle",$(this));
+			});
+		}
+		
+		// Image Toggles
+
+		$("a.imagetogglelink").on("click",function(event){
+			event.preventDefault();
+		});
+		$("img.image-toggle,svg.image-toggle-magnifier").on("click",function(event){
+			let $thisImg = $(this).parent().children("img").first();
+			if (hmDevice.device === "phone")
+				hmWebHelp.extFuncs("hmImageToggleMobile",$thisImg);
+			else
+				hmWebHelp.extFuncs("hmImageToggle",$thisImg);
+		});
+		
+		// Video lightboxes 
+		if ($videoToggles.length > 0) {
+			$videoToggles.each(function(){
+				$(this).children().first("div").on("click",function(event){
+				event.preventDefault();
+				event.stopPropagation();
+				var vData = {};
+				vData.data = $(this).attr("data-lightbox");
+				vData.vWidth = $(this).attr("data-width");
+				vData.vHeight = $(this).attr("data-height");
+				vData.$obj = $(this);
+				hmWebHelp.extFuncs("hmVideoBox",vData);
+				});
+			});
+		} // video lightboxes
+		
+		// Responsive xTables, tap images and layout images for mobile devices
+		if (!hmDevice.desktop) {	
+			
+			// xTables	
+			var $XTables = $("table.xResponsive");
+			if ($XTables.length > 0) {
+				hmWebHelp.extFuncs("hm_xTablesInit",$XTables);
+			} else {
+				$(window).off(hmBrowser.orientationevent + ".xTables");
+				}
+			
+			// Tap images
+			hmWebHelp.initTapImages();
+
+			// Layout Tables
+				var tableCounter = 0;
+			var tableType = hmDevice.phone ? "table.layout-table,table.layout-table-phone,table.layout_table,table.layout_table_phone" : "table.layout-table,table.layout-table-tablet,table.layout_table,table.layout_table_tablet";
+				$(tableType).each(function() {
+					tableCounter++;
+					$(this).hide().attr("id","ltable" + tableCounter).before(
+						'<div class="openLTable" onclick="hmWebHelp.extFuncs(\'toggleLayoutTable\',{action: \'show\',table:\'table#ltable'+tableCounter+'\',obj:this})">Tap to View Table</div>');
+					});
+			} // Mobile browsers
+
+		
+};
+
+// Splitter object for horizontal width adjustments, must be instantiated as an object
+hmWebHelp.hmCreateVSplitter = function(leftdiv, rightdiv) {
+	var oldX,
+	navWidthV,
+	minWidthV,
+	oldLeftV,
+	oldWidthV,
+	oldSplitL,
+	navWidthOffset = $("div#navwrapper").width() - $("div#navcontainer").width(),
+	startTime = 0,
+	dragTime = 0,
+	$dragsurface = $('div#dragsurface'),
+	$dragarrows = $('img#leftright'),
+	dragcount = 0;
+	
+	$dragarrows.hide();
+	
+	// Get the type of interaction event from user
+	function EventType(e) {
+		if (e.pointerType == "mouse" || e.pointerType == 4)
+			return "mouse";
+		else if (e.pointerType == "touch" || e.pointerType == 2 || e.pointerType == "pen" || e.pointerType == 3)
+			return "touch";
+		else if (/^mouse/i.test(e.type)) 
+			return "mouse";
+		else if (/^touch/i.test(e.type) || /^pen/i.test(e.type)) 
+			return "touch";
+		else return "none";
+		}
+	
+	// Perform this at the end of a drag operation
+	function endDrag(e) {
+		dragTime = new Date().getTime() - startTime;
+		if (dragTime < 200 || hmpage.$navwrapper.width() < 161 || hmpage.$navwrapper.offset().left < 0) {
+			var navw = hmpage.$navwrapper.width();
+			hmTocWidth = navw > 161 ? navw : 220;
+			hmWebHelp.pageDimensions.dragHandle(false);
+		} else if (hmpage.$navwrapper.width() >= 161 ) {
+			hmTocWidth = hmpage.$navwrapper.width();
+			setTimeout(hmWebHelp.adjustTopicPos,300);
+			}
+		$dragarrows.off(".endevents");
+		hmpage.$navsplitbar.off(".moveevents");
+		hmpage.$navsplitbar.off(".endevents");
+		hmpage.$navhandle.off(".moveevents");
+		hmpage.$navhandle.off(".endevents");
+		$dragsurface.off(".moveevents");
+		$dragsurface.off(".endevents");
+		$dragsurface.hide();
+		$dragarrows.hide();
+		hmpage.navWidth = hmpage.FnavWidth();
+		sessionVariable.setPV("navWidth",hmpage.navWidth.toString());
+		hmWebHelp.nsheader();
+		hmWebHelp.fHeadUpdate();
+		hmWebHelp.PreventDefault(e);
+		}	
+	
+	// Triggered at beginning of a drag
+    function startDrag(e) {
+		hmWebHelp.PreventDefault(e);
+		startTime = new Date().getTime();
+		var touchobj;
+		if (typeof e.changedTouches != 'undefined') 
+		touchobj = e.changedTouches[0];
+		else touchobj = e;
+		oldX = (!(document.all && !window.opera)) ? touchobj.pageX : touchobj.clientX;
+		oldY = (!(document.all && !window.opera)) ? touchobj.pageY : touchobj.clientY;
+		navWidthV = hmpage.FnavWidth();
+		maxWidthV = hmpage.FmaxNavWidth();
+		minWidthV = hmpage.FminNavWidth();
+		oldLeftV  = $(rightdiv).position().left;
+		oldWidthV = $(rightdiv).outerWidth();
+		oldSplitL = hmpage.$navwrapper.offset().left;
+
+		// Activate the drag surface overlay
+		if (hmBrowser.touch || hmDevice.winphone || EventType(e) == "mouse") {
+		$dragsurface.show();
+		$dragsurface.on(hmBrowser.touchmove, function(event) {
+			var ev = event.originalEvent; 
+			performDrag(ev);
+			});
+		$dragsurface.on(hmBrowser.touchend, function(event) {
+			var ev = event.originalEvent; 
+			endDrag(ev);
+			});
+		} 
+		
+		hmpage.$navsplitbar.on(hmBrowser.touchmove, function(event) {
+			var ev = event.originalEvent; 
+			performDrag(ev);
+			});
+		hmpage.$navsplitbar.on(hmBrowser.touchend, function(event) {
+			var ev = event.originalEvent; 
+			endDrag(ev);
+			});
+		hmpage.$navhandle.on(hmBrowser.touchmove, function(event) {
+			var ev = event.originalEvent; 
+			performDrag(ev);
+			});
+		hmpage.$navhandle.on(hmBrowser.touchend, function(event) {
+			var ev = event.originalEvent; 
+			endDrag(ev);
+			});
+
+	}
+	
+	// Drag action
+	function performDrag(e) {
+		hmWebHelp.PreventDefault(e);
+		var touchobj;
+		if (typeof e.changedTouches != 'undefined') { 
+				touchobj = e.changedTouches[0];
+			} else {
+				touchobj = e;
+			}
+		// Only move once every x events on mobile for lower processor load 
+		dragcount++;
+		if ( hmDevice.desktop || dragcount > 2 ) {
+		dragcount = 0;
+		dragTime = new Date().getTime() - startTime;
+		
+		// Show the drag arrows indicator on touch devices
+		if (hmBrowser.touch && EventType(e) != "mouse" && $dragarrows.is(":hidden") && dragTime > 80) {
+			$dragarrows.show();
+		$dragarrows.css("top", (hmpage.$pageheader.is(":visible") ? (oldY-(hmpage.$pageheader.height()+30)) + "px" : (oldY) + "px"));
+		$dragarrows.on(hmBrowser.touchend, function(event) {
+			var ev = event.originalEvent; 
+			endDrag(ev);
+			});
+			} 
+		
+		var moveX = (!(document.all && !window.opera)) ? touchobj.pageX - oldX : touchobj.clientX - oldX;
+		var moveY = (!(document.all && !window.opera)) ? touchobj.pageY : touchobj.clientY;
+		var newNavW = navWidthV + navWidthOffset + moveX;
+		if ((newNavW <= maxWidthV) && (newNavW >= minWidthV) && !hmpage.navclosed) {
+			hmpage.$navwrapper.css("width", (newNavW + 'px'));
+			if (!hmpage.topicleft) {
+				hmpage.$topicbox.css("left",(oldLeftV + newNavW - (navWidthV + navWidthOffset)) + 'px');
+				}
+			$dragarrows.css("top", (hmpage.$pageheader.is(":visible") ? moveY-(hmpage.$pageheader.height()+30) + "px" : (moveY) + "px"));
+			}
+		hmTocWidth = hmpage.$navwrapper.width();
+		}
+		
+	} // performDrag();
+	
+	 $("div#dragwrapper").on(hmBrowser.touchstart, function(event) {
+		event.stopPropagation();
+		var ev = event.originalEvent; 
+		startDrag(ev);
+		}); 
+	
+	if (hmDevice.desktop || hmDevice.tablet) {
+	$("div#navsplitbar").on(hmBrowser.touchstart, function(event) {
+		var ev = event.originalEvent; 
+		startDrag(ev);
+		});
+	}
+
+
+}; // createSplitter
+
+// Bug fix for disappearing divs in some Android browsers
+hmWebHelp.navJitter = function() {
+	setTimeout(function(){
+	if (hmpage.currentnav == 1) {
+		$("li#indextab,a#indextablink").trigger("touchstart");
+		}
+	if (hmpage.currentnav == 2) {
+		$("li#searchtab,a#searchtablink").trigger("touchstart");
+		}
+	},500);
+};
+
+// Close menus on click outside the current menu
+hmWebHelp.unClicker = function(elem1, elem2) {
+	
+	var currentFocus = document.getElementById(elem1),
+		secondFocus = elem2 ? document.getElementById(elem2) : currentFocus;
+			$(document).on(hmBrowser.touchstart + '.closemenu',function(event){
+				if (!currentFocus.contains(event.target) && !secondFocus.contains(event.target)) {
+					$(document).off(hmBrowser.touchstart + '.closemenu');
+					hmWebHelp.closeMenus();
+				}
+			});
+}
+
+hmWebHelp.initTopNav = function() {
+	// Set vertical position of menu. Move down below tabs when sidetabs are off
+	 function topInit() {
+		 $("ul.topnav li ul.subnav").css({top:($($("ul.topnav")[0]).height() + 50) + "px"});
+	 }
+	
+	// Top-level entries can only include an URL with a target if they have no submenu entries
+	
+	$("ul.topnav > li:has(ul) > a").on(hmBrowser.touchstart,function(event) { 	
+		event.preventDefault();
+		event.stopPropagation();
+		
+		var $menuTarget = $(this).parent().find("ul.subnav");
+		var $menuSwitcher = $("svg:first-child use", this);
+		var menuOpen = $menuTarget.is(":visible");
+		
+		if (!hmDevice.phone) {
+			hmWebHelp.closeTopnav(true);
+		}
+		
+		if (menuOpen && !hmDevice.phone) return;
+		
+		$(this).addClass("current");
+		
+		// Close other menus and popups on click on headers in version in main page header
+		if (!hmDevice.phone) {
+		hmWebHelp.closeMenus();
+		}
+
+	// Close menus on a click or tap anywhere outside the menu
+	
+	if (!hmDevice.phone) {
+			hmWebHelp.unClicker('header_menu');
+		}
+			if ($menuTarget.is(":hidden")) {
+				topInit();
+				$menuSwitcher.attr("xlink:href","#menu-open");
+				// Accordeon close any open submenus on phone to save space
+				if (hmDevice.phone) {
+					$("li.header ul.subnav").slideUp('fast');
+				}
+				$menuTarget.slideDown('fast',function(){
+					$(this).find("li:visible").last().not(".last").addClass("last");
+				});
+				} else {
+					$menuTarget.slideUp('fast',function(){
+						$menuSwitcher.attr("xlink:href","#menu-closed");
+					});
+					$("ul.topnav > li > a.current").removeClass("current");
+				}
+		if (hmDevice.phone) {
+			hmWebHelp.funcs.doVibrate();
+		}
+		});
+		
+		// Also close menus when a link in a submenu is clicked, except on phones
+		$("ul.subnav li a").on("click", function(){
+			if (!hmDevice.phone) {
+				hmWebHelp.closeTopnav(true);
+			} else {
+			hmWebHelp.funcs.doVibrate();
+			}
+			});	
+	topInit();
+};
+
+// Load scripts and initialize main page
+hmWebHelp.hmMainPageInit = function() {
+
+	if(hmDevice.phone) {
+		// Left/right drag handle for nav pane
+		$("svg#draghandleicon_r").find("use").attr("xlink:href", "#draghandle_rm");
+		$("svg#draghandleicon_l").find("use").attr("xlink:href", "#draghandle_lm");
+		
+		// Up/down button for show/hide page header
+		$("svg#toolbar_updown_close").find("use").attr("xlink:href", "#toolbar_updown");
+		$("svg#toolbar_updown_open").find("use").attr("xlink:href", "#toolbar_updown");
+	}
+	  var setNavWidth = sessionVariable.getPV("navWidth");
+	  hmpage.splitter = new hmWebHelp.hmCreateVSplitter("div#navwrapper","div#topicbox");
+		 
+		// if (setNavWidth === null)
+		  // setNavWidth = hmpage.Fem2pix(20.000);
+	  // else
+		if (setNavWidth !== null)
+		  hmWebHelp.resizePanes(parseInt(setNavWidth,10));
+		else
+		hmWebHelp.resizePanes(parseInt(hmpage.FnavWidth(),10));
+	   hmWebHelp.pageDimensions = new hmWebHelp.pageDims();
+	   if (hmDevice.embedded) hmWebHelp.pageDimensions.embedInit();
+	   if (!hmDevice.embedded && hmpage.headerclosedonopen && !hmDevice.phone) 	{
+		   hmWebHelp.pageDimensions.pageHeaderUpDown(false);
+		   $("svg#toolbar_updown_close").hide();
+	   } else if (!hmDevice.embedded) {
+		   $("svg#toolbar_updown_open").hide();
+	   }
+	   if (hmpage.headerclosedonopen && hmDevice.phone)
+		hmWebHelp.funcs.mobileUpDown(null);
+	   if (hmDevice.ipad && !window.navigator.standalone) {
+		$("body").css({"bottom": "-4rem"});
+	   }
+		if (hmDevice.desktop)
+			hmWebHelp.pageDimensions.doDims();
+		else
+			hmWebHelp.pageDimensions.navShadow();
+		if (hmpage.tocclosedonopen && !hmpage.navclosed && hmpage.topicleft)
+		hmWebHelp.pageDimensions.dragHandle(true);
+		// Tell TOC, index and search panes that main page is ready
+		xMessage.sendObject("hmnavigation", {action: "sendvalue", vn: "hmDevice.mainPageInitialized", vv: "*true"});
+		xMessage.sendObject("hmindex",{action: "sendvalue", vn: "hmDevice.mainPageInitialized", vv: "*true"});
+		xMessage.sendObject("hmsearch",{action: "sendvalue", vn: "hmDevice.mainPageInitialized", vv: "*true"});
+
+
+	// Bind to history StateChange Event
+		History.Adapter.bind(window,'statechange',function(){ 
+		
+		// Checking for empty currentTopicID prevents double load on start
+		// if the URL is a path without a file name
+		var State = History.getState(),
+			stateID = State.hash,
+			serverBang = hmBrowser.server ? "\?" : "\!",
+			stateID = stateID.substr(stateID.lastIndexOf("\/")+1),
+			searchQ = State.hash.lastIndexOf("q\=") > -1 ? State.hash.substr(State.hash.lastIndexOf("q\=")) : "",
+			anchorQ = State.hash.lastIndexOf("anchor\=") > -1 ? State.hash.substr(State.hash.lastIndexOf("anchor\=")) : "";
+			searchQ = searchQ.length > 0 ? serverBang + searchQ.split("\&")[0] : "";
+			anchorQ = anchorQ.length > 0 ? serverBang + anchorQ.split("\&")[0] : "";
+			stateID = stateID.indexOf(serverBang) > -1 ? stateID.substr(0,stateID.lastIndexOf(serverBang)) : stateID;
+
+			if ((stateID + anchorQ != hmpage.currentTopicID || hmFlags.searchHighlight != "") && hmpage.currentTopicID !== "") {
+				hmpage.currentTopicID = stateID + anchorQ;
+				hmpage.hmHelpUrl = hmWebHelp.parseState(hmpage.currentTopicID);
+				hmpage.currentURI = encodeURI(document.location.href);
+				hmWebHelp.tocNav({action: "href", href: hmpage.hmHelpUrl.topic, bs: false});
+				hmWebHelp.loadTopic(hmpage.hmHelpUrl);
+				hmWebHelp.track('topic', hmpage.currentTopicID + searchQ);
+			}
+		});
+	
+		if (hmpage.hmHelpUrl.topic != hmFlags.hmCurrentPage) {
+			hmWebHelp.currentAnchor = hmpage.hmHelpUrl.anchor !== "" ? hmpage.hmHelpUrl.anchor : false;			
+			hmWebHelp.loadTopic(hmpage.hmHelpUrl);
+			hmWebHelp.track('topic', hmpage.currentTopicID);
+		}
+
+	if (hmpage.hmHelpUrl.topic !== "") {
+		if (hmpage.hmHelpUrl.anchor !== "") {
+			History.replaceState(null,null,hmpage.hmHelpUrl.topic + hmpage.anchorX + hmpage.hmHelpUrl.anchor);
+			if (hmpage.currentnav === 0) {
+				setTimeout(function(){
+			xMessage.sendObject("hmnavigation",{action: "callfunction", fn: "tocSource.findElement", fa: (hmpage.hmHelpUrl.topic + "#" + hmpage.hmHelpUrl.anchor)});
+				},300);
+			}
+			hmWebHelp.track('topic', hmpage.hmHelpUrl.topic + "?anchor=" + hmpage.hmHelpUrl.anchor);
+			} else {
+			// Reset title to current title to stop it getting deleted
+			History.replaceState(null,$("title").text(),hmpage.hmHelpUrl.topic);
+			hmWebHelp.track('topic', hmpage.hmHelpUrl.topic);
+		}
+	}
+
+	// Tap response on navhandle
+	hmpage.$navhandle.on(hmBrowser.touchstart,function(event){
+		$('div#dragwrapper').addClass('draghilite');
+		setTimeout(function(){
+		$('div#dragwrapper').removeClass('draghilite');
+		},50);
+	});
+	
+	// Main page header on/off on desktop browsers
+	if (hmDevice.desktop) {
+		$("li#showhide_pageheader").on(hmBrowser.touchstart,function(event){
+			hmWebHelp.pageDimensions.pageHeaderUpDown(false);
+		});
+	}
+	
+	// Tablet button tab for show/hide toolbar
+	if (hmDevice.tablet || hmDevice.desktop) {
+		$("div#toolbutton_wrapper").on(hmBrowser.touchstart,function(event){
+				hmWebHelp.pageDimensions.pageHeaderUpDown(false);
+		});
+	}
+
+	// Bind tab switching click/tap handlers
+	$("a#contentstablink").on(hmBrowser.touchstart,function(event){
+		event.preventDefault();
+		hmWebHelp.switchNavTab('contents');
+		});
+	$("a#indextablink").on(hmBrowser.touchstart,function(event){
+		event.preventDefault();
+		hmWebHelp.switchNavTab('index');
+		});
+	$("a#searchtablink").on(hmBrowser.touchstart,function(event){
+		event.preventDefault();
+		hmWebHelp.switchNavTab('search');
+		});
+
+		// Sync the TOC as soon as it's loaded
+		if (hmTocLoaded) {
+		hmWebHelp.syncToc(true);
+		} else {
+		var tocCheck = setInterval(function() {
+			if (hmTocLoaded) {
+				hmWebHelp.syncToc(true);
+				clearInterval(tocCheck);
+			}
+			},100);
+		}
+	// Toggles and popups if there are any
+	// if (typeof hmInitPageToggles == 'function') hmInitPageToggles();
+	// if (typeof hmInitPagePopups == 'function') hmInitPagePopups();
+	
+	// Initialize the topic page specific events
+	// hmWebHelp.hmTopicPageInit();
+
+/* Mobile browsers  */
+if (!hmDevice.desktop) {
+	if (hmDevice.tablet && !hmBrowser.Flandscape())
+		hmWebHelp.pageDimensions.moveTopicLeft();
+	
+	hmWebHelp.funcs.doubleTap = new hmWebHelp.dT();
+	hmWebHelp.funcs.doPagePos = new hmWebHelp.pagePos("div#hmpagebody");
+	if (hmDevice.mobileSleepReload) 
+		hmWebHelp.reloadAfterSleep();
+
+	} // mobile browsers
+
+	hmWebHelp.hmTopicPageInit();
+	
+	// Set current ref ID for the first page loaded 
+	// (Set by loadtopic for subsequent pages)
+	hmpage.currentTopicID = History.getState().hash;
+	hmpage.currentTopicID = hmpage.currentTopicID.lastIndexOf("\/") > -1 ? hmpage.currentTopicID.substr(hmpage.currentTopicID.lastIndexOf("\/")+1) : hmpage.currentTopicID;
+	if (hmpage.currentTopicID.indexOf("\?") > -1)
+	hmpage.currentTopicID = hmpage.currentTopicID.substr(0,hmpage.currentTopicID.lastIndexOf("\?"));
+	
+	// Initialize the dropdown menu
+	hmWebHelp.initTopNav();
+	
+	// Flag the page as initialized 
+	hmpage.initialized = true;
+
+};  // hmWebHelp.hmMainPageInit()
+
+// Main page dimensions function, encapsulates all its own functions and variables
+// Must be instantiated as an object
+hmWebHelp.pageDims = function() {
+		
+		var animate = false,
+		resizedragcount = 0,
+		staticWindow = true,
+		widthChange = false,
+		heightChange = false,
+		leftmargin = 0;
+		
+		// Shadow for navigation pane when it overlaps the rest of the page
+		function navShadow() {
+		var mtoolbar = false;
+		if (typeof hmpage.$mToolbar != "undefined") {
+			if (hmpage.$mToolbar.attr('data') == 'open')
+			mtoolbar="open";
+				else mtoolbar="closed";
+			}
+		if (hmpage.navclosed) {
+			$("svg#draghandleicon_l").hide();
+			$("svg#draghandleicon_r").show();
+		} else {
+			$("svg#draghandleicon_r").hide();
+			$("svg#draghandleicon_l").show();
+		}
+
+			if (!hmpage.navclosed && hmpage.topicleft && !hmDevice.phone) {
+				hmpage.$topicbox.css("opacity", "0.7");
+				} else {
+				hmpage.$topicbox.css("opacity","1.0");	
+				} 
+			} // navShadow()
+		
+		// Current width of the nav pane
+		function tocWidth() {
+			// return hmTocWidth;
+			var currentTocWidth = 0;
+			if (!hmpage.navclosed) {
+				do {
+					currentTocWidth = hmFlags.tocInitWidth;
+				}
+				while (hmFlags.tocInitWidth === 0); 
+			} else  {
+			// currentTocWidth = hmFlags.tocInitWidth;
+			currentTocWidth = parseInt(currentTocWidth,10) + 20;
+			}
+			hmFlags.tocInitWidth = currentTocWidth;
+			return currentTocWidth;
+			
+			/*if (hmBrowser.touch && hmpage.Fnarrowpage() && !hmDevice.w8desktop) {
+				hmTocWidth = 211;
+				}
+			else {
+				if (hmDevice.w8metro) {
+					hmTocWidth = 350;
+				} else {
+				hmTocWidth = 219;
+				}
+				}
+			return hmTocWidth;*/
+			}
+		
+		/* Individual functions for each nav pane / topic move operation */	
+		
+		function phUpDown() {
+		
+		var headerPos = "0.0rem",
+			navboxPosDown = hmpage.Fpix2em(hmpage.$navwrapper.position().top) + "rem",
+			topicPosDown = hmpage.Fpix2em(hmpage.$topicbox.position().top) + "rem",
+			topicPosUp = "0.300rem",
+			navboxPosUp = "0.300rem",
+			$bothBoxes = $("div#navwrapper, div#topicbox"),
+			headerOn = hmpage.$headerbox.is(":visible"),
+			inProgress =  false;
+			
+		return function(animOff) {
+			if (inProgress) return;
+			inProgress = true;
+			var reset = false;
+			if ((animOff && animate) || (!hmpage.initialized && animate)) {
+				animate = false;
+				reset = true;
+				} else animate = true;
+			
+			if (headerOn) {
+				headerOn = false;
+				if (!hmDevice.phone) {
+					$("svg#toolbar_updown_close").hide();
+					$("svg#toolbar_updown_open").show();
+					}
+				navboxPosDown = hmpage.Fpix2em(hmpage.$navwrapper.position().top) + "rem";
+				topicPosDown = hmpage.Fpix2em(hmpage.$topicbox.position().top) + "rem";
+				hmpage.$headermenu.hide();
+				hmpage.$navwrapper.animate({
+					"top": navboxPosUp
+				},(animate ? 400 : 0));
+				hmpage.$topicbox.animate({
+					"top": topicPosUp
+				},(animate ? 400 : 0));
+				hmpage.$headerbox.slideUp((animate ? "400" : "0"), function(){
+				if (reset) animate = true;
+				if (hmDevice.desktop) {
+					$("svg#showhide_header_icon").find("use").attr("xlink:href","#expand");
+					$("li#showhide_pageheader a").first().attr("title","Show Page Header");
+					$("li#showhide_pageheader span").first().html("Show Page Header");
+					}
+				inProgress = false;
+				sessionVariable.setSV("headerState","closed");
+				});
+			} else {
+			headerOn = true;
+			if (!hmDevice.phone) {
+				$("svg#toolbar_updown_open").hide();
+				$("svg#toolbar_updown_close").show();
+				}
+			navboxPosUp = hmpage.Fpix2em(hmpage.$navwrapper.position().top) + "rem";
+			topicPosUp = hmpage.Fpix2em(hmpage.$topicbox.position().top) + "rem";
+			hmpage.$navwrapper.animate({
+					"top": navboxPosDown
+				},(animate ? 400 : 0),function(){
+					if (!hmWebHelp.minTopicHeader)
+						hmpage.$headermenu.show();
+					inProgress = false;
+				});
+			hmpage.$topicbox.animate({
+					"top": topicPosDown
+			},(animate ? 400 : 0));
+			hmpage.$headerbox.slideDown((animate ? "400" : "0"), function(){
+				if (reset) animate = true;
+				if (hmDevice.desktop) {
+					$("svg#showhide_header_icon").find("use").attr("xlink:href","#collapse");
+					$("li#showhide_pageheader a").first().attr("title","Hide Page Header");
+					$("li#showhide_pageheader span").first().html("Hide Page Header");
+					}
+				sessionVariable.setSV("headerState","open");
+			});
+			}
+			};
+		}
+		
+		var pageHeaderUpDown = new phUpDown();
+		
+		function moveTopicLeft(animOff) {	
+		hmpage.topicadjust = true;
+		var reset = false;
+			if ((animOff && animate) || (!hmpage.initialized && animate)) {
+				animate = false;
+				reset = true;
+				} else animate = true;
+			hmpage.topicleft = true;
+			
+			var leftVal = (hmDevice.phone ? "0" : ((hmpage.$navwrapper.width() - hmpage.$navcontainer.width()) + hmpage.Fem2pix(hmpage.navboxoffset)));
+			
+			var bottomVal = (hmDevice.phone ? (hmpage.$mToolbar.attr('data') == 'open' ? (hmpage.Fpix2em(hmpage.$mToolbarHeight) + "rem") : "0px") : hmFlags.skinType != "flat" ? "0.5rem" : "0.0rem");
+			
+			hmpage.$topicbox.animate({
+				left: leftVal,
+				// top: topVal,
+				bottom: bottomVal
+				},animate ? 450 : 0, function(){
+					if (!hmpage.navclosed && !hmpage.$navtools.first().hasClass("over")) {
+						hmpage.$navtools.addClass("over");
+					}
+					else {
+						hmpage.$navtools.removeClass("over");
+					}
+					hmWebHelp.nsheader();
+					hmWebHelp.fHeadUpdate();
+					if (reset) animate = true; 
+					setTimeout(hmWebHelp.adjustTopicPos,300);
+					});
+			navShadow();
+			}
+		
+		function moveTopicRight(animOff) {
+			hmpage.topicadjust = true;
+			hmpage.$navtools.removeClass("over");
+			var reset = false,
+			leftVal = hmpage.$navwrapper.width() + leftmargin + hmpage.Fem2pix(hmpage.navboxoffset),
+			bottomVal = (hmDevice.phone ? (hmpage.$mToolbar.attr('data') == 'open' ? (hmpage.Fpix2em(hmpage.$mToolbarHeight) + "rem") : "0px") : hmFlags.skinType != "flat" ? "0.5rem" : "0.0rem");
+			
+			if ((animOff && animate) || (!hmpage.initialized && animate)) {
+				animate = false;
+				reset = true;
+				} else animate = true;
+			hmpage.topicleft = false;
+			hmpage.$topicbox.animate({
+			left: leftVal,
+			bottom: bottomVal
+			},animate ? 250 : 0, function() {
+				hmWebHelp.nsheader();
+				hmWebHelp.fHeadUpdate();
+				if (reset) animate = true; 
+				setTimeout(hmWebHelp.adjustTopicPos,300);
+				});
+			navShadow();
+			}
+			
+		function moveTOCLeft(animOff) {
+			hmpage.navWidth = hmpage.FnavWidth();
+			var reset = false;
+			if ((animOff && animate) || (!hmpage.initialized && animate)) {
+				animate = false;
+				reset = true;
+				} else animate = true;
+			hmpage.navclosed = true;
+			hmTocWidth = hmpage.$navwrapper.width();
+			hmpage.$navwrapper.animate({
+					left: -hmpage.$navcontainer.width() + "px"
+				},animate ? 250 : 0, function(){
+					//if (!hmDevice.phone) {
+					$("svg#draghandleicon_l").hide();
+					$("svg#draghandleicon_r").show();
+					hmpage.$navtools.removeClass("over");
+					//}
+					if (hmDevice.phone)
+					$("div.mobnav.toc").css("background-image","url('./images/toc_show.png')");
+					if (reset) animate = true; 
+					navShadow();
+					sessionVariable.setSV("tocState","closed");
+				});
+			}
+			
+		function moveTOCRight(animOff) {
+			var reset = false;
+			$("svg#draghandleicon_r").hide();
+			$("svg#draghandleicon_l").show();
+			if (hmpage.topicleft && !hmpage.$navtools.first().hasClass("over")) {
+				hmpage.$navtools.addClass("over");
+			}
+			else {
+				hmpage.$navtools.removeClass("over");
+			}
+			if ((animOff && animate) || (!hmpage.initialized && animate)) {
+				animate = false;
+				reset = true;
+				} else animate = true;
+			hmpage.navclosed = false;
+			if (hmDevice.phone && $("div#navigationmenu").is(":visible")) {
+				hmWebHelp.closeTopNav();
+				}
+			hmpage.$navwrapper.animate({
+					left: leftmargin
+				},animate ? 450 : 0, function() {
+					if (hmDevice.phone) {
+					$("div.mobnav.toc").css("background-image","url('./images/toc_hide.png')");
+					}
+					if (reset) animate = true; 
+					navShadow();
+					sessionVariable.setSV("tocState","open");
+					});
+		}
+
+		// Init for embedded WebHelp 
+		function embedInit() {
+			if (hmDevice.embedded && hmDevice.desktop) {
+				if (hmpage.$headerbox.is(":visible"))
+					hmWebHelp.pageDimensions.pageHeaderUpDown(true);
+					$("p#ptopic_breadcrumbs").hide();
+				
+			} else if (!hmDevice.embedded && hmDevice.desktop) {
+				if (hmpage.$headerbox.is(":hidden"))
+					hmWebHelp.pageDimensions.pageHeaderUpDown(true);
+				if (hmpage.breadcrumbs)
+					$("p#ptopic_breadcrumbs").show();
+			} else if (hmDevice.tablet || hmDevice.phone) {
+				parentdomain = (/^(https?:\/\/.*?)\/.*?$/i).exec(document.referrer)[1];
+		xMessage.sendObject("parent",{action: "callfunction", fn: "hmHelp.doFullWindow", domain: parentdomain});
+			}
+		} // embedInit()
+	
+	// Check for switch between narrow/wide and short/tall window
+	function aspectChange(mode) {
+			var changed = false;
+			switch (mode) {
+				case "both":
+				if (hmpage.Fnarrowpage() !== hmpage.narrowpageX || hmpage.Fshortpage() !== hmpage.shortpageX) {
+					changed = true;
+					hmpage.narrowpageX = !hmpage.narrowpageX;
+					hmpage.shortpageX = !hmpage.shortpageX;
+					} 
+				break;
+				case "width":
+				if (hmpage.Fnarrowpage() !== hmpage.narrowpageX) {
+					changed = true;
+					hmpage.narrowpageX = !hmpage.narrowpageX;
+					} 
+				break;
+				case "height":
+				if (hmpage.Fshortpage() !== hmpage.shortpageX) {
+					changed = true;
+					hmpage.shortpageX = !hmpage.shortpageX;
+					} 
+				break;
+			
+			}
+			return changed;	
+		}
+	// Adjust relation between panes after changes
+	function resetNavRelation() {
+		var navwidth = hmpage.FnavWidth(),
+			maxwidth = hmpage.FmaxNavWidth(),
+			minwidth = hmpage.FminNavWidth();
+		if (navwidth > maxwidth) {
+		hmWebHelp.resizePanes(maxwidth);
+		}
+		if (navwidth < minwidth) {
+		hmWebHelp.resizePanes(minwidth);
+		}
+	}
+	// Check and adjust page dimensions
+	function doDims() {
+		// Resize panes if the page resize makes nav pane too wide
+		// in relation to the topic pane
+		resetNavRelation();
+		// Narrow page layout for desktop with narrow window
+		if (hmDevice.desktop && !hmpage.topicleft && hmpage.Fnarrowpage()) {
+			moveTopicLeft();
+			if (true)
+				moveTOCLeft();
+			}
+		if (hmDevice.desktop && hmpage.topicleft && !hmpage.navclosed && !hmpage.Fnarrowpage()) {
+			moveTopicRight();
+			if (hmpage.navclosed)
+			moveTOCRight();
+			}
+		navShadow();
+		// Exit directly if there is no change in window aspect
+		// This reduces processing overhead considerably!!
+		if (!aspectChange("both") && hmpage.initialized && hmDevice.desktop) {
+			return;
+			}
+			var timeout = 50;
+			var dragcount = 0;
+			if (hmBrowser.touch && animate) animate = false;
+		// Width changed or first open or non-desktop device?
+		if ( !hmpage.initialized || aspectChange("width") || !hmDevice.desktop ) {
+			if (hmpage.Fnarrowpage() || hmDevice.phone || (hmDevice.tablet && !hmBrowser.Flandscape()) ) {
+					moveTopicLeft();
+					if ((true && hmDevice.desktop) || (true && !hmDevice.desktop))
+						moveTOCLeft();
+					navShadow();
+			} else if ((!hmpage.Fnarrowpage() && hmpage.topicleft && !hmDevice.phone) || (hmDevice.tablet && hmBrowser.Flandscape())) {
+					moveTopicRight();
+				if (!hmpage.navclosed) {
+					if (staticWindow) moveTopicRight();
+				}
+				else {
+					// tocSet();
+					moveTOCRight();
+				}
+				navShadow();
+				} 
+		} // if widthChange 
+		
+		// Turn animation back on after initializing page on first load
+		animate = true;
+		hmpage.initialized = true;
+		} // doDims() function
+		
+
+		// Nav open/close function 
+		function dragHandle(animOff) {
+			if (!animOff) animOff = false;
+			if (hmWebHelp.funcs.doVibrate && !animOff) hmWebHelp.funcs.doVibrate();
+			if (hmpage.Fnarrowpage() || hmDevice.phone || (hmDevice.tablet && hmBrowser.Flandscape())) {
+				if (!hmpage.navclosed) {
+					moveTOCLeft(animOff);
+					if (!hmpage.topicleft && hmDevice.tablet && hmBrowser.Flandscape())
+						moveTopicLeft();
+				} else {
+					// tocWidth();
+					moveTOCRight(animOff);
+					if (hmpage.topicleft && hmDevice.tablet && hmBrowser.Flandscape())
+						moveTopicRight();
+				}
+				navShadow();
+			} else  {
+				if (!hmpage.navclosed) {
+					// tocWidth();
+					moveTOCLeft(animOff);
+					moveTopicLeft(animOff);
+				}
+				else {
+					// tocWidth();
+					if (!hmDevice.phone && !(hmDevice.tablet && !hmBrowser.Flandscape())) 
+					moveTopicRight(animOff);
+					moveTOCRight(animOff);
+				}
+				navShadow();
+				}
+				animate = true;
+			} // Callable dragHandle() function:
+	
+		
+		// Expose these methods for external calling
+		return {
+			tocWidth: tocWidth,
+			doDims: doDims,
+			embedInit: embedInit,
+			dragHandle: dragHandle,
+			navShadow: navShadow,
+			moveTOCLeft: moveTOCLeft,
+			moveTOCRight: moveTOCRight,
+			moveTopicLeft: moveTopicLeft,
+			moveTopicRight: moveTopicRight,
+			pageHeaderUpDown: pageHeaderUpDown
+			};
+		
+		}; // End of main PageDims function
+
+/* Topic scroll position handler for leaving and returning to page */
+/* Must be instantiated as an object */
+/* Can be instantiated as often as needed for multiple calls */
+hmWebHelp.pagePos = function(elem) {
+	var xPos = 0, yPos = 0;
+	var scrollNode = elem;
+	function getP() {
+			yPos = $(scrollNode).scrollTop();
+			xPos = $(scrollNode).scrollLeft();
+	}
+	function setP(speed) {
+			if (!speed) {
+				$(scrollNode).scrollTop(yPos).scrollLeft(xPos);
+			} else {
+				$(scrollNode).animate(
+				{scrollTop: yPos, scrollLeft: xPos},
+				speed
+				);
+			}
+			yPos = 0; xPos = 0;
+	}
+	
+	return {
+		getPos: function() {
+			getP();
+		},
+		setPos: function(speed) {
+			setP(speed);
+		}
+	};
+	
+	}; // pagePos()
+
+/* Double-tap handler for external functions */
+hmWebHelp.dT = function() {
+	var firstTap = new Date().getTime();
+	var f = null;	
+	
+		return function(func, args) {
+
+			var newTap = new Date().getTime();
+			var checkTap = newTap - firstTap;
+			firstTap = newTap;
+			if ((checkTap > 120) && (checkTap < 500) && f === func) {
+				hmWebHelp.extFuncs(func,args);
+				}
+			f = func;
+		};
+	};
+
+// Check invalid hrefs and convert anchor references to ?anchor= format required by history
+hmWebHelp.targetCheck = function(t) {
+	if (!t || t.substr(0,11) == "javascript:")
+			return "";
+		if (t.indexOf("#") > -1) t = t.replace("#",hmpage.anchorX);
+			return t;
+	};
+
+// Set a value for a specific period, then reset it
+// Currently only used for the toc clicked flag, which should only be active briefly
+hmWebHelp.timedReset = function(vari,valu,timer) {
+		vari = valu;
+		setTimeout(function(){
+			vari = !valu;
+			},timer);
+	};
+
+// Flash paragraph of target anchor on arrival
+hmWebHelp.flashTarget = function(obj,repeat,delay) {
+	if (!true) return;
+	repeat--;
+	doFlash();
+	function doFlash() {
+	setTimeout(function() {
+	$(obj).each(function() {
+		$(obj).css("visibility","hidden");
+		setTimeout(function() {
+			repeat--;
+			$(obj).css("visibility","visible");
+			if (repeat > 0) doFlash();
+			},delay);
+	});
+	},delay);
+	} // doFlash;
+}; // flashTarget	
+
+// Universal topic scroller with togglejump for hidden anchors
+hmWebHelp.scrollTopic = function(anchor, topic) {
+	var $anchor, 
+		$targetTParents = null,
+		$targetThisToggle = null,
+		$scrollBox = hmDevice.phone ? $("div#topicbox") : $("div#hmpagebody_scroller");
+	
+	// Target is already a jQ object
+	if (typeof anchor !== "undefined" && typeof anchor !== "string") {
+		$anchor = anchor;
+	}
+	else if (typeof anchor === "string") {
+	// Make jQ target object
+		anchor = anchor.replace(/\./g,"\\.");
+		$anchor = anchor === "" ? false : $("a#" + anchor);
+		if ($anchor && $anchor.length === 0) {
+			$anchor = false;
+		}
+	}
+	
+	if ($anchor) {
+		$targetTParents = $anchor.parents("div.dropdown-toggle-body");
+		$targetThisToggle = $anchor.siblings("img.dropdown-toggle-icon").first();
+		if ($targetThisToggle.length === 0)
+			$targetThisToggle = $anchor.siblings("a.dropdown-toggle").first();
+		if ($targetThisToggle.length == 1) {
+			$targetThisToggle = $targetThisToggle.attr("id");
+			$targetThisToggle = $targetThisToggle.substr(0,$targetThisToggle.indexOf("_"));
+			$targetThisToggle = $("a#" + $targetThisToggle + "_LINK").first();
+		}
+		else 
+			$targetThisToggle = false;
+	}
+	
+	if ($targetTParents && $targetTParents.length > 0) {
+		hmWebHelp.extFuncs('hmDoToggle',{method: 'hmToggleToggles', obj: {toggles: $targetTParents, mode: "expand", scrolltarget: $anchor, dotoggle: $targetThisToggle}});
+	} else if ($anchor) {
+		// Allow time for navpane width to be adjusted before scrolling
+		var scrollcount = 0;
+		var checkscroll = setInterval(function(){
+		scrollcount++; // Break after 4 seconds
+		if (!hmpage.topicadjust || scrollcount > 80) {
+		hmpage.topicadjust = false; // Reset, just in case
+		$scrollBox.scrollTo($anchor,300,{axis: 'y', offset:{top:-20},
+		onAfter:function(){
+			if ($targetThisToggle) {				
+				hmWebHelp.extFuncs('hmDoToggle',{method: 'HMToggle', obj: $targetThisToggle});
+			} else 
+				hmWebHelp.flashTarget($anchor.parent(),3,200);
+		}});
+		clearInterval(checkscroll);
+		}
+		},50);
+	} else if (topic) {
+		$scrollBox.scrollTop(topic);
+	}
+};
+	
+// Functions for loading topics
+
+// Executed when a JS topic is loaded
+
+function hmLoadTopic(topicObj) {
+	// hmWebHelp.currentTopic = topicObj;
+	
+	var titleBarText = topicObj.hmTitle;
+	switch ("topic") {
+		case "project":
+		titleBarText = $("h1#hm_pageheader").text();
+		break;
+		
+		case "project_topic":
+		titleBarText = $("h1#hm_pageheader").text() + " \> " + topicObj.hmTitle; 
+		break;
+	}
+	titleBarText = $("<textarea/>").html(titleBarText).text();
+	$("title").text(titleBarText);
+	
+	$("meta[name='keywords']").attr("content",topicObj.hmKeywords);
+	//$("p#ptopic_breadcrumbs").html("Navigation:&nbsp; " +(topicObj.hmBreadCrumbs !== "" ? topicObj.hmBreadCrumbs : " \<span\>&raquo; No topics above this level" + " &laquo;\<\/span\>"));
+	hmpage.hmDescription = typeof topicObj.hmDescription == "undefined" ? "" : topicObj.hmDescription;
+	$("meta[name='description']").attr("content",hmpage.hmDescription);
+	hmpage.hmPicture = typeof topicObj.hmPicture == "undefined" ? "" : topicObj.hmPicture;
+	
+	// Close any popup before loading a new topic
+	hmWebHelp.closePopup();
+	
+	// Insert formatted or plain text topic header
+	if (!hmFlags.hdFormat) {
+			$("p.topictitle").html(topicObj.hmTitle);
+		} else {
+			if (topicObj.hmHeader !== "")
+			$("span.hdFormat").html(topicObj.hmHeader);
+		else
+			$("span.hdFormat").html('<h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">'+topicObj.hmTitle+'</span></h1>');
+		}
+	$("div#hmpagebody_scroller").html(topicObj.hmBody + hmpage.topicfooter);
+	
+	// Initialize featured images if present and enabled
+		if (true && hmpage.hmPicture !== "") {
+			$("div#featureheader").remove();
+			if (!hmDevice.phone) {
+				hmWebHelp.extFuncs('hmFeatureHeader');
+				}
+			else  {
+				hmWebHelp.extFuncs('hmFeatureHeaderM',"init");
+			}
+		}			
+		else {
+			$("div#featureheader").remove();
+			if (!hmDevice.phone)
+				$('div#hmpagebody_scroller').css({"padding-top": "0.5rem"});
+			else 
+				$('div#topicbox').css({"padding-top": "0.5rem"});
+		}
+}
+
+// Main load routine, called by statechange event
+hmWebHelp.loadTopic = function(newTopic) {
+	// var topicTimerA = new Date().getTime();
+	// var topicTimerB = 0;
+	var cacheTopic = "";
+	if (hmpage.currentnav === 0)
+		hmWebHelp.currentAnchor = false;
+	var args = [];
+	if (newTopic.topic === "") return;
+	if (newTopic.anchor === "")
+		hmWebHelp.currentAnchor = "";
+	else
+		hmWebHelp.currentAnchor = newTopic.anchor;
+	// Null the autoTOC for the current topic
+	$("#autoTocWrapper").html("");
+	
+	// Close the hamburger menu if it's  open
+	if ($("div#navigationmenu").is(":visible"))
+		hmWebHelp.hamburgerMenu();
+
+	// Close image toggle if it's open
+	if ($("div#imagetogglebox").is(":visible"))
+		hmWebHelp.funcs.closeImageToggle(null,0);
+
+	function topicPostLoad() {
+		var acTarget = "";
+		$("div#topicheaderwrapper span").addClass("wraptext");
+		// Hide breadcrumb links when the help is embedded in an iFrame within a larger page
+		if ((hmDevice.desktop && hmDevice.embedded)) $("p#ptopic_breadcrumbs").hide();
+		var $scrollBox = hmDevice.phone ? $("div#topicbox") : $("div#hmpagebody_scroller");
+		if (newTopic.anchor !== ""){
+			acTarget = hmpage.anchorX + newTopic.anchor;
+			hmWebHelp.scrollTopic(newTopic.anchor,"");
+		}
+			else {
+				hmWebHelp.scrollTopic("", newTopic.topic);
+			}
+
+		hmFlags.hmCurrentPage = newTopic.topic + acTarget;
+		
+		// Configure the topic navigation links etc. in the newly-loaded topic
+		hmWebHelp.hmTopicPageInit();
+		
+		// Non-scrolling header update
+		hmWebHelp.nsheader();
+		hmWebHelp.fHeadUpdate();
+		if (hmFlags.searchHighlight != "") {
+			hmWebHelp.extFuncs("highlight");
+		}
+		// User function injection to execute after topic load
+			try {
+				
+			}
+			catch(err) {
+			alert("ERROR executing user topic post-load function: \r\n\r\n" + err);
+			}
+
+	}
+
+	cacheTopic = newTopic.jstopic.substr(newTopic.jstopic.lastIndexOf("\/")+1);
+	
+	if (Object.keys(hmWebHelp.visitedTopics).length > 300)
+		hmWebHelp.visitedTopics = {};
+
+	if (!hmWebHelp.visitedTopics.hasOwnProperty(cacheTopic)){
+
+	// Load the new topic
+	$.getScript(newTopic.jstopic, function(data, textStatus, jqxhr) {
+			topicPostLoad();
+			hmWebHelp.visitedTopics[cacheTopic] = true;
+			}).fail(function(){
+				History.pushState(null,null,hmFlags.hmMainPage);
+				alert("ERROR Topic Not Found " + newTopic.topic);
+			});
+	} else {
+		$.cachedScript(newTopic.jstopic).done(function(script,textStatus){
+			topicPostLoad();
+			});
+	}
+	}; // loadtopic
+
+// Initialize images with "tap-image" class to make them toggle-expandable in touch devices
+hmWebHelp.initTapImages = function() {
+	var $tapimages = $("img.tap-image");
+	if ($tapimages.length > 0){
+		$("img.tap-image").each(function() {
+			$(this).on(hmBrowser.touchstart, function(event) {
+			var ev = event.originalEvent;			
+			hmWebHelp.funcs.doubleTap('tapImage',this);
+			});
+		});}
+	};
+
+// Do an automatic reload after inactivity (sleep, off) on mobile devices
+
+hmWebHelp.reloadAfterSleep = function() {
+
+	function getTime() {
+    return (new Date()).getTime();
+	}
+
+	var systole = getTime(),
+		diastole = getTime(),
+		flutter = 0,
+		interval = 5000;
+
+	function ecg() {
+		diastole = getTime();
+		flutter = diastole - systole;
+		if (flutter > 120000){
+	    	location.reload();
+	    }
+		systole = getTime();
+	}
+	setInterval(ecg,interval);
+};
+
+// Call full window function from embedded window
+
+hmWebHelp.doFullEmbedWindow = function(obj) {
+	var $objCaption = $(obj).children("span").first(),
+		currentCaption = $objCaption.text(),
+		current,
+		newCaption = currentCaption == "Zoom Window Out" ? "Zoom Window In" : "Zoom Window Out",
+		currentIcon = $("svg#fullscreen_toggle").find("use").attr("xlink:href"),
+		newIcon = currentIcon == "#resize-full" ? "#resize-small" : "#resize-full",
+		parentdomain = (/^(https?:\/\/.*?)\/.*?$/i).exec(document.referrer)[1];
+		
+		xMessage.sendObject("parent",{action: "callfunction", fn: "hmHelp.doFullWindow", domain: parentdomain});
+
+		// hmDevice.embedded = newIcon.indexOf("off") < 0;
+		hmDevice.embedded = newIcon.indexOf("-small") < 0;
+		hmWebHelp.pageDimensions.embedInit();
+		$("svg#fullscreen_toggle").find("use").attr("xlink:href",newIcon);
+		$objCaption.text(newCaption);
+		hmWebHelp.hamburgerMenu();
+	};
+
+// Switch between the stacked navigation panes	
+hmWebHelp.switchNavTab = function(targetTab) {
+
+	$("li.current").removeClass("current");
+	$("li#" + targetTab + "tab").addClass("current");
+	$("div.navbox.on").removeClass("on").addClass("off");
+	$("div#" + targetTab + "box").removeClass("off").addClass("on");
+
+	// Load search and index pages on first view 
+	if (targetTab === "search" && $("iframe#hmsearch").attr("src") === "") {
+		$("iframe#hmsearch").attr("src",hmFlags.hmSearchPage);
+		}
+	if (targetTab === "index" && $("iframe#hmindex").attr("src") === "") {
+		$("iframe#hmindex").attr("src",hmFlags.hmIndexPage);
+		}
+	switch (targetTab) {
+		case "contents":
+		xMessage.sendObject("hmnavigation",{action: "callfunction", fn: "tocSource.findElement", fa: hmFlags.hmCurrentPage});
+		if (hmWebHelp.currentAnchor !== "")
+			xMessage.sendObject("hmnavigation",{action: "callfunction", fn: "tocSource.findElement", fa: (hmFlags.hmCurrentPage + "#" + hmWebHelp.currentAnchor)});
+		hmWebHelp.currentAnchor = false;
+		hmpage.currentnav = 0;
+		break;
+		case "index": 
+		hmpage.currentnav = 1;
+		if (hmpage.android)
+			hmWebHelp.navJitter();
+		break;
+		case "search":
+		hmpage.currentnav = 2;
+		if (hmDevice.android)
+			hmWebHelp.navJitter();
+		break;
+	}
+	// $("section#"+tab+"_section").removeClass("off").addClass("on");
+
+};
+// Adjust relationship between panes and set to rems
+hmWebHelp.adjustTopicPos = function() {
+	var newTopicLeft = 0,
+		navRightPos = hmpage.Fpix2em(hmpage.$navwrapper.position().left + hmpage.$navwrapper.width()),
+		navRemWidth = hmpage.Fpix2em(hmpage.$navwrapper.width()),
+		navRemPos = hmpage.Fpix2em(hmpage.$navwrapper.position().left);
+		hmpage.$navwrapper.css({"left": navRemPos + "rem", "width": navRemWidth + "rem"});
+		hmpage.topicadjust = false;
+		if (hmpage.topicleft && !hmpage.navclosed)
+			return;		
+		hmpage.$topicbox.css("left", navRightPos + hmpage.navboxoffset + "rem");
+		hmpage.topicadjust = false;
+};
+// Adjust widths of navigation and topic panes for font resizing etc.
+hmWebHelp.resizePanes = function(refWidth) {
+	if (typeof refWidth == "undefined")
+		return;
+	if (refWidth > hmpage.FmaxNavWidth()) refWidth = hmpage.FmaxNavWidth();
+	if (refWidth < hmpage.FminNavWidth()) refWidth = hmpage.FminNavWidth();
+	hmpage.$navwrapper.width(refWidth + "px");
+	hmWebHelp.adjustTopicPos();
+	hmWebHelp.nsheader();
+	hmWebHelp.fHeadUpdate();
+	};
+
+// Check whether we are on the main page
+hmWebHelp.hmMainPageCheck = function(t) {
+	if (!window.history.pushState) {
+		if (location.pathname.substr(location.pathname.lastIndexOf("/")+1) != hmFlags.hmMainPage) 
+		{
+		document.location = hmFlags.hmMainPage + "#" + t;
+		return false;
+		} else return true;
+		} else
+		return true;
+	};
+
+// Decode query components from URL
+hmWebHelp.getQueryComponent = function(q,qC) {
+	
+	var rx = new RegExp('^' + qC + '=(.+?)$','i');
+	var queryComponent = ""; 
+	
+	for (var c in q) {
+			var match = rx.exec(q[c]);
+			if (match !== null) {
+				queryComponent = match[1];
+				break;
+				} 
+			}
+	return decodeURIComponent(queryComponent);
+	};
+
+// URL parser for all the possible valid URL syntaxes
+hmWebHelp.parseUrl = function() {
+
+	var getExt = function(f) {
+		if (f === "") return false;
+		var ext = f.substr(f.lastIndexOf('.'));
+		if (ext === "") return false;
+			else return ext;
+		};
+
+	var url = {
+		topic: "",
+		jstopic:"",
+		anchor: "",
+		switches: "",
+		valid: false
+	};
+	
+	var mainFile = location.pathname.substr(location.pathname.lastIndexOf("/")+1);
+
+
+	var urlQuery, urlHashQuery, urlQueryTopic, urlQueryExt, urlHash, urlHashTemp = [], urlHashTopic, plainUrl;
+
+	urlQuery = location.search.substr(1).split("&");
+	urlQueryExt = getExt(urlQuery[0]);
+	urlQueryTopic = urlQueryExt == hmFlags.topicExt || urlQueryExt + "l" == hmFlags.topicExt ? urlQuery[0] : "";
+	
+	// Set the search highlight if this is a search query posted from outside
+	
+	if (urlQuery.length > 0 && urlQuery[0] != "") {
+		urlQuery.forEach(function(item, index){
+		if (item.substr(0,14) === "zoom_highlight"){
+			hmFlags.searchHighlight = item;
+			}
+		}); 
+	}
+	
+	// Check for hash syntax hash value components
+	if (location.hash !== "") {
+		
+		if (!hmBrowser.server) {
+		urlQuery = [];
+		urlQueryTopic = "";
+		}
+		
+		if (location.hash.indexOf(hmpage.anchorY) > -1) {
+			urlHash = location.hash.substr(1).split(hmpage.anchorY);
+			if (urlHash[1].indexOf("&") > -1) {
+				urlHashTemp[0] = urlHash[0];
+				urlHash = urlHash[1].split("&");
+				urlHash = urlHashTemp.concat(urlHash);
+				}
+		} else { 
+		urlHash = location.hash !== "" ? location.hash.substr(1).split("&") : [""];
+		} 
+	} else urlHash = [""];
+	urlHashTopic = getExt(urlHash[0]) == hmFlags.topicExt ? urlHash[0] : ""; 
+
+	plainUrl = (location.search === "" && location.hash === "");
+	
+	// Correct existing old references to .htm if we're using .html for topics
+	if (urlQueryExt == ".htm" && hmFlags.topicExt == ".html" && urlQueryTopic !== "") {
+		urlQueryTopic = urlQueryTopic.replace(/htm$/,"html");
+	}
+	
+	// Possible valid URL contents:
+	// 1: Completely empty
+	var emptyUrl = (mainFile === "" && plainUrl);
+	// 2: Main index file only
+	var mainIndexUrl = (mainFile == hmFlags.hmMainPage);
+	var mainIndexUrlOnly = (mainIndexUrl && plainUrl);
+	// 3: Main index file + topic file old syntax 
+	var oldSyntaxUrl = (mainFile == hmFlags.hmMainPage && urlQueryTopic !== ""); 
+	// 4: Main index file + topic file hash syntax
+	var indexHashUrl = (!hmBrowser.server && mainFile == hmFlags.hmMainPage && urlHashTopic !== "");
+	// 5: Topic file hash syntax without index file
+	var noIndexHashUrl = (!hmBrowser.server && mainFile !== "" && mainFile !== hmFlags.hmMainPage && urlHashTopic === "");
+	// 6: Topic file only
+	// var topicFileUrl = (mainFile !== "" && mainFile != hmFlags.hmMainPage && getExt(mainFile) == hmFlags.topicExt);
+	var topicFileUrl = (!indexHashUrl && !noIndexHashUrl && mainFile !== "" && !oldSyntaxUrl && getExt(mainFile) == hmFlags.topicExt);
+
+	// Filters needed for
+		// Additional query components
+		// Additional hash components
+		
+	// Reload on non-server if the main file is not index.html
+	if (noIndexHashUrl) {
+		document.location = hmFlags.hmMainPage + "#" + mainFile + (urlHashTopic !== "" ? "!" + urlHashTopic : "");
+	}
+
+	// New topic file syntax
+	if (topicFileUrl || indexHashUrl) {
+			if (urlQuery.length > 0) {
+				url.anchor = hmWebHelp.getQueryComponent(urlQuery,"anchor");
+			} else if (urlHash.length > 1 && !hmBrowser.server) {
+				url.anchor = hmWebHelp.getQueryComponent(urlHash,"anchor");
+			}
+				url.topic = hmBrowser.server ? mainFile : urlHashTopic !== "" ? urlHashTopic : mainFile;
+				url.jstopic = "./jstopics/" + url.topic.replace(/(.*)\..+?$/ig, "$1.js");
+			
+			if (!hmBrowser.server && urlHashTopic !== "" && mainFile !== hmpage.defaulttopic) {
+					var hashAnchor = url.anchor !== "" ? "!anchor=" + url.anchor : "",
+						urlSwitches = location.hash.substr(location.hash.indexOf("&"));
+					document.location = hmpage.defaulttopic + "#" + urlHashTopic + hashAnchor + urlSwitches;
+			}
+			
+			url.valid = true;
+			if (url.anchor !== "" ) {
+				hmWebHelp.scrollTopic(url.anchor);
+			}
+
+		/** Parse additional URL switches **/
+		
+		var doContext, doIndex, doSearch,
+			thisQuery = hmBrowser.server ? urlQuery : urlHash;
+
+		// Context IDs
+
+		if (hmFlags.contextID) {
+		url.topic = hmGetContextId(hmFlags.contextID);
+		if (/\#/.test(url.topic)) {
+			url.anchor = url.topic.substr(url.topic.indexOf("\#")+1);
+			url.topic = url.topic.substr(0,url.topic.indexOf("\#"));
+		}
+		if (url.topic == "undefined") {
+			// Return the default topic if something goes wrong...	
+			url.topic = hmFlags.hmDefaultPage;
+		} 			
+		url.jstopic = "./jstopics/" + url.topic.replace(/(.*)\..+?$/ig, "$1.js");
+		url.valid = true;
+	}
+		// User Parameters Object
+
+		var userArgs = thisQuery,
+			tempArg, tempVal;
+
+		for (var x = 0; x < userArgs.length; x++) {
+			if (userArgs[x].indexOf("\=") < 0) continue;
+			tempArg = userArgs[x].substr(0,userArgs[x].indexOf("\="));
+			tempVal = userArgs[x].substr(userArgs[x].indexOf("\=")+1);
+			
+			if ($.inArray(tempArg,["kwindex","ftsearch","contextid"]) > -1) continue; 
+			
+			hmWebHelp.userParams.paramsCount++;
+			hmWebHelp.userParams[tempArg] = tempVal;
+		}
+		// Execute user code for saving URL parameters to session variables
+		hmGetUrlParams();
+		
+		// KW index and Search
+		
+			doIndex = hmWebHelp.getQueryComponent(thisQuery,"kwindex");
+			doSearch = hmWebHelp.getQueryComponent(thisQuery,"ftsearch");
+	
+		// Ignore if both are set -- contradiction
+		if (doIndex + doSearch === "")
+			return url;
+		if (doIndex !== "") {
+			hmWebHelp.switchNavTab('index');
+			if (doIndex != "$hmindex")
+			setTimeout(function(){
+				xMessage.sendObject("hmindex",{action: "callfunction", fn: "hmDoKwSearch", fa: doIndex});
+			},1000);
+		}
+		// Search
+		if (doSearch !== "") {
+			hmWebHelp.switchNavTab('search');
+			if (doSearch != "$hmsearch")
+				setTimeout(function(){
+				xMessage.sendObject("hmsearch",{action: "callfunction", fn: "hmDoFtSearch", fa: doSearch});
+			},1000);
+		}
+		return url;
+	}
+
+	// Default topic
+	if (emptyUrl || mainIndexUrlOnly) {
+			url.topic = hmFlags.hmDefaultPage;
+			url.jstopic = "./jstopics/" + url.topic.replace(/(.*)\..+?$/ig, "$1.js");
+			url.valid = true;
+		return url;
+	}
+
+	if (oldSyntaxUrl) {
+			
+			if (!hmBrowser.server) {
+			var oldHref = document.location.href,
+				newHref = oldHref.replace(/\?/,"\#");
+			if (document.location.hash !== "") {
+				var rN = document.location.hash,
+					rX = new RegExp(rN);
+				rN = rN.replace(/\#/,hmpage.anchorX);
+				newHref = newHref.replace(rX,rN);
+		} 			
+			document.location.href = newHref;
+			return false;
+	} 
+	
+			url.topic = urlQueryTopic;
+			url.jstopic = "./jstopics/" + url.topic.replace(/(.*)\..+?$/ig, "$1.js");
+			url.anchor = urlHash[0];
+			url.valid = true;
+		return url;
+	}
+
+			url.topic = hmFlags.hmDefaultPage;
+			url.jstopic = "./jstopics/" + url.topic.replace(/(.*)\..+?$/ig, "$1.js");
+			url.valid = true;
+		return url;	
+};
+
+// Sync the current page to the TOC
+hmWebHelp.syncToc = function() {
+	
+	if (hmFlags.isHmTopic || hmFlags.hmCurrentPage !== "") {
+		if (hmFlags.hmCurrentPage === "") {
+		xMessage.sendObject("hmnavigation", {action: "callfunction", fn: "tocSource.findElement", fa: hmFlags.thisTopic});
+		}
+		else {
+			if (hmpage.hmHelpUrl.anchor !== "") {
+		xMessage.sendObject("hmnavigation", {action: "callfunction", fn: "tocSource.findElement", fa: (hmpage.hmHelpUrl.topic + "#" + hmpage.hmHelpUrl.anchor)});
+			}
+			else if (hmFlags.hmCurrentPage != hmpage.hmHelpUrl.topic)
+		xMessage.sendObject("hmnavigation", {action: "callfunction", fn: "tocSource.findElement", fa: hmpage.hmHelpUrl.topic});
+		else
+		xMessage.sendObject("hmnavigation", {action: "callfunction", fn: "tocSource.findElement", fa: hmFlags.hmCurrentPage});
+		
+		}
+	}
+	else {
+		xMessage.sendObject("hmnavigation", {action: "callfunction", fn: "tocSource.findElement", fa: hmFlags.hmDefaultPage});
+	}
+};
+
+hmWebHelp.parseState = function(state) {
+	state = state.substr(state.lastIndexOf("/")+1);
+	var urlQuery = [""];	
+	 var url = {
+			topic: "",
+			jstopic:"",
+			anchor: "",
+			switches: "",
+			valid: false
+		};
+
+		url.topic = state.indexOf(hmpage.anchorY) > -1 ? state.substr(0,state.indexOf(hmpage.anchorY)) : state;
+		url.jstopic = "\.\/jstopics\/" + url.topic.replace(/(.*)\..+?$/ig, "$1.js");
+		
+		if (state.indexOf(hmpage.anchorY) > -1) {
+		urlQuery = state.substr(state.indexOf(hmpage.anchorY)+1).split("&");
+			url.anchor = hmWebHelp.getQueryComponent(urlQuery,"anchor");
+		}
+			return url;
+};
+
+// Non-scrolling header update for topic area
+hmWebHelp.nsheader = function() {
+		if (hmDevice.phone) return;
+		var tHdheight = $("table#topicheadertable").height(),
+		tNavMinHeight = $("a#hamburgerlink").outerHeight()+7;
+		tNavHeight = tHdheight;
+		$("div#hmpagebody").css("top",(tNavHeight) + "px");
+		$("div#navigationmenu").css("top",(tNavHeight) + "px");
+};
+
+hmWebHelp.fHeadUpdate = function() {
+	if (!true) return;
+	if ($("div#featureheader").length < 1) return;
+	if (typeof hmWebHelp.funcs.hmFeatureHeader !== "undefined")
+			hmWebHelp.funcs.hmFeatureHeader("resize");
+	if (typeof hmWebHelp.funcs.hmFeatureHeaderM !== "undefined")
+			hmWebHelp.funcs.hmFeatureHeaderM("resize");
+	};
+
+// Additional functions menu in topic area
+hmWebHelp.hamburgerMenu = function(swCommand) {
+
+	var switcher = false;
+	if (typeof swCommand != "undefined")
+		switcher = swCommand;
+	var $hMenu = $("div#navigationmenu");
+	
+	if ($("#autoTocWrapper").is(":visible") && !hmDevice.phone) {
+		hmWebHelp.extFuncs("hm_autotoc","snap");
+		}
+
+	function openMenu() {
+		hmWebHelp.unClicker("navigationmenu");
+		$hMenu.slideDown(150,function(){
+		$("ul#hamburgermenu li:visible").last().not(".last").addClass("last");
+		});
+	}
+	
+	function closeMenu(instant) {
+		if (!instant)
+			$hMenu.slideUp(150);
+		else
+			$hMenu.hide();
+		$(document).off(hmBrowser.touchstart + '.closemenu');
+		}
+	
+	if (!switcher) {
+		if ($hMenu.is(":hidden")) {
+			// Close any popup before opening menu
+			hmWebHelp.closePopup();
+			openMenu();
+			}
+		else
+			closeMenu();
+			} else {
+				if (switcher == "close")
+					closeMenu(true);
+				else
+					openMenu();
+					
+			}
+}; // hamburger menu
+
+/* Stuff that needs to be done immediately on loading this script */
+// Parse the current URL before it's gone...
+hmpage.hmHelpUrl = hmWebHelp.parseUrl();
+hmpage.currentURI = encodeURI(document.location.href);
+// Set the starting values for the page aspects
+hmpage.narrowpageX = hmpage.Fnarrowpage();
+hmpage.shortpageX = hmpage.Fshortpage();
+
+$(document).ready(function() {
+
+	$("div#topicheaderwrapper span").addClass("wraptext");
+		var nsDelay = hmDevice.desktop ? 0 : 800;
+		$(window).on(hmBrowser.orientationevent, function() {
+			setTimeout(function() {
+			window.scrollTo(0,0);
+			if (!hmDevice.phone) {
+				hmWebHelp.pageDimensions.doDims();
+				hmWebHelp.nsheader();
+			} else {
+				hmWebHelp.funcs.mobTBfix();
+			}
+			// Close popups if user changes mobile device orientation
+			if (hmBrowser.orientationevent !== "resize")
+				hmWebHelp.closePopup();
+			},nsDelay);
+			});
+		hmWebHelp.nsheader(); 
+		hmpage.$scrollBox = hmDevice.phone ? $("div#topicbox") : $("div#hmpagebody_scroller");
+	hmpage.$scrollContainer = hmDevice.phone ? $("body") : $("div#hmpagebody");
+	
+	// Load index and search frames a little later
+	
+	setTimeout(function(){
+	
+	if ($("iframe#hmindex").attr("src") === "" && hmIndexActive) {
+		$("iframe#hmindex").attr("src",hmFlags.hmIndexPage);
+		}
+		
+	setTimeout(function(){
+	if ($("iframe#hmsearch").attr("src") === "" && hmSearchActive) {
+			$("iframe#hmsearch").attr("src",hmFlags.hmSearchPage);
+		}
+
+	},1000);
+		},1000);
+});
+

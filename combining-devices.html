@@ -1,36 +1,213 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<!-- Help+Manual Premium Pack Version 3.41 (c) 2015-2017 by Tim Green all rights reserved -->
+	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
 	<title>Combining devices</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
-	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Expires" content="-1">
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
 	<meta http-equiv="cache-control" content="no-cache" />	
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
 	<meta name="description" content="Compound devices can either be created by the Digital Twin registration agent when the device is first registered, or they can be created through the HsM Client Service..." />
-	<meta name="author" content="" />
+	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
+	<meta name="author" content="Daniel Egger, Schmuck Clemens" />
 	<meta name="msapplication-tap-highlight" content="no" />
+<link rel="shortcut icon" href="favicon.ico" /> 
+<!-- If you use Google Web Fonts please include Open Sans as it is the preferred font for the skin's own UI -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 	<link type="text/css" href="./css/hmprojectstyles.css" rel="stylesheet" />
 	<script type="text/javascript">
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(function(){var c=0,b="HsM Reference ManualUser-defined Project ID";for(var a=0;a<b.length;a++){c=c+(b.charCodeAt(a)*(a+2))}return(c*697).toString(32)+"_"})(),hmSetCookie:function(b,f,c){var a="";if(c){var e=new Date();e.setTime(e.getTime()+(c*24*60*60*1000));a="expires="+e.toGMTString()}document.cookie=b+"="+f+"; "+a},hmGetCookie:function(d){var b=d+"=";var a=document.cookie.split(";");for(var e=0;e<a.length;e++){var f=a[e];while(f.charAt(0)==" "){f=f.substring(1)}if(f.indexOf(b)!=-1){return f.substring(b.length,f.length)}}return""},hmDeleteCookie:function(b){var a=b+"=";document.cookie=a+"; expires=Thu, 01 Jan 1970 00:00:00 UTC"}};var storageOK=(function(){var a=Storage&&localStorage&&sessionStorage;if(a){try{localStorage.setItem("testStorage",1);localStorage.removeItem("testStorage");a=true}catch(b){a=false}}return a})();sessionVariable={localS:storageOK,fxVal:function(a){return decodeURIComponent(a)},setPV:function(b,a){if(this.localS){localStorage.setItem(hmDevice.compilehash+b,this.fxVal(a))}else{hmDevice.hmSetCookie(hmDevice.compilehash+b,this.fxVal(a),365)}},setSV:function(b,a){if(this.localS){sessionStorage.setItem(hmDevice.compilehash+b,this.fxVal(a))}else{hmDevice.hmSetCookie(hmDevice.compilehash+b,this.fxVal(a),false)}},getPV:function(a){if(this.localS){if(typeof(localStorage.getItem(hmDevice.compilehash+a))!=="undefined"){return localStorage.getItem(hmDevice.compilehash+a)}else{return null}}else{return hmDevice.hmGetCookie(hmDevice.compilehash+a)}},getSV:function(a){if(this.localS){if(typeof(sessionStorage.getItem(hmDevice.compilehash+a))!=="undefined"){return sessionStorage.getItem(hmDevice.compilehash+a)}else{return null}}else{return hmDevice.hmGetCookie(a)}},deletePV:function(a){if(this.localS){localStorage.removeItem(hmDevice.compilehash+a)}else{hmDevice.hmDeleteCookie(hmDevice.compilehash+a)}},deleteSV:function(a){if(this.localS){sessionStorage.removeItem(hmDevice.compilehash+a)}else{hmDevice.hmDeleteCookie(hmDevice.compilehash+a)}}},hmFlags={skinType:"flat"};hmDevice.page="topicpage";hmDevice.baseFontSize=95;hmDevice.fontChangeMax=20;hmDevice.agent=navigator.userAgent.toLowerCase();hmDevice.embedded=(self!=top);hmDevice.platform=navigator.platform.toLowerCase();hmDevice.ipad=/ipad/.test(hmDevice.platform);hmDevice.iphone=/iphone/.test(hmDevice.platform);hmDevice.winphone7=(/windows phone os [7]\.\d\d??; .*?trident\/[5]\.\d\d??; iemobile\/9/.test(hmDevice.agent));hmDevice.winphone=(/windows phone [89]\.\d\d??; .*?trident\/[67]\.\d\d??;.*?touch; /.test(hmDevice.agent));hmDevice.w8desktop=(/windows nt 6\.[2345]|windows nt 10\.[0123456]/m.test(hmDevice.agent));hmDevice.msBrowser=(/edge|trident/m.test(hmDevice.agent));hmDevice.w8metro=(function(){var a=true;try{new ActiveXObject("htmlfile")}catch(b){a=false}return(!a&&hmDevice.w8desktop&&hmDevice.msBrowser)})();hmDevice.touch=!!(("ontouchstart" in window&&!window.opera)||("msmaxtouchppoints" in window.navigator)||("maxtouchppoints" in window.navigator)||(navigator.maxTouchPoints>0)||(navigator.msMaxTouchPoints>0));hmDevice.tb=(/tablet/.test(hmDevice.agent)&&(!/trident/.test(hmDevice.agent)||(hmDevice.w8metro&&hmDevice.touch)));hmDevice.goodandroid=(/android.+?applewebkit\/(?:(?:537\.(?:3[6-9]|[4-9][0-9]))|(?:53[8-9]\.[0-9][0-9])|(?:54[0-9]\.[0-9][0-9]))|android.+?gecko\/[345][0-9]\.\d{1,2} firefox/.test(hmDevice.agent));hmDevice.deadandroid=(/android.+?applewebkit\/(?:53[0-6]\.\d{1,2})|firefox\/[0-2]\d\.\d{1,2}/.test(hmDevice.agent));hmDevice.android=(/android/.test(hmDevice.agent)&&!hmDevice.deadandroid);hmDevice.mb=/mobi|mobile/.test(hmDevice.agent);hmDevice.phone=(hmDevice.mb&&!hmDevice.ipad&&!hmDevice.tb);hmDevice.tablet=(hmDevice.ipad||hmDevice.tb||(!hmDevice.phone&&hmDevice.android));hmDevice.aspectRatio=(screen.height/screen.width>1?screen.height/screen.width:screen.width/screen.height).toFixed(2);hmDevice.narrowTablet=(hmDevice.tablet&&hmDevice.aspectRatio>1.4);hmDevice.desktop=((!hmDevice.tablet&&!hmDevice.phone));hmDevice.device=hmDevice.phone?"phone":hmDevice.tablet?"tablet":hmDevice.desktop?"desktop":"default";hmDevice.fontSize=hmDevice.phone?hmDevice.baseFontSize*1.0:hmDevice.tablet?hmDevice.baseFontSize*1.0:hmDevice.desktop?hmDevice.baseFontSize:hmDevice.baseFontSize;hmDevice.maxFontSize=hmDevice.fontSize+hmDevice.fontChangeMax;hmDevice.minFontSize=hmDevice.fontSize-hmDevice.fontChangeMax;if(hmDevice.device!==sessionVariable.getPV("hmDevice")){sessionVariable.setPV("hmDevice",hmDevice.device);sessionVariable.setPV("fontSize",hmDevice.fontSize.toString())}else{var tempSize=sessionVariable.getPV("fontSize");if(tempSize!==null){hmDevice.fontSize=parseInt(tempSize,10)}else{sessionVariable.setPV("fontSize",hmDevice.fontSize.toString())}}hmDevice.cssfile=document.createElement("link");hmDevice.cssfile.rel="stylesheet";hmDevice.cssfile.type="text/css";hmDevice.cssfile.href=hmDevice.phone?"./css/hmwebhelp_main_phone.css":hmDevice.tablet?"./css/hmwebhelp_main_tablet.css":hmDevice.desktop?"./css/hmwebhelp_main_desktop.css":"./css/hmwebhelp_main_default.css";document.getElementsByTagName("head")[0].appendChild(hmDevice.cssfile);
+		var pageName = "mainPage";
+
+		
+		var hmDevice = {
+		
+		mobileSleepReload: true,
+		// Unique project ID
+		compilehash: (function () {
+		var outVal = 0, t="HsM Reference ManualUser-defined Project ID";
+		for (var x = 0; x < t.length; x++) {
+			outVal = outVal + (t.charCodeAt(x)*(x+2));
+		}
+		return (outVal*697).toString(32) + "_";
+		})(),
+		
+		// Cookies
+		hmSetCookie: function(cname, cvalue, exdays) {
+			var expires = "";
+			if (exdays) {
+				var d = new Date();
+				d.setTime(d.getTime() + (exdays*24*60*60*1000));
+				expires = "expires="+d.toGMTString();
+			}
+			document.cookie = cname + "=" + cvalue + "; " + expires;
+		},
+
+		hmGetCookie: function(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0; i<ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1);
+				if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+			}
+			return "";
+		},
+		
+		hmDeleteCookie: function(cname) {
+			var name = cname + "=";
+			document.cookie = name + "; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+		}
+	
+	};
+	// Session Variables
+	// Test that storage is both available and accessible (looking at you, Safari!)
+	var storageOK = (function(){
+		var gotStorage = typeof(Storage) === "object" && typeof(localStorage) === "object" && typeof(sessionStorage) === "object";
+		if (gotStorage) {
+			try {
+				localStorage.setItem('testStorage',1);
+				localStorage.removeItem('testStorage');
+				gotStorage = true;
+			}
+			catch(e) {
+			gotStorage = false;
+			}
+		}
+		return gotStorage;
+		})();
+		
+	sessionVariable = {
+		localS: storageOK,
+		
+		fxVal: function(v) {
+			return decodeURIComponent(v);
+		},
+		
+		setPV: function(sVar,sVal) {
+			if (this.localS) {
+				localStorage.setItem(hmDevice.compilehash + sVar,this.fxVal(sVal));
+			} else
+				hmDevice.hmSetCookie(hmDevice.compilehash + sVar,this.fxVal(sVal),365);	
+		},
+		setSV: function(sVar,sVal) {
+			if (this.localS)
+				sessionStorage.setItem(hmDevice.compilehash + sVar,this.fxVal(sVal));
+			else
+				hmDevice.hmSetCookie(hmDevice.compilehash + sVar,this.fxVal(sVal),false);
+		},
+		getPV: function(sVar) {
+			if (this.localS) {
+				if (typeof(localStorage.getItem(hmDevice.compilehash + sVar)) !== "undefined")
+					return localStorage.getItem(hmDevice.compilehash + sVar);
+				else return null;
+			} else 
+				return hmDevice.hmGetCookie(hmDevice.compilehash + sVar);
+		},
+		getSV: function(sVar) {
+			if (this.localS) {
+				if (typeof(sessionStorage.getItem(hmDevice.compilehash + sVar)) !== "undefined")
+					return sessionStorage.getItem(hmDevice.compilehash + sVar);
+				else return null;
+			} else 
+				return hmDevice.hmGetCookie(sVar);
+		},
+		deletePV: function(sVar) {
+			if (this.localS)
+				localStorage.removeItem(hmDevice.compilehash + sVar);
+			else
+				hmDevice.hmDeleteCookie(hmDevice.compilehash + sVar);
+		},
+		deleteSV: function(sVar) {
+			if (this.localS)
+				sessionStorage.removeItem(hmDevice.compilehash + sVar);
+			else
+				hmDevice.hmDeleteCookie(hmDevice.compilehash + sVar);
+		}
+	},
+	hmFlags = {
+		skinType: "flat"
+	};	
+	
+	/* UI Location */
+	hmDevice.page = "topicpage";
+	hmDevice.baseFontSize = 95;
+	hmDevice.fontChangeMax = 20;
+	
+	/* Source Checks */
+	hmDevice.agent = navigator.userAgent.toLowerCase();
+	hmDevice.embedded = (self != top);
+	hmDevice.Xdomain = (function(){try { return parent.location.hostname.length < 0 } catch(err) { return true;}})();
+	hmDevice.platform = navigator.platform.toLowerCase();
+	hmDevice.ipad = /ipad/.test(hmDevice.platform);
+	hmDevice.iphone = /iphone/.test(hmDevice.platform);
+	hmDevice.winphone7 =  (/windows phone os [7]\.\d\d??; .*?trident\/[5]\.\d\d??; iemobile\/9/.test(hmDevice.agent));
+	hmDevice.winphone = (/windows phone [89]\.\d\d??; .*?trident\/[67]\.\d\d??;.*?touch; /.test(hmDevice.agent));
+	hmDevice.w8desktop = (/windows nt 6\.[2345]|windows nt 10\.[0123456]/m.test(hmDevice.agent));
+	hmDevice.msBrowser = (/edge|trident/m.test(hmDevice.agent));
+	hmDevice.w8metro = (function(){var supported = true; 
+				try {new ActiveXObject("htmlfile");} catch(e) {supported = false;} 
+				return (!supported && hmDevice.w8desktop && hmDevice.msBrowser)})();
+	hmDevice.touch = !!(('ontouchstart' in window && !window.opera) || ('msmaxtouchppoints' in window.navigator) || ('maxtouchppoints' in window.navigator) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+	// Treat all Windows 8 devices as desktops unless in metro mode with touch
+	hmDevice.tb = (/tablet/.test(hmDevice.agent) && (!/trident/.test(hmDevice.agent) || (hmDevice.w8metro && hmDevice.touch)));
+	hmDevice.goodandroid = (/android.+?applewebkit\/(?:(?:537\.(?:3[6-9]|[4-9][0-9]))|(?:53[8-9]\.[0-9][0-9])|(?:54[0-9]\.[0-9][0-9]))|android.+?gecko\/[345][0-9]\.\d{1,2} firefox/.test(hmDevice.agent));
+	hmDevice.deadandroid = (/android.+?applewebkit\/(?:53[0-6]\.\d{1,2})|firefox\/[0-2]\d\.\d{1,2}/.test(hmDevice.agent));
+	hmDevice.android = (/android/.test(hmDevice.agent) && !hmDevice.deadandroid);
+	hmDevice.mb = /mobi|mobile/.test(hmDevice.agent);
+	
+	/* Main Checks */
+	hmDevice.phone = (hmDevice.mb && !hmDevice.ipad && !hmDevice.tb);
+	hmDevice.tablet = (hmDevice.ipad || hmDevice.tb || (!hmDevice.phone && hmDevice.android));
+	hmDevice.aspectRatio = (screen.height / screen.width > 1 ? screen.height / screen.width : screen.width / screen.height).toFixed(2);
+	hmDevice.narrowTablet = (hmDevice.tablet && hmDevice.aspectRatio > 1.4);
+	hmDevice.desktop = ((!hmDevice.tablet && !hmDevice.phone));
+	hmDevice.device = hmDevice.phone ? "phone" : hmDevice.tablet ? "tablet" : hmDevice.desktop ? "desktop" : "default";
+	hmDevice.fontSize = hmDevice.phone ? hmDevice.baseFontSize * 1.0 : hmDevice.tablet ? hmDevice.baseFontSize * 1.0 : hmDevice.desktop ? hmDevice.baseFontSize : hmDevice.baseFontSize;
+	hmDevice.maxFontSize = hmDevice.fontSize + hmDevice.fontChangeMax;
+	hmDevice.minFontSize = hmDevice.fontSize - hmDevice.fontChangeMax;
+	if (hmDevice.device !== sessionVariable.getPV("hmDevice")) {
+		sessionVariable.setPV("hmDevice", hmDevice.device);
+		sessionVariable.setPV("fontSize",hmDevice.fontSize.toString());
+		} else {
+			var tempSize = sessionVariable.getPV("fontSize");
+			if (tempSize !== null)
+				hmDevice.fontSize = parseInt(tempSize,10);
+			else
+				sessionVariable.setPV("fontSize",hmDevice.fontSize.toString());
+		}
+		
+	/* Main Stylesheet */
+	hmDevice.cssfile = document.createElement('link');
+	hmDevice.cssfile.rel = 'stylesheet';
+	hmDevice.cssfile.type = 'text/css';
+	hmDevice.cssfile.href = hmDevice.phone ? "./css/hmwebhelp_main_phone.css" : hmDevice.tablet ? "./css/hmwebhelp_main_tablet.css" : hmDevice.desktop ? "./css/hmwebhelp_main_desktop.css" : "./css/hmwebhelp_main_default.css";
+	document.getElementsByTagName('head')[0].appendChild(hmDevice.cssfile);
+
+	// Expand to full width of container frame if help is embedded in another page
+	if (hmDevice.embedded && hmDevice.desktop) {
+		let embedStyle = document.createElement("style");
+			embedStyle.type = "text/css";
+			embedStyle.appendChild(document.createTextNode("div#helpwrapper {max-width: 100% !important}"));
+			document.getElementsByTagName("head")[0].appendChild(embedStyle);
+	}
+
 	hmDevice.pageStylesheet = "./css/hmprojectstyles.css";
 	var hmSearchActive = true,
 		hmIndexActive = true;
 	</script>
 	<style type="text/css">.svgsprite{display:none;} 
 	div#fouc{background:#ffffff;position:absolute;top:0;right:0;bottom:0;left:0;z-index:10000;}
-	div#noscript {display: none;}
-	</style> 
+	div#noscript {display: none;}</style> 
 	<style id="livestyles" type="text/css"></style>
 	<noscript><style type="text/css">
 	div#pagewrapper {display: none;}
@@ -54,6 +231,7 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	<script id="jqscript" type="text/javascript"></script>
 </head>
 <body>
+<!--ZOOMSTOP-->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: none;">
 <defs>
 <g class="svgsprite" id="th-list" width="32" height="32" viewBox="0 0 32 32">
@@ -65,13 +243,27 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 <g class="svgsprite" id="search" width="30" height="32" viewBox="0 0 30 32">
 <path d="M20.576 14.848q0-3.296-2.368-5.632t-5.632-2.368-5.664 2.368-2.336 5.632 2.336 5.664 5.664 2.336 5.632-2.336 2.368-5.664zM29.728 29.728q0 0.928-0.704 1.6t-1.6 0.672q-0.96 0-1.6-0.672l-6.112-6.112q-3.2 2.208-7.136 2.208-2.56 0-4.896-0.992t-4-2.688-2.688-4-0.992-4.896 0.992-4.864 2.688-4.032 4-2.688 4.896-0.992 4.864 0.992 4.032 2.688 2.688 4.032 0.992 4.864q0 3.936-2.208 7.136l6.112 6.112q0.672 0.672 0.672 1.632z"></path>
 	</g>
-<g class="svgsprite" id="draghandle" width="30" height="32" viewBox="0 0 30 32">
-    <path d="M21.482,17.037v-4.977h-8.877V4.977h8.877V0L30,8.519L21.482,17.037z M0,22.2l8.518,8.519v-4.977h8.877v-7.084H8.518v-4.977
-	L0,22.2z"></path>
+<g class="svgsprite" id="draghandle_r" width="30" height="32" viewBox="0 0 30 32">
+    <path d="M10,6L8.59,7.41,13.17,12l-4.58,4.59L10,18l6,-6z"></path>
+  </g>
+<g class="svgsprite" id="draghandle_l" width="30" height="32" viewBox="0 0 30 32">
+    <path d="M15.41,7.41L14,6l-6,6,6,6,1.41,-1.41L10.83,12z"></path>
+  </g>
+<g class="svgsprite" id="draghandle_rm" width="30" height="32" viewBox="0 0 30 32">
+    <path d="M12.8 24.896l8.096-8.096q0.352-0.352 0.352-0.8t-0.352-0.8l-8.096-8.096q-0.32-0.352-0.8-0.352t-0.8 0.352l-1.824 1.792q-0.352 0.352-0.352 0.832t0.352 0.8l5.472 5.472-5.472 5.472q-0.352 0.352-0.352 0.8t0.352 0.832l1.824 1.792q0.352 0.352 0.8 0.352t0.8-0.352zM27.424 16q0 3.744-1.824 6.88t-4.992 4.992-6.88 1.856-6.912-1.856-4.96-4.992-1.856-6.88 1.856-6.88 4.96-4.992 6.912-1.856 6.88 1.856 4.992 4.992 1.824 6.88z"></path>
+  </g>
+<g class="svgsprite" id="draghandle_lm" width="30" height="32" viewBox="0 0 30 32">
+    <path d="M16.224 24.896l1.824-1.792q0.352-0.352 0.352-0.832t-0.352-0.8l-5.472-5.472 5.472-5.472q0.352-0.352 0.352-0.8t-0.352-0.832l-1.824-1.792q-0.32-0.352-0.8-0.352t-0.8 0.352l-8.096 8.096q-0.352 0.32-0.352 0.8t0.352 0.8l8.096 8.096q0.352 0.352 0.8 0.352t0.8-0.352zM27.424 16q0 3.744-1.824 6.88t-4.992 4.992-6.88 1.856-6.912-1.856-4.96-4.992-1.856-6.88 1.856-6.88 4.96-4.992 6.912-1.856 6.88 1.856 4.992 4.992 1.824 6.88z"></path>
   </g>
 <g class="svgsprite" id="toolbar_updown" width="30" height="30" viewBox="0 0 30 30">
     <path d="M17.038,8.518h-4.977v8.879l-7.084-0.002V8.518H0L8.519,0L17.038,8.518z M22.2,30l8.519-8.518h-4.977v-8.877l-7.084-0.002
 	v8.879h-4.977L22.2,30z"></path>
+  </g>
+<g class="svgsprite" id="toolbar_close" width="30" height="30" viewBox="0 0 30 30">
+    <path d="M16.295 15.705C16.295 15.705 17.705 14.295 17.705 14.295C17.705 14.295 11.705 8.295 11.705 8.295C11.705 8.295 5.705 14.295 5.705 14.295C5.705 14.295 7.115 15.705 7.115 15.705C7.115 15.705 11.705 11.125 11.705 11.125C11.705 11.125 16.295 15.705 16.295 15.705"></path>
+  </g>
+<g class="svgsprite" id="toolbar_open" width="30" height="30" viewBox="0 0 30 30">
+    <path d="M7.115 8.295C7.115 8.295 5.705 9.705 5.705 9.705C5.705 9.705 11.705 15.705 11.705 15.705C11.705 15.705 17.705 9.705 17.705 9.705C17.705 9.705 16.295 8.295 16.295 8.295C16.295 8.295 11.705 12.875 11.705 12.875C11.705 12.875 7.115 8.295 7.115 8.295"></path>
   </g>
 <g class="svgsprite" id="angle-circled-left" width="27" height="32" viewBox="0 0 27 32">
 <path d="M16.224 24.896l1.824-1.792q0.352-0.352 0.352-0.832t-0.352-0.8l-5.472-5.472 5.472-5.472q0.352-0.352 0.352-0.8t-0.352-0.832l-1.824-1.792q-0.32-0.352-0.8-0.352t-0.8 0.352l-8.096 8.096q-0.352 0.32-0.352 0.8t0.352 0.8l8.096 8.096q0.352 0.352 0.8 0.352t0.8-0.352zM27.424 16q0 3.744-1.824 6.88t-4.992 4.992-6.88 1.856-6.912-1.856-4.96-4.992-1.856-6.88 1.856-6.88 4.96-4.992 6.912-1.856 6.88 1.856 4.992 4.992 1.824 6.88z"></path>
@@ -85,6 +277,9 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 <g class="svgsprite" id="menu" width="27" height="32" viewBox="0 0 27 32">
     <path d="M27.424 24v2.272q0 0.48-0.32 0.8t-0.832 0.352h-25.12q-0.48 0-0.8-0.352t-0.352-0.8v-2.272q0-0.48 0.352-0.8t0.8-0.352h25.12q0.48 0 0.832 0.352t0.32 0.8zM27.424 14.848v2.304q0 0.448-0.32 0.8t-0.832 0.32h-25.12q-0.48 0-0.8-0.32t-0.352-0.8v-2.304q0-0.448 0.352-0.8t0.8-0.32h25.12q0.48 0 0.832 0.32t0.32 0.8zM27.424 5.728v2.272q0 0.48-0.32 0.8t-0.832 0.352h-25.12q-0.48 0-0.8-0.352t-0.352-0.8v-2.272q0-0.48 0.352-0.832t0.8-0.32h25.12q0.48 0 0.832 0.32t0.32 0.832z"></path>
   </g>
+<g class="svgsprite" id="weblink" width="32" height="32" viewBox="0 0 27 32">
+ <path d="M11.99,2C6.47,2,2,6.48,2,12s4.47,10,9.99,10C17.52,22,22,17.52,22,12S17.52,2,11.99,2zm6.93,6h-2.95c-0.32,-1.25,-0.78,-2.45,-1.38,-3.56,1.84,0.63,3.37,1.91,4.33,3.56zM12,4.04c0.83,1.2,1.48,2.53,1.91,3.96h-3.82c0.43,-1.43,1.08,-2.76,1.91,-3.96zM4.26,14C4.1,13.36,4,12.69,4,12s0.1,-1.36,0.26,-2h3.38c-0.08,0.66,-0.14,1.32,-0.14,2,0,0.68,0.06,1.34,0.14,2H4.26zm0.82,2h2.95c0.32,1.25,0.78,2.45,1.38,3.56,-1.84,-0.63,-3.37,-1.9,-4.33,-3.56zm2.95,-8H5.08c0.96,-1.66,2.49,-2.93,4.33,-3.56C8.81,5.55,8.35,6.75,8.03,8zM12,19.96c-0.83,-1.2,-1.48,-2.53,-1.91,-3.96h3.82c-0.43,1.43,-1.08,2.76,-1.91,3.96zM14.34,14H9.66c-0.09,-0.66,-0.16,-1.32,-0.16,-2,0,-0.68,0.07,-1.35,0.16,-2h4.68c0.09,0.65,0.16,1.32,0.16,2,0,0.68,-0.07,1.34,-0.16,2zm0.25,5.56c0.6,-1.11,1.06,-2.31,1.38,-3.56h2.95c-0.96,1.65,-2.49,2.93,-4.33,3.56zM16.36,14c0.08,-0.66,0.14,-1.32,0.14,-2,0,-0.68,-0.06,-1.34,-0.14,-2h3.38c0.16,0.64,0.26,1.31,0.26,2s-0.1,1.36,-0.26,2h-3.38z"></path>
+ </g>
 <g class="svgsprite" id="collapse" width="27" height="32" viewBox="0 0 27 32">
 <path d="M20.448 19.936q-0.32 0.64-1.024 0.64h-11.424q-0.704 0-1.024-0.64-0.32-0.608 0.096-1.184l5.728-8q0.32-0.48 0.928-0.48t0.928 0.48l5.696 8q0.416 0.576 0.096 1.184zM22.848 24.576v-17.152q0-0.224-0.16-0.384t-0.416-0.192h-17.12q-0.224 0-0.416 0.192t-0.16 0.384v17.152q0 0.224 0.16 0.384t0.416 0.192h17.12q0.256 0 0.416-0.192t0.16-0.384zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 	</g>
@@ -127,53 +322,26 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 <g class="svgsprite" id="ok-squared" width="27" height="32" viewBox="0 0 27 32">
 <path d="M12.224 23.2l10.976-10.976q0.32-0.32 0.32-0.8t-0.32-0.8l-1.824-1.824q-0.352-0.32-0.8-0.32t-0.8 0.32l-8.352 8.352-3.776-3.776q-0.32-0.352-0.8-0.352t-0.8 0.352l-1.824 1.824q-0.32 0.32-0.32 0.8t0.32 0.8l6.4 6.4q0.352 0.32 0.8 0.32t0.8-0.32zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 	</g>
+<symbol class="svgsprite" id="menu-closed" viewBox="0 0 24 24">
+<path d="M2.99999995 23.9999998C2.99999995 23.9999998 21.0123147 12.01849265 21.0123147 12.01849265C21.0123147 12.01849265 3.02464845 1.28000000075e-05 3.02464845 1.28000000075e-05C3.02464845 1.28000000075e-05 2.99999995 23.9999998 2.99999995 23.9999998"></path>
+  </symbol>
+<symbol class="svgsprite" id="menu-open" viewBox="0 0 24 24">
+    <path d="M0.0 3.0C0.0 3.0 12.0 21.0 12.0 21.0C12.0 21.0 24.0 3.0 24.0 3.0C24.0 3.0 0.0 3.0 0.0 3.0"></path>
+  </symbol>
 </defs>
 </svg>
 <div id="fouc"></div><div id="noscript"><h2 id="noscriptwarning">Please enable JavaScript to view this site.</h2></div>
-<!--ZOOMSTOP--> 
+	<div id="helpwrapper">
 	<div id="pagewrapper">
 	<div id="toolbar_updown" class="toolwrapper phone">
 	<svg id="toolbar_updown_button" alt="Show/Hide Toolbars" viewBox="0 0 30 30"><use xlink:href="#toolbar_updown"></use></svg>
 	</div>
 	<div id="headerbox_wrapper">
 	<div id="headerbox">
-<a id="headerlogo" href="https://docs.hsm.digital/dev/index.html" title="Hygiene Management" target="_blank"></a>
+<a id="headerlogo" href="http://www.hagleitner.com/" title="HsM - Hygiene Sense Management" target="_blank"></a>
 <div id="headerwrapper"><h1 class="page_header" id="hm_pageheader">HsM Reference Manual</h1></div>
 
 
-<div id="phone_hamburger_icon" class="phone"><svg id="phone_hamburger_mobnav" viewBox="0 0 27 32"><use xlink:href="#menu"></use></svg></div>
-	</div>
-	<div id="header_menu">
-<ul class="topnav">  
-    <li class="phone"><a href="javascript:hmWebHelp.closeTopNav();" data-target="socialsharing.js" data-path="./js/" data-title="Share This Topic" class="popuplink" title="Share this Topic">Share This Topic</a></li>
-	<li class="desk_tablet"><a href="//www.helpandmanual.com/" target="_blank" title="Main Page">EC Software Website</a></li>	
-    <li>  
-        <a title="Tutorials for programmers">Tutorials</a>  
-        <ul class="subnav">  
-            <li><a href="//www.helpandmanual.com/support_tutorials.html" target="_blank" title="Main Tutorials Page">Tutorials Page</a></li>
-			<li><a href="//www.helpandmanual.com/support_tutorials.html#vb" target="_blank" title="Visual Basic tutorials">Visual Basic</a></li>  
-            <li><a href="//www.helpandmanual.com/support_tutorials.html#dotnet" target="_blank" title=".NET language tutorials">For .NET languages</a></li>
-			<li><a href="//www.helpandmanual.com/support_tutorials.html#ac" target="_blank" title="Microsoft Access tutorials">Microsoft Access</a></li>
-			<li><a href="//www.helpandmanual.com/support_tutorials.html#foxpro" target="_blank" title="Visual Foxpro tutorials">Visual Foxpro</a></li>
-        </ul>  
-    </li>  
-    <li>  
-        <a title="Free resources for help authors">Resources</a>  
-        <ul class="subnav">  
-            <li><a href="//www.helpandmanual.com/downloads_mscomp.html" target="_blank" title="Help compiler downloads">Help Compilers</a></li>  
-            <li><a href="//www.helpandmanual.com/downloads_delphi.html" target="_blank" title="Free components for Delphi programmers">Delphi Components</a></li> 
-			<li><a href="//www.tntscreencapture.com/" target="_blank" title="Free TNT screen capture utility">TNT Screen Capture</a></li> 			
-        </ul>  
-    </li>  
-    <li><a title="Sources for further information">Information</a>
-	<ul class="subnav">
-	    <li><a href="//www.helpandmanual.com/company_about.html" target="_blank" title="About EC Software">About</a></li>  
-		<li><a href="//news.helpandmanual.com/" target="_blank" title="The EC Software news blog and RSS feed">News Blog</a></li>  
-		<li><a href="//www.helpandmanual.com/company_contact.html" target="_blank" title="Contact addresses for feedback and support">Contact Us</a></li>
-       </ul>  		
-	</li>  
-	<li class="desktop tablet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-</ul>
 
 	</div>
 	</div>
@@ -185,7 +353,7 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	<svg id="fullscreen_toggle" class="hmbicon" viewBox="0 0 27 32"><use xlink:href="#resize-full"></use></svg>
 	<a onclick='hmWebHelp.doFullEmbedWindow(this)' title="Zoom window">
 	<span>Zoom Window Out</span></a>
-	</li> 
+	</li>
 	<li>
 		<svg class="hmbicon" viewBox="0 0 32 32"><use xlink:href="#text-height"></use></svg>
 		<a onclick="hmWebHelp.extFuncs('fontSize',[true,'global']);" title="Increase Font Size"> 
@@ -203,8 +371,8 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	</li>
 	<li id="hm_printable_version">
 		<svg class="hmbicon" viewBox="0 0 30 32"><use xlink:href="#print"></use></svg>
-		<a id="hm_printable_link" href="_hm_print_window.htm?combining-devices.html" onclick="hmWebHelp.hamburgerMenu()" target="hm_print_window" title="Display a Printable Version of Current Topic"> 
-		<span>Printable Version</span></a>
+		<a id="hm_printable_link" href="_hm_print_window.htm?combining-devices.html" onclick="hmWebHelp.hamburgerMenu()" target="hm_print_window" title="Print Current Topic">
+		<span>Print Topic</span></a>
 	</li>
 	<li class="desktop server">
 		<svg class="hmbicon" viewBox="0 0 30 32"><use xlink:href="#link"></use></svg>
@@ -221,26 +389,29 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation: <a href="neutral-backend-infrastructure.html">Neutral backend infrastructure</a> &gt; <a href="cats.html">Catalog service</a> &gt; <a href="compound-device-types.html">Compound device types</a></p> 
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="neutral-backend-infrastructure.html">Neutral backend infrastructure</a> &gt; <a href="cats.html">Catalog service</a> &gt; <a href="compound-device-types.html">Compound device types</a></p> 
 		  <p class="topictitle">Combining devices</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
 		<a id="atoclink" class="topicnavlink" title="Contents of this topic">
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
-		<span>Scroll</span></a> 
+		<span>Scroll</span></a>
+		
 		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="delivering-device-types-via-th.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="index.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="compound-device-types.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Top</span></a>
 		<a id="topicnavlinknext" class="topicnavlink nav" href="display-groups.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
+		
 		 <a id="hamburgerlink" class="topicnavlink" title="Additional Functions Menu">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#menu"></use></svg>
 		 <span>More</span></a>
+		 
 		 </span>
 		 </td>
 	  </tr>
@@ -248,22 +419,27 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	</div>
 	<div id="autoTocWrapper" class=""></div> 
 	<div id="hmpagebody">
-	<div id="unclicker"></div>
+	
 	<div id="hmpagebody_scroller">
-<!--ZOOMRESTART-->
+<!--ZOOMRESTART--> 
 	<p class="p_Normal">Compound devices can either be created by the Digital Twin registration agent when the device is first registered, or they can be created through the HsM Client Service (usually via Xibu App or Web Frontend).</p>
 <p class="p_Normal">Both possible ways of combining devices make use of the catalog service, since it provides information about possible device type placeholders for compound device types. As the placeholders are typed, the consumers of the catalog know which combinable devices can be installed in a compound device.</p>
 
+	<div class="topicfooter">
+<p class="topicfooter">powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a></p>
+</div>
 	</div> <!-- hmpagebody_scroller -->
 	</div> <!-- hmpagebody -->
 	</div> <!-- topicbody-->
 	</div><!-- topicbox -->
 	<div id="navwrapper">
 	<div id="dragwrapper" class="toolwrapper">
-	<svg id="draghandleicon" viewBox="0 0 30 32" alt="resize nav pane"><use xlink:href="#draghandle"></use></svg>
+	<svg id="draghandleicon_r" class="splittertool" viewBox="0 0 30 32" alt="resize nav pane"><use xlink:href="#draghandle_r"></use></svg>
+	<svg id="draghandleicon_l" class="splittertool" viewBox="0 0 30 32" alt="resize nav pane"><use xlink:href="#draghandle_l"></use></svg>
 	</div>
-	<div id="toolbutton_wrapper" class="toolwrapper tablet">
-	<svg id="tablet_toolbar_updown_button" alt="Show/Hide Toolbars" viewBox="0 0 30 30"><use xlink:href="#toolbar_updown"></use></svg>
+	<div id="toolbutton_wrapper" class="toolwrapper desk_tablet">
+	<svg id="toolbar_updown_close" class="splittertool" viewBox="0 0 30 32" alt="showhide pageheader"><use xlink:href="#toolbar_close"></use></svg>
+	<svg id="toolbar_updown_open" class="splittertool" viewBox="0 0 30 32" alt="showhide pageheader"><use xlink:href="#toolbar_open"></use></svg>
 	</div>
 	<div id="navsplitbar"></div>
 	<img id="leftright" src="./images/leftright.png" alt="resize nav pane" width="150" height="45" border="0" />
@@ -271,9 +447,11 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 	<!-- NAV TABS START -->
 	<nav id="navpane_tabs">
 	<ul id="topictabs" class="tabs">
-	<li id="contentstab" class="hmtabs current" title="Table of Contents"><a id="contentstablink"><svg class="tocicon" viewBox="0 0 30 32"><use xlink:href="#th-list"></use></svg></a></li>
-	<li id="indextab" class="hmtabs" title="Keyword Index"><a id="indextablink"><svg class="tocicon" viewBox="0 0 30 32"><use xlink:href="#key-inv"></use></svg></a></li>
-	<li id="searchtab" class="hmtabs" title="Search Topics"><a id="searchtablink"><svg class="tocicon" viewBox="0 0 30 32"><use xlink:href="#search"></use></svg></a></li>
+	<li id="contentstab" class="hmtabs current" title="Table of Contents"><a id="contentstablink"><svg class="tocicon" viewBox="0 0 30 32"><use xlink:href="#list-bullet"></use></svg><span class="desk_tablet">Contents</span><span class="phone">Contents</span></a></li>
+	
+	<li id="indextab" class="hmtabs" title="Keyword Index"><a id="indextablink"><svg class="tocicon" viewBox="0 0 30 32"><use xlink:href="#key-inv"></use></svg><span>Index</span></a></li>
+	
+	<li id="searchtab" class="hmtabs" title="Search Topics"><a id="searchtablink"><svg class="tocicon" viewBox="0 0 30 32"><use xlink:href="#search"></use></svg><span>Search</span></a></li>
 	</ul>
 	</nav>
 	<!-- NAV TABS END -->	
@@ -302,17 +480,132 @@ var pageName="mainPage";var hmDevice={mobileSleepReload:true,compilehash:(functi
 			<td id="mob_tb_hamburger" class="mob_hamburger" align="right" valign="top"><div id="phone_mobnav_hamburger_icon" class="mobnav phone"><svg id="phone_hamburger_mobnav" viewBox="0 0 27 32"><use xlink:href="#menu"></use></svg></div></td>
 			</tr></table>
 	</div></div>
-	</div> <!-- pagewrapper --> 
+	</div> <!-- pagewrapper -->
+	</div> <!-- helpwrapper -->
 	<div id="dragsurface"></div>
 <script type="text/javascript" src="./js/xmessage.js"></script> 
 <script id="hmPageInitScript" type="text/javascript">
 var fouc=document.getElementById("fouc");
 if (!hmFlags.isEWriter) fouc.parentNode.removeChild(fouc);
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-(function(){var b=sessionVariable.getPV("fontSize"),a=document.getElementsByTagName("html")[0];if(b!==null){a.style.fontSize=b+"%"}else{a.style.fontSize=hmDevice.baseFontSize+"%"}})();var moveCheck=null,hmTocLoaded=false,hmTocWidth=0,xMessage=new xMsg("LANDING TOPIC");function initScripts(){hmPopupsObject={};hmFlags.isHmTopic=true;hmFlags.idxLoaded=false;hmFlags.schLoaded=false;hmFlags.searchSession=false;hmFlags.tocClicked=false;hmFlags.layoutTable=false;hmFlags.searchHighlight="";hmFlags.tocInitWidth=0;hmFlags.jumpHighlight=false;hmFlags.hmMainPage="index.html";hmFlags.hmTrackHost="http://www.helpandmanual.com/help/";hmFlags.hmProject="HsM Reference Manual";hmFlags.hmDefaultPage="index.html";hmFlags.hmCurrentPage="combining-devices.html";hmFlags.hmTOC="hmcontent.html";hmFlags.hmSearchPage="hmftsearch.html";hmFlags.hmIndexPage="hmkwindex.html";hmFlags.thisTopic="combining-devices.html";hmFlags.lastTopic="index.html";hmFlags.isEWriter=false;hmFlags.topicExt=".html";hmFlags.defaultExt=".html";hmFlags.projName="HsM Reference Manual";hmFlags.tDescription=document.querySelector("meta[name='description']").getAttribute("content");hmFlags.tKeywords="";hmFlags.hdFormat=false;hmFlags.contextID=(function(){var f;if(/^https??:\/\//im.test(document.location)){f=/contextid=\d*/.exec(window.location.search.substring(1))}else{f=/contextid=\d*/.exec(window.location.hash.substring(1))}return f!=null?f[0]:false})();function e(f){$.getScript(a[f],function(g,i,h){if(d<a.length-1){d++;e(d)}else{hmpage.defaulttopic="index.html";hmWebHelp.hmMainPageInit();hmpage.hmDescription=document.querySelector("meta[name='description']").getAttribute("content");hmpage.hmPicture=""===""?"":"./images/";}})}if(document.location.protocol.substr(0,4)!=="http"){window.History={options:{html4Mode:true}}}var d=0;var a=["./js/helpman_settings.js","./js/jquery.scrollTomin.js","./js/jquery.history.js","./js/hm_webhelp.js"];if(hmFlags.contextID){a.unshift("./js/hmcontextids.js")}if(hmDevice.phone){a.push("./js/mobileNav.js")}var c=document.getElementById("jqscript");c.src="./js/jquery.js";var b=setInterval(function(){if(window.jQuery){clearInterval(b);$.ajaxPrefilter("json script",function(g){g.crossDomain=true});if(hmDevice.embedded&&hmDevice.desktop){$("li#toggle_fullscreen").show()}e(0);var f="Combining devices";switch("topic"){case"project":f="HsM Reference Manual";break;case"project_topic":f="HsM Reference Manual > Combining devices";break}$("title").text(f)}},100)}if(window.addEventListener){window.addEventListener("load",initScripts,false)}else{if(window.attachEvent){window.attachEvent("onload",initScripts)}else{window.onload=initScripts}};
-helpman_mailrecipient = 'Support Staff ';
+// Reset font size with preset cookie value if available
+(function(){
+	var tempFontSize = sessionVariable.getPV("fontSize"),
+		baseElement = document.getElementsByTagName("html")[0];
+	if (tempFontSize !== null) {
+	baseElement.style.fontSize=tempFontSize + "%";
+	} else {
+	baseElement.style.fontSize = hmDevice.baseFontSize + "%";
+	}
+	})();
+/*** TOGGLE INIT PLACEHOLDER ***/
+
+	var moveCheck = null, hmTocLoaded = false, hmTocWidth = 0, xMessage = new xMsg("LANDING TOPIC");
+
+	// Post-loading scripts function
+	function initScripts() {
+	hmPopupsObject = {};
+	hmFlags.isHmTopic = true;
+	hmFlags.idxLoaded = false;
+	hmFlags.schLoaded = false;
+	hmFlags.searchSession = false;
+	hmFlags.tocClicked = false;
+	hmFlags.layoutTable = false;
+	hmFlags.searchHighlight = "";
+	hmFlags.tocInitWidth = 0;
+	hmFlags.jumpHighlight = false;
+	hmFlags.hmMainPage = "index.html";
+	hmFlags.hmTrackHost = "http://www.helpandmanual.com/help/";
+	hmFlags.hmProject = "HsM Reference Manual";
+	hmFlags.hmDefaultPage = "index.html";
+	hmFlags.hmCurrentPage = "combining-devices.html";
+	hmFlags.hmTOC = "hmcontent.html";
+	hmFlags.hmSearchPage = "hmftsearch.html";
+	hmFlags.hmIndexPage = "hmkwindex.html";
+	hmFlags.thisTopic = "combining-devices.html";
+	hmFlags.lastTopic = "index.html";
+	hmFlags.isEWriter = false;
+	hmFlags.topicExt = ".html";
+	hmFlags.defaultExt = ".html";
+	hmFlags.projName = "HsM Reference Manual";
+	hmFlags.tDescription = document.querySelector("meta[name='description']").getAttribute("content");
+	hmFlags.tKeywords = "";
+	hmFlags.hdFormat = false;
+	hmFlags.contextID = (function(){
+		var cntxMatch;
+		if (/^https??:\/\//im.test(document.location)) {
+			cntxMatch = /contextid=\d*/.exec(window.location.search.substring(1));
+		} else {
+			cntxMatch = /contextid=\d*/.exec(window.location.hash.substring(1));
+			}
+		return cntxMatch != null ? cntxMatch[0] : false;
+		})();	
+	
+	function loadScripts(x) {
+	$.getScript( scripts[x], function( data, textStatus, jqxhr ) {
+	  if (currentScript < scripts.length-1) {
+	  currentScript++;
+	  loadScripts(currentScript);
+	  } else {
+	  hmpage.defaulttopic = "index.html";
+	hmpage.breadcrumbs = !false;
+	hmpage.parenthome = true;
+	  hmWebHelp.hmMainPageInit();
+	  hmpage.hmDescription = document.querySelector("meta[name='description']").getAttribute("content");
+	  hmpage.hmPicture = "" === "" ? "" : "./images/";
+	  hmpage.topicfooter = $("div.topicfooter")[0].outerHTML;
+	  
+	  
+	  
+	
+	  }
+	}); // $getScript
+	}  // loadScripts()
+	
+	// Force HTML4 mode in History framework for local WebHelp (required for Chrome, use globally for consistency)
+	if (document.location.protocol.substr(0,4) !== "http") {
+		window.History = {options: {html4Mode: true} };
+	}
+	var currentScript = 0;
+	var scripts = ["./js/helpman_settings.js", "./js/jquery.scrollTomin.js", "./js/jquery.history.js", "./js/hm_webhelp.js"]
+	if (hmFlags.contextID) scripts.unshift("./js/hmcontextids.js");
+	if (hmDevice.phone) scripts.push("./js/mobileNav.js");	
+ 
+	var jScript = document.getElementById("jqscript");
+	jScript.src = "./js/jquery.js";
+	
+	var loadCheck = setInterval(function() {
+		if (window.jQuery) {
+			clearInterval(loadCheck);
+			$.ajaxPrefilter( "json script", function(options) {options.crossDomain = true;});
+			if (hmDevice.embedded && hmDevice.desktop) $("li#toggle_fullscreen").show();
+			loadScripts(0);
+			
+			/* Title Bar Text */
+			var titleBarText = "Combining devices";
+			switch ("topic") {
+				case "project":
+				titleBarText = "HsM Reference Manual";
+				break;
+				
+				case "project_topic":
+				titleBarText = "HsM Reference Manual" + " \> " + "Combining devices"; 
+				break;
+				}
+			titleBarText = $("<textarea/>").html(titleBarText).text();
+			$("title").text(titleBarText);
+			
+			}
+		},100);
+	}
+	if (window.addEventListener)
+	window.addEventListener("load", initScripts, false);
+	else if (window.attachEvent)
+	window.attachEvent("onload", initScripts);
+	else window.onload = initScripts;
+helpman_mailrecipient = 'Support Staff <support@ec-software.com>';
 hmGetUrlParams = function() {/*! 
 * Enter code to save URL parameters to session variables inside the if clause below.
 * This will be executed when your WebHelp is first opened and the session variables
@@ -320,15 +613,28 @@ hmGetUrlParams = function() {/*!
 * the V3 Responsive Skins chapter of the help for detailed instructions.
 */
 if (hmWebHelp.userParams && hmWebHelp.userParams.paramsCount > 0) {
-  
+
 }
 }
 /*! 
-* Enter the function/s you want to call after topics load in this file.
+* Enter the JS function/s you want to be able to call after the main page 
+* or individual topics load in this file. The functions are made available 
+* by this file but called by the POSTLOAD_TOPICFUNC and POSTLOAD_PAGEFUNC
+* variables. 
+*  
 * Nothing in this file should be executed on loading! All execution is
-* initiated with a single statement stored in the POSTLOAD_FUNC variable
-* including any arguments. Example:
-* myFunction("red","blue");
+* initiated with a single statement stored in the POSTLOAD_PAGEFUNC and
+* POSTLOAD_TOPICFUNC variables, in the General Settings variables group. 
+*
+* POSTLOAD_PAGEFUNC: Statement to be executed ONCE on loading the main page.
+* POSTLOAD_TOPICFUNC: Statement to be executed on EVERY page load
+* 
+* The statement/s you enter POSTLOAD_PAGEFUNC will be executed after 
+* all page components and assets have loaded, including images.
+* 
+* The statement/s in POSTLOAD_TOPICFUNC are executed after topic content
+* has been dynamically replaced in the page when the user browses to a new
+* topic.
 */
 
 </script>

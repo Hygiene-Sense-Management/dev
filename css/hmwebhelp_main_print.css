@@ -1,5 +1,5 @@
  /* Main Help & Manual WebHelp Page Layout CSS
-	 Copyright (c) by Tim Green 2014. All rights reserved. Contact: tg@it-authoring.com
+	 Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
 body { 
 	font-size: 100;
@@ -35,7 +35,16 @@ div#topicheader {
 	}
 
 
-/* Topic title in topic header*/ 
+/* Topic title in topic header*/
+p#ptopic_breadcrumbs {
+	display: none;
+	color: #000000;
+	}
+p#ptopic_breadcrumbs a {
+	color: #000000;  
+	opacity: 1.0; 
+	font-style: normal; 
+	}
 p.topictitle {
 	font-size: 1.3rem;
 	font-weight: bold;
@@ -53,9 +62,6 @@ div#mob_toolbar_wrapper {
 div#dragsurface {
 	display: none;
 	}
-div#unclicker {
-	display: none;
-	}	
 
 .wraptext {
 	white-space: normal !important;

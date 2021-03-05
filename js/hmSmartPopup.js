@@ -1,4 +1,580 @@
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-var hmXPopup={};var $popparent=$("body");$popparent.append('<div id="hmpopupbox" class="hmpopup"><div id="hmpopuptitlebar" class="hmpopup"><div id="hmpopuptitle" class="hmpopup"><p class="hmpopup">This is the title bar</p></div><div id="hmclosepopup" class="hmpopup"><span>X</span></div></div><div id="hmpopupbody"></div></div>');hmXPopup.$popup=$("div#hmpopupbox");hmXPopup.$popupcontainer=$("div#topicbox");hmXPopup.$popuptitle=$("div#hmpopuptitle > p");hmXPopup.$popupheader=$("div#hmpopuptitlebar");hmXPopup.$popupdragger=$("div#hmpopuptitle");hmXPopup.$popupbody=$("div#hmpopupbody");hmXPopup.popupwindow=hmXPopup.$popupbody[0];hmXPopup.$dragsurface=$("div#dragsurface");hmXPopup.refPath="./jspopups/";hmXPopup.clickX=0;hmXPopup.clickY=0;hmXPopup.posX=0;hmXPopup.posY=0;hmXPopup.PreventDefault=function(a){if(typeof a=="undefined"||a===null){return}if(a.preventDefault){a.preventDefault()}else{a.returnValue=false}};hmXPopup.sizeAndPosition=function(){hmXPopup.posX=hmXPopup.clickX;hmXPopup.posY=hmXPopup.clickY;var k=function(q,r){if(typeof q==="string"&&q.charAt(q.length-1)==="%"){return parseFloat(q,10)}else{r=typeof r==="string"?parseFloat(r,10):r;q=typeof q==="string"?parseFloat(q,10):q;return((q/r)*100)}};var c=function(){return $(window).width()},o=0,e=0,b=function(){return $(window).height()},i=0,p=0,l=function(){return hmXPopup.popupwindow.clientHeight<hmXPopup.popupwindow.scrollHeight},h=function(){return hmXPopup.popupwindow.clientWidth<hmXPopup.popupwindow.scrollWidth},g=0,a=0,j=false,f=k(hmXPopup.$popup.css("max-width"),c())/100,d=k(hmXPopup.$popup.css("max-height"),b())/100,n=hmDevice.desktop?hmXPopup.$popupcontainer:$(window);var m=function(){var r=c(),q=hmXPopup.$popup.width(),t=b(),s=hmXPopup.$popup.height();hmXPopup.$popup.css({width:k(q,r)+"%",height:k(s,t)+"%"})};if(h()){hmXPopup.$popup.width((hmXPopup.popupwindow.scrollWidth+5)+"px");j=true}if(l()){g=hmXPopup.$popup.width();a=hmXPopup.$popup.height();j=true;do{g+=5;a+=5;hmXPopup.$popup.width(g+"px");hmXPopup.$popup.height(a+"px")}while(l()&&(g<n.width()*f));if(h()){hmXPopup.$popup.width((hmXPopup.popupwindow.scrollWidth+5)+"px")}if(l()){hmXPopup.$popup.height((hmXPopup.$popupheader.height()+hmXPopup.popupwindow.scrollHeight+2)+"px")}}o=c()-5;e=hmXPopup.$popup.width();i=b()-5;p=hmXPopup.$popup.height();if((p+hmXPopup.posY+15<i-5)&&(e+hmXPopup.posX+30<o-5)){hmXPopup.posY+=15;hmXPopup.posX+=30}else{if(p+hmXPopup.posY+15>i-5){hmXPopup.posY=i-(p+5);hmXPopup.posY=hmXPopup.posY<0?5:hmXPopup.posY}else{hmXPopup.posY+=15}if(e+hmXPopup.posX+30>o-5){if(e+5<hmXPopup.posX){hmXPopup.posX=hmXPopup.posX-(e+5)}else{hmXPopup.posX=o-(e+5)}hmXPopup.posX=hmXPopup.posX<0?5:hmXPopup.posX}else{hmXPopup.posX+=30}}if(hmDevice.ipad){hmXPopup.posX-=20;hmXPopup.posY-=20}hmXPopup.$popup.css({top:(hmXPopup.posY)+"px",left:(hmXPopup.posX)+"px"});if(j&&(hmXPopup.$popup.width()>hmXPopup.$popupcontainer.width()*0.5||hmXPopup.$popup.height()>hmXPopup.$popupcontainer.height()*0.5)){m()}};hmXPopup.closePopup=function(){hmXPopup.$popup.fadeOut(300);if(hmDevice.desktop){$("body").off(".resizepopup").off(".resizepopuplistener");hmXPopup.$dragsurface.off(".resizepopup").attr("style","");$("input#bookmarkPermalink").off("mousedown")}if(hmXPopup.social&&$("script#gplus_script").length>0){$("script#gplus_script").remove()}if(!hmXPopup.social&&!hmXPopup.permalink){hmXPopup.$popupbody.find("iframe").attr("src","");var a=hmXPopup.$popupbody.find("object,embed,param");if(a.length>0){if(/trident|edge/i.test(window.navigator.userAgent)){document.location.reload()}else{a.attr("data","").attr("src","").attr("value","").remove()}}}hmXPopup.$popup.attr("style","");hmXPopup.$popupbody.html("")};hmXPopup.bookmarkPermalink=function(){if(hmBrowser.server){alert("Right-click on permalink to copy, then press CTRL+D or CMD+D to bookmark.")}else{alert("This page is stored locally. You can only bookmark pages on a web server.")}};hmLoadPopup=function(b){hmXPopup.$popupbody.html(b.hmBody);hmXPopup.$popuptitle.html(b.hmTitle);if(typeof b.dims==="undefined"){hmXPopup.$popup.css({height:"3.6rem",width:"20rem"})}else{hmXPopup.$popup.css(b.dims)}hmXPopup.noresize=false;if(typeof b.permalink!=="undefined"&&b.permalink){hmXPopup.noresize=true;$("textarea#plinkBox").text(document.location.protocol+"//"+document.location.hostname+document.location.pathname);$("p#permalink_tip").text("Right-click on permalink to copy to clipboard");$("input#bookmarkPermalink").attr("value","Bookmark Topic");$("input#selectPermalink").on(hmBrowser.touchstart,function(){$("textarea#plinkBox").focus().select()});$("textarea#plinkBox").on("mousedown",function(d){if(d.button==2){$(this).focus().select()}});$("input#bookmarkPermalink").on("mousedown",function(){hmXPopup.bookmarkPermalink()})}hmXPopup.$popup.show();hmXPopup.sizeAndPosition();if(typeof hmXPopup.social!=="undefined"&&hmXPopup.social){setTimeout(hmXPopup.sizeAndPosition,3000)}if(typeof b.permalink!=="undefined"&&b.permalink){var a=(hmXPopup.$popup.height()+7)+"px",c=($("textarea#plinkBox").width()+25)+"px";hmXPopup.$popup.css({width:c,"min-width":c,height:a,"min-height":a});$("textarea#plinkBox").focus().select()}if(hmDevice.desktop&&!hmXPopup.noresize){$("body").off("mousemove.resizepopuplistener").on("mousemove.resizepopuplistener",function(e){var d=e.originalEvent;hmXPopup.resizeListener(d)});$("body").off("mousedown.resizepopup").on("mousedown.resizepopup",function(d){var f=d.originalEvent;hmXPopup.startResizePopup(f)})}};hmXPopup.loadPopup=function(f,d,b){var a=false,h=f.substr(f.lastIndexOf(".")+1,2),g="",e=hmXPopup.refPath;if(typeof d!=="undefined"){e=d;if(h!=="js"){a=true}}if(Object.keys(hmWebHelp.visitedTopics).length>300){hmWebHelp.visitedTopics={}}if(e.charAt(e.length-1)!=="/"){e+="/"}g=e+f;if(!a){hmXPopup.social=!!(f==="socialsharing.js");if(!hmWebHelp.visitedTopics.hasOwnProperty(f)){$.getScript(g,function(i,k,j){if(k!=="success"){alert("Error loading popup file: "+g)}else{hmWebHelp.visitedTopics[f]=true}})}else{$.cachedScript(g).done(function(i,j){if(j!=="success"){alert("Error loading popup file: "+g)}})}}else{var c={};c.hmTitle=typeof b==="string"?b:"";c.permalink=!!(f==="_hmpermalink.html");$.get(g,function(i){c.hmBody=i;hmLoadPopup(c)},"html")}};hmXPopup.$popupbody.on("click","a.topiclink, a.topichotspot",function(a){a.preventDefault();a.stopPropagation()}).on(hmBrowser.touchstart,"a.topiclink, a.topichotspot",function(d){d.preventDefault();d.stopPropagation();var e=$(this).attr("href");if(!e){return}var a=e.indexOf("#")>1?e.split("#").pop():false,c=document.location.pathname.split("/").pop(),f=e.indexOf("#")>1?e.substr(0,e.lastIndexOf("#")):e,b=c!==f;if(a&&!b){hmWebHelp.scrollTopic(a)}else{e=hmWebHelp.targetCheck($(this).attr("href"));if(hmWebHelp.hmMainPageCheck(e)){History.pushState(null,null,e)}}});hmXPopup.$popupbody.on(hmBrowser.touchstart,"a.weblink, a.webhotspot",function(a){$(this).attr("target","_blank")});hmXPopup.$popupbody.on(hmBrowser.touchstart,"a.popuplink,a.popuphotspot,a.topichotspot[href^='javascript:void']",function(b){b.preventDefault();hmXPopup.clickX=hmXPopup.$popup.position().left;hmXPopup.clickY=hmXPopup.$popup.position().top;var a=$(this).attr("data-target");hmXPopup.loadPopup(a)});$("div#hmclosepopup").on(hmBrowser.touchstart,hmXPopup.closePopup);hmXPopup.EventType=function(a){if(a.pointerType=="mouse"||a.pointerType==4){return"mouse"}else{if(a.pointerType=="touch"||a.pointerType==2||a.pointerType=="pen"||a.pointerType==3){return"touch"}else{if(/^mouse/i.test(a.type)){return"mouse"}else{if(/^touch/i.test(a.type)||/^pen/i.test(a.type)){return"touch"}else{return"none"}}}}};hmXPopup.startTime=0;hmXPopup.dragTime=0;hmXPopup.dragcount=0;hmXPopup.oldX=undefined;hmXPopup.oldY=undefined;hmXPopup.oldLeftPos=undefined;hmXPopup.oldTopPos=undefined;hmXPopup.endDrag=function(a){hmXPopup.dragTime=new Date().getTime()-hmXPopup.startTime;if(hmXPopup.dragTime<200){}hmXPopup.$popupdragger.off(".endevents");hmXPopup.$popupdragger.off(".moveevents");hmXPopup.$dragsurface.off(".endevents");hmXPopup.$dragsurface.off(".moveevents");hmXPopup.$dragsurface.hide().css("cursor","col-resize");hmXPopup.PreventDefault(a)};hmXPopup.performDrag=function(d){hmXPopup.dragTime=new Date().getTime()-hmXPopup.startTime;if(hmXPopup.dragTime<50){return}var b;if(typeof d.changedTouches!="undefined"){b=d.changedTouches[0]}else{b=d}hmXPopup.dragcount++;if(hmDevice.desktop||hmXPopup.dragcount>2){hmXPopup.dragcount=0;var c=(!(document.all&&!window.opera))?b.pageX-hmXPopup.oldX:b.clientX-hmXPopup.oldX;var a=(!(document.all&&!window.opera))?b.pageY-hmXPopup.oldY:b.clientY-hmXPopup.oldY;hmXPopup.$popup.css({left:(hmXPopup.oldLeftPos+c)+"px"});hmXPopup.$popup.css({top:(hmXPopup.oldTopPos+a)+"px"})}};hmXPopup.startDrag=function(b){hmXPopup.PreventDefault(b);hmXPopup.startTime=new Date().getTime();var a;if(typeof b.changedTouches!="undefined"){a=b.changedTouches[0]}else{a=b}hmXPopup.oldX=(!(document.all&&!window.opera))?a.pageX:a.clientX;hmXPopup.oldY=(!(document.all&&!window.opera))?a.pageY:a.clientY;hmXPopup.oldLeftPos=hmXPopup.$popup.position().left;hmXPopup.oldTopPos=hmXPopup.$popup.position().top;if(hmBrowser.touch||hmDevice.winphone||hmXPopup.EventType(b)=="mouse"){hmXPopup.$dragsurface.css("cursor","all-scroll").show();hmXPopup.$dragsurface.on(hmBrowser.touchmove,function(d){var c=d.originalEvent;hmXPopup.performDrag(c)});hmXPopup.$dragsurface.on(hmBrowser.touchend,function(d){var c=d.originalEvent;hmXPopup.endDrag(c)})}hmXPopup.$popupdragger.on(hmBrowser.touchmove,function(d){var c=d.originalEvent;hmXPopup.performDrag(c)});hmXPopup.$popupdragger.on(hmBrowser.touchend,function(d){var c=d.originalEvent;hmXPopup.endDrag(c)})};hmXPopup.$popupdragger.off(hmBrowser.touchstart).on(hmBrowser.touchstart,function(b){var a=b.originalEvent;hmXPopup.startDrag(a)});if(hmDevice.desktop){hmXPopup.resizeListener=function(i){var g=hmXPopup.$popup.position(),h=hmXPopup.$popup.outerWidth(),f=hmXPopup.$popup.outerHeight(),b=2;hmXPopup.ewResize="ew-resize";hmXPopup.nsResize="ns-resize";var c=((i.pageX>(g.left+(h-4)))&&(i.pageX<(g.left+h+8))&&(i.pageY>g.top)&&(i.pageY<g.top+f+8));var a=((i.pageY>(g.top+(f-4-b)))&&(i.pageY<(g.top+f+8))&&(i.pageX<(g.left+h+8))&&(i.pageX>g.left+4));var d=((c&&(i.pageY>(g.top+f-10)))||(a&&i.pageX>(g.left+h-10)));hmXPopup.bdDrag=c||a;$("body").css("cursor",function(){return d?"nw-resize":c&&!a?hmXPopup.ewResize:a&&!c?hmXPopup.nsResize:"auto"})};hmXPopup.deSelect=function(){if(window.getSelection){window.getSelection().removeAllRanges()}else{if(document.selection){document.selection.empty()}}return false};hmXPopup.doResizePopup=function(c,e){hmXPopup.deSelect();var b=c.clientX-hmXPopup.resizeX,a=c.clientY-hmXPopup.resizeY,f=hmXPopup.popdims.w+b,d=hmXPopup.popdims.h+a;switch(e){case"horizontal":d=hmXPopup.popdims.h;break;case"vertical":f=hmXPopup.popdims.w;break}hmXPopup.$popup.css({width:f+"px","max-width":f+"px",height:d+"px","max-height":d+"px"})};hmXPopup.endResizePopup=function(a){hmXPopup.$dragsurface.off("mousemove.resizepopup");$("body").off("mouseup.resizepopup");hmXPopup.$popupbody.css("overflow","auto");$("body").css("cursor","default");hmXPopup.$dragsurface.css("cursor","default").hide()};hmXPopup.startResizePopup=function(c){var b=$("body").css("cursor");function a(d){hmXPopup.resizeX=c.pageX;hmXPopup.resizeY=c.pageY;hmXPopup.$popupbody.css("overflow","hidden");hmXPopup.popdims={};hmXPopup.popdims.w=hmXPopup.$popup.width();hmXPopup.popdims.h=hmXPopup.$popup.height();$("body").on("mouseup.resizepopup",function(f){var g=f.orginalEvent;hmXPopup.endResizePopup(g)});hmXPopup.$dragsurface.css("cursor",b);$("body").css("cursor",b);hmXPopup.$dragsurface.show().on("mousemove.resizepopup",function(f){var g=f.originalEvent;hmXPopup.doResizePopup(g,d)})}switch(b){case"ew-resize":a("horizontal");break;case"nw-resize":a("diagonal");break;case"ns-resize":a("vertical");break}}};
+
+//** Main Object **//
+var hmXPopup = {};
+
+// Get the parent container
+var $popparent = $("body");
+
+$popparent.append('<div id="hmpopupbox" class="hmpopup"><div id="hmpopuptitlebar" class="hmpopup"><div id="hmpopuptitle" class="hmpopup"><p class="hmpopup">This is the title bar</p></div><div id="hmclosepopup" class="hmpopup"><span>X</span></div></div><div id="hmpopupbody"></div></div>');
+
+// General variables
+	hmXPopup.$popup = $("div#hmpopupbox");
+	hmXPopup.$popupcontainer = $("div#topicbox");
+	hmXPopup.$popuptitle = $("div#hmpopuptitle > p");
+	hmXPopup.$popupheader = $("div#hmpopuptitlebar");
+	hmXPopup.$popupdragger = $("div#hmpopuptitle");
+	hmXPopup.$popupbody = $("div#hmpopupbody");
+	hmXPopup.popupwindow = hmXPopup.$popupbody[0];
+	hmXPopup.$dragsurface = $('div#dragsurface');
+	hmXPopup.refPath = "./jspopups/";
+	hmXPopup.clickX = 0;  hmXPopup.clickY = 0;
+	hmXPopup.posX = 0;  hmXPopup.posY = 0;
+	
+	
+hmXPopup.PreventDefault = function(event) {
+	if (typeof event == "undefined" || event === null) return;
+	if (event.preventDefault)
+		event.preventDefault();
+	else
+		event.returnValue = false;
+	};
+
+// Auto resize and reposition executed when the popup becomes visible
+hmXPopup.sizeAndPosition = function() {
+		
+		hmXPopup.posX = hmXPopup.clickX;
+		hmXPopup.posY = hmXPopup.clickY;
+		
+		var getPercent = function(px,pt) {
+				if (typeof px === "string" && px.charAt(px.length-1) === "%") {
+					return parseFloat(px,10);
+				} else {
+				pt = typeof pt === "string" ? parseFloat(pt,10) : pt;
+				px = typeof px === "string" ? parseFloat(px,10) : px;
+				return ((px/pt) * 100);
+				}
+			};
+		
+		var	windowWidth = function(){return $(window).width();},
+			wW = 0, pW = 0,
+			windowHeight = function(){return $(window).height();},
+			wH = 0, pH = 0,
+			hasTable = $("div#hmpopupbody").has("table[style*='width']").length,
+			shortText = (function() {
+				if (hasTable) return false;
+				var maxLength = 0, curLength = 0;
+				$("div#hmpopupbody p").each(function() {
+					curLength = $.trim($(this).text().length);
+					if (curLength > maxLength) maxLength = curLength;
+				});
+				return maxLength < 100;
+			})(),
+			verticalScroller = function() {return hmXPopup.popupwindow.clientHeight < hmXPopup.popupwindow.scrollHeight;},
+			horizontalScroller = function() {return hmXPopup.popupwindow.clientWidth < hmXPopup.popupwindow.scrollWidth;},
+			newWidth = 0, newHeight = 0,
+			adjustedDims = false,
+			popMaxWidth = getPercent(hmXPopup.$popup.css("max-width"),windowWidth())/100,
+			popMaxHeight = getPercent(hmXPopup.$popup.css("max-height"),windowHeight())/100,
+			$popWidthReference = hmDevice.desktop ? hmXPopup.$popupcontainer : $(window);
+			
+			var setPercentageDimensions = function() { 
+			var wwd = windowWidth(), 
+				pxw = hmXPopup.$popup.width(),
+				wwh = windowHeight(),
+				pxh = hmXPopup.$popup.height();
+			hmXPopup.$popup.css({"width": getPercent(pxw,wwd) + "%", "height": getPercent(pxh,wwh) + "%"});
+			};
+			// Horizontal scrollbar? (triggered by graphics etc)
+			if (horizontalScroller()) {
+				
+				hmXPopup.$popup.width((hmXPopup.popupwindow.scrollWidth + 5) + "px");
+				adjustedDims = true;
+			}
+			
+			// Adjust both dimensions for vertical scrollbar
+			if (verticalScroller()) {
+				var newMaxHeight = popMaxHeight * windowHeight();
+				newWidth = hmXPopup.$popup.width();
+				newHeight = hmXPopup.$popup.height();
+				adjustedDims = true;
+				do {
+					newWidth+=(hasTable || shortText ? 0 : 5); 
+					newHeight+=5;
+					hmXPopup.$popup.width(newWidth + "px");
+					hmXPopup.$popup.height(newHeight + "px");
+				} while (verticalScroller() && (newHeight < newMaxHeight));
+					
+			if (horizontalScroller()) {
+				var expandWidth = hmXPopup.$popup.width();
+				var expandMax = windowWidth() * popMaxWidth;
+				adjustedDims = true;
+				do {
+					expandWidth+=5;
+					hmXPopup.$popup.width(expandWidth + "px");
+				} while (horizontalScroller() && expandWidth < expandMax);
+				if (expandWidth < expandMax)
+					hmXPopup.$popup.width((expandWidth+5) + "px");
+			}
+			if (!horizontalScroller() && hasTable) {
+				var expandWidth = hmXPopup.$popup.width();
+				var expandMin = 200;
+				adjustedDims = true;
+				do {
+					expandWidth-=5;
+					hmXPopup.$popup.width(expandWidth + "px");
+				} while (!horizontalScroller() && expandWidth > expandMin);
+				hmXPopup.$popup.width((expandWidth+8) + "px");
+			}
+				
+			/*if (verticalScroller()) {					 
+				hmXPopup.$popup.height((hmXPopup.$popupheader.height() + hmXPopup.popupwindow.scrollHeight + 2) + "px");
+				} */
+			} 
+			
+		
+		// Now position the popup
+		
+		wW = windowWidth()-5; pW = hmXPopup.$popup.width();
+		wH = windowHeight()-5; pH = hmXPopup.$popup.height();
+		
+		// VERTICAL
+		
+		// Does it fit in the standard position (just below and right of click position)?
+		if ((pH + hmXPopup.posY + 15 < wH-5) && (pW + hmXPopup.posX  + 30 < wW-5)) {
+			hmXPopup.posY+=15;
+			hmXPopup.posX+=30;
+		} else {
+			
+		 // Vertical: Move up minimum amount to fit with 30 px from bottom of window
+		 if (pH + hmXPopup.posY + 30 > wH-5) {
+			 hmXPopup.posY = wH - (pH+30);
+			 hmXPopup.posY = hmXPopup.posY < 0 ? 5 : hmXPopup.posY;
+		 } else {
+			 hmXPopup.posY+=15;
+		 }
+		 
+		 // HORIZONTAL
+		 
+		 // Horizontal: Move left to fit
+		 if (pW + hmXPopup.posX  + 30 > wW-5) {
+			 // Fits left of the click point?
+			 if (pW+5 < hmXPopup.posX) {
+				 hmXPopup.posX = hmXPopup.posX - (pW+5);
+			 } else { 
+				hmXPopup.posX = wW - (pW+30);
+			 }
+			 hmXPopup.posX = hmXPopup.posX < 0 ? 5 : hmXPopup.posX;
+		 } else hmXPopup.posX+=30;
+		 
+		}
+		if (hmDevice.ipad) {
+			hmXPopup.posX-=20;
+			hmXPopup.posY-=20;
+		}
+		// Apply the calculated position coordinates
+		hmXPopup.$popup.css({"top": (hmXPopup.posY) + "px", "left": (hmXPopup.posX) + "px"});
+		
+		// Convert dimensions to responsive for larger popups
+		if (adjustedDims && (hmXPopup.$popup.width() > hmXPopup.$popupcontainer.width() * 0.5 || hmXPopup.$popup.height() > hmXPopup.$popupcontainer.height() * 0.5)) {
+			setPercentageDimensions();
+		}
+		
+	};
+
+// Close the popup (only destroys contents, not the actual popup)
+hmXPopup.closePopup = function() {
+	hmXPopup.$popup.fadeOut(300);
+
+	// Unbind all the resizing on the desktop
+	if (hmDevice.desktop) {
+		$("body").off(".resizepopup").off(".resizepopuplistener");
+		hmXPopup.$dragsurface.off(".resizepopup").attr("style","");
+		$('input#bookmarkPermalink').off("mousedown");
+	}
+	
+	// Kill Google Plus One in sharing popup
+	
+	if(hmXPopup.social && $('script#gplus_script').length > 0) {
+		$('script#gplus_script').remove();
+	}
+	
+	// Kill any video iframes and objects to prevent hangovers and crashes
+	if (!hmXPopup.social && !hmXPopup.permalink) {
+		hmXPopup.$popupbody.find("iframe").attr("src","");
+		var $videoBits = hmXPopup.$popupbody.find("object,embed,param");
+		if ($videoBits.length > 0) {
+			// In IE the only a reload gets rid of the buffered video object
+			if (/trident|edge/i.test(window.navigator.userAgent)) {
+				document.location.reload();
+			}
+			else {
+				$videoBits.attr("data","").attr("src","").attr("value","").remove();
+			}
+		}
+	}
+	// Clear the inline style settings of the popup and contents of the container
+	hmXPopup.$popup.attr("style","");
+	hmXPopup.$popupbody.html("");
+};
+
+// Bookmarker
+hmXPopup.bookmarkPermalink = function() {
+	if (hmBrowser.server) {
+	        alert("Right-click on permalink to copy, then press CTRL+D or CMD+D to bookmark.");
+	} else {
+			alert("This page is stored locally. You can only bookmark pages on a web server.");
+	}
+	}; // Bookmark()
+
+// Global load popup executed by the JS popup when it is loaded
+hmLoadPopup = function(popObj) {
+	$(document).on("keydown.popescape",function(event){
+		if (event.which === 27) {
+			$(document).off(".popescape");
+			hmXPopup.closePopup();
+		}
+	});
+	hmXPopup.$popup.attr("style","");
+	hmXPopup.$popupbody.html(popObj.hmBody);
+	hmXPopup.$popuptitle.html(popObj.hmTitle);
+	if (typeof popObj.dims === 'undefined')
+		hmXPopup.$popup.css({"height": "3.6rem", "width": "20rem"});
+	else
+		hmXPopup.$popup.css(popObj.dims);
+	hmXPopup.noresize = false;
+	
+	// Permalink popup
+	if (typeof popObj.permalink !== 'undefined' && popObj.permalink){
+		hmXPopup.noresize = true;
+		$("textarea#plinkBox").text(document.location.protocol + "\/\/" + document.location.hostname + (document.location.port === "80" || document.location.port === "" ? "" : ":" + document.location.port) +  document.location.pathname);
+		$("p#permalink_tip").text("Right-click on permalink to copy to clipboard");
+		$("input#bookmarkPermalink").attr("value","Bookmark Topic");
+		$('input#selectPermalink').on(hmBrowser.touchstart,function(){
+			$('textarea#plinkBox').focus().select();
+		});
+		// Prevent deselection
+		$('textarea#plinkBox').on("mousedown",function(event){
+			if (event.button == 2)
+			$(this).focus().select();
+		});
+		$('input#bookmarkPermalink').on("mousedown",function(){
+			hmXPopup.bookmarkPermalink();
+		});
+	}
+	
+	hmXPopup.$popup.show();
+	hmXPopup.sizeAndPosition();
+
+	// Social sharing popup
+	/*if (typeof hmXPopup.social !== 'undefined' && hmXPopup.social) {
+		// hmXPopup.noresize=true;
+		setTimeout(hmXPopup.sizeAndPosition,3000);
+	}*/
+	
+	// Permalink popup
+	if (typeof popObj.permalink !== 'undefined' && popObj.permalink){
+	var newH = (hmXPopup.$popup.height() + 7) + "px",
+		newW = ($("textarea#plinkBox").width() + 25) + "px";
+	hmXPopup.$popup.css({"width": newW, "min-width": newW, "height": newH, "min-height": newH});
+	$('textarea#plinkBox').focus().select();
+	}
+	
+	if (hmDevice.desktop && !hmXPopup.noresize) {
+		$("body").off("mousemove.resizepopuplistener").on("mousemove.resizepopuplistener",function(event){
+		var ev = event.originalEvent;
+		hmXPopup.resizeListener(ev);
+		});
+		$("body").off("mousedown.resizepopup").on("mousedown.resizepopup",function(event){
+			var e = event.originalEvent;
+			hmXPopup.startResizePopup(e);
+		});
+	}
+	
+};
+
+// This is the function called by the click on the popup link
+hmXPopup.loadPopup = function(thisPopup, refPath, refTitle) {
+	var htmlSource = false,
+		popExtension = thisPopup.substr(thisPopup.lastIndexOf('.')+1,2),
+		target = "",
+		thisPath = hmXPopup.refPath;
+
+	if (typeof refPath !== "undefined") {
+		thisPath = refPath;
+		if (popExtension !== "js")
+			htmlSource = true;
+	}
+	
+	if (Object.keys(hmWebHelp.visitedTopics).length > 300)
+		hmWebHelp.visitedTopics = {};
+
+	
+	// Check for missing trailing slash
+	if (thisPath.charAt(thisPath.length-1) !== "/")
+		thisPath +="\/";
+	target = thisPath + thisPopup;
+	if (!htmlSource) {
+		hmXPopup.social = !!(thisPopup === 'socialsharing.js');
+
+		if (!hmWebHelp.visitedTopics.hasOwnProperty(thisPopup)){
+		$.getScript(target, function(data, textStatus, jqxhr) {
+			if (textStatus !== 'success')
+				alert("Error loading popup file: " + target);
+					else 
+						hmWebHelp.visitedTopics[thisPopup] = true;
+				});} else {
+					$.cachedScript(target).done(function(script,textStatus){
+						if (textStatus !== 'success')
+						alert("Error loading popup file: " + target);
+		});
+				}
+	} else {
+		var popObj = {};
+		popObj.hmTitle = typeof refTitle === 'string' ? refTitle : "";
+		popObj.permalink = !!(thisPopup === '_hmpermalink.html');
+		$.get(target, function(ref) {
+			popObj.hmBody = ref;
+			hmLoadPopup(popObj);
+		},'html'); 
+		
+	}
+};
+
+// Delegated event binding for topic links in the popup
+hmXPopup.$popupbody.on("click",
+	"a.topiclink, a.topichotspot",
+	function(event){
+		event.preventDefault(); event.stopPropagation();
+		}).on(hmBrowser.touchstart, "a.topiclink, a.topichotspot",
+		function(event) {
+		event.preventDefault(); event.stopPropagation();
+		var target = $(this).attr("href");
+		// Handle disabled links/tools
+		if (!target) return;
+		var thisAnchor = target.indexOf("#") > 1 ? target.split("#").pop() : false,
+			thisPage = document.location.pathname.split("\/").pop(),
+			targetPage = target.indexOf("#") > 1 ? target.substr(0,target.lastIndexOf("#")) : target,
+			newPage = thisPage !== targetPage;
+		
+		// Filter out anchor links to targets in current topic 
+		if (thisAnchor && !newPage) { 
+			hmWebHelp.scrollTopic(thisAnchor);
+		} else {
+				target = hmWebHelp.targetCheck($(this).attr("href"));
+				if (hmWebHelp.hmMainPageCheck(target)) {
+					History.pushState(null,null,target);
+				}
+			}
+	});	
+// Delegated event binding for web links in the popup
+hmXPopup.$popupbody.on(hmBrowser.touchstart,
+	"a.weblink, a.webhotspot",
+	function(event){
+		$(this).attr("target","_blank");
+	});	
+
+// Delegated event binding for popup links in the popup
+hmXPopup.$popupbody.on(hmBrowser.touchstart,
+	"a.popuplink,a.popuphotspot,a.topichotspot[href^='javascript:void']",
+	function(event){
+		event.preventDefault();
+		hmXPopup.clickX = hmXPopup.$popup.position().left;
+		hmXPopup.clickY = hmXPopup.$popup.position().top;
+		var popupTarget = $(this).attr("data-target");
+		hmXPopup.loadPopup(popupTarget);
+	});	
+
+	
+// Binding for the close icon in the top right corner
+$("div#hmclosepopup").on(hmBrowser.touchstart,hmXPopup.closePopup);
+
+/*** Draggable Popups ***/
+
+// Get the type of interaction event from user
+hmXPopup.EventType = function(e) {
+	if (e.pointerType == "mouse" || e.pointerType == 4)
+		return "mouse";
+	else if (e.pointerType == "touch" || e.pointerType == 2 || e.pointerType == "pen" || e.pointerType == 3)
+		return "touch";
+	else if (/^mouse/i.test(e.type)) 
+		return "mouse";
+	else if (/^touch/i.test(e.type) || /^pen/i.test(e.type)) 
+		return "touch";
+	else return "none";
+	};
+
+	
+	// General variables
+	hmXPopup.startTime = 0;
+	hmXPopup.dragTime = 0;
+	hmXPopup.dragcount = 0;
+	hmXPopup.oldX = undefined;
+	hmXPopup.oldY = undefined;
+	hmXPopup.oldLeftPos = undefined;
+	hmXPopup.oldTopPos = undefined;
+
+	
+	// Perform this at the end of a drag operation
+	hmXPopup.endDrag = function(e) {
+		hmXPopup.dragTime = new Date().getTime() - hmXPopup.startTime;
+		if (hmXPopup.dragTime < 200) {
+			}
+		hmXPopup.$popupdragger.off(".endevents");
+		hmXPopup.$popupdragger.off(".moveevents");
+		hmXPopup.$dragsurface.off(".endevents");
+		hmXPopup.$dragsurface.off(".moveevents");
+		hmXPopup.$dragsurface.hide().css("cursor","col-resize");
+		hmXPopup.PreventDefault(e);
+		};
+			// Drag action
+	hmXPopup.performDrag = function(e) {
+		hmXPopup.dragTime = new Date().getTime() - hmXPopup.startTime;
+		if (hmXPopup.dragTime < 50) {
+			return;
+		}
+		
+		var touchobj;
+		if (typeof e.changedTouches != 'undefined') { 
+				touchobj = e.changedTouches[0];
+			} else {
+				touchobj = e;
+			}
+		
+		// Only move once every x events on mobile for lower processor load 
+		hmXPopup.dragcount++;
+		if ( hmDevice.desktop || hmXPopup.dragcount > 2 ) {
+		hmXPopup.dragcount = 0;
+		var moveX = (!(document.all && !window.opera)) ? touchobj.pageX - hmXPopup.oldX : touchobj.clientX - hmXPopup.oldX;
+		var moveY = (!(document.all && !window.opera)) ? touchobj.pageY - hmXPopup.oldY: touchobj.clientY - hmXPopup.oldY;
+		hmXPopup.$popup.css({"left": (hmXPopup.oldLeftPos + moveX) + 'px'});
+		hmXPopup.$popup.css({"top": (hmXPopup.oldTopPos + moveY) + 'px'});
+		}
+	};
+	// Triggered at beginning of a drag
+    hmXPopup.startDrag = function(e) {
+		hmXPopup.PreventDefault(e);
+		hmXPopup.startTime = new Date().getTime();
+		var touchobj;
+		if (typeof e.changedTouches != 'undefined') 
+			touchobj = e.changedTouches[0];
+		else
+			touchobj = e;
+		hmXPopup.oldX = (!(document.all && !window.opera)) ? touchobj.pageX : touchobj.clientX;
+		hmXPopup.oldY = (!(document.all && !window.opera)) ? touchobj.pageY : touchobj.clientY;
+		hmXPopup.oldLeftPos = hmXPopup.$popup.position().left;
+		hmXPopup.oldTopPos = hmXPopup.$popup.position().top;
+
+		// Activate the drag surface overlay
+		if (hmBrowser.touch || hmDevice.winphone || hmXPopup.EventType(e) == "mouse") {
+		hmXPopup.$dragsurface.css("cursor","all-scroll").show();
+		hmXPopup.$dragsurface.on(hmBrowser.touchmove, function(event) {
+			var ev = event.originalEvent; 
+			hmXPopup.performDrag(ev);
+			});
+		hmXPopup.$dragsurface.on(hmBrowser.touchend, function(event) {
+			var ev = event.originalEvent; 
+			hmXPopup.endDrag(ev);
+			});
+		} 
+		
+		hmXPopup.$popupdragger.on(hmBrowser.touchmove, function(event) {
+			var ev = event.originalEvent; 
+			hmXPopup.performDrag(ev);
+			});
+		hmXPopup.$popupdragger.on(hmBrowser.touchend, function(event) {
+			var ev = event.originalEvent; 
+			hmXPopup.endDrag(ev);
+			});
+
+	};
+
+	hmXPopup.$popupdragger.off(hmBrowser.touchstart).on(hmBrowser.touchstart, function(event) {
+		var ev = event.originalEvent; 
+		hmXPopup.startDrag(ev);
+		});
+
+// Resizable popups only on the desktop
+if (hmDevice.desktop) {
+
+hmXPopup.resizeListener = function(e) {
+	 var popPos = hmXPopup.$popup.position(),
+	 popWd = hmXPopup.$popup.outerWidth(),
+	 popHt = hmXPopup.$popup.outerHeight(),
+	 bWidth = 2;
+	 hmXPopup.ewResize = "ew-resize";
+	 hmXPopup.nsResize = "ns-resize";
+	// Body cursor for resizing, based on proximity to left and right borders of popup
+	var rBd = ((e.pageX > (popPos.left + (popWd-4))) && (e.pageX < (popPos.left + popWd+8)) && (e.pageY > popPos.top) && (e.pageY < popPos.top + popHt+8));
+	var bBd = ((e.pageY > (popPos.top + (popHt-4-bWidth))) && (e.pageY < (popPos.top + popHt+8)) && (e.pageX < (popPos.left + popWd+8)) && (e.pageX > popPos.left+4));
+	var corner = ((rBd && (e.pageY > (popPos.top + popHt-10))) || (bBd && e.pageX > (popPos.left + popWd-10)));
+	hmXPopup.bdDrag = rBd || bBd;
+
+	$("body").css("cursor",function(){
+	return corner ? "nw-resize" : rBd && !bBd ? hmXPopup.ewResize : bBd && !rBd ? hmXPopup.nsResize : "auto";
+	});
+};
+	
+	// Deselect during drag
+	hmXPopup.deSelect = function(){
+		if (window.getSelection){
+			window.getSelection().removeAllRanges();
+		}
+		else if (document.selection){
+			document.selection.empty();
+		}
+	return false;
+	}; // End deSelect()
+	
+	hmXPopup.doResizePopup = function(event,direction) {
+		hmXPopup.deSelect();
+		var moveX = event.clientX - hmXPopup.resizeX,
+			moveY = event.clientY - hmXPopup.resizeY,
+			newX = hmXPopup.popdims.w + moveX,
+			newY = hmXPopup.popdims.h + moveY;
+			
+			switch (direction) {
+				case "horizontal":
+				newY = hmXPopup.popdims.h;
+				break;
+				case "vertical":
+				newX = hmXPopup.popdims.w;
+				break;
+			}
+			hmXPopup.$popup.css({"width": newX + "px", "max-width": newX + "px", "height": newY + "px", "max-height": newY + "px"});
+	};
+	
+	hmXPopup.endResizePopup = function(event) {
+		// $("body").off("mousemove.resizepopup");
+		hmXPopup.$dragsurface.off("mousemove.resizepopup");
+		$("body").off("mouseup.resizepopup");
+		hmXPopup.$popupbody.css("overflow","auto");
+		$("body").css("cursor","default");
+		hmXPopup.$dragsurface.css("cursor","default").hide();
+	};
+	
+	hmXPopup.startResizePopup = function(e) {
+		var thisCursor = $("body").css("cursor");
+		function initialize(direction) {
+			hmXPopup.resizeX = e.pageX;
+			hmXPopup.resizeY = e.pageY;
+			hmXPopup.$popupbody.css("overflow","hidden");
+			hmXPopup.popdims = {};
+			hmXPopup.popdims.w = hmXPopup.$popup.width();
+			hmXPopup.popdims.h = hmXPopup.$popup.height();
+			$("body").on("mouseup.resizepopup", function(event) {
+			var e = event.orginalEvent;
+			hmXPopup.endResizePopup(e);
+			});
+			hmXPopup.$dragsurface.css("cursor",thisCursor);
+			$("body").css("cursor",thisCursor);
+			hmXPopup.$dragsurface.show().on("mousemove.resizepopup", function(event){
+			var e = event.originalEvent;
+			hmXPopup.doResizePopup(e,direction);
+			});
+		}
+		switch (thisCursor) {
+			case "ew-resize":
+			initialize("horizontal");
+			break;
+			case "nw-resize":
+			initialize("diagonal");
+			break;
+			case "ns-resize":
+			initialize("vertical");
+			break;
+		}
+	};
+} // End popup resizer block / desktop only

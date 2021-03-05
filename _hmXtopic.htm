@@ -10,33 +10,41 @@
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimal-ui" />
 	<link id="pagestylesheet" type="text/css" href="./css/hmprojectstyles.css" rel="stylesheet" />
 	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.scrollTomin.js"></script>
+	<script type="text/javascript" src="./js/xmessage.js"></script>
+	<script type="text/javascript">
+	// Initialize XMessage
+		if (typeof xMessage == "undefined") {
+			xMessage = new xMsg("EMBED XTopic");
+		}</script>
+	<script type="text/javascript" src="./js/hmXtopic.js"></script>
 	<style type="text/css">
-	html { overflow: auto; -webkit-overflow-scrolling: touch;}
-	body { overflow: hidden; }
-	html, body {
-		margin: 1em 0 0 0; padding: 0.25em;
-	}
 
-	p.linkheader {
-		text-align: center;
-		border-bottom: 1px solid silver;
-		margin-bottom: 1rem;
-		margin-top: 0;
-		padding: 0.2em 0;
-		position: fixed;
-		top: 0; left: 0; right: 0;
-		background-color: white;
-		z-index: 10000;
+	body, html {
+	position: absolute;
+	top: 0; right: 0; left: 0; bottom: 0;
 	}
-	p.linkheader a:link {
-		color: silver;
-		text-decoration: none;
+	html {
+	overflow: hidden;
 	}
-	p.linkheader a:visited {
-		color: silver;
+	/* Firefox bug prevents auto-scrolling without this */
+	@-moz-document url-prefix() {
+	  html {
+		overflow: visible;
+	  }
 	}
-	p.linkheader a:hover {
-		color: #666666;
+	body {
+	background-color: white;
+	margin: 0 0 0 0; padding: 0.25em;
+	overflow-x: auto;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	}
+	
+	h1.xpageheader {
+		border-bottom: 2px solid #bfbfbf;
+		padding-bottom: 5px;
+		margin-bottom: 1em;
 	}
 
 	/* Plain Text Popups */
@@ -93,13 +101,12 @@ div#imagecaptionbox p.zoomedcaption {
 	text-align: left;
 	}
 		
-</style> 
-<script type="text/javascript" src="./js/hmXtopic.js"></script>
+</style>
 </head>
 <body>
 <div id="textpopup"></div>
 <div id="hmxpopupbody">
-<p>Topic body text will be inserted here</p> 
+<p>Error: No topic file loaded</p> 
 </div> 
 </body>
 </html>

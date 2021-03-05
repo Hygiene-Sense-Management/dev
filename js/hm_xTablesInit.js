@@ -1,4 +1,295 @@
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-function xTableConstructor(p){var g=p.attr("id"),d=parseFloat($("body").css("font-size")),z=c(p.parent("div").attr("style")),j=false,n=20,s=$(p.find("tr")[0]).children("th").length,m=$(window).width(),l=$(window).width(),v=false,i=0,h,a="Hide row data display",e="Show hidden row data";function c(G){var H=0,C="",F=/width:\s{0,2}(\d+?)(px|em)/i,E=F.exec(G),D=0;if(E!==null){H=E[1];C=E[2];if(C=="rem"){D=parseInt(H,10)}else{D=Math.round(parseInt(H,10)/d)}}return D}function t(I){var F=$(p.find("tr")[0]).children("th:visible"),D=F.length,G=Math.round(($(window).width()/d)),H=0;for(var C=0;C<D;C++){var E=c($(F[C]).attr("style"));if(E===0){E=Math.round($(F[C]).width()/d);if(I){E=E>=n?E-8:E}else{E=E>=n?E:n}}H+=E}return(G-H)}function u(){var E=$(p.find("tr")[0]).children("th:visible");var D=E.length;var C=0;E.each(function(){C+=$(this).width()});C=Math.round(C/d);return C}function B(){var C=$(p.find("tr")[0]).children("th:visible");return C.length}function b(){var F=B(),G=s-F,E=$("tr."+g+".datarows"),D=$("div."+g+".xtable_dataiconwrapper");E.children("td:first-child").attr("colspan",F);if(F==s){E.hide();D.hide()}else{D.show();for(x=s;x>1&&x>s-G;x--){$("div."+g+".xtable_datablock.column"+x).show()}for(x=2;x<=F;x++){$("div."+g+".xtable_datablock.column"+x).hide()}var C=$("img[id^='"+g+"_'][src='images/close_data\\.png']").parents("tr:first-of-type").next("tr");if(C.length>0&&$(C[0]).is(":hidden")){C.show()}}}function y(D){l=$(window).width();v=m<l;m=l;var C=B();if(!v){while((t(v)<-8)&&(C>1)){C=B();p.find("th:nth-child("+C+"),td:nth-child("+C+")").hide()}}else{if(C<s){while(t(v)>8&&C+1<=s){C=B();p.find("th:nth-child("+(C+1)+"),td:nth-child("+(C+1)+")").show()}}}b()}$(window).on(hmBrowser.orientationevent+".xTables",function(){if(hmBrowser.orientationevent=="orientationchange"){setTimeout(function(){if(z>0&&Math.round($(window).width()/d)>z){return}y(false)},300)}else{i++;if(i<10){return}i=0;if(z>0&&Math.round($(window).width()/d)>z){return}y(false)}});if(!j&&(z===0||(z>0&&Math.round($(window).width()/d)>z))){y(true)}var f=p.find("td,th"),k=p.find("tbody tr"),w,o,A=1,r=1,q=1;f.each(function(){var C=$(this),D=C.index();if(D+1>r){f.filter(":nth-child("+(D+1)+")").addClass("data")}if(D==A){f.filter("td:nth-child("+(D)+")").addClass("switch")}});w=p.find("td.switch");o=p.find("th.data");k.each(function(){$(this).attr("id",g+"_row"+(q++));$(this).addClass("dataoff")});w.each(function(){var E=$(this).parent().attr("id")+"_icon",C=$(this).html(),D=$(this);$(this).html("<div class='"+g+" xtable_dataiconwrapper'><img class='xtable_dataicon' id=\""+E+'"src="images/open_data.png" title="'+e+"\"/></div><div class='xtable_switchwrapper'>"+C+"</div>");$("img#"+E).on("click",function(F){hmWebHelp.funcs.xTables[g](F,D)})});o.each(function(){if(typeof h=="undefined"){h=[]}h.push($(this).text())});if(s==B()&&!j){$("div."+g+".xtable_dataiconwrapper").hide()}j=true;return function(D,C){C.parent("tr").toggleClass("dataon dataoff");var F=C.siblings(),G="",M=C.parent("tr"),E=M.attr("id"),I=E+"_data",O=E+"_div",N=E+"_icon",K=C.attr("style"),H=0,J=0,L="xtable_datatitle";if($("tr#"+I).length===0){J=0;F.each(function(){G+="<div class='"+g+" xtable_datablock column"+($(this).index()+1)+"'><p class='xtable_datatitle'>"+h[J]+":</p>"+$(this).html()+"</div>\r\n";J++});H=B();G='<tr id="'+I+'" class="'+g+' datarows"><td style="'+K+'" colspan="'+H+'"><div id="'+O+'">'+G+"</div></td></tr>";M.after(G)}b();if(C.parent("tr").hasClass("dataon")&&B()<s){$("div#"+O).hide();$("tr#"+I).show();$("div#"+O).slideDown("fast",function(){$("img#"+N).attr("src","images/close_data.png").attr("title",a)})}else{if(C.parent("tr").hasClass("dataoff")||B()==s){$("div#"+O).slideUp("fast",function(){$("tr#"+I).hide();$("img#"+N).attr("src","images/open_data.png").attr("title",e)})}}}}hmWebHelp.funcs.hm_xTablesInit=function(b){var a=0;hmWebHelp.funcs.xTables={};if(b.length>0){b.each(function(){$(this).attr("id","xtable"+a);hmWebHelp.funcs.xTables[$(this).attr("id")]=new xTableConstructor($(this));a++})}};
+
+function xTableConstructor($thisTable) {
+
+	var tableID = $thisTable.attr("id"),
+		fontSize = parseFloat($("body").css("font-size")),
+		fixedTableWidth = widthFromStyle($thisTable.parent("div").attr("style")),
+		initialized = false,
+		emsMinimum = 20,
+		noOfColumns = $($thisTable.find("tr")[0]).children("th").length,
+		lastWindowWidth = $(window).width(),
+		currentWindowWidth = $(window).width(),
+		windowExpanding = false,
+		resizeCounter = 0,
+		dataTitles,
+		hideDataTooltip="Hide row data display",
+		showDataTooltip="Show hidden row data";
+	
+	function widthFromStyle(str) {
+		var fixedWidth = 0,
+			fixedWidthType = "",
+			wrx = /width:\s{0,2}(\d+?)(px|em)/i,
+			match = wrx.exec(str),
+			returnWidth = 0;
+		if (match !== null) {
+			fixedWidth = match[1];
+			fixedWidthType = match[2];
+			if (fixedWidthType == "rem")
+				returnWidth = parseInt(fixedWidth,10);
+			else
+				returnWidth = Math.round(parseInt(fixedWidth,10)/fontSize);
+			} 
+		return returnWidth;
+		}
+	
+	function tableDiff(expanding) {
+		
+		var $visibleColumns = $($thisTable.find("tr")[0]).children("th:visible"),
+			visColCount = $visibleColumns.length,
+			windowEms = Math.round(($(window).width()/fontSize)),
+			tableEms = 0;
+		
+		for (var x = 0 ; x < visColCount; x++) {		
+			var colWidth = widthFromStyle($($visibleColumns[x]).attr("style"));
+			// No fixed width set
+			if (colWidth === 0) {
+				// Set flexibile columns to current or minimum width
+				colWidth = Math.round($($visibleColumns[x]).width()/fontSize);
+				if (expanding) {
+					colWidth = colWidth >= emsMinimum ? colWidth-8 : colWidth;
+					}
+				else {
+					colWidth = colWidth >= emsMinimum ? colWidth : emsMinimum;
+					}
+			}
+		tableEms += colWidth;
+		}
+		
+		return (windowEms - tableEms);
+		}
+	
+	
+	function visibleWidth() {
+
+		var $visibleColumns = $($thisTable.find("tr")[0]).children("th:visible");
+		var visColCount = $visibleColumns.length;
+		var totalWidth = 0;
+		$visibleColumns.each(function(){
+			
+			totalWidth += $(this).width();
+			
+			});
+			
+		totalWidth = Math.round(totalWidth / fontSize);
+		return totalWidth;
+	}
+	
+	
+	function visibleColumns() {
+		var $visCols = $($thisTable.find("tr")[0]).children("th:visible");
+		return $visCols.length;
+	}
+	
+	
+	function updateDataBlocks() {
+		
+		var visCols = visibleColumns(),
+			colDiff = noOfColumns - visCols,
+			$dataRows = $("tr."+tableID+".datarows"),
+			$dataIcons = $("div." + tableID + ".xtable_dataiconwrapper");
+		
+		// Update colspan value for number of visible columns
+		$dataRows.children("td:first-child").attr("colspan",visCols);
+		
+		// Show/hide data blocks as needed
+		if (visCols == noOfColumns) {
+			// Hide all data blocks and switch icons when full table is visible
+			$dataRows.hide();
+			$dataIcons.hide();
+			} else {
+				$dataIcons.show();
+				// Show data of hidden columns
+				for (x=noOfColumns;x>1&&x>noOfColumns-colDiff;x--)
+					{
+					$("div."+tableID+".xtable_datablock.column" + x).show();
+					}
+				// Hide data of visible columns
+				for (x=2;x<=visCols;x++)
+					{
+					$("div."+tableID+".xtable_datablock.column" + x).hide();
+					}
+				// Open data blocks row if it is in the open state
+				var $openRows = $("img[id^='"+tableID+"_'][src='images/close_data\\.png']").parents("tr:first-of-type").next("tr");				
+				if ($openRows.length > 0 && $($openRows[0]).is(":hidden")) {
+					$openRows.show();
+				}
+				
+			}
+			
+	}
+	
+	function updateColumns(init) {
+	
+	// Is window expanding or contracting?
+		currentWindowWidth = $(window).width();
+		windowExpanding = lastWindowWidth < currentWindowWidth;
+		lastWindowWidth = currentWindowWidth;
+
+		var lastColumn = visibleColumns();
+		if (!windowExpanding) {
+			while ((tableDiff(windowExpanding) < -8) && (lastColumn > 1)) {
+					lastColumn = visibleColumns();
+					$thisTable.find("th:nth-child("+lastColumn+"),td:nth-child("+lastColumn+")").hide();
+				}
+			}
+		else if (lastColumn < noOfColumns) {
+				while (tableDiff(windowExpanding) > 8  && lastColumn+1 <= noOfColumns) {
+				lastColumn = visibleColumns();
+				$thisTable.find("th:nth-child("+(lastColumn+1)+"),td:nth-child("+(lastColumn+1)+")").show();
+				}
+				}
+		
+		updateDataBlocks();
+	} // updateColumns
+	
+	// Resize handler
+	$(window).on(hmBrowser.orientationevent + ".xTables", function(){
+		
+		if (hmBrowser.orientationevent == "orientationchange") {
+			setTimeout(function(){
+			if (fixedTableWidth > 0 && Math.round($(window).width()/fontSize) > fixedTableWidth) return;
+			updateColumns(false);
+			},300);
+		} else {
+				resizeCounter++;
+				if (resizeCounter < 10) return;
+				resizeCounter = 0;
+		
+		// Quit if the window is still bigger than the table
+		if (fixedTableWidth > 0 && Math.round($(window).width()/fontSize) > fixedTableWidth) {
+			return;
+			}
+		updateColumns(false);		
+		}
+		
+		});
+		
+	// Startup update
+	if (!initialized && (fixedTableWidth === 0 || (fixedTableWidth > 0 && Math.round($(window).width()/fontSize) > fixedTableWidth))) {	
+	updateColumns(true);
+		}
+	
+		
+	// return;
+	// Basic variables
+	var allCells = $thisTable.find("td,th"),
+	allRows = $thisTable.find("tbody tr"),
+	$allSwitches, $dataHeaders,
+	switchCol = 1, // parseInt($thisTable.attr("switch-col"),10),
+	titleCols = 1,// parseInt($thisTable.attr("title-cols"),10),
+	rowCounter = 1;
+	// Set up the data and switch cells
+	allCells.each(function() {
+		var el = $(this),
+		pos = el.index();
+		if (pos+1 > titleCols)
+			allCells.filter(":nth-child(" + (pos+1) + ")").addClass("data");
+		if (pos == switchCol)
+			allCells.filter("td:nth-child(" + (pos) + ")").addClass("switch");
+	});
+	
+	$allSwitches = $thisTable.find("td.switch");
+	$dataHeaders = $thisTable.find("th.data");
+	
+	// Set up the row IDs
+	allRows.each(function() {
+		$(this).attr("id",tableID + "_row" + (rowCounter++));
+		$(this).addClass("dataoff");
+		});
+	// Attach switch handlers to open/close data blocks
+	$allSwitches.each(function(){
+		var tIconID = $(this).parent().attr("id") + "_icon",
+			tempHTML = $(this).html(),
+			$switchTD = $(this);
+			
+			
+		$(this).html("<div class='"+tableID+" xtable_dataiconwrapper'><img class='xtable_dataicon' id=\""+tIconID+"\"src=\"images/open_data.png\" title=\""+showDataTooltip+"\"/></div><div class='xtable_switchwrapper'>" + tempHTML+"</div>");
+		
+		$("img#"+tIconID).on("click",function(event){
+			hmWebHelp.funcs.xTables[tableID](event,$switchTD);
+			
+		});
+		
+		
+	});
+
+	// Store the data headers array
+	$dataHeaders.each(function(){
+		if (typeof dataTitles == "undefined") {
+			dataTitles = [];	
+			}
+			dataTitles.push($(this).text());
+	});
+	
+	if (noOfColumns == visibleColumns() && !initialized) {
+		// alert("div." +tableID+".xtable_dataiconwrapper");
+		$("div." +tableID+".xtable_dataiconwrapper").hide();
+	}
+	
+	initialized = true;
+	
+	/*** Handler for data blocks  ***/
+	return function(event,$obj) {
+		$obj.parent("tr").toggleClass("dataon dataoff");
+		var $siblings = $obj.siblings(),
+			siblingsHTML = "",
+			$row = $obj.parent("tr"),
+			rowid = $row.attr("id"),
+			dataid = rowid + "_data",
+			divid = rowid + "_div",
+			iconid = rowid + "_icon",
+			inlinestyle = typeof $obj.attr("style") == "undefined" ? "" :  $obj.attr("style"),
+			colspan = 0,
+			colcounter = 0,
+			datatitle_class = "xtable_datatitle";
+				
+		// Create data blocks row if it doesn't exist already
+		// Only create if actually needed (user tries to display it)
+		if ($("tr#" + dataid).length === 0) {
+			colcounter = 0;
+			$siblings.each(function(){
+				siblingsHTML += "<div class='"+tableID+" xtable_datablock column"+($(this).index()+1)+"'><p class='xtable_datatitle'>" + dataTitles[colcounter] + ":</p>" + $(this).html() + "</div>\r\n";
+				// colspan = $(this).index();
+				colcounter++;
+				});
+			colspan = visibleColumns();
+			siblingsHTML = '<tr id="'+dataid+'" class="'+tableID+' datarows"><td style="'+inlinestyle+'" class="xResponsive" colspan="'+colspan+'"><div id="'+divid+'">'+siblingsHTML+'</div></td></tr>';
+			$row.after(siblingsHTML);
+		}
+		
+		updateDataBlocks();
+		
+		if ($obj.parent("tr").hasClass("dataon") && visibleColumns() < noOfColumns) {
+			$("div#" + divid).hide();
+			$("tr#" + dataid).show();
+			$("div#" + divid).slideDown("fast", function(){
+			$("img#" + iconid).attr("src","images/close_data.png").attr("title",hideDataTooltip);
+			});
+				
+			} else if ($obj.parent("tr").hasClass("dataoff") || visibleColumns() == noOfColumns) {
+				$("div#" + divid).slideUp("fast", function(){
+				$("tr#" + dataid).hide();
+				$("img#" + iconid).attr("src","images/open_data.png").attr("title",showDataTooltip);
+				});
+				
+				}
+	
+	}; // expandEntry
+	
+} // xTable Constructor
+
+hmWebHelp.funcs.hm_xTablesInit = function($XTables) {
+	var xTableCounter = 0;
+	hmWebHelp.funcs.xTables = {};
+	
+	if ($XTables.length > 0)
+		$XTables.each(function(){
+		$(this).attr("id","xtable" + xTableCounter);	
+		hmWebHelp.funcs.xTables[$(this).attr("id")] = new xTableConstructor($(this));
+		xTableCounter++;
+		});
+}; // end hm_xTables// 	
+

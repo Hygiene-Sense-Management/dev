@@ -17,31 +17,29 @@ div#dragsurface {
 	z-index: 100000;
 	}
 	
-div.hmpopup , p.hmpopup{
+div.hmpopup, p.hmpopup {
 	margin: 0; padding: 0;
-	font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 div#hmpopupbox {
 	position: absolute; 
 	display: none; 
-	border: 0.154rem solid #707070;
-	background-color: #707070;
+	border: 0.154rem solid #bfbfbf;
+	background-color: #bfbfbf;
 	top: 1rem; left: 1rem;
 	width: 20rem;
 	height: 3.6rem;
-	max-width: 50%;
-	max-height: 80%;
-	box-shadow: 0.125rem 0.125rem 0.500rem 0.025rem #676767;
+	box-shadow: 0.125rem 0.125rem 0.500rem 0.025rem #959595;
 	z-index: 20000;
 	}
 div#hmpopuptitlebar {
 	position: absolute;
-	top: 0; left: 0; right: 0; 
+	top: 0; left: 0; right: -2px; 
 	height: 1.2rem;
-	background-color: #707070;
+	background-color: #bfbfbf;
 	padding: 0 0.3rem; 
-	color: #ffffff;
+	color: #444444;
 	font-weight: bold;
 }
 div#hmpopuptitlebar p.hmpopup {
@@ -75,9 +73,36 @@ div#hmpopuptitlebar  div#hmclosepopup span {
 div#hmpopuptitlebar  div#hmclosepopup:hover {
 	color: red;
 	}
+div#hmpopuptitlelink {
+	position: absolute;
+	top: 1.2rem; left: 0; right: 0; 
+	height: 1.2rem;
+}
+p.linkheader {
+	text-align: center;
+	border-bottom: 1px solid silver;
+	margin-bottom: 1rem;
+	margin-top: 0;
+	padding: 0.2em 0;
+	position: relative;
+	font-size: 0.9rem;
+	top: 0; left: 0; right: 0;
+	background-color: white;
+	z-index: 10000;
+}
+p.linkheader a:link {
+	color: silver;
+	text-decoration: none;
+}
+p.linkheader a:visited {
+	color: silver;
+}
+p.linkheader a:hover {
+	color: #666666;
+}
 div#hmpopupbody {
 	position: absolute;
-	top: 1.5rem; left: 0; right: 0; bottom: 0;
+	top: 2.6rem; left: 0; right: -2px; bottom: 0.05rem;
 	overflow: hidden;
 	padding: 0;
 	background-color: #ffffff;
@@ -85,8 +110,8 @@ div#hmpopupbody {
 	}
 iframe#hmXPopupFrame {
 	position: absolute; 
-	top:0; left:0; 
-	width:100%; height:100%;
+	top: 0; left: 0; 
+	width: 100%; height: 100%;
 	border: none;
 }
 

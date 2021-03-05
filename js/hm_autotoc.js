@@ -1,4 +1,243 @@
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-function hmatoc(){var n=this,i="Jump to:&amp;nbsp;",e=parseInt("3",10),k="No contents for this topic",r="Contents of this topic",l="Jump to top of page",j="Scroll to Top of Page",a=parseInt("45",10),c="empty",m=false;function b(){var u=window.location.search.lastIndexOf("zoom_highlight")>0;if(!u){var s=document.getElementsByTagName("FONT");if(s.length>0){var t="";for(var v=0;v<s.length;v++){t=s[v].style.cssText;if(t.indexOf("BACKGROUND-COLOR")===0){u=true;break}}}}return u}function d(v,s){var u,t;if(s===0){return v}if((s>0)&&(s<=20)){s=20}u=v.split("");if(u.length>s){for(t=u.length-1;t>-1;--t){if(t>s){u.length=t}else{if(" "===u[t]){u.length=t;break}}}u.push("...")}return u.join("")}function p(t){return t.replace(/^\s+|\s+$/g,"")}function h(s){heading=s.replace(/\&/g,"&amp;");s=s.replace(/</g,"&lt;");s=s.replace(/>/g,"&gt;");return s}function q(){var t=$("div#hmpagebody");var s=t.position().top+(parseFloat(t.css("borderTopWidth"),10)/2);$("div#autoTocWrapper").css("top",s+1+"px")}function g(){var B,t,y,I,F,G,x,D,C,H,w,v,E,z,s=false,A='data=""',u=$("span[class*=_atoc]").children("a.dropdown-toggle");E=$("[class*='_atoc']").filter("[class^='p_']").add(u);if(E.length>=e){B=[];for(z=0;z<E.length;z++){s=false;t=E[z];y=$(E[z]).text();y=p(y);y=h(y);I=$(t).attr("class");if(I==="dropdown-toggle"){I=$(t).parent("span").attr("class");s=true}F=(I.indexOf("_atocs_")!=-1);if(y.length==1){y=y.replace(/\xa0/,"")}if(y!==""){m=true;G=y.replace(/\"/g,"'");y=d(y,a);if(!s){x="autoTOC"+z;t.innerHTML='<a id="'+x+'"></a>'+t.innerHTML;A='data="" '}else{x=t.id;A='data="'+x+'" '}if(!F){D='<li class="autoTOC mainlink" id="src_'+x+'" '+A+'title="'+i+G+'"><span><svg class="atocicon" viewBox="0 0 27 32"><use xlink:href="#ok-squared"></use></svg></span><p class="autoTOC">'+y+"</p></li>"}else{D='<li class="autoTOC subTOC mainlink" id="src_'+x+'" '+A+'title="'+i+G+'"><span><svg class="atocicon" viewBox="0 0 27 32"><use xlink:href="#ok"></use></svg></span><p class="autoTOC subTOC">'+y+"</p></li>"}B.push(D)}}}else{return}if((B[0])&&(B[0]!=="")){C="";H=document.getElementById("autoTocWrapper");for(z=0;z<B.length;z++){C=C+B[z]}C='<li id="toplink" class="autoTOC toplink" title="'+l+'"><span><svg class="atocicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg></span><p class="autoTOC">'+j+"</p></li>"+C;C='<div id="autoTocMiddle"><div id="autoTocInner"><ul id="autoTocList">'+C+"</ul></div></div>";H.innerHTML=C;$("li.mainlink").on(hmBrowser.touchstart+".atoc_clicks",function(){var L=b(),K=$(this).attr("id"),M=K.replace(/src_/,""),N=$("a[id='"+M+"']"),J=$(this).attr("data");if((u.length!==null)&&(!L)){if(J!==""){hmWebHelp.extFuncs("hmDoToggle",{method:"HMToggle",obj:{target:$("a#"+J),speed:0,mode:"expand"}})}}hmWebHelp.scrollTopic(N);return false});$("li.toplink").on(hmBrowser.touchstart+".atoc_clicks",function(){var J=b();hmpage.$scrollBox.scrollTo(0,600,{onAfter:function(){if((u.length>0)&&(!J)){hmWebHelp.extFuncs("hmDoToggle",{method:"hmToggleToggles",obj:{speed:0,mode:"collapse"}})}}});return false})}}function f(){if($("div#navigationmenu").is(":visible")){hmWebHelp.hamburgerMenu()}q();$(window).on("resize.atocResize",function(){q()});$("div#autoTocWrapper").slideDown("fast",function(){$("div#unclicker").on(hmBrowser.touchstart,function(){o()}).show()})}function o(t){var s="fast";if(typeof t=="string"&&t=="snap"){s=0}$("div#autoTocWrapper").slideUp(s,function(){$(window).off("resize.atocResize");$("div#unclicker").off(hmBrowser.touchstart).hide()})}return function(s){if($("div#unclicker").length<1){$("div#hmpagebody").prepend('<div id="unclicker" />')}if($("#autoTocWrapper").html()===""){g()}if($("div#autoTocWrapper").is(":hidden")){clickDelayA=new Date().getTime();f()}else{clickDelayB=new Date().getTime();if(clickDelayB-clickDelayA>1000){o(s)}}}}hmWebHelp.funcs.hm_autotoc=new hmatoc();
+function hmatoc() {
+
+	// General variables
+	var 
+		self = this,
+		atoc_tip = "Jump to:&nbsp;",
+		atoc_minHeaders = parseInt("3",10),
+		atoc_btntip_off = "No contents for this topic",
+		atoc_btntip_on = "Contents of this topic",
+		atoc_toptip = "Jump to top of page",
+		atoc_top = "Scroll to Top of Page",
+		atoc_linklimit = parseInt("45",10),
+		thisAtoc = "empty",
+		isATOC = false;
+
+	
+	// Check if the current page is a search results topic
+	function SearchCheck()  {
+	  var foundHilite = window.location.search.lastIndexOf("zoom_highlight") > 0;
+	  if (!foundHilite) {
+		var fontTags = document.getElementsByTagName("FONT");
+		if (fontTags.length > 0) {
+		  var hStyle = "";
+		  for (var cCheck = 0; cCheck < fontTags.length; cCheck++) {
+			hStyle = fontTags[cCheck].style.cssText;
+			if (hStyle.indexOf("BACKGROUND-COLOR")===0) {
+		  foundHilite = true;
+			  break; 
+			}
+		  }
+		}
+	  }  return foundHilite;     
+	} // SearchCheck
+	
+	// String fix functions
+	function truncate(str, limit) {
+	var bits, i;
+		if (limit===0) return str;
+		if ((limit > 0) && (limit <= 20)) limit = 20;
+		bits = str.split('');
+		if (bits.length > limit) {
+		   for (i = bits.length - 1; i > -1; --i) {
+			if (i > limit) {
+			bits.length = i;
+			}
+			else if (' ' === bits[i]) {
+			bits.length = i;
+			break;
+			}
+		}
+		bits.push('...');
+		}
+	return bits.join('');
+
+	}
+	function trim(s) {
+		return s.replace(/^\s+|\s+$/g, "");
+	}
+	
+	function htmlFix(hd) {
+		heading = hd.replace(/\&/g, "&amp;");
+		hd = hd.replace(/</g, "&lt;");
+		hd = hd.replace(/>/g, "&gt;");
+		return hd;
+	}
+	
+	// Reposition ATOC menu
+  function atocPos() {
+	var pBody = $("div#hmpagebody");
+	var headerPos = pBody.position().top + (parseFloat(pBody.css("borderTopWidth"),10) / 2);
+	 $("div#autoTocWrapper").css("top", headerPos + "px");
+  }
+			
+	
+	function initAtoc() {
+		
+		var tocHeads,
+			thisPara,
+			linkText,
+			thisParaClass,
+			subStyle,
+			fullLinkText,
+			linkID,
+			TOClink,
+			autoTOCcontent,
+			TOCbox,
+			clickDelayA, 
+			clickDelayB,
+			topicParas,
+			i,
+			isToggle = false,
+			toggleID = "data=\"\"",
+			$HMToggles = $("span[class*=_atoc]").children("a.dropdown-toggle");
+
+	
+	// Get the headers with AutoTOC tags			
+	topicParas = $("[class*='_atoc']").filter("[class^='p_']").add($HMToggles);// add("span[class='temp_atoc_'],span[class='temp_atocs_']");
+
+		if (topicParas.length >= atoc_minHeaders) {
+		tocHeads = [];
+		for (i = 0; i < topicParas.length;i++) {
+			isToggle = false;
+			thisPara = topicParas[i];
+			linkText = $(topicParas[i]).text();
+			linkText = trim(linkText);
+			linkText = htmlFix(linkText);
+			thisParaClass = $(thisPara).attr("class");
+			if (thisParaClass === "dropdown-toggle") {
+				thisParaClass = $(thisPara).parent("span").attr("class");
+				isToggle = true;
+			}
+			subStyle = (thisParaClass.indexOf("_atocs_") != -1);
+			// Delete non-breaking space for brain-dead IE
+			if (linkText.length == 1) linkText = linkText.replace(/\xa0/,"");
+
+			if (linkText!=="") {
+				isATOC = true;
+				fullLinkText = linkText.replace(/\"/g,"'");
+				linkText = truncate(linkText,atoc_linklimit);
+				
+				// Create a target for non-toggles, use toggle ID for toggles
+				if (!isToggle) {
+					linkID = "autoTOC"+i;
+					thisPara.innerHTML = '<a id="'+linkID+'"></a>' + thisPara.innerHTML;
+					toggleID = "data=\"\" ";
+				} else {
+					linkID = thisPara.id;
+					toggleID = "data=\""+linkID+"\" ";
+				}
+				if (!subStyle) {
+				   TOClink = '<li class="autoTOC mainlink" id="src_'+linkID+'" '+toggleID+'title="'+atoc_tip+fullLinkText+'"><span><svg class="atocicon" viewBox="0 0 27 32"><use xlink:href="#ok-squared"></use></svg></span><p class="autoTOC">'+linkText+'</p></li>';
+					} else {
+				   TOClink = '<li class="autoTOC subTOC mainlink" id="src_'+linkID+'" '+toggleID+'title="'+atoc_tip+fullLinkText+'"><span><svg class="atocicon" viewBox="0 0 27 32"><use xlink:href="#ok"></use></svg></span><p class="autoTOC subTOC">'+linkText+'</p></li>';
+					}
+				
+					tocHeads.push(TOClink);
+					}
+		}
+
+			} else return;
+			
+		// Build the AutoTOC if elements exist
+
+		if ((tocHeads[0]) && (tocHeads[0]!=="")) {
+		autoTOCcontent = "";
+		TOCbox = document.getElementById("autoTocWrapper");
+		for (i = 0; i < tocHeads.length;i++) {
+			autoTOCcontent = autoTOCcontent + tocHeads[i];
+			}
+		autoTOCcontent = '<li id="toplink" class="autoTOC toplink" title="'+atoc_toptip+'"><span><svg class="atocicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg></span><p class="autoTOC">'+atoc_top+'</p></li>' +autoTOCcontent;
+		autoTOCcontent = '<div id="autoTocMiddle"><div id="autoTocInner"><ul id="autoTocList">' + autoTOCcontent + '</ul></div></div>';
+		
+		TOCbox.innerHTML = autoTOCcontent;
+
+		// Jump to targets for main ATOC entries
+		 $("li.mainlink").on(hmBrowser.touchstart + ".atoc_clicks", function() {
+			var isSearch = SearchCheck(),
+				cTarget = $(this).attr("id"),
+				tTarget = cTarget.replace(/src_/,""),
+				theTarget = $("a[id='"+tTarget+"']"),
+				doToggle = $(this).attr("data");
+			// alert(theTarget.parent().html());
+	   // If there are toggles on the page close them all
+	   if (($HMToggles.length!==null) && (!isSearch)) {
+			// hmWebHelp.extFuncs('hmDoToggle',{method: 'hmToggleToggles', obj: {speed:0,mode:"collapse"}});
+			// alert("pause...")
+			if (doToggle !== "") {
+			hmWebHelp.extFuncs("hmDoToggle",{method: "HMToggle", obj:{target:$("a#"+doToggle),speed:0,mode:"expand"}});
+			}
+				
+			
+	   }
+
+	   // Scroll to the target with togglejump
+	   hmWebHelp.scrollTopic(theTarget);
+	   
+		return false;
+		});
+
+		// Scroll to top of document function
+		$("li.toplink").on(hmBrowser.touchstart + ".atoc_clicks", function () {
+		var isSearch = SearchCheck();
+		hmpage.$scrollBox.scrollTo(0, 600,{
+			onAfter: function(){
+				if (($HMToggles.length > 0) && (!isSearch)) {
+				hmWebHelp.extFuncs('hmDoToggle',{method: 'hmToggleToggles', obj:{speed:0,mode:"collapse"}});
+				}
+			}
+		});
+		return false;
+		});
+		
+		} // End Build ATOC
+
+	} // initAtoc()
+	
+	function openMenu() {
+		hmWebHelp.closeMenus();
+		atocPos();
+		$(window).on('resize.atocResize', function() {
+				atocPos();
+				});
+		hmWebHelp.unClicker("autoTocWrapper");
+		$("div#autoTocWrapper").slideDown("fast");
+		}
+
+	function closeMenu(speed) {
+			var animation = "fast";
+			if (typeof speed == "string" && speed == "snap")
+				animation = 0;
+			$("div#autoTocWrapper").slideUp(animation, function(){
+			$(window).off('resize.atocResize');
+			$(document).off(hmBrowser.touchstart + '.closemenu');
+				});
+		}
+	
+	/*** Expose the main calling function as the return object ***/
+	return function(speed) {
+
+		// Set up for current topic if necessary
+		if ($("#autoTocWrapper").html() === "") {
+			initAtoc();		
+		}
+		
+		// Show or hide the Atoc menu
+		// Click delay prevents immediate closing after opening
+		if ($("div#autoTocWrapper").is(":hidden")) {
+			clickDelayA = new Date().getTime();
+			openMenu();
+		} else {
+			clickDelayB = new Date().getTime();
+			if (clickDelayB - clickDelayA > 1000)
+				closeMenu(speed);
+				clickDelayA = 0;
+			} 
+
+		}; // End main calling function
+} // Constructor
+
+hmWebHelp.funcs.hm_autotoc = new hmatoc();

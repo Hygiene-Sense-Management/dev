@@ -1,4 +1,121 @@
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-function fh(){var f,m,n,k,l,i,h,b,d,c,a,e,g;doFeatureHeight=function(){var o=$(window).height();a=m.width()*d;c=o*d;e=i.height();g=k.height();if(hmBrowser.Flandscape()){o=o/2;e=e>c?e:c}else{o=o/2;e=e>a?e:a}e=e>o?o:e;n.css({"padding-top":e+"px"});m.css({top:(k.is(":visible")?g:0)+"px","border-bottom":"2px solid #bababa",height:e+"px"})};init=function(){if($("div#featureheader").length<1){$("div#topicbody").prepend('<div id="featureheader"><p id="featuretext"></p></div>')}m=$("div#featureheader");n=$("div#topicbox");k=$("div#headerbox");l=$("div#hmpagebody");i=$("p#featuretext");f=new Image();f.src=hmpage.hmPicture;m.css("background-image","url('"+hmpage.hmPicture+"')");i.html(hmpage.hmDescription);setTimeout(function(){var o=0;var p=setInterval(function(){h=f.width;b=f.height;d=b/h;o++;if(h>0||o>50){doFeatureHeight();clearInterval(p)}},50);$(window).off("orientationchange.features").on("orientationchange.features",function(){setTimeout(function(){doFeatureHeight()},100)});n.off("scroll.features").on("scroll.features",function(){var r=n.scrollTop(),q=e-r;q=q<=e?q:e;if(q<1){q=1}m.css({height:q+"px"});if(q<3){m.css("border-bottom","0")}else{m.css("border-bottom","2px solid #bababa")}});m.on("selectstart",function(){return false});m.off(hmBrowser.touchstart).on(hmBrowser.touchstart,function(){if(i.is(":visible")){i.fadeOut("fast")}else{i.fadeIn("fast")}})},100)};var j=function(o){if(!o){o="init"}switch(o){case"init":init();break;case"resize":doFeatureHeight();break}};return j}hmWebHelp.funcs.hmFeatureHeaderM=new fh();
+
+// Constructor
+
+function fh() {
+
+	var image,
+		$fhead,
+		$pscroller,
+		$pheader,
+		$pbody,
+		$fp,
+		imwidth,
+		imheight,
+		imaspect,
+		imheightL,
+		imheightP,
+		hh,
+		hht;
+			
+	doFeatureHeight = function() {
+
+		var wh = $(window).height();
+
+		imheightP = $fhead.width() * imaspect;
+		imheightL = wh * imaspect;
+
+		hh = $fp.height();
+		hht = $pheader.height();
+			
+		if (hmBrowser.Flandscape()) {
+			wh = wh/2;
+			hh = hh > imheightL ? hh : imheightL;
+		} else {
+			wh = wh/2;
+			hh = hh > imheightP ? hh : imheightP;
+		}
+			
+		hh = hh > wh ? wh : hh;
+		
+	  $pscroller.css({"padding-top": hh + "px"});
+		$fhead.css({"top": ($pheader.is(":visible") ? hht : 0) + "px", "border-bottom": "2px solid #bababa", "height": hh + "px"});
+	};
+			
+	init = function() {
+		if ($("div#featureheader").length < 1)
+			$("div#topicbody").prepend('<div id="featureheader"><p id="featuretext"></p></div>');
+		$fhead = $("div#featureheader");
+		$pscroller = $('div#topicbox');
+		$pheader = $('div#headerbox');
+		$pbody = $("div#hmpagebody");
+		$fp = $("p#featuretext");
+		image = new Image();
+		image.src = hmpage.hmPicture;
+		$fhead.css("background-image","url('"+hmpage.hmPicture+"')");
+		$fp.html(hmpage.hmDescription);
+	
+
+	setTimeout(function(){
+		
+		// It can take a while to get the image dimensions on first load
+		var imDimCount = 0;
+		var getImDims = setInterval(function(){
+			imwidth = image.width;
+			imheight = image.height;
+			imaspect = imheight/imwidth;
+			imDimCount++;
+			if (imwidth > 0 || imDimCount > 50) {
+			doFeatureHeight();
+			clearInterval(getImDims);
+			}
+		},50);
+		
+	 $(window).off('orientationchange.features').on('orientationchange.features', function() {
+			setTimeout(function(){
+				doFeatureHeight();
+			},100);
+		});
+	  $pscroller.off('scroll.features').on('scroll.features', function() {
+		        var y = $pscroller.scrollTop(),
+					newhh = hh-y;
+					newhh = newhh <= hh ? newhh : hh;
+					if (newhh < 1) newhh = 1;
+          		$fhead.css({'height': newhh + "px"});
+				if (newhh < 3 )
+					 $fhead.css("border-bottom","0");
+				else 
+					$fhead.css("border-bottom","2px solid #bababa");
+				
+			});
+			
+	$fhead.on("selectstart",function(){return false;});
+
+	$fhead.off(hmBrowser.touchstart).on(hmBrowser.touchstart, function(){
+				if ($fp.is(":visible")) {
+					$fp.fadeOut("fast");
+				} else {
+					$fp.fadeIn("fast");
+				}
+			});
+	},100);
+	}; // Init
+	
+	var doFeatureImage = function(mode) {
+		if (!mode) mode = "init";
+		switch(mode) {
+			case "init":
+			init();
+			break;
+			case "resize":
+			doFeatureHeight();
+			break;
+		}
+	};
+	
+	return doFeatureImage;
+}
+
+hmWebHelp.funcs.hmFeatureHeaderM = new fh();			

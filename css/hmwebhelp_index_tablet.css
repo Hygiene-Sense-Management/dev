@@ -10,42 +10,45 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-    body {
-	background-color: #ffffff;
-	overflow: hidden;
+html {
+	-webkit-text-size-adjust: 100%;
+}
+body {
 	font-size: 100%;
-	font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	color: #000000;
+	background-color: transparent;
+	overflow: hidden;
 	margin: 0;  padding: 0.313rem;
 	line-height: 1.1rem;
 	 }
 	   
 	div#hmpageheader {
 		position: absolute;
-		top: 0; left: 0; right: 0;
+		top: 0.313rem; left: 0.313rem; right: 0.313rem;
 		background-color: transparent;
 		}
 	div#hmpagebody {
 		position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
+		top: 0; left: 0; right: 0; bottom: 0;
+		background-color: transparent;
 		overflow: hidden;
-	padding: 0;
+		border-style: solid;
+		border-color: transparent;
+		border-width: thin;
+		border-radius: 0.5rem 0 0 0.5rem;
+		padding: 0.313rem 0 0.313rem 0.313rem;
 		margin: 0;
-	background-color: #ffffff;
-	color: #000000;
+		color: auto;
 		}
-	div#unclicker {
-		display: none;
-		position: fixed;
-		top: 0; right: 0; bottom: 0; left: 0;
-		background-image: url("../images/spacer.gif");
-		z-index: 1000;
-	}
 
 /* General */
 .desktop {
 	display: none !important;
 	}
+.tablet {
+	
+}
 .phone {
 	display: none !important;
 	}
@@ -55,12 +58,9 @@ footer, header, hgroup, menu, nav, section {
 .scripted {
 	
 	}
-.tablet {
-	
-}
 .desk_tablet {
-	
-	}
+
+}
 
 /*** KW Index Pane ***/ 
 
@@ -68,14 +68,16 @@ div#idxheadwrapper {
 	position: absolute;
 	top:0; left: 0; right: 0;
 	border-bottom: thin solid #c0c0c0;
-	background-color: #efefef;
+	background-color: transparent;
 	padding: 0.1rem;
 	margin: 0 0 0 0;
 }
 div#hmindextree {
 	position: absolute;
 	top: 100px; left: 0.2rem; right: 0; bottom: 0;
+	background-color: #ffffff;
 	-webkit-overflow-scrolling: touch;
+	-overflow-scrolling: touch;
 	overflow-y: scroll;
 }
 ul#idxheader {
@@ -88,7 +90,7 @@ form#idxsearch {
 	left: 0;
 	}
 table#searchtable {
-	width: 100%;
+	width: 98%;
 	}
 td#btn {
 	width: 60px;
@@ -127,10 +129,10 @@ p.idxmultiref {
 	background-position: left -0.143rem;
 	}
 div#multiwrapper {
-	border: thin solid #777777;
-	box-shadow: 1px 1px 4px #676767;
+	border: thin solid #444444;
+	box-shadow: 1px 1px 4px #959595;
 	padding: 0.3rem 0.5rem 0.1rem 0.3rem;
-	background-color: #c0c0c0;
+	background-color: #f5f5f5;
 	position: absolute;
 	display: block;
 	right: 0.5rem;
@@ -140,10 +142,10 @@ div#multiwrapper {
 	z-index: 1001;
 	}
 div#popmessage {
-	border: thin solid #777777;
-	box-shadow: 1px 1px 4px #676767;
+	border: thin solid #444444;
+	box-shadow: 1px 1px 4px #959595;
 	padding: 0.3rem 0.5rem 0.1rem 0.3rem;
-	background-color: #c0c0c0;
+	background-color: #f5f5f5;
 	position: absolute;
 	display: block;
 	visibility: hidden;
@@ -151,7 +153,7 @@ div#popmessage {
 	}
 p.popmessage {
 	font-size: 0.8rem;
-	color: #000000;
+	color: #444444;
 	padding: 0.35rem;
 	}
 p.popmessage span {
@@ -165,7 +167,7 @@ a.kw:visited {
 	color: #000000;
 	}
 div#multiwrapper a.kw, div#idxheadwrapper a.kw {
-	color: #000000;
+	color: #444444;
 	}
 
 /* Letter Groups */
@@ -178,8 +180,9 @@ ul.idxgroup-header {
 	margin: 0.714rem 0.286rem 0.357rem 0;
 	background-position: 0px 0px;
 	background-repeat: no-repeat;
-	border: thin solid #c0c0c0;
-	background-color: #aeaeae;
+	border: thin solid #444444;
+	background-color: #bfbfbf;
+	color: #000000;
 	padding: 0.143rem 0.143rem 0.143rem 0.357rem;
 	cursor: pointer;
 }

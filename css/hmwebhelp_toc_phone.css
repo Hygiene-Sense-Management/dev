@@ -10,12 +10,16 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 	}
-html, body { overflow: hidden; }
+html {
+	-webkit-text-size-adjust: 100%;
+}
+html, body {
+ overflow: hidden; }
 body { 
 	font-size: 100%;
-	font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	color: #000000;
-	background-color: #ffffff;
+	background-color: transparent;
 	}
 * {
     -webkit-touch-callout: none;
@@ -32,13 +36,14 @@ div#hmpageheader {
 	}
 div#hmpagebody {
 	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	background-color: #ffffff;
+	top: 0; left: 0.2rem; right: 0.2rem; bottom: 0.2rem;
+	background-color: transparent;
 	overflow-y: auto; overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 	border-style: solid;
-	border-color: #838383;
-	border-width:  0.15rem 0.15rem 0.15rem 0;
+	border-color: transparent;
+	border-radius: 0.8rem 0 0 0.8rem;
+	border-width:  thin;
 	padding: 0;
 	margin: 0;
 	}
@@ -68,7 +73,6 @@ div#hmpagebody {
 div#hmtoctree {
 	position: absolute;
 	left: 0; right: 0; bottom: 0; top: 0.54rem;
-	background-color: #ffffff;
 	}
 ul#toc, ul#toc ul { 
 	padding: 0; margin: 0;
@@ -82,45 +86,43 @@ ul#toc li {
 
 ul#toc li > span {
 	display: block;
-	padding: 0.143rem 0.143rem 0.143rem 1.786rem;
+	padding: 0.143rem 0.143rem 0.143rem 2.000rem;
 	background-repeat: no-repeat;
-	background-position: 0.6rem 0.2rem;
+	background-position: 0.6rem 0.31rem;
 	background-size: 1.1rem;
-	color: #000000;
+	color: #444444;
 	}
-ul#toc li.lv2 span {
-	background-position: 1.3rem 0.2rem;
+ul#toc li.lv2 span{
+	background-position: 1.3rem 0.31rem;
 	padding-left: 2.50rem;
 	}
 ul#toc li.lv3 span {
-	background-position: 2rem 0.2rem;
+	background-position: 2rem 0.31rem;
 	padding-left: 3.214rem;
 	}
 ul#toc li.lv4 span {
-	background-position: 2.70rem 0.2rem;
+	background-position: 2.70rem 0.31rem;
 	padding-left: 3.929rem;
 	}
 ul#toc li.lv5 span {
-	background-position: 3.4rem 0.2rem;
+	background-position: 3.4rem 0.31rem;
 	padding-left: 4.643rem;
 	}
 ul#toc li.lv6 span {
-	background-position: 4.2rem 0.2rem;
+	background-position: 4.2rem 0.31rem;
 	padding-left: 5.357rem;
 	}
 ul#toc li.lv7 span {
-	background-position: 4.9rem 0.2rem;
+	background-position: 4.9rem 0.31rem;
 	padding-left: 6.071rem;
 	}
 ul#toc li.current {
 	z-index: 10000;
 	}
-
 ul#toc li span.current {
-	background-color: #e2e2e2;
+	background-color: transparent;
 	color: #000000;
-	font-weight: bold;
-	outline: thin solid #707070;
+	text-decoration: underline;
 	}
 
 ul#toc ul { 

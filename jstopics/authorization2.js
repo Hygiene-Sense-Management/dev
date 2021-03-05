@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Authorization",
 hmDescription:"Permissions: Permissions sind die kleinsten Atome. Permissions sind vom System vordefiniert. Permission können sich auf bestimme Wirklungsbereich beziehen, das ist aber ni",
-hmPrevLink:"authentication.html",
+hmPrevLink:"clse-stored-device-filters.html",
 hmNextLink:"permissions.html",
 hmParentLink:"clse.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"clse.html\">Client Service<\/a>",

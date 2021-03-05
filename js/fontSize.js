@@ -1,4 +1,101 @@
 /*! Help & Manual WebHelp 3 Script functions
-Copyright (c) 2015-2017 by Tim Green. All rights reserved. Contact tg@it-authoring.com
+Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.ec-software.com
 */
-function hmFS(){var c=null,e=null,d=null,b=0;function a(h){function f(k){if(typeof k==="string"){k=parseInt(k,10);}c=hmDevice.baseFontSize*k;e=c;i();}function j(k){switch(k){case"phone":f(1.0,10);break;case"tablet":f(1.0,10);break;case"desktop":f(1,10);break;default:f(1,10);}}function g(k){hmWebHelp.extFuncs("fontSize",k);xMessage.sendObject("hmnavigation",{action:"callfunction",fn:"extFuncs",fa:["fontSize",k]});xMessage.sendObject("hmsearch",{action:"callfunction",fn:"extFuncs",fa:["fontSize",k]});xMessage.sendObject("hmindex",{action:"callfunction",fn:"extFuncs",fa:["fontSize",k]});}function i(){var k=false,l;if(typeof h=="object"){k=h[1];l=h[0];}else{l=h;}if(k&&k=="global"){g(l);return;}else{if(l){if(e<hmDevice.maxFontSize){if(e+5<=hmDevice.maxFontSize){e+=5;}else{e=hmDevice.maxFontSize;}}}else{if(e>hmDevice.minFontSize){if(e-5>=hmDevice.minFontSize){e-=5;}else{e=hmDevice.minFontSize;}}}document.getElementsByTagName("html")[0].style.fontSize=e+"%";if(pageName=="mainPage"){sessionVariable.setPV("fontSize",e.toString());setTimeout(function(){if(!hmDevice.phone){hmWebHelp.resizePanes(hmpage.FnavWidth());}},100);}if(hmDevice.phone){hmWebHelp.funcs.mobTBfix();}}}if(c===null){j(hmDevice.device);}else{i();}}return a;}if(typeof hmWebHelp!="undefined"){hmWebHelp.funcs.fontSize=hmFS();}else{funcs.fontSize=hmFS();}
+function hmFS() {
+
+		var baseSize=null, changeSize=null, testBaseSize=null, fontOffset = 0;
+		
+		function doFontSize(args) {
+			
+			function doBase(fOffset) {
+				if (typeof fOffset === "string") fOffset = parseInt(fOffset,10);
+				baseSize = hmDevice.baseFontSize * fOffset;
+				changeSize = baseSize;
+				doFS();
+			}
+			
+			function setBaseSize(dv){
+				
+				switch (dv) {
+				case "phone":
+					doBase(1.0,10);
+					break;
+				case "tablet": 
+					doBase(1.0,10);
+					break;
+				case "desktop":
+					doBase(1,10);
+					break;
+				default:
+					doBase(1,10);
+				}
+				
+				} // setBaseSize
+		
+		function globalFontSize (mode) {
+			hmWebHelp.extFuncs('fontSize',mode);
+			xMessage.sendObject("hmnavigation", {action: "callfunction", fn: "extFuncs", fa: ['fontSize',mode]});
+			xMessage.sendObject("hmsearch", {action: "callfunction", fn: "extFuncs", fa:['fontSize',mode]});
+			xMessage.sendObject("hmindex", {action: "callfunction", fn: "extFuncs", fa: ['fontSize',mode]});
+		}
+			
+			function doFS()	{ 
+				var global = false, mode;
+				if (typeof args == "object") {
+					global = args[1];
+					mode = args[0];
+				} else mode = args;
+				if (global && global=="global") {
+					globalFontSize(mode);
+					return;
+				} 
+					else {
+				if (mode) {
+					if (changeSize < hmDevice.maxFontSize) {
+						if (changeSize + 5 <= hmDevice.maxFontSize)
+							changeSize+=5;
+						else
+							changeSize = hmDevice.maxFontSize;
+						}
+				} else {
+					if (changeSize > hmDevice.minFontSize) {
+						if (changeSize - 5 >= hmDevice.minFontSize)
+							changeSize-=5;
+						else
+							changeSize = hmDevice.minFontSize;
+						}
+
+				}
+				document.getElementsByTagName("html")[0].style.fontSize = changeSize + "%";
+				if (pageName == "mainPage") {
+					sessionVariable.setPV("fontSize",changeSize.toString());
+					setTimeout(function() {
+					if (!hmDevice.phone)
+						hmWebHelp.resizePanes(hmpage.FnavWidth());
+					},100);
+					} 
+					
+					if (hmDevice.phone) {
+						hmWebHelp.funcs.mobTBfix();
+					}
+				}
+			} // doFS()
+		
+			if (baseSize===null)
+			{
+			setBaseSize(hmDevice.device);
+			} else {
+			doFS();
+			}
+		
+		} // doFontSize()
+			
+			return doFontSize;
+
+		}
+if (typeof hmWebHelp != "undefined") {
+	hmWebHelp.funcs.fontSize = hmFS();
+	}
+	else {
+		funcs.fontSize = hmFS();
+	}
