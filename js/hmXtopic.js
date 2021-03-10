@@ -6,7 +6,7 @@ hmProjectInfo = {
 	copyright: "© 2021 Daniel Egger, Schmuck Clemens",
 	summary: "&nbsp;",
 	version: "1.0.0",
-	date: "Friday, March 5, 2021",
+	date: "Wednesday, March 10, 2021",
 	language: "en-us",
 	mainfile: "index.html"
 	}
