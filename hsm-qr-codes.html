@@ -14,9 +14,9 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="All devices managed by the HsM have stickers with a QR code that carry information about the device. This QR code sticker is used by clients (like Apps) identify devices and..." />
+	<meta name="description" content="All devices managed by HsM have QR codes that carry information about the device. This QR code is used by clients (like Apps) identify devices and get information about devices." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
-	<meta name="author" content="Daniel Egger, Schmuck Clemens" />
+	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
 <link rel="shortcut icon" href="favicon.ico" /> 
 <!-- If you use Google Web Fonts please include Open Sans as it is the preferred font for the skin's own UI -->
@@ -422,8 +422,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">All devices managed by the HsM have stickers with a QR code that carry information about the device. This QR code sticker is used by clients (like Apps) identify devices and get information about devices.</p>
-<p class="p_Normal">Note: The QR code sticker is physically placed on one component of the device, therefore if the component gets exchanged the QR code sticker will change. </p>
+	<p class="p_Normal">All devices managed by HsM have QR codes that carry information about the device. This QR code is used by clients (like Apps) identify devices and get information about devices.</p>
+<p class="p_Normal">Note: The QR code is physically placed on one component of the device, therefore if the component gets exchanged the QR code will change.</p>
 <p class="p_Normal">The data encoded in the QR code sticker is also printed on the same sticker in human-readable form.</p>
 <p class="p_Normal">The contents of the QR Code is a UTF-8 encoded string without <span style="font-style: italic;">Byte order Mark</span> that carries several data fields as explained in table 18. </p>
 <div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
@@ -431,9 +431,9 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <tr>
 <th style="vertical-align:top; width:6.5625rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Data field</p>
 </th>
-<th style="vertical-align:top; width:10.9375rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Location in string</p>
+<th style="vertical-align:top; width:16.7500rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Location in string</p>
 </th>
-<th style="vertical-align:top; width:30.5625rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:19.5625rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
@@ -441,49 +441,49 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <tr>
 <td style="vertical-align:top; width:6.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Data type</p>
 </td>
-<td style="vertical-align:top; width:10.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters up to the first hyphen (U+002D, 0x2D)</p>
+<td style="vertical-align:top; width:16.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters up to the first hyphen (U+002D, 0x2D)</p>
 </td>
-<td style="vertical-align:top; width:30.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:19.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:6.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Version</p>
 </td>
-<td style="vertical-align:top; width:10.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the first hyphen to the second hyphen (U+002D, 0x2D)</p>
+<td style="vertical-align:top; width:16.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the first hyphen to the second hyphen (U+002D, 0x2D)</p>
 </td>
-<td style="vertical-align:top; width:30.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:19.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:6.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Product type code</p>
 </td>
-<td style="vertical-align:top; width:10.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the second hyphen (U+002D, 0x2D up to the third hyphen.</p>
+<td style="vertical-align:top; width:16.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the second hyphen (U+002D, 0x2D up to the third hyphen.</p>
 </td>
-<td style="vertical-align:top; width:30.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The product type code of the device type this QR code is on.</p>
+<td style="vertical-align:top; width:19.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The product type code of the device type this QR code is on.</p>
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:6.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Article number</p>
 </td>
-<td style="vertical-align:top; width:10.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the third hyphen (U+002D, 0x2D up to the first new line (<span style="font-size: 1.10rem; color: #242729; background-color: #ffffff;">U+000A, 0x0A</span>)</p>
+<td style="vertical-align:top; width:16.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the third hyphen (U+002D, 0x2D up to the first new line (<span style="font-size: 1.10rem; color: #242729; background-color: #ffffff;">U+000A, 0x0A</span>)</p>
 </td>
-<td style="vertical-align:top; width:30.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:19.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:6.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal"><a href="comm-serial-numbers.html" class="topiclink">Serial number</a></p>
 </td>
-<td style="vertical-align:top; width:10.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters between the first and the second new line (<span style="font-size: 1.10rem; color: #242729; background-color: #ffffff;">U+000A, 0x0A</span>)</p>
+<td style="vertical-align:top; width:16.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters between the first and the second new line (<span style="font-size: 1.10rem; color: #242729; background-color: #ffffff;">U+000A, 0x0A</span>)</p>
 </td>
-<td style="vertical-align:top; width:30.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The serial number of the device or one of the components of the device</p>
+<td style="vertical-align:top; width:19.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The serial number of the device or one of the components of the device</p>
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:6.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Network id</p>
 </td>
-<td style="vertical-align:top; width:10.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the second new line (<span style="font-size: 1.10rem; color: #242729; background-color: #ffffff;">U+000A, 0x0A</span>) </p>
+<td style="vertical-align:top; width:16.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the second new line (<span style="font-size: 1.10rem; color: #242729; background-color: #ffffff;">U+000A, 0x0A</span>) </p>
 </td>
-<td style="vertical-align:top; width:30.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Encodes a network identity e.g. the MAC address or the blUUID of a component</p>
+<td style="vertical-align:top; width:19.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Encodes a network identity e.g. the MAC address or the blUUID of a component</p>
 </td>
 </tr>
 </tbody>
@@ -716,7 +716,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <p style="margin: 0 0 0 0;"><span style="color: #000000;">&nbsp;</span></p>
 
 	<div class="topicfooter">
-<p class="topicfooter">powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a></p>
+<p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner. </a>&copy; 2021.</p>
 </div>
 	</div> <!-- hmpagebody_scroller -->
 	</div> <!-- hmpagebody -->

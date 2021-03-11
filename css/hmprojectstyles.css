@@ -25,10 +25,13 @@ span.f_Heading1 /* Heading1 */
 {
  font-size: 1.10rem;
  font-weight: bold;
+ color: #5f5f5f;
 }
 span.f_Heading2 /* Heading2 */
 {
+ font-style: italic;
  font-weight: bold;
+ color: #5f5f5f;
 }
 span.f_Identifier /* Identifier */
 {
@@ -106,7 +109,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  border-right: none;
  border-left: none;
  padding: 0.3750rem 0.3750rem 0.3750rem 0.3750rem;
- margin: 0 0 0 0;
+ margin: 0 0 0.2500rem 0;
 }
 .p_InlineCode /* InlineCode */
 {

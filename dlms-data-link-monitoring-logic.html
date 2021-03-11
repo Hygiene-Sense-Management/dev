@@ -16,7 +16,7 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="The data link monitoring service records the result of monitoring data links between non-gateway devices and stationary gateways and the results of monitoring the data links..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
-	<meta name="author" content="Daniel Egger, Schmuck Clemens" />
+	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
 <link rel="shortcut icon" href="favicon.ico" /> 
 <!-- If you use Google Web Fonts please include Open Sans as it is the preferred font for the skin's own UI -->
@@ -425,7 +425,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	<p class="p_Normal">The data link monitoring service records the result of monitoring data links between non-gateway devices and stationary gateways and the results of monitoring the data links between stationary gateways and the HsM backend. It keeps the current online status of these devices and in case of changes to the status will forward the changed status to the HsM IoT Data Storage as resource instance values.</p>
 <p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Changes to a device status will be persisted as resource instance values. Consecutive reporting of the same status will not be persisted in the associated resource instance values.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Persisting as resource instance values is done via IoT hub (as fake resource instance values)</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>When a stationary gateway disconnection is detected all non-gateway devices that used this stationary gateway previously will be set to state offline (Gateway not reachable) if the device has not been reported online with another stationary gateway within a grace period of xx minutes.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Devices for which no update has been received for the last 24 hours will be set to Offline (Device not reachable).</p>
 	<div class="topicfooter">
-<p class="topicfooter">powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a></p>
+<p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner. </a>&copy; 2021.</p>
 </div>
 	</div> <!-- hmpagebody_scroller -->
 	</div> <!-- hmpagebody -->

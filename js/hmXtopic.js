@@ -2,11 +2,11 @@
 
 hmProjectInfo = {
 	title: "HsM Reference Manual",
-	author: "Daniel Egger, Schmuck Clemens",
-	copyright: "© 2021 Daniel Egger, Schmuck Clemens",
+	author: "Hagleitner",
+	copyright: "© 2021 Hagleitner",
 	summary: "&nbsp;",
 	version: "1.0.0",
-	date: "Wednesday, March 10, 2021",
+	date: "Thursday, March 11, 2021",
 	language: "en-us",
 	mainfile: "index.html"
 	}
