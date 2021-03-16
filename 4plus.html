@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Recording of data link status</title>
+	<title>4Plus (50-01)</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="The data link status of HsM Backend devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status..." />
+	<meta name="description" content="Additional to the content parts described in Device QR Codes this content type also includes an EUI-48 network Id. This content type is used for 4Plus with a built in network..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -227,7 +227,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	}
 	</style>
 	</noscript>
-	<link rel="canonical" href="http://www.helpandmanual.com/help/dlms-recording-of-data-link-status.html" />
+	<link rel="canonical" href="http://www.helpandmanual.com/help/4plus.html" />
 	<script id="jqscript" type="text/javascript"></script>
 </head>
 <body>
@@ -371,7 +371,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	</li>
 	<li id="hm_printable_version">
 		<svg class="hmbicon" viewBox="0 0 30 32"><use xlink:href="#print"></use></svg>
-		<a id="hm_printable_link" href="_hm_print_window.htm?dlms-recording-of-data-link-status.html" onclick="hmWebHelp.hamburgerMenu()" target="hm_print_window" title="Print Current Topic">
+		<a id="hm_printable_link" href="_hm_print_window.htm?4plus.html" onclick="hmWebHelp.hamburgerMenu()" target="hm_print_window" title="Print Current Topic">
 		<span>Print Topic</span></a>
 	</li>
 	<li class="desktop server">
@@ -389,8 +389,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a></p> 
-		  <p class="topictitle">Recording of data link status</p>
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="comm.html">Common</a> &gt; <a href="hsm-qr-codes.html">Device QR Codes</a></p> 
+		  <p class="topictitle">4Plus (50-01)</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -398,13 +398,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-presented-status-gateway-devices.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="hsm-qr-codes.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="hsm-qr-codes.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Top</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-data-link-monitoring-nongateway-gateway.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="hybrid-(50-02).html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -422,19 +422,47 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The data link status of HsM Backend devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status of each HsM Backend device is recorded as time-series of data. </p>
-<p class="p_Normal">Following virtual resource instance values are recorded</p>
-<h2 class="p_Heading2"><span class="f_Heading2">Data-link status change</span></h2>
-<p class="p_Normal">Applies to gateway and non-gateway devices</p>
-<p class="p_Normal">Resource type:</p>
-<p class="p_Normal">Resource instance number:</p>
-<p class="p_Normal">Whenever a change in the data-link status of a device is detected by the HsM data link monitoring the new status after the status change is recorded as a resource instance value and stored with the device.</p>
-<p class="p_Normal">Due to technical reasons the time-stamp of this change in not always precise as the change of the data link status might be detected with a certain delay.</p>
-<h2 class="p_Heading2"><span class="f_Heading2">Last used stationary gateway </span></h2>
-<p class="p_Normal">Applies to non-gateway devices only</p>
-<p class="p_Normal">For non-gateway devices the last used stationary gateway, i.e. the stationary gateway that was last used by the non-gateway device to connect to the HsM Backend) is stored.</p>
-<h2 class="p_Heading2"><span class="f_Heading2">Last-detected-online (Non-gateway devices and stationary gateways)</span></h2>
-<p class="p_Normal">The time stamp when a data-link status of the device was last Online. This is used to for differentiating between temporarily offline and offline.</p>
+	<p class="p_Normal">Additional to the content parts described in <a href="hsm-qr-codes.html" class="topiclink">Device QR Codes</a> this content type also includes an EUI-48 network Id. This content type is used for 4Plus with a built in network interface.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:6.5625rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Content part</p>
+</th>
+<th style="vertical-align:top; width:16.7500rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Location in content</p>
+</th>
+<th style="vertical-align:top; width:19.5625rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:6.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Network Id </p>
+<p class="p_Normal">(EUI 48)</p>
+</td>
+<td style="vertical-align:top; width:16.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters of the third line in the QR code content. </p>
+</td>
+<td style="vertical-align:top; width:19.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The EUI-48 (Mac Address) of the device's network interface. Presented as lower-case hexadecimal number in colon delimited groups of two hexadecimal digits.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_cff7da" class="hmanchor"></a><span class="f_ImageCaption">Table 20: &nbsp;Additional content parts for this content type.</span></p>
+<h2 class="p_Heading2"><span class="f_Heading2">Example</span></h2>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0;">
+<tr>
+<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:none"><p style="margin: 0 0 0 0;"><img alt="qr-code-example-4plus" style="margin:0;width:7.8750rem;height:7.9375rem;border:none" src="./images/qr-code-example-4plus.png"/></p>
+</td>
+<td style="vertical-align:top; width:35.1250rem; padding:0.1250rem; border:none"><p class="p_Normal">Content:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">50-01-2000-422090127000</span><br />
+<span class="f_CodeExample">200603TTT0002</span><br />
+<span class="f_CodeExample">ab:cd:ef:01:23:45</span></p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_CodeExample">(Note this example won't work in HsM as it not referring to a device registered in the Digital Twin Service)</p>
+</td>
+</tr>
+</table>
+</div>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner. </a>&copy; 2021.</p>
@@ -531,11 +559,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	hmFlags.hmTrackHost = "http://www.helpandmanual.com/help/";
 	hmFlags.hmProject = "HsM Reference Manual";
 	hmFlags.hmDefaultPage = "index.html";
-	hmFlags.hmCurrentPage = "dlms-recording-of-data-link-status.html";
+	hmFlags.hmCurrentPage = "4plus.html";
 	hmFlags.hmTOC = "hmcontent.html";
 	hmFlags.hmSearchPage = "hmftsearch.html";
 	hmFlags.hmIndexPage = "hmkwindex.html";
-	hmFlags.thisTopic = "dlms-recording-of-data-link-status.html";
+	hmFlags.thisTopic = "4plus.html";
 	hmFlags.lastTopic = "index.html";
 	hmFlags.isEWriter = false;
 	hmFlags.topicExt = ".html";
@@ -595,14 +623,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Recording of data link status";
+			var titleBarText = "4Plus (50-01)";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Recording of data link status"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "4Plus (50-01)"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();
