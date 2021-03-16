@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Neutral backend infrastructure",
 hmDescription:"HsM is designed to be operated by different HsM OEM Partners, I.e. different OEM Partner can host their own HsM infrastructure and can therefore operate their own totally...",
-hmPrevLink:"data-source.html",
+hmPrevLink:"trace_product.html",
 hmNextLink:"cats.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",

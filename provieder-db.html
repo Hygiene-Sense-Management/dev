@@ -404,7 +404,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="on-premise-infrastructure.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Top</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="trace_product.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="product-record-state.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -422,48 +422,40 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The provider DB is the place where the first digital representation of HsM devices is stored. The End-Test procedure writes data records to tables in this database; from this records HsM starts the life cycle for digital twins.</p>
-<p class="p_Normal">The Provider DB stores much more information than necessary for HsM. HsM only interacts with data in following table:</p>
+	<p class="p_Normal">The provider DB is the place where the first digital representation of HsM devices is stored. The End-Test procedure writes data records to tables in this database; from this database HsM starts the life cycle for digital twins.</p>
+<p class="p_Normal">The Provider DB stores much more information than necessary for HsM. HsM only interacts with data in following tables:</p>
 <div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:9.2500rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Table Name</p>
+<th style="vertical-align:top; width:12.3125rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Table Name</p>
 </th>
-<th style="vertical-align:top; width:35.5625rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:30.8125rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:9.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">TRACE_Product</p>
+<td style="vertical-align:top; width:12.3125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">TRACE_Product</p>
 </td>
-<td style="vertical-align:top; width:35.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">This is the main table for products i.e. things that run of the production line including dispensers, gateways and other device.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:9.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">TRACE_Measure</p>
-</td>
-<td style="vertical-align:top; width:35.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">A Key value storage used to store measurements done by the end-test procedure, actions performed by the end-test procedure and values set by the end-test procedure.</p>
+<td style="vertical-align:top; width:30.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">This is the main table for products i.e. things that run off the production line including dispensers, gateways and other device.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:9.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:12.3125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">TRACE_Measure</p>
 </td>
-<td style="vertical-align:top; width:35.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:30.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">A Key value storage used to store measurements done by the end-test procedure, actions performed by the end-test procedure and values set by the end-test procedure.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:12.3125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">TRACE_ProductRecordState</p>
+</td>
+<td style="vertical-align:top; width:30.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">A lookup table for defined product record states. These states are used in TRACE_Product to classify the records stored there.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="p_Normal">When inserting a record with <span class="f_InlineCode">ProductRecordStateId = 0</span> the <span class="f_InlineCode">TRG_TRACE_Product_InsteadOfInsert</span> trigger will intercept the insert and will apply following logic:</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">If there is already a record with the same BLUUID and ProductRecordState 0 </p>
-<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>this record will be set to productRecordState 2 (re-tested)</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>The DeviceId of this record will be used for the record to be inserted (overriding any user-provided deviceid)</p><p class="p_Normal">Else</p>
-<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>The insert is done without any additional logic</p><p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">&nbsp;</p>
-<p style="margin: 0 0 0 0;"><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">CREATE</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">UNIQUE</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">INDEX</span><span style="font-size: 0.90rem; font-family: Consolas;"> IX_UniqueBluuid </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">on</span><span style="font-size: 0.90rem; font-family: Consolas;"> Trace_Product</span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">(</span><span style="font-size: 0.90rem; font-family: Consolas;">Bluuid</span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">,</span><span style="font-size: 0.90rem; font-family: Consolas;"> ProductRecordStateId</span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">)</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">WHERE</span><span style="font-size: 0.90rem; font-family: Consolas;"> ProductRecordStateId </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">=</span><span style="font-size: 0.90rem; font-family: Consolas;"> 0 </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">AND</span><span style="font-size: 0.90rem; font-family: Consolas;"> Bluuid </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">IS</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">NOT</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">NULL</span></p>
-<p style="margin: 0 0 0 0;"><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">CREATE</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">UNIQUE</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">INDEX</span><span style="font-size: 0.90rem; font-family: Consolas;"> IX_UniqueDeviceId </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">on</span><span style="font-size: 0.90rem; font-family: Consolas;"> Trace_Product</span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">(</span><span style="font-size: 0.90rem; font-family: Consolas;">DeviceId</span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">,</span><span style="font-size: 0.90rem; font-family: Consolas;"> ProductRecordStateId</span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">)</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">WHERE</span><span style="font-size: 0.90rem; font-family: Consolas;"> ProductRecordStateId </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">=</span><span style="font-size: 0.90rem; font-family: Consolas;"> 0</span></p>
-<p style="margin: 0 0 0 0;"><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">CREATE</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">UNIQUE</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">INDEX</span><span style="font-size: 0.90rem; font-family: Consolas;"> IX_UniqueSerialNo </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">on</span><span style="font-size: 0.90rem; font-family: Consolas;"> Trace_Product</span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">(</span><span style="font-size: 0.90rem; font-family: Consolas;">SerialNo</span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">,</span><span style="font-size: 0.90rem; font-family: Consolas;"> ProductRecordStateId</span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">)</span><span style="font-size: 0.90rem; font-family: Consolas;"> </span><span style="font-size: 0.90rem; font-family: Consolas; color: #0000ff;">WHERE</span><span style="font-size: 0.90rem; font-family: Consolas;"> ProductRecordStateId </span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">IN(</span><span style="font-size: 0.90rem; font-family: Consolas;">0</span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">,</span><span style="font-size: 0.90rem; font-family: Consolas;">2</span><span style="font-size: 0.90rem; font-family: Consolas; color: #808080;">)</span></p>
+<p class="p_ImageCaption"><a id="fig_c6659b" class="hmanchor"></a><span class="f_ImageCaption">Table 1: Tables in the Provider DB used by HsM</span></p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner. </a>&copy; 2021.</p>
