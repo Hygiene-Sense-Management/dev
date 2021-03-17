@@ -3,7 +3,7 @@ hr { color: #000000 }
 body, table, tr, th /* Normal */
 {
  font-size: 100%;
- font-family: Arial,Helvetica,sans-serif;
+ font-family: 'Segoe UI',Tahoma,Verdana,Arial,sans-serif;
  font-style: normal;
  font-weight: normal;
  color: #000000;
@@ -61,12 +61,14 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 {
  text-align: left;
  text-indent: 0;
+ line-height: 1.44;
  padding: 0 0 0 0;
- margin: 0 0 0.3750rem 0;
+ margin: 0.2500rem 0 0.3750rem 0;
 }
 .p_CodeExample /* Code Example */
 {
  font-size: 0.90rem;
+ line-height: 1.20;
  margin: 0 0 0 0;
 }
 .p_Comment /* Comment */
@@ -79,6 +81,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  font-weight: normal;
  text-align: left;
  text-indent: 0;
+ line-height: 1.44;
  padding: 0 0 0 0;
  margin: 0.7500rem 0 0.3750rem 0;
 }
@@ -88,8 +91,9 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  font-weight: normal;
  text-align: left;
  text-indent: 0;
+ line-height: 1.44;
  padding: 0 0 0 0;
- margin: 0 0 0.3750rem 0;
+ margin: 0.2500rem 0 0.3750rem 0;
 }
 .p_Identifier /* Identifier */
 {
@@ -98,7 +102,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_ImageCaption /* Image Caption */
 {
  font-size: 0.80rem;
- margin: 0 0 0.6250rem 0;
+ margin: 0.2500rem 0 0.6250rem 0;
 }
 .p_Important /* Important */
 {
@@ -118,11 +122,18 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_Notes /* Notes */
 {
  font-size: 1.00rem;
+ page-break-inside: avoid;
+ page-break-after: avoid;
+ border-color: #f0ecfd;
+ border-style: solid;
+ border-width: 0.3125rem;
+ background: #f0ecfd;
+ margin: 0.2500rem 0.5000rem 0.3750rem 0.5000rem;
 }
 .p_Tablecontents /* Table contents */
 {
  font-size: 1.00rem;
- margin: 0 0 0.1250rem 0;
+ margin: 0.2500rem 0 0.1250rem 0;
 }
 /* Table styles */
 div.hmrotate90  { display:inline-block; -webkit-writing-mode: vertical-rl; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; }

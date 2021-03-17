@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Customer selection flow",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"xiap.html",
+hmPrevLink:"debug-mode.html",
 hmNextLink:"seap.html",
 hmParentLink:"xiap.html",
 hmBreadCrumbs:"<a href=\"frontends.html\">Frontends<\/a> &gt; <a href=\"xiap.html\">Xibu App<\/a>",

@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Stored device filters</title>
+	<title>Debug mode</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Device filters can be stored on the HsM Client Service for reuse." />
+	<meta name="description" content="For extended debugging the app can be switched to a debug mode. To do so go to the profile screen and tab on the e-mail address 5 times. After that The profile screen will show..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -227,7 +227,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	}
 	</style>
 	</noscript>
-	<link rel="canonical" href="http://www.helpandmanual.com/help/clse-stored-device-filters.html" />
+	<link rel="canonical" href="http://www.helpandmanual.com/help/debug-mode.html" />
 	<script id="jqscript" type="text/javascript"></script>
 </head>
 <body>
@@ -371,7 +371,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	</li>
 	<li id="hm_printable_version">
 		<svg class="hmbicon" viewBox="0 0 30 32"><use xlink:href="#print"></use></svg>
-		<a id="hm_printable_link" href="_hm_print_window.htm?clse-stored-device-filters.html" onclick="hmWebHelp.hamburgerMenu()" target="hm_print_window" title="Print Current Topic">
+		<a id="hm_printable_link" href="_hm_print_window.htm?debug-mode.html" onclick="hmWebHelp.hamburgerMenu()" target="hm_print_window" title="Print Current Topic">
 		<span>Print Topic</span></a>
 	</li>
 	<li class="desktop server">
@@ -389,8 +389,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="clse.html">Client Service</a> &gt; <a href="clse-devicefilter.html">Device filter</a></p> 
-		  <p class="topictitle">Stored device filters</p>
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="frontends.html">Frontends</a> &gt; <a href="xiap.html">Xibu App</a></p> 
+		  <p class="topictitle">Debug mode</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -398,13 +398,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="clse-devicefiltertermtype-organization.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="xiap.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="clse-devicefilter.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="xiap.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Top</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="authorization2.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="cuap-customer-selection-flow.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -422,43 +422,9 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal"><a href="clse-devicefilter.html" class="topiclink">Device filters</a> can be stored on the HsM Client Service for reuse.</p>
-<p class="p_Normal">Stored device filters are either stored for the whole system (global) or for a specific organization or for a specific customer.</p>
-<p class="p_Normal">The <span class="f_Identifier">scope availability</span> defines in which scopes the stored device filter shall be available for execution. Scope availability can only be set for device filters stored globally or for a specific organization. Table 13 shows the scope availability options for device filters in different storage places. Per default all scope availability options are set.</p>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.1250rem 0;"><table style="width:100%; border:none; border-spacing:0; border-collapse:collapse;">
-<thead>
-<tr>
-<th style="vertical-align:top; width:8.6875rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Tablecontents"><span class="f_Tablecontents">Place of storage</span></p>
-</th>
-<th style="vertical-align:top; width:40.3750rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Tablecontents"><span class="f_Tablecontents">Scope availability options</span></p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align:top; width:8.6875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Tablecontents"><span class="f_Tablecontents">Global</span></p>
-</td>
-<td style="vertical-align:top; width:40.3750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Tablecontents"><span class="f_Tablecontents">Global</span></p>
-<p class="p_Tablecontents"><span class="f_Tablecontents">Organization</span></p>
-<p class="p_Tablecontents"><span class="f_Tablecontents">Customer</span></p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:8.6875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Tablecontents"><span class="f_Tablecontents">Organization</span></p>
-</td>
-<td style="vertical-align:top; width:40.3750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Tablecontents"><span class="f_Tablecontents">Organization</span></p>
-<p class="p_Tablecontents"><span class="f_Tablecontents">Customer</span></p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="p_ImageCaption"><a id="fig_e0a6f9" class="hmanchor"></a><span class="f_ImageCaption">Table 14: Stored device filter availability scopes</span></p>
-<p class="p_Normal">A stored device filter can be either personal or public, personal device filters are available only to the user who created the filter (and can only be modified by this user) public device filters are available for all users.</p>
-<p class="p_Normal">A user can create and modify personal stored device filters in storage places where he has the permission <span style="font-style: italic;">Create and Modify personal device filters</span>. A user can create and modify public stored device filters in all storage places where he has the permission to <span class="f_Identifier">Create and modify public device filters</span>.</p>
-<p class="p_Normal">All users can see public device filters that are available in a specific execution scope (based on place of storage and scope availability). Personal device filters are only available to the creator of the filter (also based on place of storage and scope availability).</p>
-<p class="p_Normal">When storing device filters the HsM Client Service will check hard and soft validity constraints only valid device filters can be stored.</p>
-<p class="p_Normal">A stored device filter must always have a non-empty name. The system does not check the uniqueness of device filter names. The name is stored a s a phrase and can therefore be defined for each culture separately, the phrase must have at least one non-empty translation.</p>
+	<p class="p_Normal">For extended debugging the app can be switched to a debug mode. To do so go to the profile screen and tab on the e-mail address 5 times. After that The profile screen will show more elements.</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Send logs</span></h1>
+<p class="p_Normal">When in debugging mode the app records log information that includes important information for the developers to inspect problems. When a specific problem occurs, switch the app to debugging mode and repeat the steps that make problems. After that go back to the profile screen tab on Send logs and send the log file to the support.</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner. </a>&copy; 2021.</p>
@@ -555,11 +521,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	hmFlags.hmTrackHost = "http://www.helpandmanual.com/help/";
 	hmFlags.hmProject = "HsM Reference Manual";
 	hmFlags.hmDefaultPage = "index.html";
-	hmFlags.hmCurrentPage = "clse-stored-device-filters.html";
+	hmFlags.hmCurrentPage = "debug-mode.html";
 	hmFlags.hmTOC = "hmcontent.html";
 	hmFlags.hmSearchPage = "hmftsearch.html";
 	hmFlags.hmIndexPage = "hmkwindex.html";
-	hmFlags.thisTopic = "clse-stored-device-filters.html";
+	hmFlags.thisTopic = "debug-mode.html";
 	hmFlags.lastTopic = "index.html";
 	hmFlags.isEWriter = false;
 	hmFlags.topicExt = ".html";
@@ -619,14 +585,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Stored device filters";
+			var titleBarText = "Debug mode";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Stored device filters"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Debug mode"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();
