@@ -398,13 +398,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="product-record-state.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="provieder-db.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="provieder-db.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Top</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="neutral-backend-infrastructure.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="product-record-state.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -443,7 +443,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <tr>
 <td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Item No</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The product's <a href="article-numbers.html" class="topiclink">article number</a></p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The product's <a href="article-numbers.html" class="topiclink">article number</a>.</p>
+<p class="p_Normal">Via this article number the Digital Twin Registration Agent looks up the components in the <span class="f_InlineCode">Production BOM Header</span> and <span class="f_InlineCode">Proudction BOM Line</span> &nbsp;tables. The components found there are then mapped to the device type definition the Digital Twin Registration Agent loads from the Catalog Service.</p>
 </td>
 </tr>
 <tr>
@@ -453,9 +454,9 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">blUUID</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">BLUUID</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Named wrongly as BLUUID this column actuall holds the network ID of the device (at the time of production) which can can be a EUI64 or EUI48.</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Named wrongly as BLUUID this column actually holds the network ID of the device (at the time of production) which can can be a EUI64 or EUI48.</p>
 <p class="p_Normal">The End-Test encodes EUIs as lowercase non-grouped hexadecimal number.</p>
 </td>
 </tr>
@@ -468,12 +469,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <tr>
 <td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">ProductionOrderId</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Reference to a production order that was basis for this product. The production order is a blueprint for the device and defines the exact components built into a device.</p>
-<p class="p_Normal">This column is used by the Digital Twin Registration Agent to map the catalog definition of a device type to the production order and create device components accordingly.</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Reference to a production order that was basis for this product. </p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">QRCOde</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">QrCode</p>
 </td>
 <td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The contents of the QR Code printed on a component of the device. Not used by HsM</p>
 </td>
@@ -499,13 +499,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <tr>
 <td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">DeviceId</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The DeviceId used for the digital twin. (Aeroplane-ID). The id is set by the database.</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The DeviceId &nbsp;is the id digital twin (Airplane-ID). The id is set by the database.</p>
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">BirthDate</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The Birth date of the digtial twin, set by the database)</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The Birth date of the digital twin, set by the database)</p>
 </td>
 </tr>
 <tr>
@@ -556,13 +556,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <tr>
 <td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">2</p>
 </td>
-<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Unused </p>
+<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">This data source id is currently unused </p>
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">3</p>
 </td>
-<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">At one point in time devices found in the HsM System but not in the Provider DB were inserted in the provider DB. This Data Source ID was used to mark them.</p>
+<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">At one point in time devices found in HsM but not in the Provider DB were inserted in the Provider DB with a script. This Data Source ID was used to mark them.</p>
 </td>
 </tr>
 <tr>

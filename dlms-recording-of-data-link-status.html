@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="The data link status of HsM Backend devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status..." />
+	<meta name="description" content="The data link status of HsM devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status of each..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -422,18 +422,19 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The data link status of HsM Backend devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status of each HsM Backend device is recorded as time-series of data. </p>
+	<p class="p_Normal">The data link status of HsM devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status of each HsM device is recorded as time-series. </p>
 <p class="p_Normal">Following virtual resource instance values are recorded</p>
-<h2 class="p_Heading2"><span class="f_Heading2">Data-link status change</span></h2>
+<h2 class="p_Heading2"><span class="f_Heading2">Data-link status</span></h2>
 <p class="p_Normal">Applies to gateway and non-gateway devices</p>
 <p class="p_Normal">Resource type:</p>
 <p class="p_Normal">Resource instance number:</p>
-<p class="p_Normal">Whenever a change in the data-link status of a device is detected by the HsM data link monitoring the new status after the status change is recorded as a resource instance value and stored with the device.</p>
+<p class="p_Normal">Whenever a change in the data-link status of a device is detected by the Data Link Monitoring Service the new status after the status change is recorded as a resource instance value and stored with the device.</p>
 <p class="p_Normal">Due to technical reasons the time-stamp of this change in not always precise as the change of the data link status might be detected with a certain delay.</p>
 <h2 class="p_Heading2"><span class="f_Heading2">Last used stationary gateway </span></h2>
 <p class="p_Normal">Applies to non-gateway devices only</p>
 <p class="p_Normal">For non-gateway devices the last used stationary gateway, i.e. the stationary gateway that was last used by the non-gateway device to connect to the HsM Backend) is stored.</p>
-<h2 class="p_Heading2"><span class="f_Heading2">Last-detected-online (Non-gateway devices and stationary gateways)</span></h2>
+<h2 class="p_Heading2"><span class="f_Heading2">Last-detected-online </span></h2>
+<p class="p_Normal">Applies to: devices and stationary gateways</p>
 <p class="p_Normal">The time stamp when a data-link status of the device was last Online. This is used to for differentiating between temporarily offline and offline.</p>
 
 	<div class="topicfooter">
