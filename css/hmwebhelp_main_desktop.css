@@ -60,7 +60,7 @@ nav#navpane_tabs {
 	top: 0;
 	left: 0;
 	right: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	margin: 0;
 	background-color: #007dc5;
 }
@@ -154,7 +154,7 @@ div#headerbox_wrapper {
 	top: 0.0rem;
 	left: 0rem; right: 0rem;
 	overflow: visible;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-image: url("../images/spacer.gif");
@@ -187,7 +187,7 @@ a#headerlogo {
 	background-position: left top;
 	}
 h1.page_header {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	color: #444444;
 	text-align: center;
 	font-size: 1.8rem;
@@ -205,7 +205,7 @@ div#header_menu {
 	overflow: auto;
 	background-color: transparent;
 	overflow: visible;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 0.832rem;
 	}
 	/* Topnav is the main menu row */
@@ -514,7 +514,7 @@ div#topicbox {
 div#hmpageheader {
 	position: absolute;
 	top: 0; left: 0; right: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	background-color: #ffffff;
 	overflow: hidden;
 	}
@@ -635,8 +635,8 @@ p.topic_breadcrumbs a:hover {
 	opacity: 1.0;
 	}
 p.topictitle {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 1.3rem;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 1.2rem;
 	font-weight: bold;
 	color: #007dc5;
 	margin: 0; padding: 0;
@@ -660,7 +660,7 @@ a.topicnavlink:hover {
 a.topicnavlink span {
 	display: block;
 	color: #444444;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 0.832rem;
 	margin-top: 0.1rem;
@@ -696,7 +696,7 @@ div#navigationmenu {
 	display: none;
 	z-index: 100;
 	top: 3.1rem; right: 2.1rem;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	background-color: rgba(35,40,45,0.9);
 	/*box-shadow: 0.125rem 0.125rem 0.500rem 0.025rem #bbbbbb;*/
 	}
@@ -729,7 +729,7 @@ ul#hamburgermenu li:hover {
 ul#hamburgermenu li a {
 	display: inline-block;
 	padding: 0.500rem 0.250rem 0.500rem 0.250rem;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 0.832rem;
 	opacity: 1;
 	color: #ffffff;
@@ -783,7 +783,7 @@ img#leftright {
 
 div.hmpopup {
 	margin: 0; padding: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 }
 
 div#hmpopupbox {
@@ -948,7 +948,7 @@ div#imagecaptionbox {
 	}
 div#imagecaptionbox p.zoomedcaption {
 	display: block;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	color: #888888;
 	font-weight: bold;
 	font-size: 1rem;
@@ -1010,7 +1010,7 @@ div#autoTocWrapper svg.atocicon {
 	fill: #ffffff;
 }
 p.autoTOC {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 0.832rem;
 	color: #ffffff;
 	margin: 0; padding: 0 0.2rem 0 0;
@@ -1163,7 +1163,7 @@ a.dropdown-toggle:hover {color: blue; }
 	p.topictitle {
 		background-color: transparent !important;
 		color: #000000 !important;
-		font-size: 1.3rem !important;
+		font-size: 1.2rem !important;
 		padding: 0; margin: 0;
 	}
 	div.dropdown-toggle-body {

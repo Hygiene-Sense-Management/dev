@@ -58,7 +58,7 @@ nav#navpane_tabs {
 	top: 0;
 	left: 0;
 	right: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	background-color: #007dc5;
 }
 
@@ -151,7 +151,7 @@ a#headerlogo {
 }
 h1.page_header {
 	display: inline-block;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	color: #444444;
 	font-size: 1.1rem;
 	padding: 0.2rem 0.2rem;
@@ -238,7 +238,7 @@ p.menu-description, ul.topnav svg, p.menu-header {
 div#header_menu {
 	display: none;
 	position: fixed;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 0.850rem;
 	right: 2.8rem;
 	z-index: 1000;
@@ -250,7 +250,7 @@ ul.topnav {
 	width: auto;
 	white-space: nowrap;
 	background-color: rgba(35,40,45,0.9);
-	box-shadow: 2px 2px 3px #959595;
+	box-shadow: 2px 2px 3px #bbbbbb;
 	}
 ul.topnav li {
 	margin: 0;
@@ -388,7 +388,7 @@ div.navbox {
 	padding: 0; margin: 0;
 	overflow: hidden;
 	background-color: transparent;
-	box-shadow: 0.09rem 0.085rem 0.2rem #959595;
+	box-shadow: 0.09rem 0.085rem 0.2rem #bbbbbb;
 	-webkit-overflow-scrolling: touch;
 	}
 div.navbox.on {
@@ -419,7 +419,7 @@ div#topicbox {
 	-webkit-overflow-scrolling: touch;
 	} 
 div#hmpageheader {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	background-color: transparent;
 	overflow: hidden;
 	}
@@ -464,7 +464,7 @@ img#leftright {
 
 div.hmpopup {
 	margin: 0; padding: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 }
 
 div#hmpopupbox {
@@ -477,7 +477,7 @@ div#hmpopupbox {
 	height: 3.6rem;
 	max-width: 95%;
 	max-height: 80%;
-	box-shadow: 1px 1px 2px 0px #959595;
+	box-shadow: 1px 1px 2px 0px #bbbbbb;
 	z-index: 99999;
 	}
 div#hmpopuptitlebar {
@@ -638,7 +638,7 @@ div#dragsurface {
 	z-index: 100000;
 	}
 p.topictitle {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 1.15rem;
 	font-weight: bold;
 	color: #007dc5;
@@ -776,7 +776,7 @@ div#imagetogglebox {
 	position:absolute;
 	background-color: #ffffff;
 	border: 4px solid #c0c0c0;
-	box-shadow: 4px 4px 4px #959595;
+	box-shadow: 4px 4px 4px #bbbbbb;
 	z-index: 999000;
 }
 div#imagetogglebox img {
@@ -801,7 +801,7 @@ div#imagecaptionbox {
 	}
 div#imagecaptionbox p.zoomedcaption {
 	display: block;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	color: #888888;
 	font-weight: bold;
 	font-size: 1rem;
@@ -911,7 +911,7 @@ a.dropdown-toggle:hover {color: blue; }
 		background: transparent !important;
 		color: #000000;
 		padding: 0 !important; margin: 0 !important;
-		font-size: 1.3rem !important;
+		font-size: 1.2rem !important;
 	}
 	div.dropdown-toggle-body {
 		display: block !important;

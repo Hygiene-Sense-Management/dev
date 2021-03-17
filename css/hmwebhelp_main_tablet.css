@@ -62,7 +62,7 @@ nav#navpane_tabs {
 	top: 0;
 	left: 0;
 	right: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	margin: 0;
 	background-color: #007dc5;
 }
@@ -155,7 +155,7 @@ div#headerbox_wrapper {
 	left: 0rem; right: 0rem;
 	overflow: visible;
 	z-index: 1000;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-image: url("../images/spacer.gif");
@@ -188,7 +188,7 @@ a#headerlogo {
 	background-position: left top;
 	}
 h1.page_header {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	color: #444444;
 	text-align: center;
 	font-size: 1.8rem;
@@ -209,7 +209,7 @@ div#header_menu {
 	overflow: auto;
 	background-color: transparent;
 	overflow: visible;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 0.900rem;
 	}
 	/* Topnav is the main menu row */
@@ -283,7 +283,7 @@ div.subnav-menu {
 	border: none;
 	margin: 0 auto;
 	max-width: 95%;
-	box-shadow: 3px 3px 5px #959595;
+	box-shadow: 3px 3px 5px #bbbbbb;
 	background-color: rgba(35,40,45,0.9);
 }
 div.blockmenu {
@@ -402,7 +402,7 @@ div#navcontainer {
 	padding: 0.300rem 0 0 0;
 	overflow: visible;
 	background-color: #f5f5f5;
-	box-shadow: 0.1rem 0.1rem 0.5rem #959595;
+	box-shadow: 0.1rem 0.1rem 0.5rem #bbbbbb;
 	z-index: 898;
 	}
 div#navsplitbar {
@@ -430,7 +430,7 @@ div#dragwrapper, div#toolbutton_wrapper {
 	overflow: visible;
 	}
 div#dragwrapper.over, div#toolbutton_wrapper.over {
-	box-shadow: 0.1rem 0.1rem 0.5rem #959595;
+	box-shadow: 0.1rem 0.1rem 0.5rem #bbbbbb;
 }
 div#toolbutton_wrapper {
 	top: 20%;
@@ -506,7 +506,7 @@ div#topicbox {
 div#hmpageheader {
 	position: absolute;
 	top: 0; left: 0; right: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	background-color: #ffffff;
 	overflow: hidden;
 	}
@@ -598,8 +598,8 @@ p.topic_breadcrumbs {
 	}
 
 p.topictitle {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 1.3rem;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 1.2rem;
 	font-weight: bold;
 	color: #007dc5;
 	margin: 0; padding: 0;
@@ -623,7 +623,7 @@ a.topicnavlink:active {
 a.topicnavlink span {
 	display: block;
 	color: #444444;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 0.900rem;
 	margin-top: 0.1rem;
@@ -655,7 +655,7 @@ div#navigationmenu {
 	display: none;
 	z-index: 100;
 	top: 3.1rem; right: 2.1rem;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	background-color: rgba(35,40,45,0.9);
 	}
 ul#hamburgermenu {
@@ -686,7 +686,7 @@ ul#hamburgermenu li a {
 	display: inline-block;
 	padding: 0.125rem;
 	padding-left: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 1rem;
 	opacity: 1;
 	color: #ffffff;
@@ -726,7 +726,7 @@ img#leftright {
 
 div.hmpopup {
 	margin: 0; padding: 0;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 }
 
 div#hmpopupbox {
@@ -739,7 +739,7 @@ div#hmpopupbox {
 	height: 3.6rem;
 	max-width: 60%;
 	max-height: 70%;
-	box-shadow: 1px 1px 2px 0px #959595;
+	box-shadow: 1px 1px 2px 0px #bbbbbb;
 	z-index: 99999;
 	}
 div#hmpopuptitlebar {
@@ -916,7 +916,7 @@ div#autoTocWrapper {
 	background-color: rgba(35,40,45,0.9);
 	border-top-width: 0;
 	z-index: 100;
-	/*box-shadow: 0.125rem 0.125rem 0.225rem 0.025rem #959595;*/
+	/*box-shadow: 0.125rem 0.125rem 0.225rem 0.025rem #bbbbbb;*/
 	}
 div#autoTocMiddle, div#autoTocInner {
    padding: 0;
@@ -938,7 +938,7 @@ div#autoTocWrapper svg.atocicon {
 }
    
 p.autoTOC {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 1rem;
 	margin:0; padding:0;
 	margin-left: 0.3rem;
@@ -989,7 +989,7 @@ div#imagetogglebox {
 	position:fixed;
 	background-color: #ffffff;
 	border: 0.25rem solid #c0c0c0;
-	box-shadow: 0.125rem 0.125rem 0.500rem 0.025rem #959595;
+	box-shadow: 0.125rem 0.125rem 0.500rem 0.025rem #bbbbbb;
 	z-index: 10000;
 }
 div#imagetogglebox img {
@@ -1022,7 +1022,7 @@ div#imagecaptionbox {
 	}
 div#imagecaptionbox p.zoomedcaption {
 	display: block;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Segoe UI','Open Sans', Helvetica, Arial, sans-serif;
 	color: #888888;
 	font-weight: bold;
 	font-size: 1rem;
@@ -1127,7 +1127,7 @@ a.dropdown-toggle:hover {color: blue; }
 	p.topictitle {
 		background-color: transparent !important;
 		color: #000000 !important;
-		font-size: 1.3rem !important;
+		font-size: 1.2rem !important;
 		padding: 0 !important; margin: 0 !important;
 	}
 	div.dropdown-toggle-body {

@@ -369,11 +369,6 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<a onclick="hmWebHelp.extFuncs('hmDoToggle',{method: 'hmToggleToggles', obj: {speed: 80}});" title="Show/hide Expanding Text Blocks on Page"> 
 		<span>Show Expanding Text</span></a>
 	</li>
-	<li id="hm_printable_version">
-		<svg class="hmbicon" viewBox="0 0 30 32"><use xlink:href="#print"></use></svg>
-		<a id="hm_printable_link" href="_hm_print_window.htm?dlms-presented-status-gateway-devices.html" onclick="hmWebHelp.hamburgerMenu()" target="hm_print_window" title="Print Current Topic">
-		<span>Print Topic</span></a>
-	</li>
 	<li class="desktop server">
 		<svg class="hmbicon" viewBox="0 0 30 32"><use xlink:href="#link"></use></svg>
 		<a href="javascript:hmWebHelp.hamburgerMenu()" data-target="_hmpermalink.html" data-path="./" data-title="Save Topic Permalink" class="popuplink" title="Copy URL of current topic">
@@ -403,7 +398,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms-presented-status.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
-		<span>Top</span></a>
+		<span>Up</span></a>
 		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-recording-of-data-link-status.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
@@ -423,10 +418,10 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
 	<p class="p_Normal">In HsM gateways are also handled as HsM devices and have their own data-link status.</p>
-<p class="p_Normal" style="text-indent: 0; padding-left: 1.2500rem; margin-left: 0;"><span class="f_Normal" style="display:inline-block;width:1.2500rem;margin-left:-1.2500rem">1.</span>Not connected: The gateway is not connected to the HsM Backend and the HsM Backend does not expect the gateway to be connected.</p><p class="p_Normal" style="text-indent: 0; padding-left: 1.2500rem; margin-left: 0;"><span class="f_Normal" style="display:inline-block;width:1.2500rem;margin-left:-1.2500rem">2.</span>Connected: The data-link between the stationary gateway and the HsM Backend system is established. Data sent by the gateway device will be immediately delivered to the HsM Backend, data sent by the HsM Backend systems will be immediately delivered to the gateway.</p><p class="p_Normal" style="text-indent: 0; padding-left: 1.2500rem; margin-left: 0;"><span class="f_Normal" style="display:inline-block;width:1.2500rem;margin-left:-1.2500rem">3.</span>Offline: A previously established data link has been broken.</p><p class="p_Normal">The HsM Backend decides if it expects a gateway to be connected via following events (latest event counts):</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 1.2500rem; margin-left: 0;"><span class="f_Normal" style="display:inline-block;width:1.2500rem;margin-left:-1.2500rem">1.</span>Not connected: The gateway is not connected to the HsM Backend and the HsM Backend does not expect the gateway to be connected.</p><p class="p_Normal" style="text-indent: 0; padding-left: 1.2500rem; margin-left: 0;"><span class="f_Normal" style="display:inline-block;width:1.2500rem;margin-left:-1.2500rem">2.</span>Connected: The data-link between the stationary gateway and the HsM Backend system is established. Data sent by the gateway device will be immediately delivered to the HsM Backend, data sent by the HsM Backend systems will be immediately delivered to the gateway.</p><p class="p_Normal" style="text-indent: 0; padding-left: 1.2500rem; margin-left: 0;"><span class="f_Normal" style="display:inline-block;width:1.2500rem;margin-left:-1.2500rem">3.</span>Offline: A previously established data link has been broken.</p><p class="p_Normal">The HsM Backend decides if it expects a gateway to be connected via following events:</p>
 <p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If a gateway was connected before the HsM Backend expects it to be connected in future</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If the gateway is moved to another customer and/or location the HsM Backend does not expect a connection</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If the gateway is uninstalled the HsM Backend does not expect a connection</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If the user manually defines that a gateway is not connected to the HsM Backend, the HsM Backend does not expect the gateway to be connected.</p>
 	<div class="topicfooter">
-<p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner. </a>&copy; 2021.</p>
+<p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
 </div>
 	</div> <!-- hmpagebody_scroller -->
 	</div> <!-- hmpagebody -->
