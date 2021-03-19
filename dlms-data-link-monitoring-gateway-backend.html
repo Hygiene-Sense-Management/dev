@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Monitoring data link between stationary gateways and the HsM backend</title>
+	<title>Data link between stationary gateways and the HsM backend</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="The Data Link Monitoring Service monitors the data link between stationary gateways and the HsM Backend. The technical environment allows to immediately recognize when a..." />
+	<meta name="description" content="The Data Link Monitoring Service monitors the data link between stationary gateways and the HsM Backend.&nbsp;" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -385,7 +385,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
 		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a></p> 
-		  <p class="topictitle">Monitoring data link between stationary gateways and the HsM backend</p>
+		  <p class="topictitle">Data link between stationary gateways and the HsM backend</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -417,7 +417,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The Data Link Monitoring Service monitors the data link between stationary gateways and the HsM Backend. The technical environment allows to immediately recognize when a stationary-gateway connects to the HsM Backend. Disconnection to the HsM Backend will be recognized with a delay of maximum xx minutes.</p>
+	<p class="p_Normal">The Data Link Monitoring Service monitors the data link between stationary gateways and the HsM Backend. </p>
+<h1 class="p_Heading1"><span class="f_Heading1">Hearbeatet</span></h1>
+<p class="p_Normal">HsM stationary gateways send hearbeat messages that indicate to the backen that the device is alive. The hearbeat message also includes the seconds at which the device plans to send the next heartbeat</p>
+<p class="p_Normal">Next hearbeatet</p>
+<p class="p_Normal">The technical environment allows to immediately recognize when a stationary-gateway connects to the HsM Backend. Disconnection to the HsM Backend will be recognized with a delay of maximum xx minutes.</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
@@ -578,14 +582,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Monitoring data link between stationary gateways and the HsM backend";
+			var titleBarText = "Data link between stationary gateways and the HsM backend";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Monitoring data link between stationary gateways and the HsM backend"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Data link between stationary gateways and the HsM backend"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();

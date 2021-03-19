@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Recording of data link status</title>
+	<title>Virtual Resource Instances written</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="The data link status of HsM devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status of each..." />
+	<meta name="description" content="The Data Link Monitoring Service records key metrics of its monitoring activity as resource instance values. This way those key metrics are made accessible to other components..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -385,7 +385,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
 		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a></p> 
-		  <p class="topictitle">Recording of data link status</p>
+		  <p class="topictitle">Virtual Resource Instances written</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -399,7 +399,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-data-link-monitoring-nongateway-gateway.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="key-metrics-available-through-.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,20 +417,65 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The data link status of HsM devices (non-gateway as well as gateway devices) is recorded as virtual resource instance values for each device. I.e. the data link status of each HsM device is recorded as time-series. </p>
-<p class="p_Normal">Following virtual resource instance values are recorded</p>
-<h2 class="p_Heading2"><span class="f_Heading2">Data-link status</span></h2>
-<p class="p_Normal">Applies to gateway and non-gateway devices</p>
-<p class="p_Normal">Resource type:</p>
-<p class="p_Normal">Resource instance number:</p>
+	<p class="p_Normal">The Data Link Monitoring Service records key metrics of its monitoring activity as resource instance values. This way those key metrics are made accessible to other components of HsM in a generic and efficient way.</p>
+<p class="p_Normal">Following resource instance values are recorded for all stationary gateways and all devices that have the ability to send data via stationary gateways.</p>
+<h1 class="p_Heading1"><span class="f_Heading1">Data-link status</span></h1>
+<p class="p_Normal">Resource type id: 0xb001</p>
+<p class="p_Normal">Resource instance number: 0</p>
+<p class="p_Normal">The data link status represents the current (latest reported) data link status of a device.</p>
 <p class="p_Normal">Whenever a change in the data-link status of a device is detected by the Data Link Monitoring Service the new status after the status change is recorded as a resource instance value and stored with the device. </p>
-<p class="p_Normal">Due to technical reasons the time-stamp of this change in not always precise as the change of the data link status might be detected with a certain delay.</p>
-<h2 class="p_Heading2"><span class="f_Heading2">Last used stationary gateway </span></h2>
-<p class="p_Normal">Applies to non-gateway devices only</p>
-<p class="p_Normal">For non-gateway devices the last used stationary gateway, i.e. the stationary gateway that was last used by the non-gateway device to connect to the HsM Backend) is stored.</p>
-<h2 class="p_Heading2"><span class="f_Heading2">Last-detected-online </span></h2>
-<p class="p_Normal">Applies to: devices and stationary gateways</p>
-<p class="p_Normal">The time stamp when a data-link status of the device was last Online. This is used to for differentiating between temporarily offline and offline.</p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Data link status</p>
+</th>
+<th style="vertical-align:top; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Stored resource instance value</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Not connected</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">3</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Online</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">2</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; height:2.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Temporarily offline</p>
+</td>
+<td style="vertical-align:top; height:2.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">1</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Offline</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">0</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_6fc1ac" class="hmanchor"></a><span class="f_ImageCaption">Table 17: Data link status and their translation to resoruce instance values</span></p>
+<h1 class="p_Heading1"><span class="f_Heading1">Online Ratio</span></h1>
+<p class="p_Normal">Resource type id: 0xb002</p>
+<p class="p_Normal">Resource instance number: 0</p>
+<p class="p_Normal">The online ration is a key metric for the overall quality of the data link between device and HsM Backend.</p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="background-color:#f5f5f5; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; padding:0.2500rem; border:solid thin #c0c0c0;"><p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">o ... online ratio</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">t</span><span class="f_CodeExample" style="font-size: 0.60rem; vertical-align: sub;">c</span><span class="f_CodeExample"> ... total time in connected state </span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">t</span><span class="f_CodeExample" style="font-size: 0.60rem; vertical-align: sub;">o</span><span class="f_CodeExample"> ... total time in states temporarily offline or offline</span></p>
+<p class="p_Normal">o = 100 * t<span style="font-size: 0.70rem; vertical-align: sub;">c</span> / t<span style="font-size: 0.70rem; vertical-align: sub;">o</span></p>
+</td>
+</tr>
+</table>
+</div>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
@@ -591,14 +636,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Recording of data link status";
+			var titleBarText = "Virtual Resource Instances written";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Recording of data link status"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Virtual Resource Instances written"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();

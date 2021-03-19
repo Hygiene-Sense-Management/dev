@@ -68,8 +68,9 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_CodeExample /* Code Example */
 {
  font-size: 0.90rem;
- line-height: 1.20;
- margin: 0 0 0 0;
+ page-break-inside: avoid;
+ page-break-after: avoid;
+ margin: 0.5000rem 0 0.5000rem 0;
 }
 .p_Comment /* Comment */
 {
@@ -136,6 +137,19 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  margin: 0.2500rem 0 0.1250rem 0;
 }
 /* Table styles */
+table.ColorBox {
+ background-color: #F3F3F3;
+ border: none;
+ border-spacing: 0;
+}
+table.ColorBox tr.ColorBox {
+ text-align: left;
+}
+table.ColorBox th.ColorBox, table.ColorBox td.ColorBox {
+ vertical-align: top;
+ padding: 0;
+ border: none;
+}
 div.hmrotate90  { display:inline-block; -webkit-writing-mode: vertical-rl; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; }
 div.hmrotate270 { display:inline-block; -webkit-writing-mode: vertical-rl; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; transform: rotate(180deg); }
 
