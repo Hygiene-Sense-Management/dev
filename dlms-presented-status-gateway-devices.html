@@ -384,7 +384,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a> &gt; <a href="dlms-presented-status.html">Data link status</a></p> 
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a> &gt; <a href="dlms-data-link-status.html">Data link status</a></p> 
 		  <p class="topictitle">Stationary gatways</p>
 		  </div>
 		</td>
@@ -396,10 +396,10 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-presented-status-non-gateway-devices.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms-presented-status.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms-data-link-status.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-recording-of-data-link-status.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-resource-instances-written.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -469,7 +469,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <p class="p_ImageCaption"><a id="fig_80aac9" class="hmanchor"></a><span class="f_ImageCaption">Table 16: Data link states for stationary gateways.</span></p>
 <p class="p_Normal">If a stationary gateway is offline (i.e. not connected to the HsM Backend) this can be either an error or it can be an expected state. If the Data Link Monitoring Service expects that a stationary gateway should be online but the gateway is actually offline it will put the device into <span style="font-style: italic;">temporarily offline</span> or <span style="font-style: italic;">offline </span>state. If the Data Link Monitoring Service does not expect the stationary gateway to be online and the stationary gateway is actually offline it will put the device to <span style="font-style: italic;">not-connected</span> state.</p>
 <p class="p_Normal">The expectation if a device should be online or offline is based on following events (the latest event counts):</p>
-<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If a stationary gateway connects to the HsM Backend the Data Link Monitoring Service expects the stationary gateway to be online (in future).</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If the  Data Link Monitoring Service receives an expectation via its REST API it will use this expectation.</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If a stationary gateway device was never connected to the HsM Backend the Data Link Monitoring Service does not know about this gateway and therefore it does not expect this gateway to be online.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If a stationary gateway connects to the HsM Backend the Data Link Monitoring Service expects the stationary gateway to be online in future, except if it received an expectation of hard-offline via the API before.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If the  Data Link Monitoring Service receives an expectation via its REST API it will use this expectation.</p>
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
 </div>

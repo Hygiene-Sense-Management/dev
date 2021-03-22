@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="HsM stationary gateways are used to connect non-gateway devices to the HsM Backend permanently and therefore enable a near-real-time uplink communication (from devices to the..." />
+	<meta name="description" content="HsM stationary gateways are used to connect non-gateway devices to the HsM Backend permanently and therefore enable a near-real-time up-link communication (from devices to the..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -399,7 +399,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="backend-infrastructure.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-presented-status.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-data-link-status.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,9 +417,9 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">HsM stationary gateways are used to connect non-gateway devices to the HsM Backend permanently and therefore enable a near-real-time uplink communication (from devices to the HsM Backend) and near real-time downlink &nbsp;communication (from the HsM Backend to devices).</p>
-<p class="p_Normal">When non-gateway devices are using stationary gateways to communicate with the HsM Backend, the devices do so by utilizing Bluetooth connections to gateways. These gateways in turn use MQTT over TCP to relay the data to or from the HsM Backend via the Internet. While this communication sequence usually is very stable things can still go wrong due to many reasons; Bluetooth connections can break, internet connection may be down, devices may run out of energy, stationary gateways may be down etc.</p>
-<p class="p_Normal">HsM data link monitoring continuously analyzes the data links and therefore provides information about the data link status of devices (both gateway, and non-gateway devices) as well as information for a historical analysis of data link quality.</p>
+	<p class="p_Normal">HsM stationary gateways are used to connect non-gateway devices to the HsM Backend permanently and therefore enable a near-real-time up-link communication (from devices to the HsM Backend) and near real-time down-link &nbsp;communication (from the HsM Backend to devices). The interface for communication of stationary gateways with the HsM HsM Backend is Azure IoT hub.</p>
+<p class="p_Normal">When non-gateway devices are using stationary gateways to communicate with the HsM Backend, the devices do so by utilizing Bluetooth connections to gateways. These gateways in turn use MQTT, MQTT over WebSockets, AMQP, AMQP over WebSockets or HTTPS to relay the data to or from the HsM Backend via the Internet. While this communication sequence usually is very stable things can still go wrong due to many reasons; Bluetooth connections can break, internet connection may be down, devices may run out of energy, stationary gateways may be down etc.</p>
+<p class="p_Normal">The Data Link Monitoring Service continuously analyzes the data links and therefore provides information about the data link status of devices (both gateway, and non-gateway devices) as well as information for a historical analysis of data link quality.</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
