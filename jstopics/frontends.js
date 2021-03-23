@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Frontends",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"raw-data-blob-storage-structur.html",
+hmPrevLink:"prdp-message-routing.html",
 hmNextLink:"mobile-gateway.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",

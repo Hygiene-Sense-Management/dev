@@ -384,7 +384,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a> &gt; <a href="prdp-message-routing.html">Message routing</a> &gt; <a href="prdp-raw-data-storage.html">Raw data storage</a></p> 
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a> &gt; <a href="prdp-raw-data-storage.html">Raw data storage</a></p> 
 		  <p class="topictitle">Raw data blob storage structure</p>
 		  </div>
 		</td>
@@ -399,7 +399,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="prdp-raw-data-storage.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="frontends.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="prdp-message-types.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -423,53 +423,53 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Message Type code</p>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Message Type code</p>
 </th>
-<th style="vertical-align:top; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Each type of message gets its own code</p>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Each type of message gets its own code</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Message type code</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Message type code</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">In device to cloud communication HsM uses different types of messages for different purposes. Each type of message gets its own virtual folder. Note that different versions of the same type of message will still be stored in the same virtual folder, so you cannot expect only one syntactical format within one message type code folder.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Year</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Year of the time-instant when the message was persisted to the blob storage, encoded as 4 digits (.NET date format string: yyyy).</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">In device to cloud communication HsM uses different types of messages for different purposes. Each type of message gets its own virtual folder. Note that different versions of the same type of message will still be stored in the same virtual folder, so you cannot expect only one syntactical format within one message type code folder.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Month</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Year</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Month of the time-instant when the message was persisted to the blob storage, encoded as 2 digits with leading zeros if necessary. (.NET date format string: MM).</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Day</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Day of the time-instant when the message was persisted to the blob storage, encoded as 2 digits with leading zeros if necessary. (.NET date format string: dd).</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Year of the time-instant when the message was persisted to the blob storage, encoded as 4 digits (.NET date format string: yyyy).</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Hour</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Month</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Hour of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: HH).</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Minute</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Minute of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: mm).</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Month of the time-instant when the message was persisted to the blob storage, encoded as 2 digits with leading zeros if necessary. (.NET date format string: MM).</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">MillisecondsInMinute</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Day</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Milliseconds from start of minute of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: mm).</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Day of the time-instant when the message was persisted to the blob storage, encoded as 2 digits with leading zeros if necessary. (.NET date format string: dd).</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Hour</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Hour of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: HH).</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Minute</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Minute of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: mm).</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">MillisecondsInMinute</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Milliseconds from start of minute of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: mm).</p>
 </td>
 </tr>
 </tbody>

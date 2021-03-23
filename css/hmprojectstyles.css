@@ -46,9 +46,8 @@ span.f_Important /* Important */
 }
 span.f_InlineCode /* InlineCode */
 {
- font-size: 0.90rem;
- font-family: 'Lucida Console',Monaco,monospace;
- background-color: #efefef;
+ font-family: Consolas;
+ color: #871232;
 }
 span.f_Notes /* Notes */
 {
@@ -68,9 +67,10 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_CodeExample /* Code Example */
 {
  font-size: 0.90rem;
+ line-height: 1.80;
  page-break-inside: avoid;
  page-break-after: avoid;
- margin: 0.5000rem 0 0.5000rem 0;
+ margin: 0 0 0 0;
 }
 .p_Comment /* Comment */
 {
@@ -118,7 +118,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 }
 .p_InlineCode /* InlineCode */
 {
- font-size: 0.90rem;
+ font-size: 1.00rem;
 }
 .p_Notes /* Notes */
 {
@@ -137,17 +137,17 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  margin: 0.2500rem 0 0.1250rem 0;
 }
 /* Table styles */
-table.ColorBox {
- background-color: #F3F3F3;
+table.BoxCode {
+ background-color: #F5F5F5;
  border: none;
  border-spacing: 0;
 }
-table.ColorBox tr.ColorBox {
+table.BoxCode tr.BoxCode {
  text-align: left;
 }
-table.ColorBox th.ColorBox, table.ColorBox td.ColorBox {
+table.BoxCode th.BoxCode, table.BoxCode td.BoxCode {
  vertical-align: top;
- padding: 0;
+ padding: 0.3750rem;
  border: none;
 }
 div.hmrotate90  { display:inline-block; -webkit-writing-mode: vertical-rl; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; }

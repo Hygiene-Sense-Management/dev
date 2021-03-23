@@ -418,175 +418,175 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
 	<p class="p_Normal">Adaptive date intervals specifications are not based on <span class="f_Identifier">Start</span> and <span class="f_Identifier">End</span> but rather specify an algorithm to calculate a Start and End from the current date and time when the adaptive date interval specification is accessed. I.e. the adaptive date interval specification is turned into a static interval on access.</p>
-<p class="p_Normal">Table 18 shows the settings that define how the algorithm calculates the Start and End of the effective interval from the current time.</p>
+<p class="p_Normal">Table 20 shows the settings that define how the algorithm calculates the Start and End of the effective interval from the current time.</p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:15.5000rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Setting</p>
+<th style="vertical-align:top; width:15.5000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Setting</p>
 </th>
-<th style="vertical-align:top; width:29.2500rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:29.2500rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Start offset</p>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset</p>
 </td>
-<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Offset for the left (lower) boundary of the date interval. See table  20 for offset definitions.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">End offset</p>
-</td>
-<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Offset for the right (upper) boundary of the date interval. See table  20 for offset definitions.</p>
+<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Offset for the left (lower) boundary of the date interval. See table  22 for offset definitions.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Start included</p>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">End offset</p>
 </td>
-<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">If set a date time that equals exactly the start date (calculated from current date and time with the start offset) would be considered as part of the interval, in not set it would be outside the interval</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">End included</p>
-</td>
-<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">If set a date time that equals exactly the end date (calculated from current date and time with the end offset) would be considered as part of the interval, in not set it would be outside the interval</p>
+<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Offset for the right (upper) boundary of the date interval. See table  22 for offset definitions.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Adjustment method</p>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start included</p>
 </td>
-<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Defines how the current date and time shall be converted into the base date and time for the actual interval calculation.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Adjustment part</p>
-</td>
-<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Defines the part of the current date and time that will be adjusted with the defined adjustment method</p>
+<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">If set a date time that equals exactly the start date (calculated from current date and time with the start offset) would be considered as part of the interval, in not set it would be outside the interval</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">First day of week</p>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">End included</p>
 </td>
-<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">For some adjustment parts (see below) the first day of the week must be defined. You can define any weekday as the first day of the week.</p>
+<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">If set a date time that equals exactly the end date (calculated from current date and time with the end offset) would be considered as part of the interval, in not set it would be outside the interval</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Adjustment method</p>
+</td>
+<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Defines how the current date and time shall be converted into the base date and time for the actual interval calculation.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Adjustment part</p>
+</td>
+<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Defines the part of the current date and time that will be adjusted with the defined adjustment method</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">First day of week</p>
+</td>
+<td style="vertical-align:top; width:29.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">For some adjustment parts (see below) the first day of the week must be defined. You can define any weekday as the first day of the week.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 19: Settings for adaptive date interval specification</span></p>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 21: Settings for adaptive date interval specification</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Adjustment of current date and time to base date and time</span></h1>
-<p class="p_Normal">The current date and time when the adaptive date interval specification is evaluated is converted into the <span style="font-style: italic;">base date and time</span> for the adaptive date interval by using the specified adjustment method and adjustment part.Table 20 lists the available adjustment methods, table 21 lists the available adjustment parts. </p>
+<p class="p_Normal">The current date and time when the adaptive date interval specification is evaluated is converted into the <span style="font-style: italic;">base date and time</span> for the adaptive date interval by using the specified adjustment method and adjustment part.Table 22 lists the available adjustment methods, table 23 lists the available adjustment parts. </p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:4.7500rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Method</p>
+<th style="vertical-align:top; width:4.7500rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Method</p>
 </th>
-<th style="vertical-align:top; width:40.0000rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:40.0000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Round</p>
+<td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Round</p>
 </td>
-<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The current date and time is rounded according to the adjustment part. E.g. If the current date time is 2020-01-12 21:15:02:12.00+01:00, the adjustment method is <span class="f_Identifier">Round</span> and the adjustment part is hours the resulting <span class="f_Identifier">base date and time</span> would be 2020-01-12 15:00:00.00+01:00.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Ceiling</p>
-</td>
-<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The current date and time is set to the next full unit according to the adjustment part. E.g. If the current date and time is 2020-01-12 21:15:02.12, the adjustment method is <span class="f_Identifier">Ceiling</span> and the adjustment part is <span class="f_Identifier">Month</span> the resulting <span class="f_Identifier">base date and time</span> would be 2020-02-01 00:00:00.00.</p>
+<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is rounded according to the adjustment part. E.g. If the current date time is 2020-01-12 21:15:02:12.00+01:00, the adjustment method is <span class="f_Identifier">Round</span> and the adjustment part is hours the resulting <span class="f_Identifier">base date and time</span> would be 2020-01-12 15:00:00.00+01:00.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Floor</p>
+<td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Ceiling</p>
 </td>
-<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The current date and time is set to the previous full unit according to the adjustment part. E.g. If the current date and time is 2015-01-12 21:15:02.12, the adjustment type is <span class="f_Identifier">Floor</span> and the adjustment part is <span class="f_Identifier">Minutes</span> the resulting <span class="f_Identifier">base date and time</span> would be 2015-01-12 21:15:00.00.</p>
+<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is set to the next full unit according to the adjustment part. E.g. If the current date and time is 2020-01-12 21:15:02.12, the adjustment method is <span class="f_Identifier">Ceiling</span> and the adjustment part is <span class="f_Identifier">Month</span> the resulting <span class="f_Identifier">base date and time</span> would be 2020-02-01 00:00:00.00.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Floor</p>
+</td>
+<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is set to the previous full unit according to the adjustment part. E.g. If the current date and time is 2015-01-12 21:15:02.12, the adjustment type is <span class="f_Identifier">Floor</span> and the adjustment part is <span class="f_Identifier">Minutes</span> the resulting <span class="f_Identifier">base date and time</span> would be 2015-01-12 21:15:00.00.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 19: Adjustment methods for calculating the base date and time from the current date and time.</span></p>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 21: Adjustment methods for calculating the base date and time from the current date and time.</span></p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:4.5625rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<th style="vertical-align:top; width:4.5625rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
 </th>
-<th style="vertical-align:top; width:40.1875rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<th style="vertical-align:top; width:40.1875rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Year</p>
+<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Year</p>
 </td>
-<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Year part of the date will be adjusted. Rounding a year checks today to which half does it belong. If today belongs in first half of the year then use current year, else use beginning of next year.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Month</p>
-</td>
-<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Adjust the month part. Floor and ceiling simply uses beginning of current and next month respectively. While round checks if today is in first half of the current month, if true then rounds to the beginning of current month. Otherwise use the beginning of next month.</p>
+<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Year part of the date will be adjusted. Rounding a year checks today to which half does it belong. If today belongs in first half of the year then use current year, else use beginning of next year.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Week</p>
+<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Month</p>
 </td>
-<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">When adjusting the current time span using week as adjustment type the system always uses first day of the week based on the user's culture.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Day</p>
-</td>
-<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Floor and ceiling moves the time stamp to the beginning of today and the beginning to tomorrow. Rounding checks if the half of the day has passed, if so use beginning of tomorrow, else use beginning of today.</p>
+<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Adjust the month part. Floor and ceiling simply uses beginning of current and next month respectively. While round checks if today is in first half of the current month, if true then rounds to the beginning of current month. Otherwise use the beginning of next month.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Hour</p>
+<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Week</p>
 </td>
-<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Floor and ceiling an hour works as expected(beginning of current and next hour). Rounding checks if half of the current hour is passed already, if so use next hour. Otherwise use the beginning of current hour.</p>
+<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">When adjusting the current time span using week as adjustment type the system always uses first day of the week based on the user's culture.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Minute</p>
+<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Day</p>
 </td>
-<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Adjusting the minutes adjust the minute part of the time. If floored uses the beginning of current minute, ceiling uses the beginning of next minute. Rounding check the seconds, If 30 seconds has passed in the current minute, use the beginning of next minute. If current time is within the first 30 second, then system uses the beginning of current minute.</p>
+<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Floor and ceiling moves the time stamp to the beginning of today and the beginning to tomorrow. Rounding checks if the half of the day has passed, if so use beginning of tomorrow, else use beginning of today.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Hour</p>
+</td>
+<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Floor and ceiling an hour works as expected(beginning of current and next hour). Rounding checks if half of the current hour is passed already, if so use next hour. Otherwise use the beginning of current hour.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:4.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Minute</p>
+</td>
+<td style="vertical-align:top; width:40.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Adjusting the minutes adjust the minute part of the time. If floored uses the beginning of current minute, ceiling uses the beginning of next minute. Rounding check the seconds, If 30 seconds has passed in the current minute, use the beginning of next minute. If current time is within the first 30 second, then system uses the beginning of current minute.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 19: Adjustment parts to which the adjustment method will be applied</span></p>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 21: Adjustment parts to which the adjustment method will be applied</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Offset specification</span></h1>
-<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 19: Configuration settings for an adaptive date interval specification</span></p>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 21: Configuration settings for an adaptive date interval specification</span></p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:8.0000rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Offset type</p>
+<th style="vertical-align:top; width:8.0000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Offset type</p>
 </th>
-<th style="vertical-align:top; width:36.7500rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:36.7500rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Month</p>
+<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Month</p>
 </td>
-<td style="vertical-align:top; width:36.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Offset given in number calender month. I.e. An offset of 5 applied to a time stamp of 2020-12-11 12:13:15+01:00 would result in 2020-07-11 12:13:15+02:00</p>
+<td style="vertical-align:top; width:36.7500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Offset given in number calender month. I.e. An offset of 5 applied to a time stamp of 2020-12-11 12:13:15+01:00 would result in 2020-07-11 12:13:15+02:00</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Time span offset</p>
+<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Time span offset</p>
 </td>
-<td style="vertical-align:top; width:36.7500rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Offset given as a time span i.e. days, hours, minutes, seconds, and milliseconds.</p>
+<td style="vertical-align:top; width:36.7500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Offset given as a time span i.e. days, hours, minutes, seconds, and milliseconds.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 19: Different types of offsets</span></p>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 21: Different types of offsets</span></p>
 <p style="line-height: 1.20; margin: 0 0 0 0;">Based on the <span class="f_Identifier">base date and time</span> the system computes the <span class="f_Identifier">start date ant time</span> and <span class="f_Identifier">end date and time</span> using the given offset specifications. The offset values are subtracted from the basic date and time, therefore to specify lower or upper boundaries in the future negative offsets have to be used.</p>
 
 	<div class="topicfooter">

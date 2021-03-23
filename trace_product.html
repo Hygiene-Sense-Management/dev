@@ -421,104 +421,104 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:11.8750rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Column Name</p>
+<th style="vertical-align:top; width:11.8750rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Column Name</p>
 </th>
-<th style="vertical-align:top; width:32.4375rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:32.4375rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">SerialNo</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">SerialNo</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The <a href="comm-serial-numbers.html" class="topiclink">serial number</a> of the product assigned by the End-Test. </p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The <a href="comm-serial-numbers.html" class="topiclink">serial number</a> of the product assigned by the End-Test. </p>
 <p class="p_Normal">In fact the serial number is printed on one component of the device only and identifies that component not the device. It still holds information about the device (that is only valid at the time of production)</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Item No</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Item No</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The product's <a href="article-numbers.html" class="topiclink">article number</a>.</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The product's <a href="article-numbers.html" class="topiclink">article number</a>.</p>
 <p class="p_Normal">Via this article number the Digital Twin Registration Agent looks up the components in the <span class="f_InlineCode">Production BOM Header</span> and <span class="f_InlineCode">Proudction BOM Line</span> &nbsp;tables. The components found there are then mapped to the device type definition the Digital Twin Registration Agent loads from the Catalog Service.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">ProductTypeCode</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">ProductTypeCode</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The product's <a href="product-type-code.html" class="topiclink">product type code</a></p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The product's <a href="product-type-code.html" class="topiclink">product type code</a></p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">BLUUID</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">BLUUID</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Named wrongly as BLUUID this column actually holds the network ID of the device (at the time of production) which can can be a EUI64 or EUI48.</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Named wrongly as BLUUID this column actually holds the network ID of the device (at the time of production) which can can be a EUI64 or EUI48.</p>
 <p class="p_Normal">The End-Test encodes EUIs as lowercase non-grouped hexadecimal number.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Created</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Created</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Set by the End-Test defines when the End-Test was performed. Not relevant to HsM.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">ProductionOrderId</p>
-</td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Reference to a production order that was basis for this product. </p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Set by the End-Test defines when the End-Test was performed. Not relevant to HsM.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">QrCode</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">ProductionOrderId</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The contents of the QR Code printed on a component of the device. Not used by HsM</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">EmployeeNo</p>
-</td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The Employee who operated the production line</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Reference to a production order that was basis for this product. </p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Production Line Id</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">QrCode</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The production line on which this record was generated</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Master Product ID</p>
-</td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Not used in HsM</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The contents of the QR Code printed on a component of the device. Not used by HsM</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">DeviceId</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">EmployeeNo</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The DeviceId &nbsp;is the id digital twin (Airplane-ID). The id is set by the database.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">BirthDate</p>
-</td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The Birth date of the digital twin, set by the database)</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The Employee who operated the production line</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">LastUpdatedDate</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Production Line Id</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The last update of the record in the database (set by the database)</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">ProductRecordStateId</p>
-</td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The product record state of this record.</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The production line on which this record was generated</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">DataSource</p>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Master Product ID</p>
 </td>
-<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The data source of this record. (See below)</p>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Not used in HsM</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">DeviceId</p>
+</td>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The DeviceId &nbsp;is the id digital twin (Airplane-ID). The id is set by the database.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">BirthDate</p>
+</td>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The Birth date of the digital twin, set by the database)</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">LastUpdatedDate</p>
+</td>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The last update of the record in the database (set by the database)</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">ProductRecordStateId</p>
+</td>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The product record state of this record.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:11.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">DataSource</p>
+</td>
+<td style="vertical-align:top; width:32.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The data source of this record. (See below)</p>
 </td>
 </tr>
 </tbody>
@@ -529,41 +529,41 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:5.8750rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Data Source</p>
+<th style="vertical-align:top; width:5.8750rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Data Source</p>
 </th>
-<th style="vertical-align:top; width:37.1875rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:37.1875rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">0</p>
+<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">0</p>
 </td>
-<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">End-Test procedure</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">1</p>
-</td>
-<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">SEP-Data Takeover. In the past data were recorded by the End-Test procedures to a different database. At one point these records were taken over into the TRACE_Product table. The records created were marked with this source.</p>
+<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">End-Test procedure</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">2</p>
+<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1</p>
 </td>
-<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">This data source id is currently unused </p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">3</p>
-</td>
-<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">At one point in time devices found in HsM but not in the Provider DB were inserted in the Provider DB with a script. This Data Source ID was used to mark them.</p>
+<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">SEP-Data Takeover. In the past data were recorded by the End-Test procedures to a different database. At one point these records were taken over into the TRACE_Product table. The records created were marked with this source.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">4</p>
+<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">2</p>
 </td>
-<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Reserved for QR Code generator</p>
+<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">This data source id is currently unused </p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">3</p>
+</td>
+<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">At one point in time devices found in HsM but not in the Provider DB were inserted in the Provider DB with a script. This Data Source ID was used to mark them.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:5.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">4</p>
+</td>
+<td style="vertical-align:top; width:37.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Reserved for QR Code generator</p>
 </td>
 </tr>
 </tbody>

@@ -419,120 +419,120 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <!--ZOOMRESTART--> 
 	<p class="p_Normal">All devices managed by HsM have QR codes that carry information about the device. This QR code is used by clients (like Apps) identify devices and get information about devices.</p>
 <p class="p_Normal">The QR code is physically placed on one component of the device, therefore if the component gets exchanged the QR code will change too. The data encoded in the QR code (<span class="f_Identifier">content</span>) is usually also printed in in human-readable form next to the QR code.</p>
-<p class="p_Normal">The content is a UTF-8 encoded string without <span style="font-style: italic;">Byte order Mark. </span>It consists of several lines separated by a linefeed (0x0A) character. The content of the first two lines is the same for all HsM QR codes (see 23), the contents of the following lines depends on the QR-code content type and subtype encoded in the first line.</p>
+<p class="p_Normal">The content is a UTF-8 encoded string without <span style="font-style: italic;">Byte order Mark. </span>It consists of several lines separated by a linefeed (0x0A) character. The content of the first two lines is the same for all HsM QR codes (see 25), the contents of the following lines depends on the QR-code content type and subtype encoded in the first line.</p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:7.4375rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Content part</p>
+<th style="vertical-align:top; width:7.4375rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Content part</p>
 </th>
-<th style="vertical-align:top; width:20.0000rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Location in content</p>
+<th style="vertical-align:top; width:20.0000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Location in content</p>
 </th>
-<th style="vertical-align:top; width:15.3125rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:15.3125rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Content type</p>
+<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Content type</p>
 </td>
-<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters up to the first hyphen (U+002D, 0x2D)</p>
+<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">All characters up to the first hyphen (U+002D, 0x2D)</p>
 </td>
-<td rowspan="2"  style="vertical-align:middle; width:15.3125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Data type and subtype define the structure and information of the rest of the content.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Content subtype</p>
-</td>
-<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the first hyphen to the second hyphen (U+002D, 0x2D)</p>
+<td rowspan="2"  style="vertical-align:middle; width:15.3125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Data type and subtype define the structure and information of the rest of the content.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal"><a href="product-type-code.html" class="topiclink">Product type code</a></p>
+<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Content subtype</p>
 </td>
-<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the second hyphen (U+002D, 0x2D up to the third hyphen.</p>
-</td>
-<td style="vertical-align:top; width:15.3125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The product type code of the device type this QR code is on.</p>
+<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">All characters after the first hyphen to the second hyphen (U+002D, 0x2D)</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal"><a href="article-numbers.html" class="topiclink">Article number</a></p>
+<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal"><a href="product-type-code.html" class="topiclink">Product type code</a></p>
 </td>
-<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters after the third hyphen (U+002D, 0x2D up to the first new line (<span style="font-size: 1.10rem; color: #242729; background-color: #ffffff;">U+000A, 0x0A</span>)</p>
+<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">All characters after the second hyphen (U+002D, 0x2D up to the third hyphen.</p>
 </td>
-<td style="vertical-align:top; width:15.3125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:15.3125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The product type code of the device type this QR code is on.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal"><a href="comm-serial-numbers.html" class="topiclink">Serial number</a></p>
+<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal"><a href="article-numbers.html" class="topiclink">Article number</a></p>
 </td>
-<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">All characters of the second line in the QR code content.</p>
+<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">All characters after the third hyphen (U+002D, 0x2D up to the first new line (<span style="font-size: 1.10rem; color: #242729; background-color: #ffffff;">U+000A, 0x0A</span>)</p>
 </td>
-<td style="vertical-align:top; width:15.3125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">The serial number of the device or one of the components of the device</p>
+<td style="vertical-align:top; width:15.3125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:7.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal"><a href="comm-serial-numbers.html" class="topiclink">Serial number</a></p>
+</td>
+<td style="vertical-align:top; width:20.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">All characters of the second line in the QR code content.</p>
+</td>
+<td style="vertical-align:top; width:15.3125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The serial number of the device or one of the components of the device</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_15d7fe" class="hmanchor"></a><span class="f_ImageCaption">Table 24: Content parts of the first line of a  </span><span class="f_ImageCaption">HsM</span><span class="f_ImageCaption"> QR code</span></p>
+<p class="p_ImageCaption"><a id="fig_15d7fe" class="hmanchor"></a><span class="f_ImageCaption">Table 26: Content parts of the first line of a  </span><span class="f_ImageCaption">HsM</span><span class="f_ImageCaption"> QR code</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Content types and subtypes</span></h1>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:6.0000rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Data type</p>
+<th style="vertical-align:top; width:6.0000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Data type</p>
 </th>
-<th style="vertical-align:top; width:5.4375rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Data subtype</p>
+<th style="vertical-align:top; width:5.4375rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Data subtype</p>
 </th>
-<th style="vertical-align:top; width:12.1875rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Name of QR-code type</p>
+<th style="vertical-align:top; width:12.1875rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Name of QR-code type</p>
 </th>
-<th style="vertical-align:top; width:18.8125rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Description</p>
+<th style="vertical-align:top; width:18.8125rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:6.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">50</p>
+<td style="vertical-align:top; width:6.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">50</p>
 </td>
-<td style="vertical-align:top; width:5.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">01</p>
+<td style="vertical-align:top; width:5.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">01</p>
 </td>
-<td style="vertical-align:top; width:12.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">4Plus</p>
+<td style="vertical-align:top; width:12.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">4Plus</p>
 </td>
-<td style="vertical-align:top; width:18.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:6.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">50</p>
-</td>
-<td style="vertical-align:top; width:5.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">02</p>
-</td>
-<td style="vertical-align:top; width:12.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Hybrid </p>
-</td>
-<td style="vertical-align:top; width:18.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Used on all Devices of the Hybrid line (devices with BLE)</p>
+<td style="vertical-align:top; width:18.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:6.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">50</p>
+<td style="vertical-align:top; width:6.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">50</p>
 </td>
-<td style="vertical-align:top; width:5.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">03</p>
+<td style="vertical-align:top; width:5.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">02</p>
 </td>
-<td style="vertical-align:top; width:12.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Analog and Auxiliary</p>
+<td style="vertical-align:top; width:12.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Hybrid </p>
 </td>
-<td style="vertical-align:top; width:18.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Used for devices that do not support network communication.</p>
+<td style="vertical-align:top; width:18.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Used on all Devices of the Hybrid line (devices with BLE)</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:6.0000rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">50</p>
+<td style="vertical-align:top; width:6.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">50</p>
 </td>
-<td style="vertical-align:top; width:5.4375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">05</p>
+<td style="vertical-align:top; width:5.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">03</p>
 </td>
-<td style="vertical-align:top; width:12.1875rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Device with network interface</p>
+<td style="vertical-align:top; width:12.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Analog and Auxiliary</p>
 </td>
-<td style="vertical-align:top; width:18.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Used for device that do not have a serial number</p>
+<td style="vertical-align:top; width:18.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Used for devices that do not support network communication.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:6.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">50</p>
+</td>
+<td style="vertical-align:top; width:5.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">05</p>
+</td>
+<td style="vertical-align:top; width:12.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Device with network interface</p>
+</td>
+<td style="vertical-align:top; width:18.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Used for device that do not have a serial number</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_15d7fe" class="hmanchor"></a><span class="f_ImageCaption">Table 24: Contents types and content subtypes of QR code content used by </span><span class="f_ImageCaption">HsM</span></p>
+<p class="p_ImageCaption"><a id="fig_15d7fe" class="hmanchor"></a><span class="f_ImageCaption">Table 26: Contents types and content subtypes of QR code content used by </span><span class="f_ImageCaption">HsM</span></p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>

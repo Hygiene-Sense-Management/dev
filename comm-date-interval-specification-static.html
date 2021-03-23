@@ -421,43 +421,43 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; width:12.8125rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Setting</p>
+<th style="vertical-align:top; width:12.8125rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Setting</p>
 </th>
-<th style="vertical-align:top; width:31.9375rem; background-color:#DCDCDC; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<th style="vertical-align:top; width:31.9375rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:12.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Start</p>
+<td style="vertical-align:top; width:12.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start</p>
 </td>
-<td style="vertical-align:top; width:31.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Date time offset specifying the left endpoint of the interval.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:12.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">End</p>
-</td>
-<td style="vertical-align:top; width:31.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Date time offset specifying the right endpoint of the interval.</p>
+<td style="vertical-align:top; width:31.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Date time offset specifying the left endpoint of the interval.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:12.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Start included</p>
+<td style="vertical-align:top; width:12.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">End</p>
 </td>
-<td style="vertical-align:top; width:31.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">If set a date time offset that equals exactly start would be considered as part of the interval, in not set it would be outside the interval</p>
+<td style="vertical-align:top; width:31.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Date time offset specifying the right endpoint of the interval.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:12.8125rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">End included</p>
+<td style="vertical-align:top; width:12.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start included</p>
 </td>
-<td style="vertical-align:top; width:31.9375rem; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">If set a date time that equals exactly the end would be considered as part of the interval, in not set it would be outside the interval</p>
+<td style="vertical-align:top; width:31.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">If set a date time offset that equals exactly start would be considered as part of the interval, in not set it would be outside the interval</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:12.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">End included</p>
+</td>
+<td style="vertical-align:top; width:31.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">If set a date time that equals exactly the end would be considered as part of the interval, in not set it would be outside the interval</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 18: Settings for static date interval speicifications</span></p>
+<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 20: Settings for static date interval speicifications</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Handling of date time offsets</span></h1>
-<p class="p_Normal">Start date and time and end date and time are given with a specific offset. When testing a specific date time offset for inclusion in the static date interval specification, these offsets are handled automatically. E.g. the date <span class="f_InlineCode">2020-12-11 14:30:00+01:00</span> is include in the static interval definition with a lower boundary of <span class="f_InlineCode">2020-12-11 13:00:00+00:00</span> and an upper boundary of<span class="f_InlineCode">&nbsp;2020-12-11 12:00:00-02:00</span></p>
+<p class="p_Normal">Start date and time and end date and time are given with a specific offset. When testing a specific date time offset for inclusion in the static date interval specification, these offsets are handled automatically. E.g. the date <span class="f_InlineCode">2020-12-11 14:30:00+01:00</span> is include in the static interval definition with a lower boundary of <span class="f_InlineCode">2020-12-11 13:00:00+00:00</span> and an upper boundary of<span class="f_InlineCode"> 2020-12-11 12:00:00-02:00</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Unbounded intervals</span></h1>
 <p class="p_Normal">Static date interval specifications may leave the <span class="f_Identifier">Start</span> and/or the <span class="f_Identifier">End</span> undefined. In that case the resulting interval is considered as unbounded. An undefined <span class="f_Identifier">Start</span> effectively results in the left interval endpoint <span class="f_InlineCode">0001-01-01 &nbsp;00:00:00 +00:00</span> an undefined End effectively results in the right interval boundary <span class="f_InlineCode">9999-12-31 &nbsp;23:59:59 +00:00</span> .</p>
 

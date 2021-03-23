@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>prdp-message-types</title>
+	<title>Message types &amp; protocols</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Message type Code Sensor-Data SEND Data link monitoring DLMO" />
+	<meta name="description" content="HsM handles different types of messages Message type Versions Description Resource instance data 1.0.0 This message type is used for transferring resource instance values fro" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -385,7 +385,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
 		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a></p> 
-		  <p class="topictitle">prdp-message-types</p>
+		  <p class="topictitle">Message types &amp; protocols</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="pdpr.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="raw-data-blob-storage-structur.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="pdpr.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="prdp-message-routing.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="gateway-heartbeat.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,31 +417,77 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+	<p class="p_Normal">HsM handles different types of messages</p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Message type</p>
+<th style="vertical-align:top; width:11.5625rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Message type</p>
+</th>
+<th style="vertical-align:top; width:8.0000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Versions</p>
+</th>
+<th style="vertical-align:top; width:29.8125rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Resource instance data</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Code</p>
+<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
+</td>
+<td style="vertical-align:top; width:29.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">This message type is used for transferring resource instance values from devices to the HsM Backend.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Sensor-Data</p>
+<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Gateway heartbeat</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">SEND</p>
+<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
 </td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">Data link monitoring</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><p class="p_Normal">DLMO</p>
+<td style="vertical-align:top; width:29.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">This message type is used by gateways to signal the HsM Backend that they are alive.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Device gateway link status</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #c0c0c0;"><br />
+<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
+</td>
+<td style="vertical-align:top; width:29.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">This message type is used by gateways to inform the HsM Backend about the status of blue-tooth links to devices.</p>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+<h1 class="p_Heading1"><span class="f_Heading1">Common application properties</span></h1>
+<p class="p_Normal">All messages transferred via the Azure IoT Hub in HsM have a common set of message application properties.</p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Property</p>
+</th>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">message-type</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">A string identifying the message type</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">message-type-version</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">A version of the message type (semantic version)</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">sender-id (component Id)</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Identifying string of the message sender. Up-link this is usually the gateway.</p>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
 
@@ -604,14 +650,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "prdp-message-types";
+			var titleBarText = "Message types &amp; protocols";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "prdp-message-types"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Message types &amp; protocols"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();
