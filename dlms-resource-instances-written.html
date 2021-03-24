@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Virtual Resource Instances written</title>
+	<title>Metrics forwarded as resource instance values</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="The Data Link Monitoring Service records key metrics of its monitoring activity as resource instance values. This way those key metrics are made accessible to other components..." />
+	<meta name="description" content="The Data Link Monitoring Service forwards key metrics as resource instance values. I.e. the Data Link Monitoring Service calculates these metrics and forwards them as resource..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -385,7 +385,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
 		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a></p> 
-		  <p class="topictitle">Virtual Resource Instances written</p>
+		  <p class="topictitle">Metrics forwarded as resource instance values</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-presented-status-gateway-devices.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="cumulated-online_-offline-time.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-rest-api.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="connection-topology.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,13 +417,40 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The Data Link Monitoring Service records key metrics of its monitoring activity as resource instance values. This way those key metrics are made accessible to other components of HsM in a generic and efficient way.</p>
-<p class="p_Normal">Following resource instance values are recorded for all stationary gateways and all devices that have the ability to send data via stationary gateways.</p>
-<h1 class="p_Heading1"><span class="f_Heading1">Data-link status </span></h1>
-<h1 class="p_Heading1">Resource type id: 0xb001</h1>
-<p class="p_Normal">Resource instance number: 0</p>
-<p class="p_Normal">The data link status represents the current (latest reported) data link status of a device.</p>
-<p class="p_Normal">Whenever a change in the data-link status of a device is detected by the Data Link Monitoring Service the new status after the status change is recorded as a resource instance value and stored with the device. </p>
+	<p class="p_Normal">The Data Link Monitoring Service forwards key <a href="metrics.html" class="topiclink">metrics</a> as resource instance values. I.e. the Data Link Monitoring Service calculates these metrics and forwards them as resource instance values to the HsM Backend as if these metrics were sent by the devices themselves. This way those key metrics are made accessible to other components of HsM in a generic and efficient way.</p>
+<p class="p_Normal">16 lists the metrics forwarded as resource instance values.</p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.7500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Metric and resource instance name</p>
+</th>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Resource type</p>
+</th>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Resource instance no</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Data-link status</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">0xb001</span> </p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">0</span> </p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Online Ratio</p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">0xb002</span> </p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">0</span> </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_8852e2" class="hmanchor"></a><span class="f_ImageCaption">Table 17: Metrics forwarded as resource instance values</span></p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
@@ -461,21 +488,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_6fc1ac" class="hmanchor"></a><span class="f_ImageCaption">Table 17: Data link status and their translation to resoruce instance values</span></p>
-<h1 class="p_Heading1"><span class="f_Heading1">Online Ratio</span></h1>
-<p class="p_Normal">Resource type id: 0xb002</p>
-<p class="p_Normal">Resource instance number: 0</p>
-<p class="p_Normal">The online ration is a key metric for the overall quality of the data link between device and HsM Backend.</p>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table class="BoxCode" >
-<tr class="BoxCode">
-<td class="BoxCode"><p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">o &nbsp;... online ratio</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">tc ... total time in connected state </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">to ... total time in states temporarily offline or offline</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">o &nbsp; = &nbsp;100 * tc / to</span></p>
-</td>
-</tr>
-</table>
-</div>
+<p class="p_ImageCaption"><a id="fig_8852e2" class="hmanchor"></a><span class="f_ImageCaption">Table 17: Translation of data link status to values stored witht he data-link status resource instance.</span></p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
@@ -636,14 +649,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Virtual Resource Instances written";
+			var titleBarText = "Metrics forwarded as resource instance values";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Virtual Resource Instances written"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Metrics forwarded as resource instance values"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();

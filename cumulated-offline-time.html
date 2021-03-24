@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Non-gateway devices</title>
+	<title>Total offline time</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="The data-link between a non-gateway device and the HsM Backend via gateways is evaluated by the Data Link Monitoring Service into the states listed in table 2." />
+	<meta name="description" content="Whenever the Data Link Monitoring Service detects a change in the data link status from offline or temporarily offline to online it adds the time between this change and the..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -227,7 +227,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	}
 	</style>
 	</noscript>
-	<link rel="canonical" href="http://www.helpandmanual.com/help/dlms-presented-status-non-gateway-devices.html" />
+	<link rel="canonical" href="http://www.helpandmanual.com/help/cumulated-offline-time.html" />
 	<script id="jqscript" type="text/javascript"></script>
 </head>
 <body>
@@ -384,8 +384,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a> &gt; <a href="metrics.html">Connection metrics</a> &gt; <a href="dlms-data-link-status.html">Data link status</a></p> 
-		  <p class="topictitle">Non-gateway devices</p>
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a> &gt; <a href="metrics.html">Connection metrics</a></p> 
+		  <p class="topictitle">Total offline time</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-data-link-status.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="total-online-time.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms-data-link-status.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="metrics.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-presented-status-gateway-devices.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="cumulated-online_-offline-time.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,59 +417,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The data-link between a non-gateway device and the HsM Backend via gateways is evaluated by the Data Link Monitoring Service into the states listed in table 2.</p>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
-<thead>
-<tr>
-<th style="vertical-align:top; width:7.0625rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Data link state</p>
-</th>
-<th style="vertical-align:top; width:6.5000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Effective connection state</p>
-</th>
-<th style="vertical-align:top; width:29.1875rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align:top; width:7.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Not connected</p>
-</td>
-<td style="vertical-align:top; width:6.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">offline</p>
-</td>
-<td style="vertical-align:top; width:29.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The device is not connected via a gateway and the Data Link Monitoring Service does also not expect the device to be connected via a stationary gateway.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Online</p>
-</td>
-<td style="vertical-align:top; width:6.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
-</td>
-<td style="vertical-align:top; width:29.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The data-link between the non-gateway device and the stationary gateway is established and the data link between this stationary gateway and the HsM Backend is established.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Temporarily offline</p>
-</td>
-<td style="vertical-align:top; width:6.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">offline</p>
-</td>
-<td style="vertical-align:top; width:29.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The device is currently not connected to the HsM Backend but the Data Link Monitoring Service assumes that this is just temporarily.</p>
-<p class="p_Normal">The assumption is made simple based on a time-threshold. If a device has been offline for less than 1 day it is assumed to be temporarily offline. If the device is offline for more than 1 day it is assumed to be offline.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Offline</p>
-</td>
-<td style="vertical-align:top; width:6.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">offline</p>
-</td>
-<td style="vertical-align:top; width:29.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p style="line-height: 2.3; margin: 0.2500rem 0 0 0;">The device is not connected to the HsM Backend and the Data Link Monitoring Service does not assume that this is just temporary.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="p_ImageCaption"><a id="fig_80aac9" class="hmanchor"></a><span class="f_ImageCaption">Table 15: Data link states for non-gateway devices</span></p>
-<p class="p_Normal">If a non-gateway device is offline (i.e. to the HsM Backend) this can be either an error or it can be an expected state. If the Data Link Monitoring Service expects that the non-connected device should be online but the device is actually offline it will put the device into <span style="font-style: italic;">temporarily offline</span> or <span style="font-style: italic;">offline </span>state. If the Data Link Monitoring Service does not expect the device to be online an the device actually offline it will put the device to not-connected state.</p>
-<p class="p_Normal">The expectation if a device should be online or offline is based on following events (the latest event counts):</p>
-<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If a non-gateway device was never connected to the HsM Backend the Data Link Monitoring Service does not know about this device and therefore it does not expect this device to be online.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If a non-gateway device connects to the HsM Backend via a stationary gateway the Data Link Monitoring Service expects the device to be online in future, except if it received an expectation of hard-offline via the API before.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>If the  Data Link Monitoring Service receives an expectation via its REST API it will use this expectation. The expectation sent for a gateway device will be set for all non-gateway devices that were connected to that stationary gateway at the time the expectation was sent to the REST API.</p>
+	<p class="p_Normal">Whenever the Data Link Monitoring Service detects a change in the data link status from <span style="font-style: italic;">offline</span> or <span style="font-style: italic;">temporarily offline</span> to <span style="font-style: italic;">online</span> it adds the time between this change and the last data link status change to the <span class="f_Identifier">total offline time</span> for this device. Changes from <span class="f_Identifier">not-connected</span> to <span style="font-style: italic;">online </span>are not added to the cumulated offline time.</p>
+
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
 </div>
@@ -565,11 +514,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	hmFlags.hmTrackHost = "http://www.helpandmanual.com/help/";
 	hmFlags.hmProject = "HsM Reference Manual";
 	hmFlags.hmDefaultPage = "index.html";
-	hmFlags.hmCurrentPage = "dlms-presented-status-non-gateway-devices.html";
+	hmFlags.hmCurrentPage = "cumulated-offline-time.html";
 	hmFlags.hmTOC = "hmcontent.html";
 	hmFlags.hmSearchPage = "hmftsearch.html";
 	hmFlags.hmIndexPage = "hmkwindex.html";
-	hmFlags.thisTopic = "dlms-presented-status-non-gateway-devices.html";
+	hmFlags.thisTopic = "cumulated-offline-time.html";
 	hmFlags.lastTopic = "index.html";
 	hmFlags.isEWriter = false;
 	hmFlags.topicExt = ".html";
@@ -629,14 +578,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Non-gateway devices";
+			var titleBarText = "Total offline time";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Non-gateway devices"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Total offline time"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();

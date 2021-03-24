@@ -418,7 +418,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
 	<p class="p_Normal">The <span class="f_Identifier">Gateway Heartbeat</span> message type is used by stationary gateways to actively inform the HsM Backend about it's alive status. These I-am-alive-signals are processed by the Data Link Monitoring Service.</p>
-<p class="p_Normal">The receipt of such a message indicates to the Data Link Monitoring Service that the sending gateway is alive. The message body contains information used to inform the Data Link Monitoring Service when it should expect the next heartbeat message, thus allowing the gateway to choose the heartbeat frequency (within the bound specified in the JSON schema below).</p>
+<p class="p_Normal">The receipt of such a message indicates to the Data Link Monitoring Service that the sending gateway is alive. The message properties also contain information when the Data Link Monitoring Service should expect the next heartbeat message, thus allowing the gateway to choose the heartbeat frequency (within the bound specified in the JSON schema below).</p>
 <h1 class="p_Heading1"><span class="f_Heading1">System Properties</span></h1>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
@@ -479,6 +479,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <td style="vertical-align:top; width:9.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">interval</p>
 </td>
 <td style="vertical-align:top; width:33.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Heartbeat interval in seconds. Set by the gateway this indicates when the Data Link Monitoring Service shall expect the next heartbeat message. This property therefore also defines how quickly an offline state of a stationary-gateway can be detected by the Data Link Monitoring Service.</p>
+<p class="p_Normal">The given interval must be greater than 10 s and less than 172 800 s (48 hours)</p>
 </td>
 </tr>
 </tbody>
@@ -486,7 +487,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </div>
 <p class="p_ImageCaption"><a id="fig_ed5cf4" class="hmanchor"></a><span class="f_ImageCaption">Table 19: Application properties of this message type</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Message body</span></h1>
-<p class="p_Normal">This message has no message body.</p>
+<p class="p_Normal">This message type has no defined message body.</p>
 <p class="p_Normal">&nbsp;</p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">&nbsp;</span></p>
 

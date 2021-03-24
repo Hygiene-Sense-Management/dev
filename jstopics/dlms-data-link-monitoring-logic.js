@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Data link monitoring service logic",
 hmDescription:"The Data Link Monitoring Service records the result of monitoring data links between non-gateway devices and stationary gateways and the results of monitoring the data links...",
-hmPrevLink:"dlms-monitoring-gateway-devices.html",
+hmPrevLink:"connection-topology.html",
 hmNextLink:"pdpr.html",
 hmParentLink:"dlms.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"dlms.html\">Data Link Monitoring Service<\/a>",
