@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Raw data blob storage structure</title>
+	<title>Date oriented storage structure</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="The blobs in the Raw data blob storage are organized using a virtual file system structure. Figure 2 shows this virtual structure." />
+	<meta name="description" content="The date oriented blob storage container is the place where HsM keeps a copy of all incoming IoT Hub messages. HsM does not use or process the data in this storage in any way..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -385,7 +385,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
 		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a> &gt; <a href="prdp-raw-data-storage.html">Raw data storage</a></p> 
-		  <p class="topictitle">Raw data blob storage structure</p>
+		  <p class="topictitle">Date oriented storage structure</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -399,7 +399,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="prdp-raw-data-storage.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="prdp-message-types.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="gateway-oriented-storage-struc.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,59 +417,61 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The blobs in the Raw data blob storage are organized using a virtual file system structure. Figure 2 shows this virtual structure.</p>
-<p class="p_Normal"><img alt="prdp-rawdatastorage-virtual-structure" style="margin:0;width:31.6875rem;height:14.6250rem;border:none" src="./images/prdp-rawdatastorage-virtual-structure.png"/></p>
-<p class="p_Normal"><a id="fig_1bb563" class="hmanchor"></a><span class="f_ImageCaption">Figure 3: &nbsp;The virtual file system structure used in the Raw Data Blob Storage. See </span><span class="f_ImageCaption">17</span></p>
+	<p class="p_Normal">The date oriented blob storage container is the place where HsM keeps a copy of all incoming IoT Hub messages. HsM does not use or process the data in this storage in any way but keeps it for reasons of long-term data safety.</p>
+<p class="p_Normal">Figure 3 shows the virtual file system structure used in this container. 20 describes the parts of this virtual file system structure.</p>
+<p class="p_Normal"><img alt="prdp-rawdatastorage-virtual-structure-date" style="margin:0;width:30.6875rem;height:14.1250rem;border:none" src="./images/prdp-rawdatastorage-virtual-structure-date.png"/></p>
+<p class="p_Normal"><a id="fig_1bb563" class="hmanchor"></a><span class="f_ImageCaption">Figure 4: &nbsp;The virtual file system structure used in the Raw Data Blob Storage container. </span></p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Message Type code</p>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Part</p>
 </th>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Each type of message gets its own code</p>
+<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Message type code</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">MessageTypeCode</span></p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">In device to cloud communication HsM uses different types of messages for different purposes. Each type of message gets its own virtual folder. Note that different versions of the same type of message will still be stored in the same virtual folder, so you cannot expect only one syntactical format within one message type code folder.</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Year</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Year of the time-instant when the message was persisted to the blob storage, encoded as 4 digits (.NET date format string: yyyy).</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Each message type used to send data to the HsM Azure IoT Hub has a specific code that is used as the top level virtual folder in this virtual file system. See <a href="prdp-message-types.html" class="topiclink">Message types &amp; protocols</a> for a list of message type codes.</p>
+<p class="p_Normal">Note that different versions of the same message type will still be stored in the same virtual folder, so you cannot expect only one syntactical format within one <span class="f_InlineCode">MessageTypeCode</span> folder.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Month</p>
+<td style="vertical-align:top; height:4.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">Year</span></p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Month of the time-instant when the message was persisted to the blob storage, encoded as 2 digits with leading zeros if necessary. (.NET date format string: MM).</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Day</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Day of the time-instant when the message was persisted to the blob storage, encoded as 2 digits with leading zeros if necessary. (.NET date format string: dd).</p>
+<td style="vertical-align:top; height:4.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Year of the time-instant when the message was persisted to the blob storage, encoded as 4 digits (.NET date format string: <span class="f_InlineCode">yyyy</span>).</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Hour</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">Month</span></p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Hour of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: HH).</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Minute</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Minute of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: mm).</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Month of the time-instant when the message was persisted to the blob storage, encoded as 2 digits with leading zeros if necessary. (.NET date format string: <span class="f_InlineCode">MM</span>).</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">MillisecondsInMinute</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">Day</span></p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Milliseconds from start of minute of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: mm).</p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Day of the time-instant when the message was persisted to the blob storage, encoded as 2 digits with leading zeros if necessary. (.NET date format string: <span class="f_InlineCode">dd</span>).</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">Hour</span></p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Hour of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: <span class="f_InlineCode">HH</span>).</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">Minute</span></p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Minute of the time-instant when the message was persisted to the blob storage, encoded as 2 digits hour on a 24h clock with leading zeros if necessary (.NET date format string: <span class="f_InlineCode">mm</span>).</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">MillisecondsInMinute</span></p>
+</td>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Milliseconds from start of minute of the time-instant when the message was persisted to the blob storage, encoded 5 digits number with leading zeros e.g. <span class="f_InlineCode">09005</span> would be the 9th second of the minute and 5 milliseconds.</p>
 </td>
 </tr>
 </tbody>
@@ -635,14 +637,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Raw data blob storage structure";
+			var titleBarText = "Date oriented storage structure";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Raw data blob storage structure"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Date oriented storage structure"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();

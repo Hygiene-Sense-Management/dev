@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="HsM handles different types of messages Message type Versions Description Resource instance data 1.0.0 This message type is used for transferring resource instance values fro" />
+	<meta name="description" content="HsM uses &nbsp;different types of messages for communication via Azure IoT Hub. 17 provides an overview of all used message types." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -393,7 +393,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="raw-data-blob-storage-structur.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="pdpr.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="pdpr.html" title="Go to top topic">
@@ -417,13 +417,15 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">HsM handles different types of messages</p>
+	<p class="p_Normal">HsM uses &nbsp;different types of messages for communication via Azure IoT Hub. 17 provides an overview of all used message types.</p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
 <th style="vertical-align:top; width:11.5625rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Message type</p>
 </th>
-<th style="vertical-align:top; width:8.0000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Versions</p>
+<th style="vertical-align:top; width:2.3750rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Code</p>
+</th>
+<th style="vertical-align:top; width:6.8750rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Versions</p>
 </th>
 <th style="vertical-align:top; width:29.8125rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
 </th>
@@ -431,25 +433,31 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Resource instance data</p>
+<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal"><a href="sensor-data-.html" class="topiclink">Resource instance data</a></p>
 </td>
-<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
+<td style="vertical-align:top; width:2.3750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">RID</span></p>
+</td>
+<td style="vertical-align:top; width:6.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
 </td>
 <td style="vertical-align:top; width:29.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">This message type is used for transferring resource instance values from devices to the HsM Backend.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Gateway heartbeat</p>
+<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal"><a href="gateway-heartbeat.html" class="topiclink">Gateway heartbeat</a></p>
 </td>
-<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
+<td style="vertical-align:top; width:2.3750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">GHB</span></p>
+</td>
+<td style="vertical-align:top; width:6.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
 </td>
 <td style="vertical-align:top; width:29.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">This message type is used by gateways to signal the HsM Backend that they are alive.</p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Device gateway link status</p>
+<td style="vertical-align:top; width:11.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal"><a href="device-gateway-link-status.html" class="topiclink">Device gateway link status</a></p>
 </td>
-<td style="vertical-align:top; width:8.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
+<td style="vertical-align:top; width:2.3750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">DLS</span></p>
+</td>
+<td style="vertical-align:top; width:6.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">1.0.0</p>
 </td>
 <td style="vertical-align:top; width:29.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">This message type is used by gateways to inform the HsM Backend about the status of blue-tooth links to devices.</p>
 </td>
@@ -457,39 +465,69 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </tbody>
 </table>
 </div>
-<h1 class="p_Heading1"><span class="f_Heading1">Common application properties</span></h1>
-<p class="p_Normal">All messages transferred via the Azure IoT Hub in HsM have a common set of message application properties.</p>
+<p class="p_ImageCaption"><a id="fig_b7eaee" class="hmanchor"></a><span class="f_ImageCaption">Table 18: IoT message types used in </span><span class="f_ImageCaption">HsM</span></p>
+<h1 class="p_Heading1"><span class="f_Heading1">Content-type and encoding</span></h1>
+<p class="p_Normal">All messages used by HsM have a <span class="f_InlineCode">application/json</span> content-type and all messages use UTF8 encoding. IoT Hub message system properties are used to signal this content-type and encoding, see table</p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Property</p>
+<th style="vertical-align:top; width:9.5000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Property</p>
 </th>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
+<th style="vertical-align:top; width:33.5625rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">message-type</p>
+<td style="vertical-align:top; width:9.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">content-type</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">A string identifying the message type</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">message-type-version</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">A version of the message type (semantic version)</p>
+<td style="vertical-align:top; width:33.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">application/json</span></p>
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">sender-id (component Id)</p>
+<td style="vertical-align:top; width:9.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">content-encoding</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Identifying string of the message sender. Up-link this is usually the gateway.</p>
+<td style="vertical-align:top; width:33.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">utf-8</span></p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
+<p class="p_ImageCaption"><a id="fig_b7eaee" class="hmanchor"></a><span class="f_ImageCaption">Table 18: The Contnet-type and encoding of </span><span class="f_ImageCaption">HsM</span><span class="f_ImageCaption"> Iot Hub messages is signaled using system message properties</span></p>
+<h1 class="p_Heading1"><span class="f_Heading1">Common application properties</span></h1>
+<p class="p_Normal">All messages transferred via the Azure IoT Hub in HsM have a common set of Azure IoT Hub message application properties as shown in table 18</p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:11.9375rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Property</p>
+</th>
+<th style="vertical-align:top; width:31.1250rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:11.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">message-type</span></p>
+</td>
+<td style="vertical-align:top; width:31.1250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">A string identifying the message type. See 18 for the message type codes used here.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:11.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">message-type-version</span></p>
+</td>
+<td style="vertical-align:top; width:31.1250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">A version of the message type. Message types can have different version. The message type version is a semantic version.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:11.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">sender-id</span></p>
+</td>
+<td style="vertical-align:top; width:31.1250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Identifying string of the message sender. Up-link this is usually the network id of the gateway. </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_b7eaee" class="hmanchor"></a><span class="f_ImageCaption">Table 18: IoT message application properties used by all </span><span class="f_ImageCaption">HsM</span><span class="f_ImageCaption"> IoT Hub Messages</span></p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>

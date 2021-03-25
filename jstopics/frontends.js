@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Frontends",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"prdp-message-routing.html",
+hmPrevLink:"gateway-registration.html",
 hmNextLink:"mobile-gateway.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",

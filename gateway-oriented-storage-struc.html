@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Device gateway link status</title>
+	<title>Gateway oriented storage structure</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="System Properties Property &nbsp;content-type application/json &nbsp;content-encoding utf-8 &nbsp;Table 20: IoT message types used in HsM Application Properties Property &nbsp;message-type" />
+	<meta name="description" content="The gateway oriented blob storage container is not turned on by default but can be enabled by configuration of the Func-iot-routing-rvs function. This raw data storage..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -227,7 +227,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	}
 	</style>
 	</noscript>
-	<link rel="canonical" href="http://www.helpandmanual.com/help/device-gateway-link-status.html" />
+	<link rel="canonical" href="http://www.helpandmanual.com/help/gateway-oriented-storage-struc.html" />
 	<script id="jqscript" type="text/javascript"></script>
 </head>
 <body>
@@ -384,8 +384,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a> &gt; <a href="prdp-message-types.html">Message types &amp; protocols</a></p> 
-		  <p class="topictitle">Device gateway link status</p>
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a> &gt; <a href="prdp-raw-data-storage.html">Raw data storage</a></p> 
+		  <p class="topictitle">Gateway oriented storage structure</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="gateway-heartbeat.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="raw-data-blob-storage-structur.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="prdp-message-types.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="prdp-raw-data-storage.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="sensor-data-.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="functions.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,156 +417,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<h1 class="p_Heading1"><span class="f_Heading1">System Properties</span></h1>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
-<thead>
-<tr>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Property</p>
-</th>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">content-type</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">application/json</span> </p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">content-encoding</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">utf-8</span> </p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="p_ImageCaption"><a id="fig_b7eaee" class="hmanchor"></a><span class="f_ImageCaption">Table 20: IoT message types used in </span><span class="f_ImageCaption">HsM</span></p>
-<h1 class="p_Heading1"><span class="f_Heading1">Application Properties</span></h1>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
-<thead>
-<tr>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Property</p>
-</th>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">message-type</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Always set to <span class="f_InlineCode">gateway-heartbeat</span></p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">message-type-version</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">1.0.0</span> </p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">sender</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">EUI48 or EUI64 of gateway</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 class="p_Heading1"><span class="f_Heading1">Message body</span></h1>
-<p class="p_Normal">The body of this message type contains a JSON document that can list the status for multiple non-gateway devices.</p>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table class="BoxCode" >
-<tr class="BoxCode">
-<td class="BoxCode"><p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;definitions&quot;: {},</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;$id&quot;: &quot;https://example.com/object1616498845.json&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;title&quot;: &quot;Root&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;type&quot;: &quot;object&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;required&quot;: [</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;Devices&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">],</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">&quot;properties&quot;: {</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;Devices&quot;: {</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;$id&quot;: &quot;#root/Devices&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;title&quot;: &quot;Devices&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;: &quot;array&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;default&quot;: [],</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;items&quot;:{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;$id&quot;: &quot;#root/Devices/items&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;title&quot;: &quot;Items&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;: &quot;object&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;required&quot;: [</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;Id&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;Timestamp&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;Status&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">],</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;properties&quot;: {</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;Id&quot;: {</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;$id&quot;: &quot;#root/Devices/items/Id&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;title&quot;: &quot;Id&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;: &quot;string&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;default&quot;: &quot;&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;examples&quot;: [</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;asd-asd-asd-asd&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">],</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;pattern&quot;: &quot;^.*$&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;Timestamp&quot;: {</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;$id&quot;: &quot;#root/Devices/items/Timestamp&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;title&quot;: &quot;Timestamp&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;: &quot;string&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;default&quot;: &quot;&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;examples&quot;: [</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;2021-02-28 22:15:14.123+01:00&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">],</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;pattern&quot;: &quot;^.*$&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">},</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;Status&quot;: {</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;$id&quot;: &quot;#root/Devices/items/Status&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;title&quot;: &quot;Status&quot;, </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;type&quot;: &quot;string&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;default&quot;: &quot;&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;examples&quot;: [</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;online&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">],</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">&quot;pattern&quot;: &quot;^.*$&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">}</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">}</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">}</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">&nbsp;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample">}</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span style="width:3.0000rem;display:inline-block">&nbsp;</span><span class="f_CodeExample">}</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">}</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">&nbsp;</span></p>
-</td>
-</tr>
-</table>
-</div>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table class="BoxCode" >
-<tr class="BoxCode">
-<td class="BoxCode"><p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;&quot;Devices&quot;: </span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;[</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;CoponentIdentifier&quot;: &quot;asd-asd-asd-asd&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Timestamp&quot;: &quot;2021-02-28 22:15:14.123+01:00&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Status&quot;: &quot;online&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;},</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;CoponentIdentifier&quot;: &quot;asd-asd-asd-123&quot;,</span></p>
-<p class="p_Normal"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Timestamp&quot;: &quot;2021-02-28 22:13:12.345+01:00&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Status&quot;: &quot;offline&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;},</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;]</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">}</span></p>
-</td>
-</tr>
-</table>
-</div>
+	<p class="p_Normal">The gateway oriented blob storage container is not turned on by default but can be enabled by configuration of the <span class="f_Identifier">Func-iot-routing-rvs </span>function. This raw data storage container is mainly intended to help developers with debugging the IoT Hub communication. HsM does not use or process the data in this storage in any way but keeps it for reasons of long-term data safety.</p>
+<p class="p_Normal">Figure 4 shows the virtual file system structure used in this container. Additional to the parts described in <a href="raw-data-blob-storage-structur.html" class="topiclink">Date oriented storage structure</a> this structure also includes a <span class="f_InlineCode">GatewayNetworkId</span> that identifies the Gateway used to send data to the HsM Backend.</p>
+<p class="p_Normal"><img alt="prdp-rawdatastorage-virtual-structure-gateway" style="margin:0;width:30.6875rem;height:15.2500rem;border:none" src="./images/prdp-rawdatastorage-virtual-structure-gateway.png"/></p>
+<p class="p_Normal"><a id="fig_1bb563" class="hmanchor"></a><span class="f_ImageCaption">Figure 5: &nbsp;The virtual file system structure used in the Raw Data Blob Storage container. </span></p>
+<p class="p_Normal">&nbsp;</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
@@ -663,11 +518,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	hmFlags.hmTrackHost = "http://www.helpandmanual.com/help/";
 	hmFlags.hmProject = "HsM Reference Manual";
 	hmFlags.hmDefaultPage = "index.html";
-	hmFlags.hmCurrentPage = "device-gateway-link-status.html";
+	hmFlags.hmCurrentPage = "gateway-oriented-storage-struc.html";
 	hmFlags.hmTOC = "hmcontent.html";
 	hmFlags.hmSearchPage = "hmftsearch.html";
 	hmFlags.hmIndexPage = "hmkwindex.html";
-	hmFlags.thisTopic = "device-gateway-link-status.html";
+	hmFlags.thisTopic = "gateway-oriented-storage-struc.html";
 	hmFlags.lastTopic = "index.html";
 	hmFlags.isEWriter = false;
 	hmFlags.topicExt = ".html";
@@ -727,14 +582,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Device gateway link status";
+			var titleBarText = "Gateway oriented storage structure";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Device gateway link status"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Gateway oriented storage structure"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();
