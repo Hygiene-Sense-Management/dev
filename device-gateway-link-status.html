@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="System Properties Property &nbsp;content-type application/json &nbsp;content-encoding utf-8 &nbsp;Table 20: IoT message types used in HsM Application Properties Property &nbsp;message-type" />
+	<meta name="description" content="Application Properties Property &nbsp;message-type Always set to device-gateway-link-status message-type-version 1.0.0 &nbsp;sender EUI48 or EUI64 of gateway Message body The body" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -417,34 +417,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<h1 class="p_Heading1"><span class="f_Heading1">System Properties</span></h1>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
-<thead>
-<tr>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Property</p>
-</th>
-<th style="vertical-align:top; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><br />
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">content-type</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">application/json</span> </p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">content-encoding</p>
-</td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">utf-8</span> </p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="p_ImageCaption"><a id="fig_b7eaee" class="hmanchor"></a><span class="f_ImageCaption">Table 20: IoT message types used in </span><span class="f_ImageCaption">HsM</span></p>
-<h1 class="p_Heading1"><span class="f_Heading1">Application Properties</span></h1>
+	<h1 class="p_Heading1"><span class="f_Heading1">Application Properties</span></h1>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
@@ -458,7 +431,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <tr>
 <td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">message-type</p>
 </td>
-<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Always set to <span class="f_InlineCode">gateway-heartbeat</span></p>
+<td style="vertical-align:top; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Always set to <span class="f_InlineCode">device-gateway-link-status</span></p>
 </td>
 </tr>
 <tr>
@@ -552,12 +525,12 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;&quot;Devices&quot;: </span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;[</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;CoponentIdentifier&quot;: &quot;asd-asd-asd-asd&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ComponentIdentifier&quot;: &quot;asd-asd-asd-asd&quot;,</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Timestamp&quot;: &quot;2021-02-28 22:15:14.123+01:00&quot;,</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Status&quot;: &quot;online&quot;</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;},</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;CoponentIdentifier&quot;: &quot;asd-asd-asd-123&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ComponentIdentifier&quot;: &quot;asd-asd-asd-123&quot;,</span></p>
 <p class="p_Normal"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Timestamp&quot;: &quot;2021-02-28 22:13:12.345+01:00&quot;,</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Status&quot;: &quot;offline&quot;</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;},</span></p>
