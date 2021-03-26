@@ -15,8 +15,7 @@ table, tr, th
 }
 span.f_CodeExample /* Code Example */
 {
- font-size: 0.90rem;
- font-family: 'Lucida Console',Monaco,monospace;
+ font-family: Consolas;
 }
 span.f_Comment /* Comment */
 {
@@ -33,27 +32,30 @@ span.f_Heading2 /* Heading2 */
  font-weight: bold;
  color: #5f5f5f;
 }
-span.f_Identifier /* Identifier */
+span.f_Highlight /* Highlight */
 {
- font-style: italic;
+}
+span.f_HighlightNote /* Highlight Note */
+{
 }
 span.f_ImageCaption /* Image Caption */
 {
  font-size: 0.80rem;
 }
-span.f_Important /* Important */
-{
-}
 span.f_InlineCode /* InlineCode */
 {
  font-family: Consolas;
- color: #871232;
+ color: #640d25;
 }
 span.f_Notes /* Notes */
 {
 }
 span.f_Tablecontents /* Table contents */
 {
+}
+span.f_Term /* Term */
+{
+ font-style: italic;
 }
 /* Paragraph styles */
 p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
@@ -66,7 +68,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 }
 .p_CodeExample /* Code Example */
 {
- font-size: 0.90rem;
+ font-size: 1.00rem;
  line-height: 1.80;
  page-break-inside: avoid;
  page-break-after: avoid;
@@ -96,25 +98,32 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  padding: 0 0 0 0;
  margin: 0.2500rem 0 0.3750rem 0;
 }
-.p_Identifier /* Identifier */
+.p_Highlight /* Highlight */
 {
  font-size: 1.00rem;
+ page-break-inside: avoid;
+ border-color: #ecfff4;
+ border-style: solid;
+ border-width: thin;
+ background: #ecfff4;
+ padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
+ margin: 0 0 0.0625rem 0;
+}
+.p_HighlightNote /* Highlight Note */
+{
+ font-size: 1.00rem;
+ page-break-inside: avoid;
+ border-color: #f0ecfd;
+ border-style: solid;
+ border-width: thin;
+ background: #f0ecfd;
+ padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
+ margin: 0 0 0.0625rem 0;
 }
 .p_ImageCaption /* Image Caption */
 {
  font-size: 0.80rem;
  margin: 0.2500rem 0 0.6250rem 0;
-}
-.p_Important /* Important */
-{
- font-size: 1.00rem;
- border-color: #999999;
- border-style: solid;
- border-width: thin;
- border-right: none;
- border-left: none;
- padding: 0.3750rem 0.3750rem 0.3750rem 0.3750rem;
- margin: 0 0 0.2500rem 0;
 }
 .p_InlineCode /* InlineCode */
 {
@@ -136,7 +145,24 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  font-size: 1.00rem;
  margin: 0.2500rem 0 0.1250rem 0;
 }
+.p_Term /* Term */
+{
+ font-size: 1.00rem;
+}
 /* Table styles */
+table.Box {
+ background-color: #F5F5F5;
+ border: none;
+ border-spacing: 0;
+}
+table.Box tr.Box {
+ text-align: left;
+}
+table.Box th.Box, table.Box td.Box {
+ vertical-align: top;
+ padding: 0.3750rem;
+ border: none;
+}
 table.BoxCode {
  background-color: #F5F5F5;
  border: none;

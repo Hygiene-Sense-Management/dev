@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Any device PUT /device/{id}/statistic-reset : Will reset statistical values stored for this device (online-ratio, time-sums etc) GET /device/{id}/data-link-status: Gets the..." />
+	<meta name="description" content="Common API Without authentication GET /service-info Standard API Basic authentication connection Metrics GET /connection-metrics/{id}/data-link-status: Gets the current data" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-resource-instances-written.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-data-link-monitoring-logic.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-monitoring-nongateway-devices.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="pdpr.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,21 +417,21 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<h1 class="p_Heading1"><span class="f_Heading1">Any device</span></h1>
-<p class="p_Normal"><span class="f_InlineCode">PUT /device/{id}/statistic-reset</span> : Will reset statistical values stored for this device (online-ratio, time-sums etc)</p>
-<p class="p_Normal"><span class="f_InlineCode">GET /device/{id}/data-link-status</span>: Gets the current data link status of the device. Retunds date and time when the status was last set and the status itself (Enum)</p>
-<p class="p_Normal"><span class="f_InlineCode">GET /device/{id}/online-ratio</span>: &nbsp;Gets the online ratio of the given device. I.e. the ration of online-time / offline-time expressed in percent.</p>
-<p class="p_Normal"><span class="f_InlineCode">GET /device/{id}/cumulated-status-times:</span> Gets the cumulated times the device was in each state. </p>
-<h1 class="p_Heading1"><span class="f_Heading1">Gateway devices</span></h1>
-<p class="p_Normal"><span class="f_InlineCode">GET /gateway-device/{id}/devices</span>: List of devices that used this gateway together with their data-link state within the given date interval specification.</p>
-<p class="p_Normal"><span class="f_InlineCode">GET /gateway-device/{id}/devices-connected</span>: List of devices currently connected to the stationary gateway </p>
-<p class="p_Normal"><span class="f_InlineCode">PUT /gateway-device/{id}/data-link-expectation</span>: Puts the expectation (online, offline, hard offline)</p>
-<p class="p_Normal"><span class="f_InlineCode">GET /gateway-device/{id}/data-link-expectation</span>: Gets the expectation (online, soft-offline, hard offline). </p>
-<h1 class="p_Heading1"><span class="f_Heading1">Non-gateway devices</span></h1>
-<p class="p_Normal"><span class="f_InlineCode">GET /non-gateway-device/{id}/latest-used-gateway</span> : gets the gateway the given device was last connected to</p>
-<p class="p_Normal"><span class="f_InlineCode">GET /non-gateway-device/{id}/used-gateways</span>: Gets an ordered list of the gateways a device used in the past. Maximum 255 entries will be returned, together with the time when the device established connection to that device.</p>
-<p class="p_Normal"><span class="f_InlineCode">GET /gateway-device/{id}/data-link-expectation</span>: Gets the expectation (online, soft-offline, hard offline). </p>
-<p class="p_Normal"><span class="f_InlineCode">PUT /gateway-device/{id}/data-link-expectation</span>: Puts the expectation (online, soft-offline, hard offline)</p>
+	<h1 class="p_Heading1"><span class="f_Heading1">Common API</span></h1>
+<p class="p_Normal">Without authentication</p>
+<p class="p_InlineCode"><span class="f_InlineCode">GET /service-info</span></p>
+<h1 class="p_Heading1"><span class="f_Heading1">Standard API</span></h1>
+<p class="p_Normal">Basic authentication</p>
+<h2 class="p_Heading2"><span class="f_Heading2">connection Metrics</span></h2>
+<p class="p_Normal"><span class="f_InlineCode">GET /connection-metrics/{id}/data-link-status</span>: Gets the current data link status of the device. Returns date and time when the status was last set and the status itself (Enum)</p>
+<p class="p_Normal"><span class="f_InlineCode">GET /connection-metrics/{id}/online-ratio</span>: &nbsp;Gets the online ratio of the given device. I.e. the ration of online-time / offline-time expressed in percent.</p>
+<p class="p_Normal"><span class="f_InlineCode">GET /connection-metrics/{id}/total-?status?-times:</span> Gets the cumulated times the device was in each state.</p>
+<p class="p_Normal"><span class="f_InlineCode">PUT /connection-metrics/{id}/statistic-reset</span> : Will reset statistical values stored for this device (online-ratio, time-sums etc)</p>
+<p class="p_Normal"><span class="f_InlineCode">PUT /connection-metrics/{id}/data-link-status-expectation</span>: Puts the expectation (online, offline, hard offline)</p>
+<p class="p_Normal"><span class="f_InlineCode">GET /connection-device/{id}/data-link-status-expectation</span>: Gets the expectation (online, soft-offline, hard offline). </p>
+<h2 class="p_Heading2"><span class="f_Heading2">Connection topology</span></h2>
+<p class="p_Normal"><span class="f_InlineCode">GET /connection-topology/connected-devices/{gateway-device-id}?since={datetimeoffset}</span>: List of devices that were connected to the given gateway device since the given date. If date is not given will only list the currently connected devices.</p>
+<p class="p_Normal"><span class="f_InlineCode">GET /connection-topology/used-gateways/{non-gateway-device-id}?since={datetimeoffset}</span>: Gets an ordered list of the gateways a device used in the past. Maximum 255 entries will be returned, together with the time when the device established connection to that device. If since is not given will only return the latest used gateway.</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>

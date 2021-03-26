@@ -417,7 +417,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">Adaptive date intervals specifications are not based on <span class="f_Identifier">Start</span> and <span class="f_Identifier">End</span> but rather specify an algorithm to calculate a Start and End from the current date and time when the adaptive date interval specification is accessed. I.e. the adaptive date interval specification is turned into a static interval on access.</p>
+	<p class="p_Normal">Adaptive date intervals specifications are not based on <span class="f_Term">Start</span> and <span class="f_Term">End</span> but rather specify an algorithm to calculate a Start and End from the current date and time when the adaptive date interval specification is accessed. I.e. the adaptive date interval specification is turned into a static interval on access.</p>
 <p class="p_Normal">Table 20 shows the settings that define how the algorithm calculates the Start and End of the effective interval from the current time.</p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
@@ -490,19 +490,19 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <tr>
 <td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Round</p>
 </td>
-<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is rounded according to the adjustment part. E.g. If the current date time is 2020-01-12 21:15:02:12.00+01:00, the adjustment method is <span class="f_Identifier">Round</span> and the adjustment part is hours the resulting <span class="f_Identifier">base date and time</span> would be 2020-01-12 15:00:00.00+01:00.</p>
+<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is rounded according to the adjustment part. E.g. If the current date time is 2020-01-12 21:15:02:12.00+01:00, the adjustment method is <span class="f_Term">Round</span> and the adjustment part is hours the resulting <span class="f_Term">base date and time</span> would be 2020-01-12 15:00:00.00+01:00.</p>
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Ceiling</p>
 </td>
-<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is set to the next full unit according to the adjustment part. E.g. If the current date and time is 2020-01-12 21:15:02.12, the adjustment method is <span class="f_Identifier">Ceiling</span> and the adjustment part is <span class="f_Identifier">Month</span> the resulting <span class="f_Identifier">base date and time</span> would be 2020-02-01 00:00:00.00.</p>
+<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is set to the next full unit according to the adjustment part. E.g. If the current date and time is 2020-01-12 21:15:02.12, the adjustment method is <span class="f_Term">Ceiling</span> and the adjustment part is <span class="f_Term">Month</span> the resulting <span class="f_Term">base date and time</span> would be 2020-02-01 00:00:00.00.</p>
 </td>
 </tr>
 <tr>
 <td style="vertical-align:top; width:4.7500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Floor</p>
 </td>
-<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is set to the previous full unit according to the adjustment part. E.g. If the current date and time is 2015-01-12 21:15:02.12, the adjustment type is <span class="f_Identifier">Floor</span> and the adjustment part is <span class="f_Identifier">Minutes</span> the resulting <span class="f_Identifier">base date and time</span> would be 2015-01-12 21:15:00.00.</p>
+<td style="vertical-align:top; width:40.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The current date and time is set to the previous full unit according to the adjustment part. E.g. If the current date and time is 2015-01-12 21:15:02.12, the adjustment type is <span class="f_Term">Floor</span> and the adjustment part is <span class="f_Term">Minutes</span> the resulting <span class="f_Term">base date and time</span> would be 2015-01-12 21:15:00.00.</p>
 </td>
 </tr>
 </tbody>
@@ -587,7 +587,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </table>
 </div>
 <p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 21: Different types of offsets</span></p>
-<p style="line-height: 1.20; margin: 0 0 0 0;">Based on the <span class="f_Identifier">base date and time</span> the system computes the <span class="f_Identifier">start date ant time</span> and <span class="f_Identifier">end date and time</span> using the given offset specifications. The offset values are subtracted from the basic date and time, therefore to specify lower or upper boundaries in the future negative offsets have to be used.</p>
+<p style="line-height: 1.20; margin: 0 0 0 0;">Based on the <span class="f_Term">base date and time</span> the system computes the <span class="f_Term">start date ant time</span> and <span class="f_Term">end date and time</span> using the given offset specifications. The offset values are subtracted from the basic date and time, therefore to specify lower or upper boundaries in the future negative offsets have to be used.</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
