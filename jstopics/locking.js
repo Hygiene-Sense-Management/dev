@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Locking",
 hmDescription:"For some operations on customer data in HSM the customer needs to be locked, so that no data inconsistencies can occur. This is mostly caused by the fact that HSM allows...",
-hmPrevLink:"global-roles.html",
+hmPrevLink:"clse-stored-device-filters.html",
 hmNextLink:"technical-check.html",
 hmParentLink:"clse.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"clse.html\">Client Service<\/a>",
