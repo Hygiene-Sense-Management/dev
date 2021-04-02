@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Data Link Monitoring Service",
 hmDescription:"HsM stationary gateways are used to connect non-gateway devices to the HsM Backend permanently and therefore enable a near-real-time up-link communication (from devices to the...",
-hmPrevLink:"administrators-guide_2.html",
+hmPrevLink:"data-series-source.html",
 hmNextLink:"dlms-monitoring-nongateway-devices.html",
 hmParentLink:"backend-infrastructure.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a>",

@@ -1,0 +1,12 @@
+hmLoadTopic({
+hmKeywords:"",
+hmTitle:"Schedule",
+hmDescription:"Technical checks should be performed regularly. A customer is therefore assigned to a technical check schedule that defines how often a technical check should be performed and...",
+hmPrevLink:"technical-check.html",
+hmNextLink:"dans.html",
+hmParentLink:"technical-check.html",
+hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"clse.html\">Client Service<\/a> &gt; <a href=\"technical-check.html\">Technical Check<\/a>",
+hmTitlePath:"Backend infrastructure > Client Service > Technical Check > Schedule",
+hmHeader:"<h1 class=\"p_Heading1\"><span class=\"f_Heading1\">Schedule<\/span><\/h1>\n\r",
+hmBody:"<p class=\"p_Normal\">Technical checks should be performed regularly. A customer is therefore assigned to a technical check schedule that defines how often a technical check should be performed and the date-intervals in which it should be performed.<\/p>\n\r<p class=\"p_Normal\">&nbsp;<\/p>\n\r<p class=\"p_Normal\">&nbsp;<\/p>\n\r<p class=\"p_Normal\">&nbsp;<\/p>\n\r<p class=\"p_Normal\">. Each customer in HsM is assigned to a technical check schedule profile that, together with <\/p>\n\r<p class=\"p_Normal\">&nbsp;<\/p>\n\r<p class=\"p_Normal\">that consists of three settings: <\/p>\n\r<p class=\"p_Normal\">Interval: Defines the planned interval between two technical checks.<\/p>\n\r<p class=\"p_Normal\">Grace period before due date: defines <\/p>\n\r<p class=\"p_Normal\">Grace period after due date<\/p>\n\r<p class=\"p_Normal\">The technical checks for a customer has a due date (d) The technical check for a customer has a grace period before g1, and grace period after g2 The technical check is due in the interval (d-g1, d +g2] The technical check is overdue in in the interval (d+g2, ∞)<\/p>\n\r<p class=\"p_Normal\">technical checks performed for rooms of a customer at date x where x &gt; d + g2 are still mapped to period (d-g, d +g] if the technical check for the customer was not completed within (d - g, d + g] technical checks performed for rooms of a customer at date x where x &gt; d + g are not mapped to any interval if the technical check for the customer was completed within (d - g, d + g]<\/p>\n\r<p class=\"p_Normal\">Resetting the due date might automatically complete a technical check for a customer Resetting the due date is not necessary even in overdue cases.<\/p>\n\r"
+})
