@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Service App",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"cuap-customer-selection-flow.html",
+hmPrevLink:"device-list.html",
 hmNextLink:"webp.html",
 hmParentLink:"frontends.html",
 hmBreadCrumbs:"<a href=\"frontends.html\">Frontends<\/a>",

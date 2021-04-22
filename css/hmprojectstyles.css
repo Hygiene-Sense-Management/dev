@@ -15,7 +15,7 @@ table, tr, th
 }
 span.f_CodeExample /* Code Example */
 {
- font-family: Consolas;
+ font-family: Consolas, Courier,monospace;
 }
 span.f_Comment /* Comment */
 {
@@ -44,7 +44,7 @@ span.f_ImageCaption /* Image Caption */
 }
 span.f_InlineCode /* InlineCode */
 {
- font-family: Consolas;
+ font-family: Consolas, Courier,monospace;
  color: #640d25;
 }
 span.f_Notes /* Notes */

@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Technical Check",
 hmDescription:"Definition of overdue The technical checks for a customer has a due date d The technical check for a customer has a grace period before g1, and grace period after g2 The...",
-hmPrevLink:"locking.html",
+hmPrevLink:"clse-device-installation.html",
 hmNextLink:"schedule.html",
 hmParentLink:"clse.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"clse.html\">Client Service<\/a>",

@@ -1,0 +1,44 @@
+{
+  "title": "device-gateway-connection-status",
+  "type": "object",
+  "properties": {
+    "ConnectionStatus": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "An array of objects describing status of connections of different ble-networked devices with the gateway.",
+      "items": {
+        "type": "object",
+        "description": "Describes the status of the connection between an BLE-networked device and the gateway at a specific point in time.",
+        "properties": {
+          "ComponentIdentifier": {
+            "type": "string",
+            "description": "Identifier of the component within the BLE-networked device that actually builds up the connection to the gateway. Usually the BLUUID if the BLE-networked device."
+          },
+          "Timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp at which this connection status was monitored."
+          },
+          "ConnectionStatus": {
+            "type": "string",
+            "enum": [
+              "connected",
+              "not-connected"
+            ],
+            "description": "The connection status."
+          }
+        },
+        "required": [
+          "ComponentIdentifier",
+          "Timestamp",
+          "ConnectionStatus"
+        ]
+      }
+    }
+  },
+  "required": [
+    "ConnectionStatus"
+  ],
+  "description": ""
+}
