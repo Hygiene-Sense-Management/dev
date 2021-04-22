@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Resource Instance data</title>
+	<title>Resource instance data</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="System Properties Property Description content-type application/json &nbsp;content-encoding utf-8 &nbsp;Application Properties Property Description message-type resource-instance-" />
+	<meta name="description" content="Application Properties Property Description message-type resource-instance-data message-type-version 1.0.0 &nbsp;sender-id EUI48 or EUI64 of the gateway relaying the data from B" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -385,7 +385,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
 		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a> &gt; <a href="prdp-message-types.html">Message types &amp; protocols</a></p> 
-		  <p class="topictitle">Resource Instance data</p>
+		  <p class="topictitle">Resource instance data</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -417,33 +417,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<h1 class="p_Heading1"><span class="f_Heading1">System Properties</span></h1>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
-<thead>
-<tr>
-<th style="vertical-align:top; width:13.4375rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Property</p>
-</th>
-<th style="vertical-align:top; width:29.6875rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align:top; width:13.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">content-type</p>
-</td>
-<td style="vertical-align:top; width:29.6875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">application/json</span> </p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:13.4375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">content-encoding</p>
-</td>
-<td style="vertical-align:top; width:29.6875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_InlineCode"><span class="f_InlineCode">utf-8</span> </p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 class="p_Heading1"><span class="f_Heading1">Application Properties</span></h1>
+	<h1 class="p_Heading1"><span class="f_Heading1">Application Properties</span></h1>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
@@ -475,6 +449,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </tbody>
 </table>
 </div>
+<p class="p_ImageCaption"><a id="fig_62fb25" class="hmanchor"></a><span class="f_ImageCaption">Table 25: Application properties of this message type</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Message body</span></h1>
 <p class="p_Normal">The body of this message type contains a JSON document that can hold the multiple resource instance values of multiple devices. Figure 4 shows an example message body. The message body structure is defined by the resource-instance data JSON Schema.</p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table class="BoxCode" >
@@ -675,14 +650,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Resource Instance data";
+			var titleBarText = "Resource instance data";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Resource Instance data"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Resource instance data"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();

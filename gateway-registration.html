@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Gateways must register with the Azure IoT Hub before they can send messages." />
+	<meta name="description" content="All gateways must be registered with the Azure IoT Hub before they can send messages." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -393,7 +393,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="func-iot-routing-rvs.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="gateway-oriented-storage-struc.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="pdpr.html" title="Go to top topic">
@@ -417,9 +417,9 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">Gateways must register with the Azure IoT Hub before they can send messages.</p>
-<p class="p_Normal">Mobile gateways are registered via the Client Service. There is an enpoint that delivers connsction strings (including the shared access key)</p>
-<p class="p_Normal">Stationary gateways are registered via the Device provisioning service </p>
+	<p class="p_Normal">All gateways must be registered with the Azure IoT Hub before they can send messages.</p>
+<p class="p_Normal">The Client Service provides the function to register gateways on Azure IoT Hub. This way of registering devices is used by mobile gateways. There is an enpoint that delivers connsction strings (including the shared access key)</p>
+<p class="p_Normal">Stationary gateways are registered via the Azure device provisioning service. During production stationary gateways are already enrolled with the azure device provisioning service. Once the device starts up it will get the address of the Azure IoT Hub it shall connect to from the device provisioning service and with it it also gets the authorization to connect to that Azure IoT Hub.</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
