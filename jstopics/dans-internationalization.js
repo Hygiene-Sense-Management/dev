@@ -1,0 +1,12 @@
+hmLoadTopic({
+hmKeywords:"",
+hmTitle:"Internationalization",
+hmDescription:"This chapter discusses aspects of internationalization for the Data Analysis Service.",
+hmPrevLink:"dans.html",
+hmNextLink:"dans-time-series-analysis.html",
+hmParentLink:"dans.html",
+hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"dans.html\">Data Analysis Service<\/a>",
+hmTitlePath:"Backend infrastructure > Data Analysis Service > Internationalization",
+hmHeader:"<h1 class=\"p_Heading1\"><span class=\"f_Heading1\">Internationalization<\/span><\/h1>\n\r",
+hmBody:"<p class=\"p_Normal\">This chapter discusses aspects of internationalization for the Data Analysis Service.<\/p>\n\r<p class=\"p_Normal\">Language: Any textual input and output is in English (US)<\/p>\n\r<p class=\"p_Normal\">Timezone: Data Analysis Service handles date and time values only in UTC. I.e. the REST API expects all date time parameters to be in UTC and all responses including date time value will express date time in UTC.<\/p>\n\r"
+})

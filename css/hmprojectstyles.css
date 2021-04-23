@@ -139,6 +139,7 @@ table.Box th.Box, table.Box td.Box {
  border: none;
 }
 table.BoxCaution {
+ width: 100%;
  background-color: #FFDACC;
  border: none;
  border-spacing: 0;
@@ -152,6 +153,7 @@ table.BoxCaution th.BoxCaution, table.BoxCaution td.BoxCaution {
  border: none;
 }
 table.BoxCode {
+ width: 100%;
  background-color: #F5F5F5;
  border: none;
  border-spacing: 0;
@@ -165,6 +167,7 @@ table.BoxCode th.BoxCode, table.BoxCode td.BoxCode {
  border: none;
 }
 table.BoxImportant {
+ width: 100%;
  background-color: #E2DAF1;
  border: none;
  border-spacing: 0;
