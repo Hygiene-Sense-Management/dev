@@ -421,9 +421,9 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <p class="p_Normal">Messages sent to the Azure IoT Hub in HsM are routed to the raw data storage. The routing configuration decides which messages are actually routed to the raw data storage, by default this are the  <a href="prdp-messagetype-resource-instance-data.html" class="topiclink">Resource instance data</a> messages.</p>
 <p class="p_Normal">Azure Blob storage is a cheap storage space that can hold a nearly unlimited amount of data, however it is not a database that can be used to search and filter in various ways but is very limited in this regard. Therefore the structure how blobs are stored is important. Primarily HsM stores IoT messages in a container in which blobs are structured date-oriented. The &nbsp;For debugging purposes the primary data processing an additional container with a gateway oriented blob-storage can be written.</p>
 <p class="p_Normal">All blobs written in the raw data storage are JSON documents. They include the IoT Hub message properties as well as the message body.</p>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.2500rem 0 0.3750rem 0;"><table class="Boxcolored" >
-<tr class="Boxcolored">
-<td class="Boxcolored"><p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">{</span></p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table class="Box" >
+<tr class="Box">
+<td class="Box"><p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">{</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;&quot;system-properties&quot;: </span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;[</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;{</span></p>

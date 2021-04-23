@@ -20,6 +20,9 @@ span.f_CodeExample /* Code Example */
 span.f_Comment /* Comment */
 {
 }
+span.f_CondensedNormal /* Condensed Normal */
+{
+}
 span.f_Heading1 /* Heading1 */
 {
  font-size: 1.10rem;
@@ -31,12 +34,6 @@ span.f_Heading2 /* Heading2 */
  font-style: italic;
  font-weight: bold;
  color: #5f5f5f;
-}
-span.f_Highlight /* Highlight */
-{
-}
-span.f_HighlightNote /* Highlight Note */
-{
 }
 span.f_ImageCaption /* Image Caption */
 {
@@ -64,7 +61,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  text-indent: 0;
  line-height: 1.44;
  padding: 0 0 0 0;
- margin: 0.2500rem 0 0.3750rem 0;
+ margin: 0.3750rem 0 0.2500rem 0;
 }
 .p_CodeExample /* Code Example */
 {
@@ -78,6 +75,12 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 {
  font-size: 1.00rem;
 }
+.p_CondensedNormal /* Condensed Normal */
+{
+ font-size: 1.00rem;
+ line-height: 1.20;
+ margin: 0.1250rem 0 0.1250rem 0;
+}
 .p_Heading1 /* Heading1 */
 {
  font-size: 100%;
@@ -86,7 +89,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  text-indent: 0;
  line-height: 1.44;
  padding: 0 0 0 0;
- margin: 0.7500rem 0 0.3750rem 0;
+ margin: 0.7500rem 0 0.2500rem 0;
 }
 .p_Heading2 /* Heading2 */
 {
@@ -96,34 +99,12 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
  text-indent: 0;
  line-height: 1.44;
  padding: 0 0 0 0;
- margin: 0.2500rem 0 0.3750rem 0;
-}
-.p_Highlight /* Highlight */
-{
- font-size: 1.00rem;
- page-break-inside: avoid;
- border-color: #ecfff4;
- border-style: solid;
- border-width: thin;
- background: #ecfff4;
- padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
- margin: 0 0 0.0625rem 0;
-}
-.p_HighlightNote /* Highlight Note */
-{
- font-size: 1.00rem;
- page-break-inside: avoid;
- border-color: #f0ecfd;
- border-style: solid;
- border-width: thin;
- background: #f0ecfd;
- padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
- margin: 0 0 0.0625rem 0;
+ margin: 0.3750rem 0 0.2500rem 0;
 }
 .p_ImageCaption /* Image Caption */
 {
  font-size: 0.80rem;
- margin: 0.2500rem 0 0.6250rem 0;
+ margin: 0.3750rem 0 0.6250rem 0;
 }
 .p_InlineCode /* InlineCode */
 {
@@ -132,33 +113,40 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 .p_Notes /* Notes */
 {
  font-size: 1.00rem;
- page-break-inside: avoid;
- page-break-after: avoid;
- border-color: #f0ecfd;
- border-style: solid;
- border-width: 0.3125rem;
- background: #f0ecfd;
- margin: 0.2500rem 0.5000rem 0.3750rem 0.5000rem;
 }
 .p_Tablecontents /* Table contents */
 {
  font-size: 1.00rem;
- margin: 0.2500rem 0 0.1250rem 0;
+ margin: 0.3750rem 0 0.1250rem 0;
 }
 .p_Term /* Term */
 {
  font-size: 1.00rem;
 }
 /* Table styles */
-table.Boxcolored {
+table.Box {
+ width: 100%;
  background-color: #F5F5F5;
  border: none;
  border-spacing: 0;
 }
-table.Boxcolored tr.Boxcolored {
+table.Box tr.Box {
  text-align: left;
 }
-table.Boxcolored th.Boxcolored, table.Boxcolored td.Boxcolored {
+table.Box th.Box, table.Box td.Box {
+ vertical-align: top;
+ padding: 0.3750rem;
+ border: none;
+}
+table.BoxCaution {
+ background-color: #FFDACC;
+ border: none;
+ border-spacing: 0;
+}
+table.BoxCaution tr.BoxCaution {
+ text-align: left;
+}
+table.BoxCaution th.BoxCaution, table.BoxCaution td.BoxCaution {
  vertical-align: top;
  padding: 0.3750rem;
  border: none;
@@ -176,7 +164,21 @@ table.BoxCode th.BoxCode, table.BoxCode td.BoxCode {
  padding: 0.3750rem;
  border: none;
 }
+table.BoxImportant {
+ background-color: #E2DAF1;
+ border: none;
+ border-spacing: 0;
+}
+table.BoxImportant tr.BoxImportant {
+ text-align: left;
+}
+table.BoxImportant th.BoxImportant, table.BoxImportant td.BoxImportant {
+ vertical-align: top;
+ padding: 0.3750rem;
+ border: none;
+}
 table.Frame {
+ width: 100%;
  border: solid thin #E1E1E1;
  border-spacing: 0;
 }
