@@ -384,7 +384,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a> &gt; <a href="prdp-message-types.html">Message types &amp; protocols</a></p> 
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="pdpr.html">Primary Data Processing</a> &gt; <a href="prdp-message-types.html">Message types</a></p> 
 		  <p class="topictitle">Device-gateway connection status</p>
 		  </div>
 		</td>
@@ -442,7 +442,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </td>
 </tr>
 <tr>
-<td style="vertical-align:top; width:13.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">sender</p>
+<td style="vertical-align:top; width:13.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">sender-id</p>
 </td>
 <td style="vertical-align:top; width:29.6250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">EUI48 (MAC address) or EUI64 of the gateway's network interface Encoded as hexadecimal string (hyphen separated groups of two hexadecimal digits)</p>
 </td>
@@ -450,21 +450,21 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_d82a4e" class="hmanchor"></a><span class="f_ImageCaption">Table 23: Application properties of this message type</span></p>
+<p class="p_ImageCaption"><a id="fig_d82a4e" class="hmanchor"></a><span class="f_ImageCaption">Table 24: Application properties of this message type</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Message body</span></h1>
 <p class="p_Normal">The body of this message type contains a JSON document with the connection status for multiple BLE-networked devices. Figure 3 shows an example message body. The message body structure is defined by the device-gateway connection status <a href="prdp-messagetype-device-gateway-connection-status.json" class="filelink">JSON Schema</a>.</p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table class="BoxCode" >
 <tr class="BoxCode">
 <td class="BoxCode"><p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;&quot;ConnectionStatus&quot;: [</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;&quot;Devices&quot;: [</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ComponentIdentifier&quot;: &quot;F8-75-A4-AC-77-12-34-A5&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Timestamp&quot;: &quot;2021-02-28 22:15:14.123+01:00&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;NetworkId&quot;: &quot;F8-75-A4-AC-77-12-34-A5&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;LoggedAt&quot;: &quot;2021-02-28 22:15:14.123Z&quot;,</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ConnectionStatus&quot;: &quot;connected&quot;</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;},</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ComponentIdentifier&quot;: &quot;B4-CE-36-6F-1E-73-22-CE&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Timestamp&quot;: &quot;2021-02-28 22:13:12.345+01:00&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;NetworkId&quot;: &quot;B4-CE-36-6F-1E-73-22-CE&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;LoggedAt&quot;: &quot;2021-02-28 22:13:12.345Z&quot;,</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ConnectionStatus&quot;: &quot;not-connected&quot;</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;}</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;]</span></p>

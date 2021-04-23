@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Administrator\'s Guide",
 hmPrevLink:"dans.html",
-hmNextLink:"dans-time-series-analysis.html",
+hmNextLink:"date-time-handling.html",
 hmParentLink:"dans.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"dans.html\">Data Analysis Service<\/a>",
 hmTitlePath:"Backend infrastructure > Data Analysis Service > Administrator\'s Guide",
