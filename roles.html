@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="A role is a collection of permissions on a specific object (customer, organization)" />
+	<meta name="description" content="Table 6 lists the roles defined in HsM, table 7 shows the permissions assigned to each role." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -399,7 +399,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="authorization2.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="customer-roles.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="customers.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,8 +417,604 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">A role is a collection of permissions on a specific object (customer, organization)</p>
-<p class="p_Normal">A user is granted a role on a specific object (global, customer, organization)</p>
+	<p class="p_Normal">Table 6 lists the roles defined in HsM, table 7 shows the permissions assigned to each role.</p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:15.5000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Role Code </span></p>
+</th>
+<th style="vertical-align:top; width:7.0000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Target securable </span></p>
+</th>
+<th style="vertical-align:top; width:23.0625rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Description</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_ADMIN </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Customer </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_USER </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Customer </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_CARETAKER </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Customer </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_USER_UNVERIFIED </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Internal </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_ADMIN </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_FIELD_ENGINEER </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_OFFICE </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_SALES </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization Limited </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_DELIVERY_AGENT </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">GLOBAL_ADMIN </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Global </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_EXTERNAL_DELIVERY_AGENT </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">GLOBAL_DISPENSER_APP_USER </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Global </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">BETA_TESTER </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_EXPORT_ADMIN </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:15.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_SALES_UNLIMITED </span></p>
+</td>
+<td style="vertical-align:top; width:7.0000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Organization </span></p>
+</td>
+<td style="vertical-align:top; width:23.0625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_c5e84f" class="hmanchor"></a><span class="f_ImageCaption">Table 6: Roles defined in HsM</span></p>
+<h1 class="p_Heading1"><span class="f_Heading1">Roles and their permissions</span></h1>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:14.5000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Role Code</span></p>
+</th>
+<th style="vertical-align:top; width:28.5625rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Permissions</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">BETA_TESTER</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">BETA_TECHNICAL_CHECK</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_ADMIN</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CLEANING_SCHEDULE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CLEANING_SCHEDULE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CATALOG_VISIBILITY_LEVEL_MAINTENANCE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_CUSTOMER_ADMINISTRATOR</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_CARETAKER</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CATALOG_VISIBILITY_LEVEL_MAINTENANCE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_CUSTOMER_CARETAKER</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_USER</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_WASHROOM_USER</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_USER_UNVERIFIED</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_PENDING_USER</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">GLOBAL_ADMIN</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICE_MAPPING</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORGANIZATION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_NAME_SUGGESTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FULL_TEXT_SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FORCE_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_USER_BLOCKING_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_ORGANIZATION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_SUB_ORGANIZATION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_SALUTATION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_PRODUCT_CATEGORIES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">COPY_ORGANIZATION_SETTINGS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CLEANING_SCHEDULE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CLEANING_SCHEDULE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_COMMISSIONING_REPORT</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_GLOBAL_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_GLOBAL_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">PERFORM_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CHANGE_TECHNICAL_CHECK_DUE_DATE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_PRODUCT_PRICE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ROLES_ORGANIZATION_ADMIN</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CATALOG_VISIBILITY_LEVEL_OEM_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_TECHNICIAN</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_SALES</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">GLOBAL_DISPENSER_APP_USER</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_COMMISSIONING_REPORT</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_ADMIN</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICE_MAPPING</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORGANIZATION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_NAME_SUGGESTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FULL_TEXT_SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FORCE_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_USER_BLOCKING_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_SUB_ORGANIZATION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_PRODUCT_CATEGORIES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">PERFORM_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CHANGE_TECHNICAL_CHECK_DUE_DATE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_PRODUCT_PRICE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ROLES_ORGANIZATION_ADMIN</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CATALOG_VISIBILITY_LEVEL_MAINTENANCE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_TECHNICIAN</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_SALES</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_DELIVERY_AGENT</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FULL_TEXT_SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_DELIVERY_AGENT</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_INTERN_TECHNICIAN</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_EXPORT_ADMIN</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICE_MAPPING</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORGANIZATION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_NAME_SUGGESTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FULL_TEXT_SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FORCE_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_USER_BLOCKING_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_SUB_ORGANIZATION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_PRODUCT_CATEGORIES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">PERFORM_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CHANGE_TECHNICAL_CHECK_DUE_DATE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_PRODUCT_PRICE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CATALOG_VISIBILITY_LEVEL_MAINTENANCE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_CUSTOMER_ADMINISTRATOR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_SALES</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_EXTERNAL_DELIVERY_AGENT</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_DELIVERY_AGENT</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_EXTERN_TECHNICIAN</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_FIELD_ENGINEER</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICE_MAPPING</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FULL_TEXT_SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">PERFORM_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CATALOG_VISIBILITY_LEVEL_MAINTENANCE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_TECHNICIAN</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_SALES</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_OFFICE</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICE_MAPPING</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FULL_TEXT_SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_USER_BLOCKING_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CATALOG_VISIBILITY_LEVEL_MAINTENANCE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_TECHNICIAN</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_SALES</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_SALES</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FULL_TEXT_SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_SEARCH_WITH_EMPLOYEE_ID</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">PERFORM_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_TECHNICIAN</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_SALES</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:14.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">ORGANIZATION_SALES_UNLIMITED</span></p>
+</td>
+<td style="vertical-align:top; width:28.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_DETAILS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_DEVICES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_LOCATIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_DEVICE_STATUS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_USER_ROLE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_VERIFICATIONCODE</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_THREAD_NETWORKS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_PRODUCTS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_COMPETITORS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_FULL_TEXT_SEARCH</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">FULL_TEXT_SEARCH_CUSTOMER_IN_NAVISION</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ROOM_SELECTIONS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">BLOCK_UNBLOCK_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_ORDERS</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CREATE_CUSTOMER</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_LANGUAGES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CALENDAR</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">CUSTOMER_SEARCH_WITH_EMPLOYEE_ID</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_OPERATIONAL_PROFILES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_SALES_AREA</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">EDIT_CUSTOMER_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">VIEW_ORGANIZATION_ANALYSIS_TEMPLATES</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">PERFORM_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">READ_TECHNICAL_CHECK</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">XIBU_TECHNICIAN</span></p>
+<p class="p_CondensedNormal"><span class="f_CondensedNormal">SERVICE_SALES</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_a27acd" class="hmanchor"></a><span class="f_ImageCaption">Table 7: Roles and their permissions</span></p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>

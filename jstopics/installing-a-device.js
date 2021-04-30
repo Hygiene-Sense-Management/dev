@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Installing a device",
 hmDescription:"The Xibu App can be used to install devices. The serial number needed to install devices can be given by scanning the QR-Code on the device or by manually entering the device\'s...",
-hmPrevLink:"cuapp-ble-browsing.html",
+hmPrevLink:"mobile-gateway.html",
 hmNextLink:"device-list.html",
 hmParentLink:"cuapp.html",
 hmBreadCrumbs:"<a href=\"frontends.html\">Frontends<\/a> &gt; <a href=\"cuapp.html\">Xibu App<\/a>",

@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Client Service protects the access to data and actions with permissions only users that are granted a specific permission can read or modify specific data or execute specific..." />
+	<meta name="description" content="HsM has three primary security components that are used to define what data users have access to and what operations users are permitted to perform:" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -417,53 +417,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">Client Service protects the access to data and actions with permissions only users that are granted a specific permission can read or modify specific data or execute specific actions. </p>
-<p class="p_Normal">Permissions ha</p>
-<p class="p_Normal">Permissions are not directly assigned to users but are combined into roles and then roles are assigned to users.</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">&nbsp;</p>
-<h1 class="p_Heading1"><span class="f_Heading1">Permissions:</span></h1>
-<p class="p_Normal">Permissions sind die kleinsten Atome.</p>
-<p class="p_Normal">Permissions sind vom System vordefiniert.</p>
-<p class="p_Normal">Permission können sich auf bestimme Wirklungsbereich beziehen, das ist aber nicht wirklich in der Permission codier, sonder wird nur manuell über Permission Rolle Zuornung und die Rolle einen Scope hat.</p>
-<p class="p_Normal">Permissions beziehen sich auf bestimmte Objekte (z.B. Devices, ...)</p>
-<h1 class="p_Heading1"><span class="f_Heading1">Scopes</span></h1>
-<p class="p_Normal">Customer: Dies Permission wirkt auf einen customer. Ob die Rollen und permissins an kettenkunden vererbt werden ist eine Customer einstellung. Tabelle Customer - Customer User Role</p>
-<p class="p_Normal">Organization: Dies permission wirkt auf eie organization. Zuordnungstabelle: OrganizationUserRole, permission wirkt auch auf alle Kunden.</p>
-<p class="p_Normal">-&gt; Organization limited</p>
-<p class="p_Normal">Global: Dies permission wirkt auf das gesamte System (d.h. auch auf alle Organisationen und alle Customers)</p>
-<p class="p_Normal">&nbsp;</p>
-<h1 class="p_Heading1"><span class="f_Heading1">Verbindung zu Xibu und Service APp</span></h1>
-<p class="p_Normal">Eine Permission in HsM (z.b. XIBU_TECHNICAN) bedingt eine Rolle in der APp. Die Permissions auf der App werden aber von der App verwaltet.</p>
-<p class="p_Normal">&nbsp;</p>
-<h1 class="p_Heading1"><span class="f_Heading1">Zuordnung Customer-User-Role</span></h1>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Rollen sind container für Permissions</p>
-<p class="p_Normal">Zuordnung geht immer über Rolle.</p>
-<p class="p_Normal">Benutzer und ROlle m:n</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Roles werden von Hagleitner definiert und sind nicht User-definierbar.</p>
-<p class="p_Normal">SCopes sind von Hagleitner definiert und können nicht vom User definiert werden.</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Rollen werden um ein Scope Attribut erweitert dameit gelten die Permissions in dieser Rolle nur für diesen Scope.</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Rolle zuweieung bu Benutze hat immer ein Scope Attribut</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Es gibt kein Benutzergruppen konzept</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Permissions are always additive.</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Object = Scope</p>
-<p class="p_Normal">&nbsp;</p>
-<p class="p_Normal">Permission </p>
-<p class="p_Normal">&nbsp;</p>
-<h1 class="p_Heading1"><span class="f_Heading1">Wie kommen User zu Ihren Roles</span></h1>
-<p class="p_Normal">Unterschied zwischen ferated und local </p>
-<p class="p_Normal">Im AD Gruppentypen mit HOP_</p>
-<p class="p_Normal">AD Gruppen werden in unser Backend synchronisiert. (eignetlich nur sync in eine Richtung)</p>
-<p class="p_Normal">Mapping von Group Names zu Rollen wirdanhand der syntax ActiveDirectoryGroupOrganizationRole Tabelle</p>
-<p class="p_Normal">&nbsp;</p>
+	<p class="p_Normal">HsM has three primary security components that are used to define what data users have access to and what operations users are permitted to perform:</p>
+<p class="p_CondensedNormal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_CondensedNormal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span><span class="f_CondensedNormal" style="font-style: italic;">Security principal</span><span class="f_CondensedNormal">: People or processes that are authorized to access / modify data or perform operations.</span></p><p class="p_CondensedNormal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_CondensedNormal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span><span class="f_Term">Securables</span><span class="f_CondensedNormal">: The resource within </span><span class="f_CondensedNormal">HsM</span><span class="f_CondensedNormal"> for which access is regulated.</span></p><p class="p_CondensedNormal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_CondensedNormal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span><span class="f_Term">Permissions</span><span class="f_CondensedNormal">: The types of access &nbsp;that principals have &nbsp;to specific securables.</span></p><p class="p_Normal">A <span style="font-style: italic;">security principal</span> is an identity using HsM and can be granted permission to access or modify data. or to perform operations.</p>
+<p class="p_Normal">Security principals receive permissions on <span style="font-style: italic;">securables</span>, these are the resources for which access is regulated. Securables in HsM are: <span class="f_CondensedNormal" style="font-style: italic;">system</span><span class="f_CondensedNormal">, </span><span class="f_CondensedNormal" style="font-style: italic;">organizations</span><span class="f_CondensedNormal">, </span><span class="f_CondensedNormal" style="font-style: italic;">customers</span><span class="f_CondensedNormal">. Securables are organized into a hierarchy (system </span><span class="f_CondensedNormal" style="font-family: Arial,Helvetica,sans-serif;">→</span><span class="f_CondensedNormal"> organization </span><span class="f_CondensedNormal" style="font-family: Arial,Helvetica,sans-serif;">→</span><span class="f_CondensedNormal"> customer) - permissions granted on a securable higher up in the hierarchy automatically apply to lower levels (although restrictions may apply).</span></p>
+<p class="p_Normal"><span style="font-style: italic;">Permissions</span> are the types of access granted to specific securables. In general HsM assigns permissions to specific security principals for specific securables. However HsM doe s not assign permissions directly to security principals but organizes permissions into <span style="font-style: italic;">roles</span> and assigns roles to security principals. Permissions and roles are predefined by HsM and cannot be modified.</p>
+<p class="p_Normal">Note: a permission can be assigned for a specific principal on a specific securable but may only have effect on securables on lower levels. E.g. a principal might be assigned the EDIT_CUSTOMER permission on a specific organization. This permission however only grants access to all customers within this organization but does not grant any access on the organization itself. The securable in this example is the organization, however the <span style="font-style: italic;">affected securable</span> is the customer.</p>
+<p class="p_Normal">Permissions with an affected securable cannot be assigned to securables that are lower in the hierarchy than the affected securable. E.g. EDIT_ORGANIZATION cannot be assigned to a customer securable. Every role has a target securable and only roles with a matching target securable can be assigned to a securable of that type. A role only groups permissions with an affected securable the same as the target securable of the role or an affected securable with a lower level than the target securable.</p>
+<p class="p_Normal">HsM uses an additive permission model. I.e. all permissions grant some kind of access to securables, they never revoke or deny access. Security principals that were not assigned any permission do cannot access or modify any data in HsM and cannot perform any operations within the system.</p>
 <p class="p_Normal">&nbsp;</p>
 <p class="p_Normal">&nbsp;</p>
 

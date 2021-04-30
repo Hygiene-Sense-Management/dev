@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Debug mode",
 hmDescription:"For extended debugging the app can be switched to a debug mode. To do so go to the profile screen and tab on the e-mail address 5 times. After that The profile screen will show...",
-hmPrevLink:"new-topic.html",
+hmPrevLink:"cuapp.html",
 hmNextLink:"cuapp-ble-communication.html",
 hmParentLink:"cuapp.html",
 hmBreadCrumbs:"<a href=\"frontends.html\">Frontends<\/a> &gt; <a href=\"cuapp.html\">Xibu App<\/a>",

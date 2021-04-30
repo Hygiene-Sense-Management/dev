@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"EUI (Extended Unique Identifier)",
 hmDescription:"In HsM EUIs (Extended Unique Identifiers) are used frequently for identification of devices. There are two different EUI types. EUI-48: A 48 bit EUI aslo called MAC address and...",
-hmPrevLink:"comm-ble-advertisement.html",
+hmPrevLink:"resource-instance-ids.html",
 hmNextLink:"glossary.html",
 hmParentLink:"comm.html",
 hmBreadCrumbs:"<a href=\"comm.html\">Common<\/a>",

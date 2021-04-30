@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Customer and Organizations",
 hmDescription:"Kunden zusammenführen Fall: Ein Kunde mit mehreren Lieferadressen Gemeinde Zell am See = Rechnungsempfänger Bauhof = Lieferkunde Lieferkunde = Anker wo Spender hängen und Ver",
-hmPrevLink:"global-roles.html",
+hmPrevLink:"roles.html",
 hmNextLink:"clse-devicefilter.html",
 hmParentLink:"clse.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"clse.html\">Client Service<\/a>",
