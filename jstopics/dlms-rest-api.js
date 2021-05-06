@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"REST API",
 hmDescription:"Terminiology DataLinkConenctionState: Inludes Status, ComputedAt, ComponentId, OnlineTime, OfflineTime DeviceStateResponse: Online\/Offline Logged At GatewayConnectioninfo: Respo",
-hmPrevLink:"dlms-data-link-monitoring-logic.html",
+hmPrevLink:"dlms-capability.html",
 hmNextLink:"pdpr.html",
 hmParentLink:"dlms.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"dlms.html\">Data Link Monitoring Service<\/a>",
