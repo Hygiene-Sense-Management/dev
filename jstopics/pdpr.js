@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Primary Data Processing",
 hmDescription:"HsM uses Azure IoT infrastructure for device-to-cloud and cloud-to-device communication. I.e. data produced by HsM devices is delivered to the HsM Backend systems via  Azure...",
-hmPrevLink:"dlms-capability.html",
+hmPrevLink:"dlms-capabilities.html",
 hmNextLink:"prdp-message-types.html",
 hmParentLink:"backend-infrastructure.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a>",

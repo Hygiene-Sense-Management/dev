@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Generated resource instance values",
 hmDescription:"The Data Link Monitoring Service forwards key metrics as resource instance values. I.e. the Data Link Monitoring Service calculates these metrics and generates resource...",
-hmPrevLink:"dlms-metrics-online-ratio.html",
+hmPrevLink:"dlms-data-link-monitoring-logic.html",
 hmNextLink:"dlms-connection-topology.html",
 hmParentLink:"dlms.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"dlms.html\">Data Link Monitoring Service<\/a>",

@@ -1,12 +1,12 @@
 hmLoadTopic({
 hmKeywords:"",
-hmTitle:"On Premise infrastructure",
+hmTitle:"On premise infrastructure",
 hmDescription:"Enter topic text here.",
 hmPrevLink:"copyright_notice.html",
 hmNextLink:"device-provisioning-registrati.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",
-hmTitlePath:"On Premise infrastructure",
-hmHeader:"<h1 class=\"p_Heading1\"><span class=\"f_Heading1\">On Premise infrastructure<\/span><\/h1>\n\r",
+hmTitlePath:"On premise infrastructure",
+hmHeader:"<h1 class=\"p_Heading1\"><span class=\"f_Heading1\">On premise infrastructure<\/span><\/h1>\n\r",
 hmBody:"<p class=\"p_Normal\">Enter topic text here.<\/p>\n\r"
 })

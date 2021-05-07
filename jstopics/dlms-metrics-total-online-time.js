@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Total online time",
 hmDescription:"Whenever the Data Link Monitoring Service detects a change in the data-link status from online to offline, temporarily offline or not connected it adds the time between this...",
-hmPrevLink:"dlms-presented-status-gateway-devices.html",
+hmPrevLink:"dlms-data-link-status-expectation.html",
 hmNextLink:"dlms-metrics-total-offline-time.html",
 hmParentLink:"dlms-connection-metrics.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"dlms.html\">Data Link Monitoring Service<\/a> &gt; <a href=\"dlms-connection-metrics.html\">Connection metrics<\/a>",

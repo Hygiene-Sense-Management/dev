@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Data link monitoring service logic</title>
+	<title>Processing of monitoring results</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="The Data Link Monitoring Service records the result of monitoring data links between non-gateway devices and stationary gateways and the results of monitoring the data links..." />
+	<meta name="description" content="The Data Link Monitoring Service records the result of monitoring data-links between BLE-networked devices and stationary gateways and the results of monitoring the data-links..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -385,7 +385,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
 		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a></p> 
-		  <p class="topictitle">Data link monitoring service logic</p>
+		  <p class="topictitle">Processing of monitoring results</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-connection-topology.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-metrics-online-ratio.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="expectation.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-generated-resource-instance-values.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,8 +417,9 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">The Data Link Monitoring Service records the result of monitoring data links between non-gateway devices and stationary gateways and the results of monitoring the data links between stationary gateways and the HsM Backend. It keeps the current online status of these devices and in case of changes to the status it will store the changed data link status locally and will forward it as <a href="dlms-generated-resource-instance-values.html" class="topiclink">virtual resource instance values</a>.</p>
-<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Consecutive reporting of the same status will not be stored or forwarded, thus limiting the amount of redundant data.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>When a stationary gateway disconnection is detected all non-gateway devices that last used this stationary gateway will considered as offline too, if those device are not reported online via another stationary gateway within a grace period of two minutes.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Devices for which no update has been received for the last 4 hours are considered as offline.</p>
+	<p class="p_Normal">The Data Link Monitoring Service records the result of monitoring data-links between BLE-networked devices and stationary gateways and the results of monitoring the data-links between stationary gateways and the HsM Backend. </p>
+<p class="p_Normal">It keeps the current online status of these devices and in case of changes to the status it will store the changed data link status locally and will forward it as <a href="dlms-generated-resource-instance-values.html" class="topiclink">virtual resource instance values</a>.</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Consecutive reporting of the same status will not be stored or forwarded, thus limiting the amount of redundant data.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>When a stationary gateway disconnection is detected all BLE-networked devices that last used this stationary gateway will considered as offline too.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Devices for which no update has been received for a configurable number of hours are considered as offline (see <a href="dlms-capabilities.html" class="topiclink">Configuration &amp; Capabilities</a> for details).</p>
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
 </div>
@@ -578,14 +579,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Data link monitoring service logic";
+			var titleBarText = "Processing of monitoring results";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Data link monitoring service logic"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Processing of monitoring results"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();
