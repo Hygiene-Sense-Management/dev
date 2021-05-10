@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Enter topic text here." />
+	<meta name="description" content="If a device is not connected to the HsM Backend this can be either an error or it can be an expected state. Therefore the data-link status of of a device is calculated is..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -384,7 +384,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a></p> 
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="dlms.html">Data Link Monitoring Service</a> &gt; <a href="dlms-connection-metrics.html">Connection metrics</a> &gt; <a href="dlms-data-link-status.html">Data-link status</a></p> 
 		  <p class="topictitle">Expectation</p>
 		  </div>
 		</td>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-data-link-monitoring-logic.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="dlms-data-link-status-gateways.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="dlms-data-link-status.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-capability.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms-metrics-total-online-time.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,7 +417,122 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">Enter topic text here.</p>
+	<p class="p_Normal">If a device is not connected to the HsM Backend this can be either an error or it can be an expected state. Therefore the data-link status of of a device is calculated is calculated based on the actual state of the network connection between the device and the HsM Backend and the expectation the system has for the device. </p>
+<p class="p_Normal">If the Data Link Monitoring Service expects a device to be connected to the HsM Backend but the device is actually not, it will put the device into <span style="font-style: italic;">temporarily offline</span> or <span style="font-style: italic;">offline </span>state. If the Data Link Monitoring Service does not expect the device to be connected to the HsM Backend and the device actually offline it will put the device to <span style="font-style: italic;">not connected</span> state.</p>
+<p class="p_Normal">The expectation can be set for each device, usually this is done by users of the system however the Data Link Monitoring Service can also modify the expectation (as described below). Table 22 lists the expectations the system can have for each device.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0.1250rem 0 0.1250rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:middle; width:12.5625rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Expectation</span></p>
+</th>
+<th style="vertical-align:middle; width:30.5000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Description</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:middle; width:12.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Online</span></p>
+</td>
+<td style="vertical-align:middle; width:30.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">The device is expected to be connected to the </span><span class="f_CondensedNormal">HsM Backend</span><span class="f_CondensedNormal">.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:12.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Soft offline</span></p>
+</td>
+<td style="vertical-align:middle; width:30.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">The device is currently not expected to be connected to the </span><span class="f_CondensedNormal">HsM Backend</span><span class="f_CondensedNormal">. However once the device connects again the </span><span class="f_CondensedNormal">Data Analysis Service</span><span class="f_CondensedNormal"> will set the expectation to </span><span class="f_CondensedNormal" style="font-style: italic;">Online</span><span class="f_CondensedNormal">.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:12.5625rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Hard offline</span></p>
+</td>
+<td style="vertical-align:middle; width:30.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">The device is not expected to be connected to the </span><span class="f_CondensedNormal">HsM Backend</span><span class="f_CondensedNormal">. Even if the device connects to the </span><span class="f_CondensedNormal">HsM Backend</span><span class="f_CondensedNormal"> the </span><span class="f_CondensedNormal">Data Link Monitoring Service</span><span class="f_CondensedNormal"> will keep this expectation state.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_040165" class="hmanchor"></a><span class="f_ImageCaption">Table 22: Expectations that can be set for devices.</span></p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:3.8125rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Current connection status</span></p>
+</th>
+<th style="vertical-align:top; width:4.1250rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">New connection status</span></p>
+</th>
+<th style="vertical-align:top; width:7.5000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Current expectation</span></p>
+</th>
+<th style="vertical-align:top; width:7.2500rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Expectation after</span></p>
+</th>
+<th style="vertical-align:top; width:7.5000rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_CondensedNormal"><span class="f_CondensedNormal">Data-link status</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:3.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">offline</p>
+</td>
+<td style="vertical-align:top; width:4.1250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">soft-offline (default)</p>
+</td>
+<td style="vertical-align:top; width:7.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:3.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">offline</p>
+</td>
+<td style="vertical-align:top; width:4.1250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">hard-offline</p>
+</td>
+<td style="vertical-align:top; width:7.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">hard-offline</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:3.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+<td style="vertical-align:top; width:4.1250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">offline</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+<td style="vertical-align:top; width:7.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">temporarily offline</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:3.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+<td style="vertical-align:top; width:4.1250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">offline</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">soft-offline</p>
+</td>
+<td style="vertical-align:top; width:7.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">soft-offline</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">not-connected</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:3.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">online</p>
+</td>
+<td style="vertical-align:top; width:4.1250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">offline</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">hard-offline</p>
+</td>
+<td style="vertical-align:top; width:7.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">hard-offline</p>
+</td>
+<td style="vertical-align:top; width:7.5000rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">not-connected</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_0e1af3" class="hmanchor"></a><span class="f_ImageCaption">Table 23: Effects of data-link expectation.</span></p>
+<p class="p_Normal">The expectation sent for a stationary gateway will be set for all BLE-networked device that were connected to that stationary gateway at the time the expectation was sent. If the expectation for a stationary gateway is set to <span class="f_Term">hard-offline</span> the last connected BLE-networked devices will be set to expectation <span style="font-style: italic;">soft-offline</span>.</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
