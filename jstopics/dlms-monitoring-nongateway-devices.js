@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Monitoring BLE-networked devices",
 hmDescription:"Stationary gateways actively monitor the BLE communication links with BLE-networked devices and report the status of these links (online or offline) to the Data Link Monitoring...",
-hmPrevLink:"dlms.html",
+hmPrevLink:"dans-internationalization_2.html",
 hmNextLink:"dlms-monitoring-gateway-devices.html",
 hmParentLink:"dlms.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a> &gt; <a href=\"dlms.html\">Data Link Monitoring Service<\/a>",

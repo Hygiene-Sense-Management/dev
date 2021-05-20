@@ -452,21 +452,28 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </div>
 <p class="p_ImageCaption"><a id="fig_d82a4e" class="hmanchor"></a><span class="f_ImageCaption">Table 31: Application properties of this message type</span></p>
 <h1 class="p_Heading1"><span class="f_Heading1">Message body</span></h1>
-<p class="p_Normal">The body of this message type contains a JSON document with the connection status for multiple BLE-networked devices. Figure 4 shows an example message body. The message body structure is defined by the device-gateway connection status <a href="hsm-device-gateway-connection-status-v1.0.0.json" class="filelink">JSON Schema</a>.</p>
+<p class="p_Normal">The body of this message type contains a JSON document with the connection status for multiple BLE-networked devices. Figure 4 shows an example message body. The message body structure is defined by the device-gateway connection status <a href="hsm-device-gateway-connection-status-v1.0.0.json" class="filelink">JSON Schema</a>. </p>
+<p class="p_Normal">Note: The JSON schema of the message body does allow date-time values with offsets, however the systems processing this messages only work based on UTC. Therefore if offsets are specified they are not respected and the date-time value is interpreted as being in UTC.</p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table class="BoxCode" >
 <tr class="BoxCode">
 <td class="BoxCode"><p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">{</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;&quot;Devices&quot;: [</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;NetworkId&quot;: &quot;F8-75-A4-AC-77-12-34-A5&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;LoggedAt&quot;: &quot;2021-02-28 22:15:14.123Z&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;LoggedAt&quot;: &quot;2021-02-28T22:15:14.123&quot;,</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ConnectionStatus&quot;: &quot;online&quot;</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;},</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;NetworkId&quot;: &quot;B4-CE-36-6F-1E-73-22-CE&quot;,</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;LoggedAt&quot;: &quot;2021-02-28 22:13:12.345Z&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;LoggedAt&quot;: &quot;2021-02-28T22:13:12.345&quot;,</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ConnectionStatus&quot;: &quot;offline&quot;</span></p>
-<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;}</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;},</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;{</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;NetworkId&quot;: &quot;C3-3B-CB-B9-A7-CD-EA-3B&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;LoggedAt&quot;: &quot;2021-02-28T22:16:12.486&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;ConnectionStatus&quot;: &quot;online&quot;,</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp; &nbsp;&quot;Rssi:&quot;: -42</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp; &nbsp;},</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample"> &nbsp;]</span></p>
 <p class="p_CodeExample" style="page-break-inside: avoid; page-break-after: avoid;"><span class="f_CodeExample">}</span></p>
 </td>

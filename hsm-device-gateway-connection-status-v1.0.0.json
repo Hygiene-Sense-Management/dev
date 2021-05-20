@@ -1,48 +1,54 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "http://schema.hsm.digital/hsm-device-gateway-connection-status-v1.0.0.schema.json",
-  "title": "hsm-device-gateway-connection-status",
-  "type": "object",
-  "properties": {
-    "Devices": {
-      "type": "array",
-      "minItems": 1,
-      "uniqueItems": true,
-      "description": "An array of objects describing status of connections of different ble-networked devices with the gateway.",
-      "items": {
-        "type": "object",
-        "description": "Describes the status of the connection between an BLE-networked device and the gateway at a specific point in time.",
-        "properties": {
-          "NetworkId": {
-            "type": "string",
-            "description": "Identifier of the component within the BLE-networked device that actually builds up the connection to the gateway. Usually the BLUUID if the BLE-networked device."
-          },
-          "LoggedAt": {
-            "type": "string",
-            "format": "date-time",
-            "description": "The timestamp at which this connection status was monitored."
-          },
-          "ConnectionStatus": {
-            "type": "string",
-            "enum": [
-              "online",
-              "offline"
-            ],
-            "description": "The connection status."
-          }
-        },
-        "required": [
-          "NetworkId",
-          "LoggedAt",
-          "ConnectionStatus"
-        ], 
-		"additionalProperties": false
-      }
-    }
-  },
-  "required": [
-    "Devices"
-  ],
-  "additionalProperties": false,
-  "description": ""
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "http://schema.hsm.digital/hsm-device-gateway-connection-status-v1.0.0.schema.json",
+	"title": "hsm-device-gateway-connection-status",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"Devices": {
+			"type": "array",
+			"minItems": 1,
+			"uniqueItems": true,
+			"description": "An array of objects describing status of connections of different ble-networked devices with the gateway.",
+			"items": {
+				"type": "object",
+				"description": "Describes the status of the connection between an BLE-networked device and the gateway at a specific point in time.",
+				"properties": {
+					"NetworkId": {
+						"type": "string",
+						"description": "Identifier of the component within the BLE-networked device that actually builds up the connection to the gateway. Usually the BLUUID if the BLE-networked device."
+					},
+					"LoggedAt": {
+						"type": "string",
+						"format": "date-time",
+						"description": "The timestamp at which this connection status was monitored."
+					},
+					"ConnectionStatus": {
+						"type": "string",
+						"enum": [
+							"online",
+							"offline"
+						],
+						"description": "The connection status."
+					},
+					"Rssi": {
+						"type": "integer",
+						"minimum": -100,
+						"maximum": 0,
+						"description": "Received Signal Strengh Indication (RSSI) of the BLE-networked device."
+					}
+				},
+				"required": [
+					"NetworkId",
+					"LoggedAt",
+					"ConnectionStatus"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [
+		"Devices"
+	],
+	"additionalProperties": false
 }

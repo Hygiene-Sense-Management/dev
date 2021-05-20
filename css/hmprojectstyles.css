@@ -15,6 +15,7 @@ table, tr, th
 }
 span.f_CodeExample /* Code Example */
 {
+ font-size: 0.90rem;
  font-family: Consolas, Courier,monospace;
 }
 span.f_Comment /* Comment */
@@ -65,7 +66,7 @@ p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
 }
 .p_CodeExample /* Code Example */
 {
- font-size: 1.00rem;
+ font-size: 0.90rem;
  line-height: 1.80;
  page-break-inside: avoid;
  page-break-after: avoid;

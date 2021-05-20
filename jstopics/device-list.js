@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Device list",
 hmDescription:"The device list tab shows all devices of the current customer grouped by the room in which devices are installed.",
-hmPrevLink:"installing-a-device.html",
+hmPrevLink:"gateway-configuration.html",
 hmNextLink:"seap.html",
 hmParentLink:"cuapp.html",
 hmBreadCrumbs:"<a href=\"frontends.html\">Frontends<\/a> &gt; <a href=\"cuapp.html\">Xibu App<\/a>",
