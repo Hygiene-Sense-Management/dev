@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Kunden zusammenführen Fall: Ein Kunde mit mehreren Lieferadressen Gemeinde Zell am See = Rechnungsempfänger Bauhof = Lieferkunde Lieferkunde = Anker wo Spender hängen und Ver" />
+	<meta name="description" content="Relation type Description Invoicing Source customer receives the invoices for items delivered to the target customer Restricted by Navision to companies within the same mandato" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -417,7 +417,55 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">&nbsp;</p>
+	<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:10.8125rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Relation type</p>
+</th>
+<th style="vertical-align:top; width:32.2500rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:10.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Invoicing</p>
+</td>
+<td style="vertical-align:top; width:32.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Source customer receives the invoices for items delivered to the target customer</p>
+<p class="p_Normal">Restricted by Navision to companies within the same mandator</p>
+<p class="p_Normal">Restricted to a single level hierarchy</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:10.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Reseller</p>
+<p class="p_Normal">(Alias: export partner)</p>
+</td>
+<td style="vertical-align:top; width:32.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Source customer resells items to target customer.</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Implies that the source customer is an organization in HsM.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Resellers (source customer) are marked in Navision as resellers</p><p class="p_Normal">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:10.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Company hierarchy</p>
+<p class="p_Normal">(Alias: chain customer, line management)</p>
+</td>
+<td style="vertical-align:top; width:32.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Source customer is a superior to the target customer.</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Implies that the HsM permissions on the source customer are inherited by the target customer.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Currently restricted by Navision to source and target being in the same mandator </p></td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:10.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Condition</p>
+<p class="p_Normal">Alias: Buying syndicate</p>
+</td>
+<td style="vertical-align:top; width:32.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Source customer provides its conditions to target customer.</p>
+<p class="p_Normal">Restricted by navision to companies within the same mandator</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">ManageBillToCustomers: A Bill to customer without this flag set is translated to a &nbsp;</p>
+<p class="p_Normal">ManageChainCustomers: A chain to customer without this flag is a Conditions relation</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">&nbsp;</p>
 <p class="p_Normal">Kunden zusammenführen</p>
 <h1 class="p_Heading1" style="line-height: 1.20; margin: 0.8750rem 0 0 0;"><span class="f_Heading1" style="font-size: 1.60rem; font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif; color: #1e4e79;">Fall: Ein Kunde mit mehreren Lieferadressen</span></h1>
 <p class="p_Normal" style="line-height: 1.20; margin: 0.3750rem 0 0 0;"><span style="font-size: 1.10rem; font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif;">Gemeinde Zell am See = Rechnungsempfänger</span></p>
