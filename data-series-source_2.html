@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Predefined adaptive date intervals</title>
+	<title>Processing</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="For easier specification of adaptive date intervals the Client Service provides some predefined date intervals" />
+	<meta name="description" content="The time series analysis will process data based on the logic sketched in figure 2.&nbsp;" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -227,7 +227,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	}
 	</style>
 	</noscript>
-	<link rel="canonical" href="http://www.helpandmanual.com/help/comm-date-interval-specification-predefinedadaptive.html" />
+	<link rel="canonical" href="http://www.helpandmanual.com/help/data-series-source_2.html" />
 	<script id="jqscript" type="text/javascript"></script>
 </head>
 <body>
@@ -384,8 +384,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="comm.html">Common</a> &gt; <a href="comm-date-interval-specification.html">Date interval specification</a></p> 
-		  <p class="topictitle">Predefined adaptive date intervals</p>
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="daan.html">Data Analysis Service</a> &gt; <a href="dans-single-value-analysis.html">Single value analysis</a></p> 
+		  <p class="topictitle">Processing</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="comm-date-interval-specification-adaptive.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="single-value-analysis-request.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="comm-date-interval-specification.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="dans-single-value-analysis.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="comm-serial-numbers.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="result.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,112 +417,12 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">For easier specification of <a href="comm-date-interval-specification-adaptive.html" class="topiclink">adaptive date intervals</a> the Client Service provides some predefined date intervals</p>
-<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
-<thead>
-<tr>
-<th style="vertical-align:top; width:7.8125rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Predefined adaptive <br />
-interval</p>
-</th>
-<th style="vertical-align:top; width:36.9375rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Resulting adaptive date interval settings</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Current Hour</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Time span: 00:01:00:00.00</p>
-<p class="p_Normal">End offset: Time span: 00:00:00:00.00</p>
-<p class="p_Normal">Adjustment method: Ceiling</p>
-<p class="p_Normal">Adjustment part: Hour</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Current Day</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Time span: 01:00:00:00.00</p>
-<p class="p_Normal">End offset: Time span: 00:00:00:00.00</p>
-<p class="p_Normal">Adjustment method: Ceiling</p>
-<p class="p_Normal">Adjustment part: Day</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; height:2.6250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Current Week</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; height:2.6250rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Time span: 07:00:00:00.00</p>
-<p class="p_Normal">End offset: Time span: 00:00:00:00.00</p>
-<p class="p_Normal">Adjustment method: Ceiling</p>
-<p class="p_Normal">Adjustment part: Week</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Current Month</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Months: 1</p>
-<p class="p_Normal">End offset: Months: 0</p>
-<p class="p_Normal">Adjustment method: Ceiling</p>
-<p class="p_Normal">Adjustment part: Month</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Current Year</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Months: 12</p>
-<p class="p_Normal">End offset: Months: 0</p>
-<p class="p_Normal">Adjustment method: Ceiling</p>
-<p class="p_Normal">Adjustment part: Month</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Last Hour</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Time span: 00:01:00:00.00</p>
-<p class="p_Normal">End offset: Time span: 00:00:00:00.00</p>
-<p class="p_Normal">Adjustment method: Floor</p>
-<p class="p_Normal">Adjustment part: Hour</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Last Day</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Time span: 01:00:00:00.00</p>
-<p class="p_Normal">End offset: Time span: 00:00:00:00.00</p>
-<p class="p_Normal">Adjustment method: Floor</p>
-<p class="p_Normal">Adjustment part: Day</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Last Week</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Time span: 07:00:00:00.00</p>
-<p class="p_Normal">End offset: Time span: 00:00:00:00.00</p>
-<p class="p_Normal">Adjustment method: Floor</p>
-<p class="p_Normal">Adjustment part: Week</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Last Month</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Months: 1</p>
-<p class="p_Normal">End offset: Months: 0</p>
-<p class="p_Normal">Adjustment method: Floor</p>
-<p class="p_Normal">Adjustment part: Month</p>
-</td>
-</tr>
-<tr>
-<td style="vertical-align:top; width:7.8125rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Last Year</p>
-</td>
-<td style="vertical-align:top; width:36.9375rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Start offset: Months: 12</p>
-<p class="p_Normal">End offset: Months: 0</p>
-<p class="p_Normal">Adjustment method: Floor</p>
-<p class="p_Normal">Adjustment part: Month</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="p_ImageCaption"><a id="fig_96ed33" class="hmanchor"></a><span class="f_ImageCaption">Table 38: Predefined adaptive date intervals and their equivalent adaptive date interval settings</span></p>
+	<p class="p_Normal">The time series analysis will process data based on the logic sketched in figure 2. </p>
+<p class="p_Normal"><img alt="dans-time-series-analysis-processing-flowchart" style="margin:0;width:47.1875rem;height:26.7500rem;border:none" src="./images/dans-time-series-analysis-processing-flowchart.png"/></p>
+<p class="p_Normal">First the Data Analysis Service fetches and processes data for each defined data series source. The data for each source that is in the time-filter defined with the request is loaded. If the data series source in the request also defines an offset for the data series this offset is applied to the read data. </p>
+<p class="p_Normal">The data for the data series source is then split into time buckets. For each time bucket the time-aggregation-function defined in the request is applied to calculate exactly one value for the whole bucket or if there are no values within the time bucket no value will be calculated.</p>
+<p class="p_Normal">These steps are repeated for each data series soruce defined in the request.</p>
+<p class="p_Normal">If the component aggregation is set to non the result of the processing of each time series is returned as result set. If the component aggregation is set to anything else but none the results of equal time buckets (same start and end date) across components are aggregated using the component aggregation function. This way only one value is calculated for each time-bucked for for all data series sources and only one time-series is returned as result.</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
@@ -619,11 +519,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	hmFlags.hmTrackHost = "http://www.helpandmanual.com/help/";
 	hmFlags.hmProject = "HsM Reference Manual";
 	hmFlags.hmDefaultPage = "index.html";
-	hmFlags.hmCurrentPage = "comm-date-interval-specification-predefinedadaptive.html";
+	hmFlags.hmCurrentPage = "data-series-source_2.html";
 	hmFlags.hmTOC = "hmcontent.html";
 	hmFlags.hmSearchPage = "hmftsearch.html";
 	hmFlags.hmIndexPage = "hmkwindex.html";
-	hmFlags.thisTopic = "comm-date-interval-specification-predefinedadaptive.html";
+	hmFlags.thisTopic = "data-series-source_2.html";
 	hmFlags.lastTopic = "index.html";
 	hmFlags.isEWriter = false;
 	hmFlags.topicExt = ".html";
@@ -683,14 +583,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Predefined adaptive date intervals";
+			var titleBarText = "Processing";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Predefined adaptive date intervals"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Processing"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();
