@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Internationalization</title>
+	<title>Message delivery process</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="We use date time offset." />
+	<meta name="description" content="Message delivery trys retry * Pass in delegate * Delegate successfully executed -&gt; message completed * Delegate not successful (exception) -&gt; retry 3 times (immediate) After th" />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -227,7 +227,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	}
 	</style>
 	</noscript>
-	<link rel="canonical" href="http://www.helpandmanual.com/help/internationalization.html" />
+	<link rel="canonical" href="http://www.helpandmanual.com/help/message-delivery-process.html" />
 	<script id="jqscript" type="text/javascript"></script>
 </head>
 <body>
@@ -385,7 +385,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
 		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="isco.html">Inter Service Communication</a></p> 
-		  <p class="topictitle">Internationalization</p>
+		  <p class="topictitle">Message delivery process</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="isco.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="authentication--authorization2.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
 		<a id="topicnavlinkhome" class="topicnavlink nav" href="isco.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="authentication--authorization2.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="frontends.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,7 +417,19 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">We use date time offset.</p>
+	<p class="p_Normal">Message delivery trys retry</p>
+<p class="p_Normal">* Pass in delegate</p>
+<p class="p_Normal">* Delegate successfully executed -&gt; message completed</p>
+<p class="p_Normal">* Delegate not successful (exception) -&gt; retry 3 times (immediate)</p>
+<p class="p_Normal">After that dead letter queue</p>
+<p class="p_Normal">=&gt; things might get out of sync over time. (serial number change)</p>
+<p class="p_Normal"><span style="font-weight: bold;">Timeout on message processing</span></p>
+<p class="p_Normal">If delegate is not doing it in 90s then we also retry</p>
+<p class="p_Normal"><span style="font-weight: bold;">Solution</span></p>
+<p class="p_Normal">* Alert rules on dead letter queue</p>
+<p class="p_Normal">* Requeue from dead letter queue - needs a tool</p>
+<p class="p_Normal">* Brute force: Sync endpoint is already there but is disabled right now</p>
+<p class="p_Normal">&nbsp;</p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
@@ -514,11 +526,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	hmFlags.hmTrackHost = "http://www.helpandmanual.com/help/";
 	hmFlags.hmProject = "HsM Reference Manual";
 	hmFlags.hmDefaultPage = "index.html";
-	hmFlags.hmCurrentPage = "internationalization.html";
+	hmFlags.hmCurrentPage = "message-delivery-process.html";
 	hmFlags.hmTOC = "hmcontent.html";
 	hmFlags.hmSearchPage = "hmftsearch.html";
 	hmFlags.hmIndexPage = "hmkwindex.html";
-	hmFlags.thisTopic = "internationalization.html";
+	hmFlags.thisTopic = "message-delivery-process.html";
 	hmFlags.lastTopic = "index.html";
 	hmFlags.isEWriter = false;
 	hmFlags.topicExt = ".html";
@@ -578,14 +590,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Internationalization";
+			var titleBarText = "Message delivery process";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Internationalization"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Message delivery process"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();

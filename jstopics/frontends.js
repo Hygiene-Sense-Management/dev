@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Frontends",
 hmDescription:"Enter topic text here.",
-hmPrevLink:"internationalization.html",
+hmPrevLink:"message-delivery-process.html",
 hmNextLink:"cuapp.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",
