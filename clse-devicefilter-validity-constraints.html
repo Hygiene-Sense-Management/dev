@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="Several constraints must be fulfilled for a device filter to be called valid. This includes constraints that apply to the structure of the expression tree as well as..." />
+	<meta name="description" content="Several constraints must be fulfilled for a device filter to be valid. This includes constraints that apply to the structure of the expression tree as well as constraints..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -417,9 +417,9 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">Several constraints must be fulfilled for a device filter to be called valid. This includes constraints that apply to the structure of the expression tree as well as constraints defined by the individual <a href="clse-devicefiltertermtypes.html" class="topiclink">device filter term types</a> used in a device filter.</p>
+	<p class="p_Normal">Several constraints must be fulfilled for a device filter to be valid. This includes constraints that apply to the structure of the expression tree as well as constraints defined by the individual <a href="clse-devicefiltertermtypes.html" class="topiclink">device filter term types</a> used in a device filter.</p>
 <h1 class="p_Heading1"><span class="f_Heading1">Hard &amp; soft validity constraints</span></h1>
-<p class="p_Normal">The Client Service will check some of the validity constraints before each execution of a device filter (<span class="f_Term">hard validity constraints</span>) and will break the execution if one of these constraints is violated. Other validity constraints will, by default, not be checked before execution of the device (<span class="f_Term">soft validity constraints</span>). The result of an execution of a device filter that violates a soft validity constraints will yield results that will probably not be exactly what the user intended.</p>
+<p class="p_Normal">The Client Service will check some of the validity constraints before each execution of a device filter (<span class="f_Term">hard validity constraints</span>) and will break the execution if one of these constraints is violated. Other validity constraints will, by default, not be checked before execution of the device filter (<span class="f_Term">soft validity constraints</span>). The result of an execution of a device filter that violates a soft validity constraints will yield results that will probably not be exactly what the user intended.</p>
 <p class="p_Normal">A full check of all validity constraints (hard &amp; soft) is offered by the Client Service as a separate endpoint. The separation between hard and soft validity constraints is implemented to provide the fastest possible execution of device filters.</p>
 <h1 class="p_Heading1"><span class="f_Heading1">Expression tree constraints</span></h1>
 <p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>Mandatory root node (hard validity constraint): The expression tree must have a root node.</p><p class="p_Normal" style="text-indent: 0; padding-left: 0.8125rem; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:0.8125rem;margin-left:-0.8125rem">&#8226;</span>No missing leaf nodes (hard validity constraint): The expression tree of a device filter must have at least one term beneath each logical operation node.</p><h1 class="p_Heading1"><span class="f_Heading1">Constraints on filter terms</span></h1>
