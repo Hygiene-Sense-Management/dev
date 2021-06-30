@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<!-- Help+Manual Premium Pack 4.1.0 (c) 2015-2021 by Tim Green. All rights reserved. -->
-	<title>Data Link Monitoring Service</title>
+	<title>Raw value analysis</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta name="generator" content="Help &amp; Manual" />
 	<meta name="keywords" content="" />
-	<meta name="description" content="HsM stationary gateways are used to connect BLE-networked devices to the HsM Backend permanently and therefore enable a near-real-time up-link communication (from devices to..." />
+	<meta name="description" content="Raw value analyses provide a generic way to fetch any resource instance data recorded by HsM. Requests can be done only for one device at a time and result in a non-aggregated..." />
 	<meta name="ZOOMIMAGE" content="./images/zoomimage.jpg" />
 	<meta name="author" content="Hagleitner" />
 	<meta name="msapplication-tap-highlight" content="no" />
@@ -227,7 +227,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	}
 	</style>
 	</noscript>
-	<link rel="canonical" href="http://www.helpandmanual.com/help/dlms.html" />
+	<link rel="canonical" href="http://www.helpandmanual.com/help/raw-value-analysis.html" />
 	<script id="jqscript" type="text/javascript"></script>
 </head>
 <body>
@@ -384,8 +384,8 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	  <tr>
 		<td id="topicheadercell">
 		  <div id="topicheaderwrapper">
-		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a></p> 
-		  <p class="topictitle">data-link Monitoring Service</p>
+		  <p id="ptopic_breadcrumbs" class="topic_breadcrumbs">Navigation:&nbsp; <a href="backend-infrastructure.html">Backend infrastructure</a> &gt; <a href="daan.html">Data Analysis Service</a></p> 
+		  <p class="topictitle">Raw value analysis</p>
 		  </div>
 		</td>
 		<td id="topicnavcell"><span>
@@ -393,13 +393,13 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 		<svg class="navicon" viewBox="0 0 32 32"><use xlink:href="#list-bullet"></use></svg>
 		<span>Scroll</span></a>
 		
-		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="raw-value-analysis.html" title="Go to previous topic">
+		 <a id="topicnavlinkprevious" class="topicnavlink nav" href="result.html" title="Go to previous topic">
 		 <svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-left"></use></svg>
 		 <span>Prev</span></a>
-		<a id="topicnavlinkhome" class="topicnavlink nav" href="backend-infrastructure.html" title="Go to top topic">
+		<a id="topicnavlinkhome" class="topicnavlink nav" href="daan.html" title="Go to top topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-up"></use></svg>
 		<span>Up</span></a>
-		<a id="topicnavlinknext" class="topicnavlink nav" href="dans-internationalization_2.html" title="Go to next topic">
+		<a id="topicnavlinknext" class="topicnavlink nav" href="dlms.html" title="Go to next topic">
 		<svg class="navicon" viewBox="0 0 27 32"><use xlink:href="#angle-circled-right"></use></svg>
 		<span>Next</span></a>
 		
@@ -417,10 +417,65 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	
 	<div id="hmpagebody_scroller">
 <!--ZOOMRESTART--> 
-	<p class="p_Normal">HsM stationary gateways are used to connect BLE-networked devices to the HsM Backend permanently and therefore enable a near-real-time up-link communication (from devices to the HsM Backend) and near real-time down-link &nbsp;communication (from the HsM Backend to devices). This communication is realized via messages from or to Azure IoT hub.</p>
-<p class="p_Normal">BLE-networked devices communicate data via BLE messages to or from stationary gateways. These gateways in turn use MQTT, MQTT over WebSockets, AMQP, AMQP over WebSockets or HTTPS to relay this data to or from the HsM Backend via the Internet. While this communication sequence usually is very stable things can still go wrong due to many reasons; BLE connections can break, the Internet of the stationary gateway connection may be down, devices may run out of energy, stationary gateways may be down etc.</p>
-<p class="p_Normal">The Data Link Monitoring Service continuously monitors and analyzes the data-links and therefore provides information about the data-link status of devices (both stationary gateways, and BLE-networked devices) as well as information for a historical analysis of data-link quality. </p>
-<p class="p_Normal">As the Data Link Monitoring Service keeps track of the connections between stationary gateways and BLE-networked devices it also builds up information about the network topology of HsM devices.</p>
+	<p class="p_Normal">Raw value analyses provide a generic way to fetch any resource instance data recorded by HsM. Requests can be done only for one device at a time and result in a non-aggregated time series, containing all data points with the according time stamp. &nbsp;</p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:9.1875rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Request parameter</p>
+</th>
+<th style="vertical-align:top; width:33.8750rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:9.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Data source</p>
+</td>
+<td style="vertical-align:top; width:33.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">A single data source (see table 26 for details).</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:9.1875rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Time range</p>
+</td>
+<td style="vertical-align:top; width:33.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Defines the time range for the analysis. All by HsM received data points within this time range will be contained in the result. The range is specified with a from and to date - time. These boundaries are inclusive, i.e. they define a closed date interval.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_98f368" class="hmanchor"></a><span class="f_ImageCaption">Table 27: Parameters of a raw value analysis request.</span></p>
+<div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; width:9.2500rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Request parameter</p>
+</th>
+<th style="vertical-align:top; width:33.8750rem; background-color:#F5F5F5; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; width:9.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Component Id</p>
+</td>
+<td style="vertical-align:top; width:33.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The identifier of the component that generated data for a data series.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:9.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Resource type</p>
+</td>
+<td style="vertical-align:top; width:33.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The id of the resource type (in decimal representation).</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:9.2500rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">Resource instance number</p>
+</td>
+<td style="vertical-align:top; width:33.8750rem; padding:0.1250rem; border:solid thin #e1e1e1;"><p class="p_Normal">The id of the resource instance number.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_ImageCaption"><a id="fig_126332" class="hmanchor"></a><span class="f_ImageCaption">Table 28: Parameters of the data source within a raw value analysis request.</span></p>
 
 	<div class="topicfooter">
 <p class="topicfooter">HsM is powered by <a href="http://www.hagleitner.com" target="_blank">Hagleitner</a>. &copy; 2021.</p>
@@ -517,11 +572,11 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 	hmFlags.hmTrackHost = "http://www.helpandmanual.com/help/";
 	hmFlags.hmProject = "HsM Reference Manual";
 	hmFlags.hmDefaultPage = "index.html";
-	hmFlags.hmCurrentPage = "dlms.html";
+	hmFlags.hmCurrentPage = "raw-value-analysis.html";
 	hmFlags.hmTOC = "hmcontent.html";
 	hmFlags.hmSearchPage = "hmftsearch.html";
 	hmFlags.hmIndexPage = "hmkwindex.html";
-	hmFlags.thisTopic = "dlms.html";
+	hmFlags.thisTopic = "raw-value-analysis.html";
 	hmFlags.lastTopic = "index.html";
 	hmFlags.isEWriter = false;
 	hmFlags.topicExt = ".html";
@@ -581,14 +636,14 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 			loadScripts(0);
 			
 			/* Title Bar Text */
-			var titleBarText = "Data Link Monitoring Service";
+			var titleBarText = "Raw value analysis";
 			switch ("topic") {
 				case "project":
 				titleBarText = "HsM Reference Manual";
 				break;
 				
 				case "project_topic":
-				titleBarText = "HsM Reference Manual" + " \> " + "Data Link Monitoring Service"; 
+				titleBarText = "HsM Reference Manual" + " \> " + "Raw value analysis"; 
 				break;
 				}
 			titleBarText = $("<textarea/>").html(titleBarText).text();

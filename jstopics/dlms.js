@@ -2,7 +2,7 @@ hmLoadTopic({
 hmKeywords:"",
 hmTitle:"data-link Monitoring Service",
 hmDescription:"HsM stationary gateways are used to connect BLE-networked devices to the HsM Backend permanently and therefore enable a near-real-time up-link communication (from devices to...",
-hmPrevLink:"raw-value-time-series.html",
+hmPrevLink:"raw-value-analysis.html",
 hmNextLink:"dans-internationalization_2.html",
 hmParentLink:"backend-infrastructure.html",
 hmBreadCrumbs:"<a href=\"backend-infrastructure.html\">Backend infrastructure<\/a>",
