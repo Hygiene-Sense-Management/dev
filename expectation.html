@@ -419,7 +419,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 <!--ZOOMRESTART--> 
 	<p class="p_Normal">If a device is not connected to the HsM Backend this can be either an error or it can be an expected state. Therefore the data-link status of of a device is calculated is calculated based on the actual state of the network connection between the device and the HsM Backend and the expectation the system has for the device. </p>
 <p class="p_Normal">If the Data Link Monitoring Service expects a device to be connected to the HsM Backend but the device is actually not, it will put the device into <span style="font-style: italic;">temporarily offline</span> or <span style="font-style: italic;">offline </span>state. If the Data Link Monitoring Service does not expect the device to be connected to the HsM Backend and the device actually offline it will put the device to <span style="font-style: italic;">not connected</span> state.</p>
-<p class="p_Normal">The expectation can be set for each device, usually this is done by users of the system however the Data Link Monitoring Service can also modify the expectation (as described below). Table 29 lists the expectations the system can have for each device.</p>
+<p class="p_Normal">The expectation can be set for each device, usually this is done by users of the system however the Data Link Monitoring Service can also modify the expectation (as described below). Table 31 lists the expectations the system can have for each device.</p>
 <div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0.1250rem 0 0.1250rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
@@ -451,7 +451,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_040165" class="hmanchor"></a><span class="f_ImageCaption">Table 29: Expectations that can be set for devices.</span></p>
+<p class="p_ImageCaption"><a id="fig_040165" class="hmanchor"></a><span class="f_ImageCaption">Table 31: Expectations that can be set for devices.</span></p>
 <div style="text-align: left; text-indent: 0; line-height: 1.44; padding: 0 0 0 0; margin: 0.3750rem 0 0.2500rem 0;"><table style="width:43.7500rem; border:none; border-spacing:0; border-collapse:collapse;">
 <thead>
 <tr>
@@ -531,7 +531,7 @@ Copyright (c) 2015-2021 by Tim Green. All rights reserved. Contact: https://www.
 </tbody>
 </table>
 </div>
-<p class="p_ImageCaption"><a id="fig_0e1af3" class="hmanchor"></a><span class="f_ImageCaption">Table 30: Effects of data-link expectation.</span></p>
+<p class="p_ImageCaption"><a id="fig_0e1af3" class="hmanchor"></a><span class="f_ImageCaption">Table 32: Effects of data-link expectation.</span></p>
 <p class="p_Normal">The expectation sent for a stationary gateway will be set for all BLE-networked device that were connected to that stationary gateway at the time the expectation was sent. If the expectation for a stationary gateway is set to <span class="f_Term">hard-offline</span> the last connected BLE-networked devices will be set to expectation <span style="font-style: italic;">soft-offline</span>.</p>
 
 	<div class="topicfooter">
