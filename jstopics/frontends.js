@@ -1,12 +1,11 @@
 hmLoadTopic({
 hmKeywords:"",
 hmTitle:"Frontends",
-hmDescription:"Enter topic text here.",
-hmPrevLink:"message-delivery-process.html",
+hmPrevLink:"c2dd-internationalization.html",
 hmNextLink:"cuapp.html",
 hmParentLink:"index.html",
 hmBreadCrumbs:"",
 hmTitlePath:"Frontends",
 hmHeader:"<h1 class=\"p_Heading1\"><span class=\"f_Heading1\">Frontends<\/span><\/h1>\n\r",
-hmBody:"<p class=\"p_Normal\">Enter topic text here.<\/p>\n\r"
+hmBody:"<p class=\"p_Normal\">&nbsp;<\/p>\n\r"
 })
